@@ -6,9 +6,11 @@ import {
 } from "react-router-dom";
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import Root, { loader as rootLoader } from './routes/root';
+import Root from './routes/root';
 import ErrorPage from './error-page';
 import AnotherPage from './routes/anotherPage';
+import defaultLoader from './loaders/defaultLoader';
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -19,13 +21,13 @@ const router = createBrowserRouter([
     path: "/",
     element: <Root />,
     errorElement: <ErrorPage />,
-    loader: rootLoader,
+    loader: defaultLoader,
   },
   {
     path: "/anotherPage",
     element: <AnotherPage />,
     errorElement: <ErrorPage />,
-    loader: rootLoader,
+    loader: defaultLoader,
   }
 ]);
 
