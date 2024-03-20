@@ -1,20 +1,27 @@
-import React from "react"
-import ReactDOM from "react-dom/client"
-import { createBrowserRouter, RouterProvider } from "react-router-dom"
-import "./index.css"
-import reportWebVitals from "./reportWebVitals"
-import Root from "./routes/root"
-import ErrorPage from "./error-page"
-import AnotherPage from "./routes/anotherPage"
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import './index.css';
+import reportWebVitals from './reportWebVitals';
+// import Root from './routes/root';
+import ErrorPage from './error-page';
+import AnotherPage from './routes/anotherPage';
+import defaultLoader from './loaders/defaultLoader';
+import OnBoard from './routes/onBoard';
+import Testing from './routes/testing';
 import defaultLoader from "./loaders/defaultLoader"
 import TestPage from "./routes/homepage"
+
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement)
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root />,
+    element: <OnBoard />,
     errorElement: <ErrorPage />,
     loader: defaultLoader,
   },
@@ -25,12 +32,18 @@ const router = createBrowserRouter([
     loader: defaultLoader,
   },
   {
+    path: "/testing",
+    element: <Testing />,
+    errorElement: <ErrorPage />,
+    loader: defaultLoader,
+  },
     path: "/homepage",
     element: <TestPage />,
     errorElement: <ErrorPage />,
     loader: defaultLoader,
   },
 ])
+
 
 root.render(
   <React.StrictMode>
