@@ -43,8 +43,8 @@ const Card: React.FC<CardProps> = ({ places }) => {
                 <img
                   src={"/imgs/restaurant.jpeg"}
                   alt=""
-                  width={70}
-                  height={70}
+                  width={75}
+                  height={75}
                   className="aspect-square rounded-xl"
                 />
               </div>

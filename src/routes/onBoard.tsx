@@ -1,19 +1,19 @@
-import { useEffect, useState } from "react";
-import { MicState, useMic } from "../helper/micHelper";
-import { Link } from "react-router-dom";
-import CountriesData from "../components/languages/langlist";
-import { useLoaderData, useNavigate } from "react-router-dom";
-import { Permission, useUserState } from "../helper/userStateHelper";
-import { DefaultLoader } from "../loaders/defaultLoader";
+import { useEffect, useState } from "react"
+import { MicState, useMic } from "../helper/micHelper"
+import { Link } from "react-router-dom"
+import CountriesData from "../components/languages/langlist"
+import { useLoaderData, useNavigate } from "react-router-dom"
+import { Permission, useUserState } from "../helper/userStateHelper"
+import { DefaultLoader } from "../loaders/defaultLoader"
 
 interface Country {
-  language: string;
-  flag: string;
+  language: string
+  flag: string
 }
 
 export default function OnBoard() {
   // Load user state
-  const loadedData = useLoaderData() as DefaultLoader;
+  const loadedData = useLoaderData() as DefaultLoader
   const {
     micPermission,
     locationPermission,
@@ -25,17 +25,15 @@ export default function OnBoard() {
     setName,
     getUserScreen,
     computeUserScreen,
-  } = useUserState(loadedData);
-  const navigate = useNavigate();
+  } = useUserState(loadedData)
+  const navigate = useNavigate()
 
   // State variables
-  const [isMicButtonHidden, setIsMicButtonHidden] = useState(false);
-  const [isStopButtonDisabled, setIsStopButtonDisabled] = useState(false);
-  const [languageDetected, setLanguageDetected] = useState(false);
-  const [wrongButtonClicked, setWrongButtonClicked] = useState(false);
-  const [permissionRequests, setPermissionRequests] = useState(0);
-
-
+  const [isMicButtonHidden, setIsMicButtonHidden] = useState(false)
+  const [isStopButtonDisabled, setIsStopButtonDisabled] = useState(false)
+  const [languageDetected, setLanguageDetected] = useState(false)
+  const [wrongButtonClicked, setWrongButtonClicked] = useState(false)
+  const [permissionRequests, setPermissionRequests] = useState(0)
 
   useEffect(() => {
     // Check if geolocation is available
@@ -43,37 +41,35 @@ export default function OnBoard() {
       navigator.geolocation.getCurrentPosition(
         () => setLocationPermission(Permission.GRANTED),
         () => setLocationPermission(Permission.DEFAULT)
-      );
+      )
     } else {
-      setLocationPermission(Permission.DEFAULT);
+      setLocationPermission(Permission.DEFAULT)
     }
-  }, [setLocationPermission]);
+  }, [setLocationPermission])
 
   useEffect(() => {
     // Check if microphone is available
     navigator.mediaDevices
       .getUserMedia({ audio: true })
       .then(() => setMicPermission(Permission.GRANTED))
-      .catch(() => setMicPermission(Permission.DEFAULT));
-  }, [setMicPermission]);
-
+      .catch(() => setMicPermission(Permission.DEFAULT))
+  }, [setMicPermission])
 
   // Handle mic permission click
   const handleMicPermissionClick = async () => {
     try {
       const micPermission = await navigator.mediaDevices.getUserMedia({
         audio: true,
-      });
-      console.log("Microphone permission granted:", micPermission);
-      setMicPermission(Permission.GRANTED);
+      })
+      console.log("Microphone permission granted:", micPermission)
+      setMicPermission(Permission.GRANTED)
     } catch (error) {
       console.error(
         "Error occurred while asking for microphone permission:",
         error
-      );
+      )
     }
-  };
-
+  }
 
   // Handle location permission click
   const handleLocationPermissionClick = async () => {
@@ -81,37 +77,37 @@ export default function OnBoard() {
       navigator.geolocation.watchPosition(
         () => setLocationPermission(Permission.GRANTED),
         (error) => {
-          setLocationPermission(Permission.DEFAULT);
-          console.error("Permission denied:", error);
+          setLocationPermission(Permission.DEFAULT)
+          console.error("Permission denied:", error)
         },
         {
           enableHighAccuracy: true,
           maximumAge: 30000,
           timeout: 27000,
         }
-      );
+      )
     } catch (error) {
-      console.error("Permission denied:", error);
+      console.error("Permission denied:", error)
     }
-  };
+  }
 
   // Handle mic button click
   const handleMicButtonClick = () => {
-    setIsMicButtonHidden(true);
-    startRecording();
-  };
+    setIsMicButtonHidden(true)
+    startRecording()
+  }
 
   // Handle stop button click
   const handleStopButtonClick = () => {
-    setIsStopButtonDisabled(true);
-    stopRecording();
-  };
+    setIsStopButtonDisabled(true)
+    stopRecording()
+  }
 
   // Send recording for language detection
   const sendRecording = async (blob: Blob) => {
-    console.log("Sending recording!!!");
-    const formData = new FormData();
-    formData.append("audio", blob, "audio.webm");
+    console.log("Sending recording!!!")
+    const formData = new FormData()
+    formData.append("audio", blob, "audio.webm")
 
     try {
       const body = await fetch(
@@ -120,42 +116,42 @@ export default function OnBoard() {
           method: "POST",
           body: formData,
         }
-      );
-      const json = await body.json();
+      )
+      const json = await body.json()
       if (json) {
-        setLanguageDetected(true);
-        console.log(json.payload.name);
+        setLanguageDetected(true)
+        console.log(json.payload.name)
 
         const country = CountriesData.countries.find(
           (country) =>
             country.language.toLocaleLowerCase() === json.payload.name
-        );
+        )
 
         if (country) {
-        //   setSearch(json.payload.name);
-        const lang = json.payload.name
+          //   setSearch(json.payload.name);
+          const lang = json.payload.name
           setIsoLanguage(lang)
           console.log(lang)
         } else {
-          console.log("Country not found for language:", json.payload.name);
+          console.log("Country not found for language:", json.payload.name)
         }
       }
     } catch (error) {
-      console.error("Error sending recording:", error);
+      console.error("Error sending recording:", error)
     }
-  };
+  }
 
   const { micState, startRecording, stopRecording } = useMic((blob: Blob) => {
-    sendRecording(blob);
-  });
+    sendRecording(blob)
+  })
 
   // Handle wrong button click
   const handleWrongButtonClick = () => {
-    setWrongButtonClicked(true);
-  };
+    setWrongButtonClicked(true)
+  }
 
   return (
-    <main>
+    <main className="overflow-scroll no-scrollbar  h-dvh">
       {micPermission === Permission.DEFAULT && (
         <div className="flex flex-col items-center h-dvh px-5">
           <div className="flex items-center justify-center gap-10 py-6 w-full">
@@ -316,24 +312,24 @@ export default function OnBoard() {
               Language Detected
             </h1>
             <div
-              className="flex flex-col justify-center border-x border-t min-h-[32rem] px-10 rounded-3xl mt-4
+              className="flex flex-col justify-center border-x border-t min-h-[32rem] rounded-3xl mt-4
             shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)]"
             >
               <div className="flex flex-col items-center text-center gap-2">
                 <p className="font-urbanist italic border-[1px] py-4 px-8 ">
                   {isoLanguage}
                 </p>
-                <p className="text-neutral-700 mt-8">
+                <p className="text-neutral-700 mt-8 px-8">
                   Can you please confirm your language
                 </p>
                 <div className="flex gap-20">
-                    <img
-                      className="w-24 h-24 mt-12 "
-                      alt="ok-button"
-                      src="/icons/ok.svg"
-                    />
                   <img
-                    className="w-24 h-24 mt-12"
+                    className="w-20 h-20 mt-12 "
+                    alt="ok-button"
+                    src="/icons/ok.svg"
+                  />
+                  <img
+                    className="w-20 h-20 mt-12"
                     alt="wrong-button"
                     src="/icons/wrong.svg"
                     onClick={handleWrongButtonClick}
@@ -368,5 +364,5 @@ export default function OnBoard() {
         </div>
       )}
     </main>
-  );
+  )
 }
