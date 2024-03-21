@@ -55,6 +55,7 @@ export default function HomePage() {
   }
 
   const handleStartRecord = () => {
+    startRecording()
     setHomepage(false)
     setListening(true)
     setProcessing(false)
@@ -62,6 +63,7 @@ export default function HomePage() {
   }
 
   const handleStopRecord = () => {
+    stopRecording()
     setListening(false)
     setProcessing(true)
     setHomepage(false)
@@ -124,6 +126,9 @@ export default function HomePage() {
     if (res.type.startsWith("INTENT:NEAREST")) {
       setMapLocations(res.payload.locations.places)
       setAnswerwithMap(true)
+
+      // const splitLocation = res.type.split("_")[1]
+
     }
     if (res.type === "INTENT:OTHER") {
     }
@@ -201,7 +206,6 @@ export default function HomePage() {
           <div className="grid place-content-center my-10">
             <img
               onClick={() => {
-                startRecording()
                 handleStartRecord()
               }}
               className="active:opacity-50"
@@ -241,7 +245,6 @@ export default function HomePage() {
               <div className="flex flex-col items-center gap-5">
                 <img
                   onClick={() => {
-                    stopRecording()
                     handleStopRecord()
                   }}
                   className="active:opacity-50"

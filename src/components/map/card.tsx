@@ -25,7 +25,7 @@ const Card: React.FC<CardProps> = ({ places }) => {
     <div className="">
       {places.map((place, index) => (
         <div className="border-b" key={index}>
-          <div className="p-6 flex gap-6 justify-between items-center">
+          <div className="px-6 py-4 flex gap-6 justify-between items-center">
             <div className="flex flex-col gap-1">
               <p className="text-lg font-semibold">
                 {index + 1}. {place.displayName.text}
@@ -43,8 +43,8 @@ const Card: React.FC<CardProps> = ({ places }) => {
                 <img
                   src={"/imgs/restaurant.jpeg"}
                   alt=""
-                  width={80}
-                  height={80}
+                  width={70}
+                  height={70}
                   className="aspect-square rounded-xl"
                 />
               </div>
