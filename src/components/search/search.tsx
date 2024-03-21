@@ -19,14 +19,6 @@ const Search: React.FC<Props> = ({ handleClick, click }) => {
       />
       {question !== "" ? (
         <div>
-          {/* <Link
-            to="/processing"
-            onClick={() => {
-              handleClick(question)
-              
-              // click()
-            }}
-          > */}
           <img
             onClick={() => {
               handleClick(question)
@@ -38,7 +30,6 @@ const Search: React.FC<Props> = ({ handleClick, click }) => {
             width={60}
             height={60}
           />
-          {/* </Link> */}
         </div>
       ) : (
         <div>

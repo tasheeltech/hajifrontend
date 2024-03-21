@@ -55,7 +55,6 @@ export default function HomePage() {
   }
 
   const handleStartRecord = () => {
-    startRecording()
     setHomepage(false)
     setListening(true)
     setProcessing(false)
@@ -63,7 +62,6 @@ export default function HomePage() {
   }
 
   const handleStopRecord = () => {
-    stopRecording()
     setListening(false)
     setProcessing(true)
     setHomepage(false)
@@ -128,7 +126,6 @@ export default function HomePage() {
       setAnswerwithMap(true)
 
       // const splitLocation = res.type.split("_")[1]
-
     }
     if (res.type === "INTENT:OTHER") {
     }
@@ -207,6 +204,7 @@ export default function HomePage() {
             <img
               onClick={() => {
                 handleStartRecord()
+                startRecording()
               }}
               className="active:opacity-50"
               src={"/button/recordBtn.svg"}
@@ -246,6 +244,7 @@ export default function HomePage() {
                 <img
                   onClick={() => {
                     handleStopRecord()
+                    stopRecording()
                   }}
                   className="active:opacity-50"
                   src={"/button/stopBtn.svg"}
