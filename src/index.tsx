@@ -12,7 +12,7 @@ import AnotherPage from './routes/anotherPage';
 import defaultLoader from './loaders/defaultLoader';
 import OnBoard from './routes/onBoard';
 import Testing from './routes/testing';
-import defaultLoader from "./loaders/defaultLoader"
+// import defaultLoader from "./loaders/defaultLoader"
 import TestPage from "./routes/homepage"
 
 
@@ -37,6 +37,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     loader: defaultLoader,
   },
+  {
     path: "/homepage",
     element: <TestPage />,
     errorElement: <ErrorPage />,
