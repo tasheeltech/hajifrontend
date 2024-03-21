@@ -124,6 +124,8 @@ export default function HomePage() {
     if (res.type.startsWith("INTENT:NEAREST")) {
       setMapLocations(res.payload.locations.places)
       setAnswerwithMap(true)
+
+      // const splitLocation = res.type.split("_")[1]
     }
     if (res.type === "INTENT:OTHER") {
     }
@@ -201,8 +203,8 @@ export default function HomePage() {
           <div className="grid place-content-center my-10">
             <img
               onClick={() => {
-                startRecording()
                 handleStartRecord()
+                startRecording()
               }}
               className="active:opacity-50"
               src={"/button/recordBtn.svg"}
@@ -241,8 +243,8 @@ export default function HomePage() {
               <div className="flex flex-col items-center gap-5">
                 <img
                   onClick={() => {
-                    stopRecording()
                     handleStopRecord()
+                    stopRecording()
                   }}
                   className="active:opacity-50"
                   src={"/button/stopBtn.svg"}
