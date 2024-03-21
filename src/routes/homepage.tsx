@@ -106,7 +106,6 @@ export default function HomePage() {
     handleReceivedData(res)
   }
 
-
   const handleReceivedData = (res: Intent) => {
     setAnswerwithMap(false)
 
@@ -152,7 +151,7 @@ export default function HomePage() {
   }
 
   return (
-    <div className="">
+    <div className="overflow-scroll no-scrollbar">
       {homepage && (
         <div className="flex flex-col justify-between h-dvh">
           <div className="">
