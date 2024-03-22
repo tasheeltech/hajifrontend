@@ -7,6 +7,7 @@ import Answering from "../pages/answering"
 import Timer from "../components/timer/timer"
 import Header from "../components/header/header"
 import Search from "../components/search/search"
+import { ImageContext } from "../components/map/context"
 
 interface Intent {
   type: string
@@ -29,6 +30,7 @@ export default function HomePage() {
   const [succes, setSuccess] = useState(false)
   const [nativeQues, setNativeQues] = useState("")
   const [mapLocations, setMapLocations] = useState([])
+  const [image, setImage] = useState("")
 
   const [answerWithMap, setAnswerwithMap] = useState(false)
   const formData = new FormData()
@@ -125,7 +127,9 @@ export default function HomePage() {
       setMapLocations(res.payload.locations.places)
       setAnswerwithMap(true)
 
-      // const splitLocation = res.type.split("_")[1]
+      const splitLocation = res.type.split("_")[1].toLowerCase().trim()
+      setImage(splitLocation)
+
     }
     if (res.type === "INTENT:OTHER") {
     }
@@ -144,6 +148,7 @@ export default function HomePage() {
   }
 
   const toListening = () => {
+    startRecording()
     handleStartRecord()
     setSuccess(false)
   }
@@ -264,14 +269,16 @@ export default function HomePage() {
       )}
       {processing && <Processing question={nativeQues} />}
       {answering && succes && (
-        <Answering
-          question={question}
-          answer={answer}
-          answerWithMap={answerWithMap}
-          toHomepage={toHomepage}
-          toListening={toListening}
-          locations={mapLocations}
-        />
+        <ImageContext.Provider value={image}>
+          <Answering
+            question={question}
+            answer={answer}
+            answerWithMap={answerWithMap}
+            toHomepage={toHomepage}
+            toListening={toListening}
+            locations={mapLocations}
+          />
+        </ImageContext.Provider>
       )}
     </div>
   )
