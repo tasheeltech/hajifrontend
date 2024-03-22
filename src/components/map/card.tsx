@@ -1,4 +1,5 @@
 import React from "react"
+import LocationImage from "./locationImage"
 
 interface Place {
   formattedAddress: string
@@ -40,13 +41,7 @@ const Card: React.FC<CardProps> = ({ places }) => {
             </div>
             <div>
               <div className="w-16">
-                <img
-                  src={"/imgs/restaurant.jpeg"}
-                  alt=""
-                  width={75}
-                  height={75}
-                  className="aspect-square rounded-xl"
-                />
+                <LocationImage />
               </div>
             </div>
           </div>
