@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 import { useMic } from "../helper/micHelper"
 import Processing from "../pages/processing"
 import Answering from "../pages/answering"
@@ -125,11 +125,11 @@ export default function HomePage() {
 
     if (res.type.startsWith("INTENT:NEAREST")) {
       setMapLocations(res.payload.locations.places)
+      console.log("locations updated")
       setAnswerwithMap(true)
 
       const splitLocation = res.type.split("_")[1].toLowerCase().trim()
       setImage(splitLocation)
-
     }
     if (res.type === "INTENT:OTHER") {
     }

@@ -1,6 +1,5 @@
 "use client"
 
-import { useEffect } from "react"
 import Map from "../components/map/map"
 import Header from "../components/header/header"
 
@@ -21,10 +20,6 @@ const Answer: React.FC<Props> = ({
   toListening,
   locations,
 }) => {
-  useEffect(() => {
-    // console.log(question)
-  }, [])
-
   return (
     <div>
       <div className="flex flex-col justify-between h-dvh">
