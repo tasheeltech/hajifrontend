@@ -1,24 +1,43 @@
 import React from "react"
 import LocationImage from "./locationImage"
 
-interface Place {
-  formattedAddress: string
-  location: {
-    latitude: number
-    longitude: number
-  }
-  rating: number
-  regularOpeningHours?: {
-    openNow: boolean
-  }
-  displayName: {
-    text: string
-    languageCode: string
-  }
-}
+// interface Place {
+//   formattedAddress: string
+//   location: {
+//     latitude: number
+//     longitude: number
+//   }
+//   rating: number
+//   regularOpeningHours?: {
+//     openNow: boolean
+//   }
+//   displayName: {
+//     text: string
+//     languageCode: string
+//   }
+// }
 
-interface CardProps {
-  places: Place[]
+// interface CardProps {
+//   places: Place[]
+// }
+
+
+type CardProps = {
+  places: {
+    formattedAddress: string
+    location: {
+      latitude: number
+      longitude: number
+    }
+    rating: number
+    regularOpeningHours?: {
+      openNow: boolean
+    }
+    displayName: {
+      text: string
+      languageCode: string
+    }
+  }[]
 }
 
 const Card: React.FC<CardProps> = ({ places }) => {

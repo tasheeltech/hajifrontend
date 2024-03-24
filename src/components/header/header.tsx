@@ -2,7 +2,7 @@ import React from "react"
 
 export default function Header() {
   return (
-    <div className=" flex gap-5 items-center justify-between p-6">
+    <div className=" flex gap-5 items-center justify-between py-4 px-6">
       <div className="flex gap-4 items-center">
         <img src={"HajiAnsariLogo.svg"} alt="" width={48} height={48} />
 
