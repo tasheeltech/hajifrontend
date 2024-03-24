@@ -1,3 +1,4 @@
+import React from "react"
 import "../components/processing/processing.css"
 import TextTypingEffect from "../components/typewriterEffect/typeWrtiter"
 
