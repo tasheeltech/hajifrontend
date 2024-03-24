@@ -1,5 +1,7 @@
 import React from "react"
 import LocationImage from "./locationImage"
+import StarRating from "../rating/starRating"
+import { Badge } from "../../ui/badge"
 
 // interface Place {
 //   formattedAddress: string
@@ -20,7 +22,6 @@ import LocationImage from "./locationImage"
 // interface CardProps {
 //   places: Place[]
 // }
-
 
 type CardProps = {
   places: {
@@ -50,13 +51,22 @@ const Card: React.FC<CardProps> = ({ places }) => {
               <p className="text-lg font-semibold">
                 {index + 1}. {place.displayName.text}
               </p>
-              <p className="text-[#6e6e6e]">
+              {/* <p className="text-[#6e6e6e]">
                 Rating - {place.rating ? place.rating : "Unknown"}
-              </p>
+              </p> */}
+              <StarRating rating={place.rating} />
 
               <p className="text-[#6e6e6e]">
-                {place.regularOpeningHours?.openNow}
+                {place.regularOpeningHours?.openNow ? "Open" : "closed"}
               </p>
+              <p className="text-[#6e6e6e]">{place.formattedAddress}</p>
+              <Badge
+                variant="outline"
+                className="flex gap-2 self-start py-2 px-4"
+              >
+                <img src="/icons/call.svg" className="w-4 h-4" alt="" />
+                <div>Call</div>
+              </Badge>
             </div>
             <div>
               <div className="w-16">

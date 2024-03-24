@@ -1,5 +1,7 @@
 "use client"
 
+import React from "react"
+
 import { useEffect, useMemo, useState } from "react"
 import { useMic } from "../helper/micHelper"
 import Processing from "../pages/processing"

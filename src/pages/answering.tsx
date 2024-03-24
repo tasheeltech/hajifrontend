@@ -1,5 +1,6 @@
 "use client"
 
+import React from "react"
 import Map from "../components/map/map"
 import Header from "../components/header/header"
 
