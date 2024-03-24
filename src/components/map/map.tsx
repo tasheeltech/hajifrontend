@@ -101,7 +101,7 @@ const Map: React.FC<MapProps> = ({ places }) => {
 
   return (
     <div className="">
-      <div className="w-full h-80 bg-[#F1F1F1] sticky top-0 shadow-inner">
+      <div className="w-full h-2/5 bg-[#F1F1F1] sticky top-0 shadow-inner">
         {isLoaded ? (
           <GoogleMap
             mapContainerStyle={containerStyle}
