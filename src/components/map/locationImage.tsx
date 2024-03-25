@@ -6,15 +6,15 @@ function LocationImage() {
   const valueFromContext = useContext(ImageContext)
 
   return (
-    <div>
-      <img
-        src={`/images/${valueFromContext ? valueFromContext : "other"}.jpeg`}
-        alt=""
-        width={75}
-        height={75}
-        className="aspect-square rounded-xl"
-      />
-    </div>
+    // <div className=" bg-contain w-full h-full">
+    <img
+      src={`/images/${valueFromContext ? valueFromContext : "other"}.jpeg`}
+      alt=""
+      width={75}
+      height={75}
+      className="rounded-xl bg-cover w-full h-full"
+    />
+    // </div>
   )
 }
 

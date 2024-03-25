@@ -62,7 +62,7 @@ const Answer: React.FC<Props> = ({
         <div className="flex gap-6 items-center justify-center py-4 px-2 sticky bottom-0 left-0 w-full bg-white border-t-2">
           <button
             onClick={toHomepage}
-            className="bg-[#2BCE986B] shadow-[0_4px_4px_-1px_rgba(0,0,0,0.5)] rounded-[30px] px-6 py-3 flex items-center gap-2 max-w-[130px] w-full active:opacity-50"
+            className="bg-[#2BCE986B] shadow-[0_4px_4px_-1px_rgba(0,0,0,0.5)] rounded-[30px] px-6 py-4 flex items-center gap-2 max-w-[130px] w-full active:opacity-50"
           >
             <img src={"/icons/chatIcon.svg"} alt="" width={20} height={20} />
             <div className="font-bold">Chat</div>
@@ -70,7 +70,7 @@ const Answer: React.FC<Props> = ({
 
           <button
             onClick={toListening}
-            className="bg-[#2BCE986B] shadow-[0_4px_4px_-1px_rgba(0,0,0,0.5)] rounded-[30px] px-6 py-3 flex items-center gap-2 max-w-[130px] w-full active:opacity-50"
+            className="bg-[#2BCE986B] shadow-[0_4px_4px_-1px_rgba(0,0,0,0.5)] rounded-[30px] px-6 py-4 flex items-center gap-2 max-w-[130px] w-full active:opacity-50"
           >
             <img src={"/icons/micIcon.svg"} alt="" width={20} height={20} />
             <div className="font-bold">Record</div>

@@ -103,6 +103,14 @@ const Map: React.FC<MapProps> = ({ places }) => {
     setMap(null)
   }, [])
 
+  const options = useMemo(
+    () => ({
+      disableDefaultUI: true,
+      clickableIcons: false,
+    }),
+    []
+  )
+
   return (
     <div className="">
       <div className="w-full h-[40vh] bg-[#F1F1F1] sticky top-0 shadow-inner">
@@ -113,8 +121,11 @@ const Map: React.FC<MapProps> = ({ places }) => {
             zoom={17}
             onLoad={onLoad}
             onUnmount={onUnmount}
+            options={options}
           >
             {/* Child components, such as markers, info windows, etc. */}
+
+            <MarkerF position={center} />
 
             {places.map((place, id) => {
               return (
