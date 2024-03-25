@@ -10,6 +10,8 @@ import {
 type MapProps = {
   places: {
     formattedAddress: string
+    internationalPhoneNumber: string
+    googleMapsUri: string
     location: {
       latitude: number
       longitude: number
@@ -27,6 +29,8 @@ type MapProps = {
 
 type Place = {
   formattedAddress: string
+  internationalPhoneNumber: string
+  googleMapsUri: string
   location: {
     latitude: number
     longitude: number
@@ -99,9 +103,17 @@ const Map: React.FC<MapProps> = ({ places }) => {
     setMap(null)
   }, [])
 
+  const options = useMemo(
+    () => ({
+      disableDefaultUI: true,
+      clickableIcons: false,
+    }),
+    []
+  )
+
   return (
     <div className="">
-      <div className="w-full h-2/5 bg-[#F1F1F1] sticky top-0 shadow-inner">
+      <div className="w-full h-[40vh] bg-[#F1F1F1] sticky top-0 shadow-inner">
         {isLoaded ? (
           <GoogleMap
             mapContainerStyle={containerStyle}
@@ -109,8 +121,11 @@ const Map: React.FC<MapProps> = ({ places }) => {
             zoom={17}
             onLoad={onLoad}
             onUnmount={onUnmount}
+            // options={options}
           >
             {/* Child components, such as markers, info windows, etc. */}
+
+            <MarkerF position={center} />
 
             {places.map((place, id) => {
               return (
