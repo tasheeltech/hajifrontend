@@ -81,7 +81,7 @@ const Map: React.FC<MapProps> = ({ places }) => {
 
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
-    googleMapsApiKey: process.env.REACT_APP_NEXT_PUBLIC_JAVASCRIPT_API!,
+    googleMapsApiKey: process.env.REACT_APP_JAVASCRIPT_API!,
   })
 
   const onLoad = React.useCallback(
