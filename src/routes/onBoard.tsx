@@ -329,7 +329,7 @@ export default function OnBoard() {
             >
               <div className="flex flex-col items-center text-center gap-2">
                 <p className="font-urbanist italic border-[1px] py-4 px-8 ">
-                  {isoLanguage.flag}{capitaliseFirstLetter(isoLanguage.language)}
+                  {isoLanguage!.flag}{capitaliseFirstLetter(isoLanguage!.language)}
                 </p>
                 <p className="text-neutral-700 mt-8 px-8">
                   Can you please confirm your language
