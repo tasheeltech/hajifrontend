@@ -12,6 +12,15 @@ interface Country {
   flag: string
 }
 
+const sentences = [
+  { "language": "Arabic", "sentence": "أريد التحدث بلغتي" },
+  { "language": "English", "sentence": "I want to talk in my language" },
+  { "language": "Urdu", "sentence": "میں اپنی زبان میں بات کرنا چاہتا ہوں۔" },
+  { "language": "Indonesian", "sentence": "Saya ingin berbicara dalam bahasa saya" },
+  { "language": "Turkish", "sentence": "Kendi dilimde konuşmak istiyorum" },
+  { "language": "Malay", "sentence": "Saya mahu bercakap dalam bahasa saya" }
+]
+
 export default function OnBoard() {
   // Load user state
   const loadedData = useLoaderData() as DefaultLoader
@@ -255,17 +264,13 @@ export default function OnBoard() {
                 >
                   <div className="flex flex-col items-center text-center gap-2">
                     <p className="font-urbanist text-[#00C483] italic">
-                      “Hello, I want to talk to Hajiansari... “
+                      {sentences.map(item => <p>{item.sentence}</p>)}
                     </p>
                     <p className="text-neutral-700">
-                      Read the above sentence in your preferred language within
-                      5 seconds.
-                    </p>
-                    <p className="text-neutral-700 mt-8 font-semibold">
-                      if you finished speaking click the stop button.
+                      Speak for 5 seconds.
                     </p>
 
-                    <h1>{MicState[micState]}</h1>
+                    {/* <h1>{MicState[micState]}</h1> */}
                     {!isMicButtonHidden && (
                       <button type="button" onClick={handleMicButtonClick}>
                         <img
