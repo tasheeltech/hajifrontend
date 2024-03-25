@@ -32,7 +32,7 @@ const StarRating: React.FC<StarRatingProps> = ({ rating }) => {
           <Def value={val} key={index} />
         </div>
       ))}
-      <p className="ml-2">Rating: {rating}/5</p>
+      <p className="ml-2 text-sm">{rating ? rating : "N/A"}</p>
     </div>
   )
 }

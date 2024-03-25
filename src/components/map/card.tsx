@@ -48,34 +48,49 @@ const Card: React.FC<CardProps> = ({ places }) => {
   return (
     <div className="">
       {places.map((place, index) => (
-        <div className="border-b" key={index}>
-          <div className="px-6 py-4 flex gap-6 justify-between items-center">
-            <div className="flex flex-col gap-1">
-              <p className="text-lg font-semibold">
-                {index + 1}. {place.displayName.text}
-              </p>
-              {/* <p className="text-[#6e6e6e]">
-                Rating - {place.rating ? place.rating : "Unknown"}
-              </p> */}
-              <StarRating rating={place.rating} />
+        <div className="border-b px-6 py-4 " key={index}>
+          <div>
+            <div className="flex gap-6 justify-between items-center">
+              <div className="flex flex-col gap-1">
+                <p className="text-lg font-medium mb-1">
+                  {index + 1}. {place.displayName.text}
+                </p>
 
-              <p className="text-[#6e6e6e]">
-                {place.regularOpeningHours?.openNow ? "Open" : "closed"}
-              </p>
-              <p className="text-[#6e6e6e]">{place.formattedAddress}</p>
-              <div className="self-start">
-                <Link to={`tel:${place.internationalPhoneNumber}`}>
-                  <Badge variant="outline" className="flex gap-2py-2 px-4">
-                    <img src="/icons/call.svg" className="w-4 h-4" alt="" />
-                    <div>Call</div>
-                  </Badge>
-                </Link>
+                <StarRating rating={place.rating} />
+
+                <p className="text-[#6e6e6e] text-sm">
+                  {place.regularOpeningHours?.openNow ? "Open" : "closed"}
+                </p>
+                <div className="">
+                  <p className="text-[#6e6e6e] text-sm ">
+                    {place.formattedAddress}
+                  </p>
+                </div>
+              </div>
+
+              <div>
+                <div className="w-20">
+                  <LocationImage />
+                </div>
               </div>
             </div>
-            <div>
-              <div className="w-16">
-                <LocationImage />
-              </div>
+          </div>
+
+          <div className=" flex self-start mt-4">
+            <div
+              className={
+                place.internationalPhoneNumber ? "" : "opacity-40 -z-50"
+              }
+            >
+              <Link to={`tel:${place.internationalPhoneNumber}`}>
+                <Badge
+                  variant="outline"
+                  className="flex gap-2 py-3 px-5 border-[#2BCE98] rounded-3xl"
+                >
+                  <img src="/icons/call.svg" className="w-4 h-4" alt="" />
+                  <div className="text-[#2BCE98]">Call</div>
+                </Badge>
+              </Link>
             </div>
           </div>
         </div>
