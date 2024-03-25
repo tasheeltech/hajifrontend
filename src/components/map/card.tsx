@@ -4,26 +4,6 @@ import StarRating from "../rating/starRating"
 import { Badge } from "../../ui/badge"
 import { Link } from "react-router-dom"
 
-// interface Place {
-//   formattedAddress: string
-//   location: {
-//     latitude: number
-//     longitude: number
-//   }
-//   rating: number
-//   regularOpeningHours?: {
-//     openNow: boolean
-//   }
-//   displayName: {
-//     text: string
-//     languageCode: string
-//   }
-// }
-
-// interface CardProps {
-//   places: Place[]
-// }
-
 type CardProps = {
   places: {
     formattedAddress: string
@@ -59,9 +39,6 @@ const Card: React.FC<CardProps> = ({ places }) => {
 
                   <StarRating rating={place.rating} />
 
-                  {/* <p className="text-[#6e6e6e] text-sm">
-                  {place.regularOpeningHours?.openNow ? "Open" : "closed"}
-                </p> */}
                   <div className=" text-sm">
                     {place.regularOpeningHours ? (
                       <p className="text-[#2BCE98]">Open</p>

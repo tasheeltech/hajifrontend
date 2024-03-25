@@ -121,7 +121,7 @@ const Map: React.FC<MapProps> = ({ places }) => {
             zoom={17}
             onLoad={onLoad}
             onUnmount={onUnmount}
-            options={options}
+            // options={options}
           >
             {/* Child components, such as markers, info windows, etc. */}
 
