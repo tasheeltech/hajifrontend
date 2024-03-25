@@ -10,6 +10,8 @@ import {
 type MapProps = {
   places: {
     formattedAddress: string
+    internationalPhoneNumber: string
+    googleMapsUri: string
     location: {
       latitude: number
       longitude: number
@@ -27,6 +29,8 @@ type MapProps = {
 
 type Place = {
   formattedAddress: string
+  internationalPhoneNumber: string
+  googleMapsUri: string
   location: {
     latitude: number
     longitude: number

@@ -2,6 +2,7 @@ import React from "react"
 import LocationImage from "./locationImage"
 import StarRating from "../rating/starRating"
 import { Badge } from "../../ui/badge"
+import { Link } from "react-router-dom"
 
 // interface Place {
 //   formattedAddress: string
@@ -26,6 +27,8 @@ import { Badge } from "../../ui/badge"
 type CardProps = {
   places: {
     formattedAddress: string
+    internationalPhoneNumber: string
+    googleMapsUri: string
     location: {
       latitude: number
       longitude: number
@@ -60,13 +63,14 @@ const Card: React.FC<CardProps> = ({ places }) => {
                 {place.regularOpeningHours?.openNow ? "Open" : "closed"}
               </p>
               <p className="text-[#6e6e6e]">{place.formattedAddress}</p>
-              <Badge
-                variant="outline"
-                className="flex gap-2 self-start py-2 px-4"
-              >
-                <img src="/icons/call.svg" className="w-4 h-4" alt="" />
-                <div>Call</div>
-              </Badge>
+              <div className="self-start">
+                <Link to={`tel:${place.internationalPhoneNumber}`}>
+                  <Badge variant="outline" className="flex gap-2py-2 px-4">
+                    <img src="/icons/call.svg" className="w-4 h-4" alt="" />
+                    <div>Call</div>
+                  </Badge>
+                </Link>
+              </div>
             </div>
             <div>
               <div className="w-16">

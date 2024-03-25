@@ -232,7 +232,9 @@ export default function OnBoard() {
 
       {micPermission === Permission.GRANTED &&
         locationPermission === Permission.GRANTED &&
-        isoLanguage == null && (
+        !languageDetected &&
+        // isoLanguage == null &&
+         (
           <div>
             <div className="flex flex-col items-center h-dvh px-5">
               <div className="flex items-center justify-center gap-10 py-6 w-full">
@@ -296,7 +298,10 @@ export default function OnBoard() {
           </div>
         )}
 
-      {isoLanguage && !wrongButtonClicked && (
+      {
+      // isoLanguage 
+      languageDetected
+      && !wrongButtonClicked && (
         <div className="flex flex-col items-center h-dvh px-5">
           <div className="flex items-center justify-center gap-10 py-6 w-full">
             {/* <Link href="/autoDetectLanguage"> */}
@@ -324,11 +329,13 @@ export default function OnBoard() {
                   Can you please confirm your language
                 </p>
                 <div className="flex gap-20">
-                  <img
-                    className="w-20 h-20 mt-12 "
-                    alt="ok-button"
-                    src="/icons/ok.svg"
-                  />
+                  <Link to={"/homepage"}>
+                    <img
+                      className="w-20 h-20 mt-12 "
+                      alt="ok-button"
+                      src="/icons/ok.svg"
+                    />
+                  </Link>
                   <img
                     className="w-20 h-20 mt-12"
                     alt="wrong-button"
@@ -348,10 +355,7 @@ export default function OnBoard() {
           </h2>
           <div>
             {CountriesData.countries.map((country: Country, index: number) => (
-              <Link
-                to={`/testing?language=${encodeURIComponent(country.language)}`}
-                key={index}
-              >
+              <Link to={`/homepage`} key={index}>
                 <div
                   key={index}
                   className="flex items-center gap-6 py-2 px-12 border-2 hover:bg-slate-200 cursor-pointer"

@@ -127,7 +127,6 @@ export default function HomePage() {
 
     if (res.type.startsWith("INTENT:NEAREST")) {
       setMapLocations(res.payload.locations.places)
-      console.log("locations updated")
       setAnswerwithMap(true)
 
       const splitLocation = res.type.split("_")[1].toLowerCase().trim()
