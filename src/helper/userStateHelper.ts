@@ -21,6 +21,12 @@ export enum UserScreenOnboarding {
   READY,
 }
 
+export interface Country {
+  language: string;
+  iso: string;
+  flag: string;
+}
+
 export function useUserState(defaultLoader: DefaultLoader) {
   const [micPermission, setMicPermission] = useState<Permission>(
     defaultLoader.micPermission
@@ -28,7 +34,7 @@ export function useUserState(defaultLoader: DefaultLoader) {
   const [locationPermission, setLocationPermission] = useState<Permission>(
     defaultLoader.locationPermission
   );
-  const [isoLanguage, setIsoLanguage] = useState<string | null>(
+  const [isoLanguage, setIsoLanguage] = useState<Country | null>(
     defaultLoader.isoLanguage
   );
   const [name, setName] = useState<string | null>(defaultLoader.name);
@@ -43,9 +49,9 @@ export function useUserState(defaultLoader: DefaultLoader) {
     localStorage.setItem(keyNames.LOCATION_PERMISSION, locationPermission);
   };
 
-  const setIsoLanguageState = (isoLanguage: string) => {
+  const setIsoLanguageState = (isoLanguage: Country) => {
     setIsoLanguage(isoLanguage);
-    localStorage.setItem(keyNames.ISO_LANUGUAGE, isoLanguage);
+    localStorage.setItem(keyNames.ISO_LANUGUAGE, JSON.stringify(isoLanguage));
   };
 
   const setNameState = (name: string) => {
@@ -66,7 +72,7 @@ export function useUserState(defaultLoader: DefaultLoader) {
     micPermission: Permission,
     locationPermission: Permission,
     name: string | null,
-    isoLanguage: string | null
+    isoLanguage: Country | null
   ): UserScreenOnboarding => {
     if (
       micPermission === Permission.GRANTED &&

@@ -8,11 +8,6 @@ export default function Root() {
     const { micPermission, locationPermission, isoLanguage, name, setMicPermission, setLocationPermission, setIsoLanguage, setName, getUserScreen, computeUserScreen } = useUserState(loadedData);
     const navigate = useNavigate();
 
-    useEffect(() => {
-        const newName = "Bob"
-        computeUserScreen(micPermission, locationPermission, isoLanguage, newName)
-    })
-
     return (
         <>
             <div>

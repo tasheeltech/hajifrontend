@@ -12,6 +12,8 @@ interface Country {
   flag: string
 }
 
+const capitaliseFirstLetter = (str: string) => str.charAt(0).toUpperCase() + str.slice(1)
+
 const sentences = [
   { "language": "Arabic", "sentence": "أريد التحدث بلغتي" },
   { "language": "English", "sentence": "I want to talk in my language" },
@@ -139,9 +141,8 @@ export default function OnBoard() {
 
         if (country) {
           //   setSearch(json.payload.name);
-          const lang = json.payload.name
-          setIsoLanguage(lang)
-          console.log(lang)
+          setIsoLanguage(country)
+          console.log(country)
         } else {
           console.log("Country not found for language:", json.payload.name)
         }
@@ -323,7 +324,7 @@ export default function OnBoard() {
             >
               <div className="flex flex-col items-center text-center gap-2">
                 <p className="font-urbanist italic border-[1px] py-4 px-8 ">
-                  {isoLanguage}
+                  {isoLanguage.flag}{capitaliseFirstLetter(isoLanguage.language)}
                 </p>
                 <p className="text-neutral-700 mt-8 px-8">
                   Can you please confirm your language
