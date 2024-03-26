@@ -62,11 +62,7 @@ const Card: React.FC<CardProps> = ({ places }) => {
             </div>
 
             <div className=" flex self-start mt-4">
-              <div
-                className={
-                  place.internationalPhoneNumber ? "" : "opacity-40 -z-50"
-                }
-              >
+              {place.internationalPhoneNumber && (
                 <Link to={`tel:${place.internationalPhoneNumber}`}>
                   <Badge
                     variant="outline"
@@ -76,7 +72,7 @@ const Card: React.FC<CardProps> = ({ places }) => {
                     <div className="text-[#2BCE98]">Call</div>
                   </Badge>
                 </Link>
-              </div>
+              )}
             </div>
           </div>
         </Link>

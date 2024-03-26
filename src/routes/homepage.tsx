@@ -10,6 +10,7 @@ import Timer from "../components/timer/timer"
 import Header from "../components/header/header"
 import Search from "../components/search/search"
 import { ImageContext } from "../components/map/context"
+import Emergency from "../components/emergency/emergency"
 
 interface Intent {
   type: string
@@ -33,6 +34,7 @@ export default function HomePage() {
   const [nativeQues, setNativeQues] = useState("")
   const [mapLocations, setMapLocations] = useState([])
   const [image, setImage] = useState("")
+  const [emergency, setEmergency] = useState(false)
 
   const [answerWithMap, setAnswerwithMap] = useState(false)
   const formData = new FormData()
@@ -47,6 +49,8 @@ export default function HomePage() {
         setNativeQues("")
       }
     }
+
+    // setEmergency(false)
   }, [question, answer, tempQues])
 
   const handleSendClick = (chatStr: string) => {
@@ -132,7 +136,12 @@ export default function HomePage() {
       const splitLocation = res.type.split("_")[1].toLowerCase().trim()
       setImage(splitLocation)
     }
-    if (res.type === "INTENT:OTHER") {
+    if (
+      res.type === "INTENT:EMERGENCY" ||
+      res.type.startsWith("INTENT:NEEDS")
+    ) {
+      setEmergency(true)
+      setQuestion(res.payload.input)
     }
 
     if (res.type.startsWith("AUDIO")) {
@@ -146,6 +155,7 @@ export default function HomePage() {
   const toHomepage = () => {
     setHomepage(true)
     setSuccess(false)
+    setEmergency(false)
   }
 
   const toListening = () => {
@@ -281,6 +291,7 @@ export default function HomePage() {
           />
         </ImageContext.Provider>
       )}
+      {emergency && <Emergency toHomepage={toHomepage} />}
     </div>
   )
 }
