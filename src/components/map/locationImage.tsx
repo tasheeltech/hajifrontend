@@ -1,5 +1,4 @@
-import React from "react"
-import { useContext, useEffect } from "react"
+import { useContext } from "react"
 import { ImageContext } from "./context"
 
 function LocationImage() {
