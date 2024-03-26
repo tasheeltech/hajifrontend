@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react"
+import React, { useEffect, useState } from "react"
 import Card from "./card"
 import {
   GoogleMap,
@@ -52,7 +52,9 @@ const containerStyle = {
 
 const Map: React.FC<MapProps> = ({ places }) => {
   const [center, setCenter] = useState({ lat: 21.4225, lng: 39.8262 })
-  const [points, setPoints] = useState<any>([])
+  // const [points, setPoints] = useState<any>([])
+
+  // eslint-disable-next-line no-use-before-define
   const [map, setMap] = React.useState(null)
   const [selectedPlace, setSelectedPlace] = useState<Place | undefined>()
 
@@ -60,7 +62,7 @@ const Map: React.FC<MapProps> = ({ places }) => {
     // Check if geolocation is supported by the browser
     console.log(places)
 
-    setPoints([])
+    // setPoints([])
 
     if (navigator.geolocation) {
       // Get the current position
@@ -81,7 +83,7 @@ const Map: React.FC<MapProps> = ({ places }) => {
     } else {
       console.error("Geolocation is not supported by this browser.")
     }
-  }, [center])
+  }, [center, places])
 
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
@@ -103,14 +105,6 @@ const Map: React.FC<MapProps> = ({ places }) => {
     setMap(null)
   }, [])
 
-  const options = useMemo(
-    () => ({
-      disableDefaultUI: true,
-      clickableIcons: false,
-    }),
-    []
-  )
-
   return (
     <div className="">
       <div className="w-full h-[40vh] bg-[#F1F1F1] sticky top-0 shadow-inner">
@@ -121,10 +115,7 @@ const Map: React.FC<MapProps> = ({ places }) => {
             zoom={17}
             onLoad={onLoad}
             onUnmount={onUnmount}
-            // options={options}
           >
-            {/* Child components, such as markers, info windows, etc. */}
-
             <MarkerF position={center} />
 
             {places.map((place, id) => {
@@ -150,13 +141,6 @@ const Map: React.FC<MapProps> = ({ places }) => {
                   lng: selectedPlace.location.longitude,
                 }}
                 zIndex={1}
-                // options={{
-                // pixeloffset:
-                // {
-                // width:
-                // 0, height: -40,
-                // },
-                // ｝｝
                 onCloseClick={() => setSelectedPlace(undefined)}
               >
                 <div>

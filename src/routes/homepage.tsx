@@ -2,7 +2,7 @@
 
 import React from "react"
 
-import { useEffect, useMemo, useState } from "react"
+import { useEffect, useState } from "react"
 import { useMic } from "../helper/micHelper"
 import Processing from "../pages/processing"
 import Answering from "../pages/answering"
@@ -11,6 +11,9 @@ import Header from "../components/header/header"
 import Search from "../components/search/search"
 import { ImageContext } from "../components/map/context"
 import Emergency from "../components/emergency/emergency"
+import { useLoaderData } from "react-router-dom"
+import { useUserState } from "../helper/userStateHelper"
+import { DefaultLoader } from "../loaders/defaultLoader"
 
 interface Intent {
   type: string
@@ -39,6 +42,9 @@ export default function HomePage() {
   const [answerWithMap, setAnswerwithMap] = useState(false)
   const formData = new FormData()
 
+  const loadedData = useLoaderData() as DefaultLoader
+  const { isoLanguage } = useUserState(loadedData)
+
   useEffect(() => {
     if (question !== "" && answer !== "") {
       if (question !== tempQues) {
@@ -49,8 +55,6 @@ export default function HomePage() {
         setNativeQues("")
       }
     }
-
-    // setEmergency(false)
   }, [question, answer, tempQues])
 
   const handleSendClick = (chatStr: string) => {
@@ -79,6 +83,7 @@ export default function HomePage() {
   const sendRecording = async (blob: Blob) => {
     console.log("Sending recording!!!")
     formData.append("audio", blob, "audio.webm")
+    formData.append("isoLanguage", isoLanguage!.iso)
     const getProcessPath =
       "https://hajibackend.tasheel-tech.workers.dev/transcript"
     const body = await fetch(getProcessPath, {
@@ -101,6 +106,9 @@ export default function HomePage() {
     setNativeQues(input)
 
     formData.append("text", input)
+    formData.append("isoLanguage", isoLanguage!.iso)
+    console.log(isoLanguage!.iso)
+
     const body = await fetch(
       "https://hajibackend.tasheel-tech.workers.dev/processText",
       {
