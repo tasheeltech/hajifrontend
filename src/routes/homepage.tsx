@@ -1,20 +1,16 @@
 "use client"
 
-import React from "react"
-
 import { useEffect, useState } from "react"
 import { useMic } from "../helper/micHelper"
 import Processing from "../pages/processing"
 import Answering from "../pages/answering"
 import Timer from "../components/timer/timer"
-import Header from "../components/header/header"
 import Search from "../components/search/search"
 import { ImageContext } from "../components/map/context"
 import Emergency from "../components/emergency/emergency"
 import { useLoaderData } from "react-router-dom"
 import { useUserState } from "../helper/userStateHelper"
 import { DefaultLoader } from "../loaders/defaultLoader"
-import NavigationMenu from "../components/navigationMenu/navigationMenu"
 
 interface Intent {
   type: string
@@ -39,7 +35,6 @@ export default function HomePage() {
   const [mapLocations, setMapLocations] = useState([])
   const [image, setImage] = useState("")
   const [emergency, setEmergency] = useState(false)
-  const [showMenu, setShowMenu] = useState(false)
 
   const [answerWithMap, setAnswerwithMap] = useState(false)
   const formData = new FormData()
@@ -86,6 +81,7 @@ export default function HomePage() {
     console.log("Sending recording!!!")
     formData.append("audio", blob, "audio.webm")
     // formData.append("isoLanguage", isoLanguage!.iso)
+    // formData.append("isoLanguage", "en")
     const getProcessPath =
       "https://hajibackend.tasheel-tech.workers.dev/transcript"
     const body = await fetch(getProcessPath, {
@@ -109,7 +105,7 @@ export default function HomePage() {
 
     formData.append("text", input)
     formData.append("isoLanguage", isoLanguage!.iso)
-    console.log(isoLanguage!.iso)
+    // console.log(isoLanguage!.iso)
 
     const body = await fetch(
       "https://hajibackend.tasheel-tech.workers.dev/processText",
@@ -178,133 +174,146 @@ export default function HomePage() {
     setProcessing(false)
   }
 
-  const toggleMenu = () => {
-    setShowMenu(!showMenu)
-  }
+  // const toggleMenu = () => {
+  //   setShowMenu(!showMenu)
+  // }
 
   return (
-    <div className="overflow-scroll no-scrollbar">
-      {showMenu && <NavigationMenu />}
-      <div className="flex flex-col h-dvh">
-        <div className="border-b">
-          <Header toggle={toggleMenu} />
-        </div>
-        {homepage && (
-          <div className="flex flex-col justify-between h-dvh">
-            <div className="">
-              <section className="flex flex-col gap-5 p-6 border-b">
-                <p className="font-semibold text-lg text-center">
-                  Assalamualaikum Ya Hajji! 😊️
+    // <div className="overflow-scroll no-scrollbar">
+    //   {showMenu && <NavigationMenu toggle={toggleMenu} />}
+    //   <div className="flex flex-col h-dvh">
+    //     <div className="border-b">
+    //       {!processing && <Header toggle={toggleMenu} />}
+    //     </div>
+    //     <Routes>
+    //       <Route path="/homepage" element={<HomePage />} />
+    //       <Route path="/tawaf" element={<TawafCalculator />} />
+    //       <Route path="/saii" element={<SaiiCalculator />} />
+    //       <Route path="/emergency" element={<EmergencyPage />} />
+    //     </Routes>
+
+    // <div>Homepage</div>
+
+    <>
+      {/* <div className=""> */}
+      {homepage && (
+        <div className="flex flex-col justify-between h-full">
+          <section className="flex flex-col gap-5 p-6 border-b">
+            <p className="font-semibold text-lg text-center">
+              Assalamualaikum Ya Hajji! 😊️
+            </p>
+            <div className="flex flex-col gap-3">
+              <div className="flex gap-4 justify-between px-5 py-4 rounded-[36px] border">
+                <p className="text-sm">Where's nearest toilet for women?</p>
+                <img
+                  className="active:scale-150"
+                  src={"/icons/goToIcon.svg"}
+                  alt=" "
+                  width={8}
+                  height={8}
+                />
+              </div>
+              <div className="flex gap-4 justify-between px-5 py-4 rounded-[36px] border">
+                <p className="text-sm">where is muzdalifa? </p>
+                <img
+                  className="active:scale-150"
+                  src={"/icons/goToIcon.svg"}
+                  alt=" "
+                  width={8}
+                  height={8}
+                />
+              </div>
+              <div className="flex gap-4 justify-between px-5 py-4 rounded-[36px] border">
+                <p className="text-sm">
+                  Translate my question in arabic to talk to a local.{" "}
                 </p>
-                <div className="flex flex-col gap-3">
-                  <div className="flex gap-4 justify-between px-5 py-4 rounded-[36px] border">
-                    <p className="text-sm">Where's nearest toilet for women?</p>
-                    <img
-                      className="active:scale-150"
-                      src={"/icons/goToIcon.svg"}
-                      alt=" "
-                      width={8}
-                      height={8}
-                    />
-                  </div>
-                  <div className="flex gap-4 justify-between px-5 py-4 rounded-[36px] border">
-                    <p className="text-sm">where is muzdalifa? </p>
-                    <img
-                      className="active:scale-150"
-                      src={"/icons/goToIcon.svg"}
-                      alt=" "
-                      width={8}
-                      height={8}
-                    />
-                  </div>
-                  <div className="flex gap-4 justify-between px-5 py-4 rounded-[36px] border">
-                    <p className="text-sm">
-                      Translate my question in arabic to talk to a local.{" "}
-                    </p>
-                    <img
-                      className="active:scale-150"
-                      src={"/icons/goToIcon.svg"}
-                      alt=" "
-                      width={8}
-                      height={8}
-                    />
-                  </div>
-                </div>
-              </section>
+                <img
+                  className="active:scale-150"
+                  src={"/icons/goToIcon.svg"}
+                  alt=" "
+                  width={8}
+                  height={8}
+                />
+              </div>
             </div>
-            <div className="grid place-content-center my-10">
+          </section>
+          <div className="grid place-content-center my-10">
+            <img
+              onClick={() => {
+                handleStartRecord()
+                startRecording()
+              }}
+              className="active:opacity-50"
+              src={"/button/recordBtn.svg"}
+              alt=""
+              width={100}
+              height={100}
+            />
+          </div>
+          <div className=" py-3 px-4 sticky bottom-0 left-0 w-full bg-white border-t-2">
+            <Search handleClick={handleSendClick} click={handleStopRecord} />
+          </div>
+        </div>
+      )}
+      {listening && (
+        <div className="flex flex-col justify-between h-full">
+          <section className="mx-6 my-3 flex flex-col items-center">
+            <div>
               <img
-                onClick={() => {
-                  handleStartRecord()
-                  startRecording()
-                }}
-                className="active:opacity-50"
-                src={"/button/recordBtn.svg"}
+                className=""
+                src={"/gif/listeningGif.gif"}
                 alt=""
-                width={100}
+                width={250}
                 height={100}
               />
             </div>
-            <Search handleClick={handleSendClick} click={handleStopRecord} />
-          </div>
-        )}
-        {listening && (
-          <div className="flex flex-col justify-between h-dvh">
-            <section className="mx-6 my-3 flex flex-col items-center">
-              <div>
+            <div className="self-center">
+              <Timer />
+            </div>
+            <p className="text-[#2BCE98] self-start mt-8"></p>
+          </section>
+
+          <div className="py-6 sticky bottom-0 left-0 bg-white">
+            <div className="grid place-content-center mb-4">
+              <div className="flex flex-col items-center gap-5">
                 <img
-                  className=""
-                  src={"/gif/listeningGif.gif"}
+                  onClick={() => {
+                    handleStopRecord()
+                    stopRecording()
+                  }}
+                  className="active:opacity-50"
+                  src={"/button/stopBtn.svg"}
                   alt=""
-                  width={250}
+                  width={100}
                   height={100}
                 />
-              </div>
-              <div className="self-center">
-                <Timer />
-              </div>
-              <p className="text-[#2BCE98] self-start mt-8"></p>
-            </section>
-
-            <div className="py-6 sticky bottom-0 left-0 bg-white">
-              <div className="grid place-content-center mb-4">
-                <div className="flex flex-col items-center gap-5">
-                  <img
-                    onClick={() => {
-                      handleStopRecord()
-                      stopRecording()
-                    }}
-                    className="active:opacity-50"
-                    src={"/button/stopBtn.svg"}
-                    alt=""
-                    width={100}
-                    height={100}
-                  />
-                  <p className="font-light italic text-sm text-center">
-                    To stop
-                    <br />
-                    recording press the button....
-                  </p>
-                </div>
+                <p className="font-light italic text-sm text-center">
+                  To stop
+                  <br />
+                  recording press the button....
+                </p>
               </div>
             </div>
           </div>
-        )}
-        {processing && <Processing question={nativeQues} />}
-        {answering && succes && (
-          <ImageContext.Provider value={image}>
-            <Answering
-              question={question}
-              answer={answer}
-              answerWithMap={answerWithMap}
-              toHomepage={toHomepage}
-              toListening={toListening}
-              locations={mapLocations}
-            />
-          </ImageContext.Provider>
-        )}
-        {emergency && <Emergency toHomepage={toHomepage} />}
-      </div>
-    </div>
+        </div>
+      )}
+      {processing && <Processing question={nativeQues} />}
+      {answering && succes && (
+        <ImageContext.Provider value={image}>
+          <Answering
+            question={question}
+            answer={answer}
+            answerWithMap={answerWithMap}
+            toHomepage={toHomepage}
+            toListening={toListening}
+            locations={mapLocations}
+          />
+        </ImageContext.Provider>
+      )}
+      {emergency && <Emergency toHomepage={toHomepage} />}
+      {/* </div>
+     </div> */}
+      {/* </div> */}
+    </>
   )
 }
