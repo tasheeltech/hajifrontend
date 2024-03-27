@@ -1,6 +1,10 @@
 import React from "react"
 
-export default function Header() {
+interface Props {
+  toggle: () => void
+}
+
+export default function Header({ toggle }: Props) {
   return (
     <div className=" flex gap-5 items-center justify-between py-4 px-6">
       <div className="flex gap-4 items-center">
