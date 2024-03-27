@@ -202,7 +202,8 @@ export default function OnBoard() {
     console.log("name :", name);
     console.log("visitPurpose :", visitPurpose);
 
-    // router.push("/homepage");
+    navigate("/homepage");
+
   };
   return (
     <main className="overflow-scroll no-scrollbar  h-dvh">
