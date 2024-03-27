@@ -451,7 +451,7 @@ export default function OnBoard() {
                     className="bg-gray-50 border border-emerald-300 text-sm rounded-lg block w-64 p-2.5"
                     placeholder="Abdullah"
                     value={userName}
-                    onChange={(e) => setName(e.target.value)}
+                    onChange={(e) => setUserName(e.target.value)}
                     required
                   />
                 </div>
