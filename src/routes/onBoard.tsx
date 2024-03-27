@@ -1,27 +1,31 @@
-import React from "react"
-import { useEffect, useState } from "react"
-import { MicState, useMic } from "../helper/micHelper"
-import { Link } from "react-router-dom"
-import CountriesData from "../components/languages/langlist"
-import { useLoaderData, useNavigate } from "react-router-dom"
-import { Permission, useUserState } from "../helper/userStateHelper"
-import { DefaultLoader } from "../loaders/defaultLoader"
+import React from "react";
+import { useEffect, useState, FormEvent } from "react";
+import { MicState, useMic } from "../helper/micHelper";
+import { Link } from "react-router-dom";
+import CountriesData from "../components/languages/langlist";
+import { useLoaderData, useNavigate } from "react-router-dom";
+import { Permission, useUserState } from "../helper/userStateHelper";
+import { DefaultLoader } from "../loaders/defaultLoader";
 
 interface Country {
-  language: string
-  flag: string
+  language: string;
+  flag: string;
 }
 
-const capitaliseFirstLetter = (str: string) => str.charAt(0).toUpperCase() + str.slice(1)
+const capitaliseFirstLetter = (str: string) =>
+  str.charAt(0).toUpperCase() + str.slice(1);
 
 const sentences = [
-  { "language": "Arabic", "sentence": "أريد التحدث بلغتي" },
-  { "language": "English", "sentence": "I want to talk in my language" },
-  { "language": "Urdu", "sentence": "میں اپنی زبان میں بات کرنا چاہتا ہوں۔" },
-  { "language": "Indonesian", "sentence": "Saya ingin berbicara dalam bahasa saya" },
-  { "language": "Turkish", "sentence": "Kendi dilimde konuşmak istiyorum" },
-  { "language": "Malay", "sentence": "Saya mahu bercakap dalam bahasa saya" }
-]
+  { language: "Arabic", sentence: "أريد التحدث بلغتي" },
+  { language: "English", sentence: "I want to talk in my language" },
+  { language: "Urdu", sentence: "میں اپنی زبان میں بات کرنا چاہتا ہوں۔" },
+  {
+    language: "Indonesian",
+    sentence: "Saya ingin berbicara dalam bahasa saya",
+  },
+  { language: "Turkish", sentence: "Kendi dilimde konuşmak istiyorum" },
+  { language: "Malay", sentence: "Saya mahu bercakap dalam bahasa saya" },
+];
 
 export default function OnBoard() {
   // Load user state
@@ -46,6 +50,10 @@ export default function OnBoard() {
   const [languageDetected, setLanguageDetected] = useState(false);
   const [wrongButtonClicked, setWrongButtonClicked] = useState(false);
   const [permissionRequests, setPermissionRequests] = useState(0);
+
+  const [userName, setUserName] = useState("");
+  const [visitPurpose, setVisitPurpose] = useState("");
+  const [listLang, setListLang] = useState(false);
 
   useEffect(() => {
     // Check if geolocation is available
@@ -161,26 +169,41 @@ export default function OnBoard() {
     setWrongButtonClicked(true);
   };
 
-const handleCountrySelection = (
-  language: string
-): React.MouseEventHandler<HTMLDivElement> => {
-  return () => {
-    console.log(language)
-    const country = CountriesData.countries.find(
-      (country) => country.language === language
-    );
-    console.log(country)
-
-    if (country) {
-      //   setSearch(json.payload.name);
-      setIsoLanguage(country);
+  const handleCountrySelection = (
+    language: string
+  ): React.MouseEventHandler<HTMLDivElement> => {
+    return () => {
+      console.log(language);
+      const country = CountriesData.countries.find(
+        (country) => country.language === language
+      );
+      setListLang(true);
       console.log(country);
-    } else {
-      console.log("Country not found for language:", language);
-    }
 
+      if (country) {
+        //   setSearch(json.payload.name);
+        setIsoLanguage(country);
+        console.log(country);
+      } else {
+        console.log("Country not found for language:", language);
+      }
+    };
   };
-};
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!name || !visitPurpose) {
+      alert("Please enter your name and select your visit purpose.");
+      return;
+    }
+    // Store the name and visit purpose in local storage
+    localStorage.setItem("userInfo", JSON.stringify({ name, visitPurpose }));
+
+    console.log("name :", name);
+    console.log("visitPurpose :", visitPurpose);
+
+    // router.push("/homepage");
+  };
   return (
     <main className="overflow-scroll no-scrollbar  h-dvh">
       {micPermission === Permission.DEFAULT && (
@@ -377,24 +400,87 @@ const handleCountrySelection = (
             </div>
           </div>
         )}
-      {isoLanguage && wrongButtonClicked && (
+      {isoLanguage && wrongButtonClicked && !listLang && (
         <div className="flex flex-col items-center">
           <h2 className="text-lg my-8 font-bold font-urbanist">
             Please select from the list of languages
           </h2>
           <div>
             {CountriesData.countries.map((country: Country, index: number) => (
-              <Link to={`/homepage`} key={index}>
+              <button key={index} className="flex">
                 <div
                   key={index}
-                  className="flex items-center gap-6 py-2 px-12 border-2 hover:bg-slate-200 cursor-pointer"
+                  className="flex min-w-72 items-center gap-6 py-2 px-12 border-2 hover:bg-slate-200 cursor-pointer"
                   onClick={handleCountrySelection(country.language)}
                 >
                   <span className="text-5xl"> {country.flag}</span>
                   <span className="text-lg "> {country.language}</span>
                 </div>
-              </Link>
+              </button>
             ))}
+          </div>
+        </div>
+      )}
+      {listLang && (
+        <div className="flex flex-col items-center h-dvh px-5">
+          <div className="flex items-center justify-center gap-10 py-6 w-full">
+            {/* <Link href="/languageDetected"> */}
+            <img className="w-7 h-7" alt="back-button" src="/icons/back.svg" />
+            {/* </Link> */}
+            <div className="w-56 rounded-full h-3 bg-zinc-100">
+              <div className="bg-emerald-400 h-3 rounded-full w-5/5"></div>
+            </div>
+            <p className="text-xl">5/5</p>
+          </div>
+
+          <div className="flex flex-col gap-2 max-w-[21.5rem]">
+            <h1 className="font-urbanist text-2xl leading-6 text-neutral-700">
+              What's Your Name?
+            </h1>
+            <p className="text-zinc-600">Please enter your full name.</p>
+            <form onSubmit={handleSubmit}>
+              <div className="flex flex-col items-center text-center mt-32">
+                <div>
+                  <p className="font-urbanist text-xl text-bold mb-4">
+                    Please Enter Your Name:
+                  </p>
+                  <input
+                    type="text"
+                    id="name"
+                    className="bg-gray-50 border border-emerald-300 text-sm rounded-lg block w-64 p-2.5"
+                    placeholder="Abdullah"
+                    value={userName}
+                    onChange={(e) => setName(e.target.value)}
+                    required
+                  />
+                </div>
+                <div>
+                  <div className="flex flex-col items-center text-center mt-12">
+                    <p className="font-urbanist text-xl text-bold mb-2 ">
+                      Why are you visiting Saudi Arabia?
+                    </p>
+                    <div className="inline-flex gap-4">
+                      <button
+                        className={`hover:bg-slate-400 font-urbanist border-[1px] rounded-md py-4 px-11 mt-4 ${
+                          visitPurpose === "Haji" && "bg-emerald-400"
+                        }`}
+                        onClick={() => setVisitPurpose("Haji")}
+                      >
+                        Hajj
+                      </button>
+                      <button
+                        className={`hover:bg-slate-400 font-urbanist border-[1px] rounded-md py-4 px-8 mt-4 ${
+                          visitPurpose === "Umrah" && "bg-emerald-400"
+                        }`}
+                        onClick={() => setVisitPurpose("Umrah")}
+                      >
+                        Umrah
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
       )}
