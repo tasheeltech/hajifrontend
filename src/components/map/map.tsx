@@ -101,9 +101,14 @@ const Map: React.FC<MapProps> = ({ places }) => {
     [center]
   )
 
-  const onUnmount = React.useCallback(function callback() {
-    setMap(null)
-  }, [])
+  const onUnmount = React.useCallback(
+    function callback() {
+      if (map) {
+        setMap(null)
+      }
+    },
+    [map]
+  )
 
   return (
     <div className="">
