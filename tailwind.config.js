@@ -72,7 +72,7 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       boxShadow: {
-        menu: "0 0 60px 200px rgba(0, 0, 0, 0.3)",
+        menu: "0 0 60px 1000px rgba(0, 0, 0, 0.3)",
       },
     },
   },

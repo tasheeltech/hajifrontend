@@ -19,14 +19,42 @@ function RootLayout() {
   const [layout, setLayout] = useState(false)
   const [showMenu, setShowMenu] = useState(false)
   const [selected, setSelected] = useState("/homepage")
+  const [name, setName] = useState("Welcome")
 
   const location = useLocation()
 
-  const menuRef = useRef<HTMLDivElement>(null) // You should specify the type of the ref
+  const menuRef = useRef<HTMLDivElement>(null)
+
+  // const loadedData = useLoaderData() as DefaultLoader
+  // const { name } = useUserState(loadedData)
 
   const toggleMenu = () => {
     setShowMenu(!showMenu)
   }
+
+  const formatName = (name: string): string => {
+    const words = name.split(" ")
+
+    const formattedWords = words.map((word) => {
+      const capitalizedFirstLetter = word.charAt(0).toUpperCase()
+      const lowercaseRemainingLetters = word.slice(1).toLowerCase()
+      return capitalizedFirstLetter + lowercaseRemainingLetters
+    })
+
+    const formattedName = formattedWords.join(" ")
+
+    return formattedName
+  }
+
+  useEffect(() => {
+    let parsed
+    const userInfo = localStorage.getItem("userInfo")
+    if (userInfo) {
+      parsed = JSON.parse(userInfo)
+      let username = formatName(parsed.name)
+      setName(username)
+    }
+  }, [])
 
   useEffect(() => {
     setSelected(location.pathname)
@@ -65,7 +93,7 @@ function RootLayout() {
                 <button onClick={toggleMenu}>
                   <img src="/icons/close.svg" alt="" width={24} height={24} />
                 </button>
-                <p className="font-semibold text-lg">Name</p>
+                <p className="font-semibold text-lg">{name}</p>
                 <div></div>
               </div>
               <div className="px-5">

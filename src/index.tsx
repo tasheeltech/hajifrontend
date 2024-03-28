@@ -68,7 +68,12 @@ const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement)
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<RootLayout />}>
+    <Route
+      path="/"
+      element={<RootLayout />}
+      errorElement={<ErrorPage />}
+      loader={defaultLoader}
+    >
       <Route
         index
         element={<OnBoard />}
