@@ -8,9 +8,9 @@ import Timer from "../components/timer/timer"
 import Search from "../components/search/search"
 import { ImageContext } from "../components/map/context"
 import Emergency from "../components/emergency/emergency"
-import { useLoaderData } from "react-router-dom"
-import { useUserState } from "../helper/userStateHelper"
-import { DefaultLoader } from "../loaders/defaultLoader"
+// import { useLoaderData } from "react-router-dom"
+// import { useUserState } from "../helper/userStateHelper"
+// import { DefaultLoader } from "../loaders/defaultLoader"
 
 interface Intent {
   type: string
@@ -39,8 +39,8 @@ export default function HomePage() {
   const [answerWithMap, setAnswerwithMap] = useState(false)
   const formData = new FormData()
 
-  const loadedData = useLoaderData() as DefaultLoader
-  const { isoLanguage } = useUserState(loadedData)
+  // const loadedData = useLoaderData() as DefaultLoader
+  // const { isoLanguage } = useUserState(loadedData)
 
   useEffect(() => {
     if (question !== "" && answer !== "") {
@@ -81,7 +81,7 @@ export default function HomePage() {
     console.log("Sending recording!!!")
     formData.append("audio", blob, "audio.webm")
     // formData.append("isoLanguage", isoLanguage!.iso)
-    // formData.append("isoLanguage", "en")
+    formData.append("isoLanguage", "en")
     const getProcessPath =
       "https://hajibackend.tasheel-tech.workers.dev/transcript"
     const body = await fetch(getProcessPath, {
@@ -104,8 +104,9 @@ export default function HomePage() {
     setNativeQues(input)
 
     formData.append("text", input)
-    formData.append("isoLanguage", isoLanguage!.iso)
+    // formData.append("isoLanguage", isoLanguage!.iso)
     // console.log(isoLanguage!.iso)
+    formData.append("isoLanguage", "en")
 
     const body = await fetch(
       "https://hajibackend.tasheel-tech.workers.dev/processText",
@@ -174,28 +175,8 @@ export default function HomePage() {
     setProcessing(false)
   }
 
-  // const toggleMenu = () => {
-  //   setShowMenu(!showMenu)
-  // }
-
   return (
-    // <div className="overflow-scroll no-scrollbar">
-    //   {showMenu && <NavigationMenu toggle={toggleMenu} />}
-    //   <div className="flex flex-col h-dvh">
-    //     <div className="border-b">
-    //       {!processing && <Header toggle={toggleMenu} />}
-    //     </div>
-    //     <Routes>
-    //       <Route path="/homepage" element={<HomePage />} />
-    //       <Route path="/tawaf" element={<TawafCalculator />} />
-    //       <Route path="/saii" element={<SaiiCalculator />} />
-    //       <Route path="/emergency" element={<EmergencyPage />} />
-    //     </Routes>
-
-    // <div>Homepage</div>
-
     <>
-      {/* <div className=""> */}
       {homepage && (
         <div className="flex flex-col justify-between h-full">
           <section className="flex flex-col gap-5 p-6 border-b">
@@ -311,9 +292,6 @@ export default function HomePage() {
         </ImageContext.Provider>
       )}
       {emergency && <Emergency toHomepage={toHomepage} />}
-      {/* </div>
-     </div> */}
-      {/* </div> */}
     </>
   )
 }
