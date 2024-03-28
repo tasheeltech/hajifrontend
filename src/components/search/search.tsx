@@ -9,7 +9,7 @@ const Search: React.FC<Props> = ({ handleClick, click }) => {
   const [question, setQuestion] = useState("")
 
   return (
-    <div className="flex gap-4 items-center justify-center py-4 px-4 sticky bottom-0 left-0 w-full bg-white border-t-2">
+    <div className="flex gap-4 items-center">
       <input
         value={question}
         onChange={(e) => setQuestion(e.target.value)}

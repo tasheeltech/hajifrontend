@@ -8,7 +8,7 @@ interface ProcessingProps {
 
 const Processing: React.FC<ProcessingProps> = ({ question }) => {
   return (
-    <div className="grid place-items-center h-dvh">
+    <div className="grid place-items-center h-full">
       <div className="mb-6 text-lg mx-6 ">
         <div className="text-center flex flex-col gap-2 min-h-10">
           <div className="font-medium text-[#373535] text-lg underline">
