@@ -35,7 +35,7 @@ const OnBoard: React.FC = () => {
       {step === 2 && <LocationPermission onNextStep={handleNextStep} />}
       {step === 3 && <LanguageDetection onNextStep={handleNextStep} />}
       {step === 4 && (
-        <UserInformation onOnboardingComplete={handleOnboardingComplete} />
+        <UserInformation onboardingComplete={handleOnboardingComplete} />
       )}
     </main>
   );

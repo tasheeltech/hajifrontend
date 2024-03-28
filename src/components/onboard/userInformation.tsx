@@ -4,11 +4,11 @@ import { DefaultLoader } from "../../loaders/defaultLoader";
 import { useLoaderData, useNavigate } from "react-router-dom";
 
 interface UserInformationProps {
-  onOnboardingComplete: () => void;
+  onboardingComplete: () => void;
 }
 
 const UserInformation: React.FC<UserInformationProps> = ({
-  onOnboardingComplete,
+  onboardingComplete,
 }) => {
   const loadedData = useLoaderData() as DefaultLoader;
   const { name, setName, isoLanguage } = useUserState(loadedData);
@@ -18,18 +18,27 @@ const UserInformation: React.FC<UserInformationProps> = ({
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!name || !visitPurpose) {
+    if (!userName || !visitPurpose) {
       alert("Please enter your name and select your visit purpose.");
       return;
     }
-    localStorage.setItem("userInfo", JSON.stringify({ name, visitPurpose }));
+    localStorage.setItem(
+      "userInfo",
+      JSON.stringify({ name: userName, visitPurpose })
+    );
 
-    console.log("name :", name);
+    console.log("name :", userName);
     console.log("visitPurpose :", visitPurpose);
 
-    // navigate("/homepage");
-    onOnboardingComplete();
+    if (userName && (visitPurpose === "Haji" || visitPurpose === "Umrah")) {
+      onboardingComplete();
+      // navigate("/homepage");
+    }
   };
+
+  useEffect(() => {
+    // This effect will re-render the component when onboardingComplete function changes
+  }, [onboardingComplete]);
 
   return (
     <main className="overflow-scroll no-scrollbar  h-dvh">
