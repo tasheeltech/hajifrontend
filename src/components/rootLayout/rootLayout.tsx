@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from "react"
-import { Link, Outlet, useLocation } from "react-router-dom"
+import { Link, Outlet, useLoaderData, useLocation } from "react-router-dom"
 import Header from "../header/header"
+// import { DefaultLoader } from "../../../src/loaders/defaultLoader"
+// import { useUserState } from "../../../src/helper/userStateHelper"
 
 interface MyObject {
   name: string
@@ -12,14 +14,16 @@ const data: MyObject[] = [
   { name: "Home", icon: "/icons/home.svg", link: "/homepage" },
   { name: "Tawaf Calculator", icon: "/icons/tawaf.svg", link: "/tawaf" },
   { name: "Saii Calculator", icon: "/icons/saii.svg", link: "/saii" },
+  // { name: "Bookmarks", icon: "/icons/bookmarks.svg", link: "/bookmarks" },
   { name: "Emergency", icon: "/icons/emergency.svg", link: "/emergency" },
+  { name: "Log out", icon: "/icons/logOut.svg", link: "/" },
 ]
 
 function RootLayout() {
   const [layout, setLayout] = useState(false)
   const [showMenu, setShowMenu] = useState(false)
   const [selected, setSelected] = useState("/homepage")
-  const [name, setName] = useState("Welcome")
+  const [name, setName] = useState("")
 
   const location = useLocation()
 
@@ -32,29 +36,14 @@ function RootLayout() {
     setShowMenu(!showMenu)
   }
 
-  const formatName = (name: string): string => {
-    const words = name.split(" ")
-
-    const formattedWords = words.map((word) => {
-      const capitalizedFirstLetter = word.charAt(0).toUpperCase()
-      const lowercaseRemainingLetters = word.slice(1).toLowerCase()
-      return capitalizedFirstLetter + lowercaseRemainingLetters
-    })
-
-    const formattedName = formattedWords.join(" ")
-
-    return formattedName
-  }
-
   useEffect(() => {
-    let parsed
+    let uName: string
     const userInfo = localStorage.getItem("userInfo")
     if (userInfo) {
-      parsed = JSON.parse(userInfo)
-      let username = formatName(parsed.name)
-      setName(username)
+      uName = JSON.parse(userInfo).name
+      setName(uName)
     }
-  }, [])
+  }, [name, showMenu])
 
   useEffect(() => {
     setSelected(location.pathname)
@@ -91,9 +80,11 @@ function RootLayout() {
             <div>
               <div className="w-full h-16 px-6 py-12 flex justify-between items-center">
                 <button onClick={toggleMenu}>
-                  <img src="/icons/close.svg" alt="" width={24} height={24} />
+                  <img src="/icons/close.svg" alt="" width={20} height={20} />
                 </button>
-                <p className="font-semibold text-lg">{name}</p>
+                <p className="font-semibold text-lg">
+                  {name ? name : "Welcome"}
+                </p>
                 <div></div>
               </div>
               <div className="px-5">
@@ -103,6 +94,9 @@ function RootLayout() {
                       <Link
                         to={obj.link}
                         onClick={() => {
+                          if (obj.link === "/") {
+                            localStorage.clear()
+                          }
                           setSelected(obj.link)
                           setShowMenu(false)
                         }}
@@ -113,7 +107,7 @@ function RootLayout() {
                         `}
                         >
                           <img src={obj.icon} alt="" />
-                          <p className="ml-2">{obj.name}</p>
+                          <p className="ml-2 font-medium">{obj.name}</p>
                         </div>
                       </Link>
                     </li>

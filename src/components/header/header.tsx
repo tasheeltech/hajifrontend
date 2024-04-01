@@ -1,26 +1,54 @@
-import React from "react"
-import { useNavigate } from "react-router-dom"
+import React, { useEffect, useState } from "react"
+import { useLocation, useNavigate } from "react-router-dom"
+// import { MdHome } from "react-icons/md"
+import { ImHome } from "react-icons/im"
+
+// import { MdOutlineArrowBack } from "react-icons/md"
 
 interface Props {
   toggle: () => void
 }
 
 export default function Header({ toggle }: Props) {
+  // const [backBtn, setBackBtn] = useState(false)
+
   const navigate = useNavigate()
+
+  // const location = useLocation()
+
+  // useEffect(() => {
+  // setSelected(location.pathname)
+
+  const goToHome = () => {
+    // if (location.pathname === "/viewPage") {
+    navigate("/homepage")
+    // setBackBtn(true)
+    // }
+  }
+
+
   return (
-    <div className="flex gap-5 items-center justify-between py-3 px-6">
+    <div className="flex gap-5 items-center justify-between py-4 px-6">
+      <button onClick={goToHome}>
+        {/* {backBtn ? (
+          <MdOutlineArrowBack style={{ width: 24, height: 24 }} />
+        ) : ( */}
+        <ImHome style={{ width: 24, height: 24 }} />
+        {/* )} */}
+      </button>
+
       <div className="flex gap-2 items-center">
-        <div onClick={() => navigate("/homepage")}>
-          <img src={"HajiAnsariLogo.svg"} alt="" width={48} height={48} />
-        </div>
+        <img src={"HajiAnsariLogo.svg"} alt="" width={38} height={38} />
 
         <div className="flex flex-col gap-1 justify-center">
           <p className="text-xl font-semibold leading-none">HajiAnsari</p>
-          <p className="text-[#17CE92] text-xs">Powered by Ansari AI</p>
+          <p className="text-[#17CE92] text-xs leading-none">
+            Powered by Ansari AI
+          </p>
         </div>
       </div>
       <button onClick={toggle}>
-        <img src={"/icons/menu.svg"} alt=" " width={32} height={32} />{" "}
+        <img src={"/icons/menu.svg"} alt=" " width={24} height={24} />{" "}
       </button>
     </div>
   )

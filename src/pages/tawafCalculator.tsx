@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 function TawafCalculator() {
   const [counter, setCounter] = useState(0)
   const [completed, setCompleted] = useState(false)
+
+  const navigate = useNavigate()
 
   useEffect(() => {
     if (counter === 7) {
@@ -22,15 +25,25 @@ function TawafCalculator() {
     }
   }
 
+  const handleNext = () => {
+    navigate("/saii")
+  }
+
   return (
     <div className="div-6 flex flex-col items-center justify-between h-full">
       {completed ? (
         <>
           <div></div>
-          <div>
-            <p className="text-2xl font-medium text-[#2bce98]">
+          <div className="flex flex-col justify-center">
+            <p className="text-2xl font-medium text-[#2bce98] mb-4">
               Tawaf Completed
             </p>
+            <button
+              className="bg-[#2bce98] rounded-lg p-3 font-medium"
+              onClick={handleNext}
+            >
+              Go to Saii Calculator
+            </button>
           </div>
           <div></div>
         </>
