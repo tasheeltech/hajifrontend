@@ -18,6 +18,8 @@ import SaiiCalculator from "./pages/saiiCalculator"
 import EmergencyPage from "./pages/emergency"
 import HomePage from "./routes/homepage"
 import RootLayout from "./components/rootLayout/rootLayout"
+// import Bookmarks from "./pages/bookmarks"
+// import ViewPage from "./pages/viewPage"
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement)
 
@@ -98,6 +100,18 @@ const router = createBrowserRouter(
         errorElement={<ErrorPage />}
         loader={defaultLoader}
       />
+      {/* <Route
+        path="/bookmarks"
+        element={<Bookmarks />}
+        errorElement={<ErrorPage />}
+        loader={defaultLoader}
+      />
+      <Route
+        path="/bookmarks/viewPage"
+        element={<ViewPage />}
+        errorElement={<ErrorPage />}
+        loader={defaultLoader}
+      /> */}
       <Route
         path="/emergency"
         element={<EmergencyPage />}

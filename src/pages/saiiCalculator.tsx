@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import { ImArrowRight } from "react-icons/im"
 
 function SaiiCalculator() {
   const [counter, setCounter] = useState(0)
@@ -57,9 +58,11 @@ function SaiiCalculator() {
               </div>
             </div>
           </div>
-          <p className="font-semibold text-lg">
-            {safaMarwa ? "Safa -> Marwa" : "Marwa -> Safa"}
-          </p>
+          <div className="flex items-center gap-5 font-semibold text-lg">
+            <p>{safaMarwa ? "Safa " : "Marwa "}</p>
+            <ImArrowRight />
+            <p>{safaMarwa ? "Marwa " : "Safa "}</p>
+          </div>
           <div className="flex items-center gap-10">
             <div className="text-[250px] w-32 leading-none flex justify-center items-center">
               <div>{counter}</div>

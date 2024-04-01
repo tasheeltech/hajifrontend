@@ -1,44 +1,61 @@
-import React, { useState, useEffect, FormEvent } from "react";
-import { Permission, useUserState } from "../../helper/userStateHelper";
-import { DefaultLoader } from "../../loaders/defaultLoader";
-import { useLoaderData, useNavigate } from "react-router-dom";
+import React, { useState, useEffect, FormEvent } from "react"
+import { Permission, useUserState } from "../../helper/userStateHelper"
+import { DefaultLoader } from "../../loaders/defaultLoader"
+import { useLoaderData, useNavigate } from "react-router-dom"
 
 interface UserInformationProps {
-  onboardingComplete: () => void;
+  onboardingComplete: () => void
 }
 
 const UserInformation: React.FC<UserInformationProps> = ({
   onboardingComplete,
 }) => {
-  const loadedData = useLoaderData() as DefaultLoader;
-  const { name, setName, isoLanguage } = useUserState(loadedData);
-  const navigate = useNavigate();
-  const [userName, setUserName] = useState("");
-  const [visitPurpose, setVisitPurpose] = useState("");
+  const loadedData = useLoaderData() as DefaultLoader
+  const { name, setName, isoLanguage } = useUserState(loadedData)
+  const navigate = useNavigate()
+  const [userName, setUserName] = useState("")
+  const [visitPurpose, setVisitPurpose] = useState("")
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+    e.preventDefault()
     if (!userName || !visitPurpose) {
-      alert("Please enter your name and select your visit purpose.");
-      return;
+      alert("Please enter your name and select your visit purpose.")
+      return
     }
+
+    const uName = formatName(userName)
+    setName(uName)
     localStorage.setItem(
       "userInfo",
-      JSON.stringify({ name: userName, visitPurpose })
-    );
+      JSON.stringify({ name: uName, visitPurpose })
+    )
 
-    console.log("name :", userName);
-    console.log("visitPurpose :", visitPurpose);
+    console.log("name :", userName)
+    console.log("visitPurpose :", visitPurpose)
 
     if (userName && (visitPurpose === "Haji" || visitPurpose === "Umrah")) {
-      onboardingComplete();
+      onboardingComplete()
       // navigate("/homepage");
     }
-  };
+  }
+
+  const formatName = (name: string): string => {
+    const words = name.split(" ")
+
+    const formattedWords = words.map((word) => {
+      const capitalizedFirstLetter = word.charAt(0).toUpperCase()
+      const lowercaseRemainingLetters = word.slice(1).toLowerCase()
+      return capitalizedFirstLetter + lowercaseRemainingLetters
+    })
+
+    const formattedName = formattedWords.join(" ")
+
+    return formattedName
+  }
 
   useEffect(() => {
     // This effect will re-render the component when onboardingComplete function changes
-  }, [onboardingComplete]);
+  }, [onboardingComplete])
 
   return (
     <main className="overflow-scroll no-scrollbar  h-dvh">
@@ -104,7 +121,7 @@ const UserInformation: React.FC<UserInformationProps> = ({
         </div>
       </div>
     </main>
-  );
-};
+  )
+}
 
-export default UserInformation;
+export default UserInformation

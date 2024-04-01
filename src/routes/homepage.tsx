@@ -8,6 +8,7 @@ import Timer from "../components/timer/timer"
 import Search from "../components/search/search"
 import { ImageContext } from "../components/map/context"
 import Emergency from "../components/emergency/emergency"
+import { useNavigate } from "react-router-dom"
 // import { useLoaderData } from "react-router-dom"
 // import { useUserState } from "../helper/userStateHelper"
 // import { DefaultLoader } from "../loaders/defaultLoader"
@@ -35,9 +36,12 @@ export default function HomePage() {
   const [mapLocations, setMapLocations] = useState([])
   const [image, setImage] = useState("")
   const [emergency, setEmergency] = useState(false)
+  const [name, setName] = useState("Welcome")
 
   const [answerWithMap, setAnswerwithMap] = useState(false)
   const formData = new FormData()
+
+  const navigate = useNavigate()
 
   // const loadedData = useLoaderData() as DefaultLoader
   // const { isoLanguage } = useUserState(loadedData)
@@ -53,6 +57,15 @@ export default function HomePage() {
       }
     }
   }, [question, answer, tempQues])
+
+  useEffect(() => {
+    let uName: string
+    const userInfo = localStorage.getItem("userInfo")
+    if (userInfo) {
+      uName = JSON.parse(userInfo).name
+      setName(uName)
+    }
+  }, [])
 
   const handleSendClick = (chatStr: string) => {
     setHomepage(false)
@@ -157,6 +170,18 @@ export default function HomePage() {
     if (res.type === "COULD_FIND_INTENT") {
       setAnswer(res.payload.message)
     }
+    if (res.type === "INTENT:OTHER") {
+      if (res.payload.input) {
+        let ques = res.payload.input.toLowerCase()
+        console.log(ques)
+        if (ques.includes("tawaf") && ques.includes("calc")) {
+          navigate("/tawaf")
+        }
+        if (ques.includes("saii") && ques.includes("calc")) {
+          navigate("/saii")
+        }
+      }
+    }
   }
 
   const toHomepage = () => {
@@ -181,7 +206,7 @@ export default function HomePage() {
         <div className="flex flex-col justify-between h-full">
           <section className="flex flex-col gap-5 p-6 border-b">
             <p className="font-semibold text-lg text-center">
-              Assalamualaikum Ya Hajji! 😊️
+              Assalamualaikum Ya {name}! 😊️
             </p>
             <div className="flex flex-col gap-3">
               <div className="flex gap-4 justify-between px-5 py-4 rounded-[36px] border">
