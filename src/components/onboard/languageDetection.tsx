@@ -6,6 +6,7 @@ import CountriesData from "../../components/languages/langlist";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import { Permission, useUserState } from "../../helper/userStateHelper";
 import { DefaultLoader } from "../../loaders/defaultLoader";
+import { useTranslation } from "react-i18next";
 
 interface Country {
   language: string;
@@ -52,6 +53,7 @@ const LanguageDetection: React.FC<LanguageDetectionProps> = ({
   const [languageDetected, setLanguageDetected] = useState(false);
   const [wrongButtonClicked, setWrongButtonClicked] = useState(false);
   const [listLang, setListLang] = useState(false);
+  const { t, i18n } = useTranslation();
 
   // Handle mic button click
   const handleMicButtonClick = () => {
