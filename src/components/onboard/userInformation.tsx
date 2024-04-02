@@ -1,61 +1,63 @@
-import React, { useState, useEffect, FormEvent } from "react"
-import { Permission, useUserState } from "../../helper/userStateHelper"
-import { DefaultLoader } from "../../loaders/defaultLoader"
-import { useLoaderData, useNavigate } from "react-router-dom"
+import React, { useState, useEffect, FormEvent } from "react";
+import { Permission, useUserState } from "../../helper/userStateHelper";
+import { DefaultLoader } from "../../loaders/defaultLoader";
+import { useLoaderData, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 interface UserInformationProps {
-  onboardingComplete: () => void
+  onboardingComplete: () => void;
 }
 
 const UserInformation: React.FC<UserInformationProps> = ({
   onboardingComplete,
 }) => {
-  const loadedData = useLoaderData() as DefaultLoader
-  const { name, setName, isoLanguage } = useUserState(loadedData)
-  const navigate = useNavigate()
-  const [userName, setUserName] = useState("")
-  const [visitPurpose, setVisitPurpose] = useState("")
+  const loadedData = useLoaderData() as DefaultLoader;
+  const { name, setName, isoLanguage } = useUserState(loadedData);
+  const navigate = useNavigate();
+  const [userName, setUserName] = useState("");
+  const [visitPurpose, setVisitPurpose] = useState("");
+  const { t } = useTranslation();
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
+    e.preventDefault();
     if (!userName || !visitPurpose) {
-      alert("Please enter your name and select your visit purpose.")
-      return
+      alert("Please enter your name and select your visit purpose.");
+      return;
     }
 
-    const uName = formatName(userName)
-    setName(uName)
+    const uName = formatName(userName);
+    setName(uName);
     localStorage.setItem(
       "userInfo",
       JSON.stringify({ name: uName, visitPurpose })
-    )
+    );
 
-    console.log("name :", userName)
-    console.log("visitPurpose :", visitPurpose)
+    console.log("name :", userName);
+    console.log("visitPurpose :", visitPurpose);
 
     if (userName && (visitPurpose === "Haji" || visitPurpose === "Umrah")) {
-      onboardingComplete()
+      onboardingComplete();
       // navigate("/homepage");
     }
-  }
+  };
 
   const formatName = (name: string): string => {
-    const words = name.split(" ")
+    const words = name.split(" ");
 
     const formattedWords = words.map((word) => {
-      const capitalizedFirstLetter = word.charAt(0).toUpperCase()
-      const lowercaseRemainingLetters = word.slice(1).toLowerCase()
-      return capitalizedFirstLetter + lowercaseRemainingLetters
-    })
+      const capitalizedFirstLetter = word.charAt(0).toUpperCase();
+      const lowercaseRemainingLetters = word.slice(1).toLowerCase();
+      return capitalizedFirstLetter + lowercaseRemainingLetters;
+    });
 
-    const formattedName = formattedWords.join(" ")
+    const formattedName = formattedWords.join(" ");
 
-    return formattedName
-  }
+    return formattedName;
+  };
 
   useEffect(() => {
     // This effect will re-render the component when onboardingComplete function changes
-  }, [onboardingComplete])
+  }, [onboardingComplete]);
 
   return (
     <main className="overflow-scroll no-scrollbar  h-dvh">
@@ -79,7 +81,7 @@ const UserInformation: React.FC<UserInformationProps> = ({
             <div className="flex flex-col items-center text-center mt-32">
               <div>
                 <p className="font-urbanist text-xl text-bold mb-4">
-                  Please Enter Your Name:
+                  {t("whatsYourName")}
                 </p>
                 <input
                   type="text"
@@ -94,7 +96,7 @@ const UserInformation: React.FC<UserInformationProps> = ({
               <div>
                 <div className="flex flex-col items-center text-center mt-12">
                   <p className="font-urbanist text-xl text-bold mb-2 ">
-                    Why are you visiting Saudi Arabia?
+                    {t("request")}
                   </p>
                   <div className="inline-flex gap-4">
                     <button
@@ -103,7 +105,7 @@ const UserInformation: React.FC<UserInformationProps> = ({
                       }`}
                       onClick={() => setVisitPurpose("Haji")}
                     >
-                      Hajj
+                      {t("haji")}
                     </button>
                     <button
                       className={`hover:bg-slate-400 font-urbanist border-[1px] rounded-md py-4 px-8 mt-4 ${
@@ -111,7 +113,7 @@ const UserInformation: React.FC<UserInformationProps> = ({
                       }`}
                       onClick={() => setVisitPurpose("Umrah")}
                     >
-                      Umrah
+                      {t("umrah")}
                     </button>
                   </div>
                 </div>
@@ -121,7 +123,7 @@ const UserInformation: React.FC<UserInformationProps> = ({
         </div>
       </div>
     </main>
-  )
-}
+  );
+};
 
-export default UserInformation
+export default UserInformation;
