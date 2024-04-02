@@ -18,7 +18,10 @@ import SaiiCalculator from "./pages/saiiCalculator"
 import EmergencyPage from "./pages/emergency"
 import HomePage from "./routes/homepage"
 import RootLayout from "./components/rootLayout/rootLayout"
+
 import Bookmarks from "./pages/bookmarks"
+import { I18nextProvider } from "react-i18next";
+import i18n from "./i18n";
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement)
 
@@ -128,10 +131,12 @@ const router = createBrowserRouter(
 )
 
 root.render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
-)
+  <I18nextProvider i18n={i18n}>
+    <React.StrictMode>
+      <RouterProvider router={router} />
+    </React.StrictMode>
+  </I18nextProvider>,
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
