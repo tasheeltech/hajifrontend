@@ -13,12 +13,13 @@ interface Props {
   locations: any
 }
 
-// interface Entry {
-//   question: string
-//   answer: string
-//   answerWithMap: boolean
-//   locations: any
-// }
+interface Entry {
+  id: string
+  question: string
+  answer: string
+  answerWithMap: boolean
+  locations: any
+}
 
 const Answer: React.FC<Props> = ({
   question,
@@ -29,60 +30,56 @@ const Answer: React.FC<Props> = ({
   locations,
 }) => {
   const [bookmark, setBookmark] = useState(false)
+  const [firstClick, setFirstClick] = useState(false)
 
-  // useEffect(() => {
-  //   function updateEntry(existingEntries: Entry[], newEntry: Entry) {
-  //     const index = existingEntries.findIndex(
-  //       (entry) =>
-  //         entry.question === newEntry.question &&
-  //         entry.answer === newEntry.answer &&
-  //         entry.answerWithMap === newEntry.answerWithMap &&
-  //         entry.locations === newEntry.locations
-  //     )
-  //     if (index !== -1) {
-  //       existingEntries[index] = newEntry
-  //     } else {
-  //       existingEntries.push(newEntry)
-  //     }
-  //     localStorage.setItem("allEntries", JSON.stringify(existingEntries))
-  //   }
+  const getEntriesFromLocalStorage = () => {
+    const allEntries = localStorage.getItem("bookmarked")
 
-  //   function removeEntry(existingEntries: Entry[], entryToRemove: Entry) {
-  //     const filteredEntries = existingEntries.filter(
-  //       (entry) =>
-  //         entry.question !== entryToRemove.question ||
-  //         entry.answer !== entryToRemove.answer ||
-  //         entry.answerWithMap !== entryToRemove.answerWithMap ||
-  //         entry.locations !== entryToRemove.locations
-  //     )
-  //     localStorage.setItem("allEntries", JSON.stringify(filteredEntries))
-  //   }
+    console.log(allEntries)
 
-  //   const allEntriesString = localStorage.getItem("allEntries")
-  //   const existingEntries = allEntriesString ? JSON.parse(allEntriesString) : []
+    if (allEntries) {
+      const parsedEntries = JSON.parse(allEntries)
 
-  //   // const newEntry = {
-  //   //   question: question,
-  //   //   answer: answer,
-  //   //   answerWithMap: answerWithMap,
-  //   //   locations: locations,
-  //   // }
+      return parsedEntries
+    }
 
-  //   const id = new Date().toISOString() // Using date as ID
-  //   const newEntry = {
-  //     id: id,
-  //     question: question,
-  //     answer: answer,
-  //     answerWithMap: answerWithMap,
-  //     locations: locations,
-  //   }
+    return []
+  }
 
-  //   if (bookmark) {
-  //     updateEntry(existingEntries, newEntry)
-  //   } else {
-  //     removeEntry(existingEntries, newEntry)
-  //   }
-  // }, [bookmark])
+  const [bookmarked, setBookmarked] = useState<Entry[]>(() =>
+    getEntriesFromLocalStorage()
+  )
+
+  const toggleBookmark = (entry: Entry) => {
+    let updatedBookmarked
+    if (bookmarked.some((item) => item.question === entry.question)) {
+      updatedBookmarked = bookmarked.filter(
+        (item) => item.question !== entry.question
+      )
+      console.log(updatedBookmarked)
+      console.log("filter")
+    } else {
+      updatedBookmarked = [...bookmarked, entry]
+      console.log(updatedBookmarked)
+      console.log("append")
+    }
+    setBookmarked(updatedBookmarked)
+    localStorage.setItem("bookmarked", JSON.stringify(updatedBookmarked))
+  }
+
+  useEffect(() => {
+    if (firstClick) {
+      const id = new Date().toISOString() // Using date as ID
+      const newEntry: Entry = {
+        id: id,
+        question: question,
+        answer: answer,
+        answerWithMap: answerWithMap,
+        locations: locations,
+      }
+      toggleBookmark(newEntry)
+    }
+  }, [bookmark])
 
   return (
     <div className="flex flex-col justify-between h-full">
@@ -93,7 +90,10 @@ const Answer: React.FC<Props> = ({
           </p>
           <div className="mt-2 flex">
             <button
-              onClick={() => setBookmark(!bookmark)}
+              onClick={() => {
+                setBookmark(!bookmark)
+                setFirstClick(true)
+              }}
               className={`flex items-center py-2 px-3 ${
                 bookmark ? "bg-[#e9fbf5]" : "bg-[#e6eaed]"
               } rounded-full`}

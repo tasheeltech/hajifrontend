@@ -14,7 +14,7 @@ const data: MyObject[] = [
   { name: "Home", icon: "/icons/home.svg", link: "/homepage" },
   { name: "Tawaf Calculator", icon: "/icons/tawaf.svg", link: "/tawaf" },
   { name: "Saii Calculator", icon: "/icons/saii.svg", link: "/saii" },
-  // { name: "Bookmarks", icon: "/icons/bookmarks.svg", link: "/bookmarks" },
+  { name: "Bookmarks", icon: "/icons/bookmarks.svg", link: "/bookmarks" },
   { name: "Emergency", icon: "/icons/emergency.svg", link: "/emergency" },
   { name: "Log out", icon: "/icons/logOut.svg", link: "/" },
 ]
