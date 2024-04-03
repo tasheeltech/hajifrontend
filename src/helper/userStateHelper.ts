@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { DefaultLoader } from "../loaders/defaultLoader";
 
 export enum Permission {
