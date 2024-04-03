@@ -1,8 +1,9 @@
-import React from "react"
+import React, { useContext } from "react"
 import LocationImage from "./locationImage"
 import StarRating from "../rating/starRating"
 import { Badge } from "../../ui/badge"
 import { Link } from "react-router-dom"
+import { ImageContext } from "./context"
 
 type CardProps = {
   places: {
@@ -25,6 +26,8 @@ type CardProps = {
 }
 
 const Card: React.FC<CardProps> = ({ places }) => {
+  const valueFromContext = useContext(ImageContext)
+
   return (
     <div className="">
       {places.map((place, index) => (
@@ -52,12 +55,15 @@ const Card: React.FC<CardProps> = ({ places }) => {
                     </p>
                   </div>
                 </div>
-
-                <div>
-                  <div className="w-24 h-24">
-                    <LocationImage />
-                  </div>
-                </div>
+                {valueFromContext && (
+                  <>
+                    <div className="w-24 h-24">
+                      <div>
+                        <LocationImage />
+                      </div>
+                    </div>
+                  </>
+                )}
               </div>
             </div>
 
