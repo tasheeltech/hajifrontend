@@ -4,6 +4,8 @@ import Header from "../header/header"
 // import { DefaultLoader } from "../../../src/loaders/defaultLoader"
 // import { useUserState } from "../../../src/helper/userStateHelper"
 
+
+
 interface MyObject {
   name: string
   icon: string
@@ -106,7 +108,8 @@ function RootLayout() {
                          ${selected === obj.link && "bg-[#e9fbf5]"}
                         `}
                         >
-                          <img src={obj.icon} alt="" />
+                          {/* <img src={obj.icon} alt="" /> */}
+
                           <p className="ml-2 font-medium">{obj.name}</p>
                         </div>
                       </Link>
