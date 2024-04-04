@@ -1,12 +1,13 @@
 // src/i18n.js
-import i18n from "i18next";
-import { initReactI18next } from "react-i18next";
+import i18n from "i18next"
+import { initReactI18next } from "react-i18next"
 // import LanguageDetector from "i18next-browser-languagedetector";
 
-import enTranslation from "./translations/en.json";
-import arTranslation from "./translations/ar.json";
-import urTranslation from "./translations/ur.json";
-import hiTranslation from "./translations/hi.json";
+import enTranslation from "./translations/en.json"
+import arTranslation from "./translations/ar.json"
+import urTranslation from "./translations/ur.json"
+import hiTranslation from "./translations/hi.json"
+// import arHome from "./translations/ar/home.json"
 
 i18n
   // .use(LanguageDetector)
@@ -21,6 +22,7 @@ i18n
       },
       ar: {
         translation: arTranslation,
+        // common: arHome,
       },
       ur: {
         translation: urTranslation,
@@ -29,7 +31,7 @@ i18n
         translation: hiTranslation,
       },
     },
-    fallbackLng: "ur",
-  });
+    fallbackLng: "en",
+  })
 
-export default i18n;
+export default i18n

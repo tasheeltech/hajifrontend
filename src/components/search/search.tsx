@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { useTranslation } from "react-i18next"
 
 interface Props {
   handleClick: (question: string) => void
@@ -7,6 +8,8 @@ interface Props {
 
 const Search: React.FC<Props> = ({ handleClick, click }) => {
   const [question, setQuestion] = useState("")
+
+  const { t } = useTranslation()
 
   return (
     <div className="flex gap-4 items-center">

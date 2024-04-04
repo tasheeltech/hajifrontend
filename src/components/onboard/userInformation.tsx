@@ -73,10 +73,10 @@ const UserInformation: React.FC<UserInformationProps> = ({
         </div>
 
         <div className="flex flex-col gap-2 max-w-[21.5rem]">
-          <h1 className="font-urbanist text-2xl leading-6 text-neutral-700">
+          {/* <h1 className="font-urbanist text-2xl leading-6 text-neutral-700">
             What's Your Name?
           </h1>
-          <p className="text-zinc-600">Please enter your full name.</p>
+          <p className="text-zinc-600">Please enter your full name.</p> */}
           <form onSubmit={handleSubmit}>
             <div className="flex flex-col items-center text-center mt-32">
               <div>
