@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import { MdBookmarks } from "react-icons/md"
 import { MdChevronRight } from "react-icons/md"
 import ViewPage from "./viewPage"
+import { useTranslation } from "react-i18next"
 
 interface Entry {
   id: string
@@ -16,6 +17,8 @@ const Bookmarks = () => {
   const [bookmark, setBookmark] = useState(false)
   const [selectedEntry, setSelectedEntry] = useState<Entry | null>(null)
   const [view, setView] = useState(false)
+
+  const { t } = useTranslation()
 
   const getEntriesFromLocalStorage = () => {
     const allEntries = localStorage.getItem("bookmarked")
@@ -66,9 +69,9 @@ const Bookmarks = () => {
     }
   }, [bookmark])
 
-  // Function to render bookmark button
+
   const renderBookmarkButton = () => {
-    // if (selectedEntry && bookmarked.includes(selectedEntry)) {
+
     return (
       <button
         onClick={() => {
@@ -80,7 +83,7 @@ const Bookmarks = () => {
         } rounded-full`}
       >
         <MdBookmarks style={{ width: 12, height: 12 }} />
-        <p className="ml-1 text-xs font-medium">Bookmark</p>
+        <p className="ml-1 text-xs font-medium">{t("bookmark")}</p>
       </button>
     )
   }
@@ -129,7 +132,7 @@ const Bookmarks = () => {
               <div className="flex h-full gap-2 flex-col justify-center items-center text-center">
                 <MdBookmarks style={{ color: "#666666" }} />
                 <p className="max-w-28 text-sm text-[#666666]">
-                  No bookmarks added yet
+                  {t("noBookmarks")}
                 </p>
               </div>
             )}
