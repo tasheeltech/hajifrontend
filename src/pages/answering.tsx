@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react"
 import Map from "../components/map/map"
 import { MdBookmarks } from "react-icons/md"
+import { useTranslation } from "react-i18next"
 
 interface Props {
   question: string
@@ -31,6 +32,8 @@ const Answer: React.FC<Props> = ({
 }) => {
   const [bookmark, setBookmark] = useState(false)
   const [firstClick, setFirstClick] = useState(false)
+
+  const { t } = useTranslation()
 
   const getEntriesFromLocalStorage = () => {
     const allEntries = localStorage.getItem("bookmarked")
@@ -85,7 +88,7 @@ const Answer: React.FC<Props> = ({
     <div className="flex flex-col justify-between h-full">
       <div className={`flex flex-col gap-5  pt-3 ${!answerWithMap && "px-6"}`}>
         <div className={`${answerWithMap && "px-6"}`}>
-          <p className="text-[#666666] text-sm font-medium">
+          <p className="text-[#8a8a8a] font-medium">
             {answerWithMap ? "Here are your results" : question}
           </p>
           <div className="mt-2 flex">
@@ -99,7 +102,7 @@ const Answer: React.FC<Props> = ({
               } rounded-full`}
             >
               <MdBookmarks style={{ width: 12, height: 12 }} />
-              <p className="ml-1 text-xs font-medium">Bookmark</p>
+              <p className="ml-1 text-xs font-medium">{t("bookmark")}</p>
             </button>
           </div>
         </div>
@@ -132,7 +135,7 @@ const Answer: React.FC<Props> = ({
         >
           <div className="flex items-center gap-1">
             <img src={"/icons/chatIcon.svg"} alt="" width={20} height={20} />
-            <div className="font-bold">Chat</div>
+            <div className="font-bold">{t("chat")}</div>
           </div>
         </button>
 
@@ -142,7 +145,7 @@ const Answer: React.FC<Props> = ({
         >
           <div className="flex items-center gap-1">
             <img src={"/icons/micIcon.svg"} alt="" width={20} height={20} />
-            <div className="font-bold">Record</div>
+            <div className="font-bold">{t("record")}</div>
           </div>
         </button>
       </div>

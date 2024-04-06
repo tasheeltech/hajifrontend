@@ -8,10 +8,11 @@ import Timer from "../components/timer/timer"
 import Search from "../components/search/search"
 import { ImageContext } from "../components/map/context"
 import Emergency from "../components/emergency/emergency"
-import { useNavigate } from "react-router-dom"
-// import { useLoaderData } from "react-router-dom"
-// import { useUserState } from "../helper/userStateHelper"
-// import { DefaultLoader } from "../loaders/defaultLoader"
+import { useLoaderData, useNavigate } from "react-router-dom"
+import { useTranslation } from "react-i18next"
+import { useUserState } from "../helper/userStateHelper"
+import { DefaultLoader } from "../loaders/defaultLoader"
+import i18n from "../i18n"
 
 interface Intent {
   type: string
@@ -41,10 +42,21 @@ export default function HomePage() {
   const [answerWithMap, setAnswerwithMap] = useState(false)
   const formData = new FormData()
 
+  const { t } = useTranslation()
+
   const navigate = useNavigate()
 
-  // const loadedData = useLoaderData() as DefaultLoader
-  // const { isoLanguage } = useUserState(loadedData)
+  const loadedData = useLoaderData() as DefaultLoader
+  const { isoLanguage } = useUserState(loadedData)
+
+  useEffect(() => {
+    i18n.changeLanguage(isoLanguage ? isoLanguage.iso : navigator.language)
+    console.log(navigator.language)
+
+    console.log(isoLanguage)
+    console.log(i18n.dir())
+    document.body.dir = i18n.dir()
+  }, [])
 
   useEffect(() => {
     if (question !== "" && answer !== "") {
@@ -206,11 +218,11 @@ export default function HomePage() {
         <div className="flex flex-col justify-between h-full">
           <section className="flex flex-col gap-5 p-6 border-b">
             <p className="font-semibold text-lg text-center">
-              Assalamualaikum Ya {name}! 😊️
+              {t("welcome")} {name} 😊️
             </p>
             <div className="flex flex-col gap-3">
               <div className="flex gap-4 justify-between px-5 py-4 rounded-[36px] border">
-                <p className="text-sm">Where's nearest toilet for women?</p>
+                <p className="text-sm">{t("question1")}</p>
                 <img
                   className="active:scale-150"
                   src={"/icons/goToIcon.svg"}
@@ -220,7 +232,7 @@ export default function HomePage() {
                 />
               </div>
               <div className="flex gap-4 justify-between px-5 py-4 rounded-[36px] border">
-                <p className="text-sm">where is muzdalifa? </p>
+                <p className="text-sm">{t("question2")}</p>
                 <img
                   className="active:scale-150"
                   src={"/icons/goToIcon.svg"}
@@ -230,9 +242,7 @@ export default function HomePage() {
                 />
               </div>
               <div className="flex gap-4 justify-between px-5 py-4 rounded-[36px] border">
-                <p className="text-sm">
-                  Translate my question in arabic to talk to a local.{" "}
-                </p>
+                <p className="text-sm">{t("question3")}</p>
                 <img
                   className="active:scale-150"
                   src={"/icons/goToIcon.svg"}
@@ -293,10 +303,8 @@ export default function HomePage() {
                   width={100}
                   height={100}
                 />
-                <p className="font-light italic text-sm text-center">
-                  To stop
-                  <br />
-                  recording press the button....
+                <p className="font-light italic text-sm text-center max-w-40">
+                  {t("stopRecord")}
                 </p>
               </div>
             </div>

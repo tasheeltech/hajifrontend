@@ -22,53 +22,9 @@ import RootLayout from "./components/rootLayout/rootLayout"
 import Bookmarks from "./pages/bookmarks"
 import { I18nextProvider } from "react-i18next"
 import i18n from "./i18n"
+import Language from "./pages/language"
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement)
-
-// const router = createBrowserRouter([
-//   {
-//     path: "/",
-//     element: <OnBoard />,
-//     errorElement: <ErrorPage />,
-//     loader: defaultLoader,
-//   },
-//   {
-//     path: "/anotherPage",
-//     element: <AnotherPage />,
-//     errorElement: <ErrorPage />,
-//     loader: defaultLoader,
-//   },
-//   {
-//     path: "/testing",
-//     element: <Testing />,
-//     errorElement: <ErrorPage />,
-//     loader: defaultLoader,
-//   },
-//   {
-//     path: "/homepage",
-//     element: <TestPage />,
-//     errorElement: <ErrorPage />,
-//     loader: defaultLoader,
-//   },
-//   {
-//     path: "/tawaf",
-//     element: <TawafCalculator />,
-//     errorElement: <ErrorPage />,
-//     loader: defaultLoader,
-//   },
-//   {
-//     path: "/saii",
-//     element: <SaiiCalculator />,
-//     errorElement: <ErrorPage />,
-//     loader: defaultLoader,
-//   },
-//   {
-//     path: "/emergency",
-//     element: <EmergencyPage />,
-//     errorElement: <ErrorPage />,
-//     loader: defaultLoader,
-//   },
-// ])
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -115,6 +71,12 @@ const router = createBrowserRouter(
         loader={defaultLoader}
       />
       <Route
+        path="/language"
+        element={<Language />}
+        errorElement={<ErrorPage />}
+        loader={defaultLoader}
+      />
+      <Route
         path="/anotherPage"
         element={<AnotherPage />}
         errorElement={<ErrorPage />}
@@ -133,7 +95,9 @@ const router = createBrowserRouter(
 root.render(
   <React.StrictMode>
     <I18nextProvider i18n={i18n}>
-      <RouterProvider router={router} />
+      <React.Suspense fallback={"Loading..."}>
+        <RouterProvider router={router} />
+      </React.Suspense>
     </I18nextProvider>
   </React.StrictMode>
 )

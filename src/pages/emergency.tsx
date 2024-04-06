@@ -1,9 +1,12 @@
 import React from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { Badge } from "../ui/badge"
+import { useTranslation } from "react-i18next"
 
 function EmergencyPage() {
   const navigate = useNavigate()
+
+  const { t } = useTranslation()
 
   return (
     <div className="absolute left-0 top-0 h-dvh p-8 w-full flex justify-center items-center z-50 bg-white">
@@ -22,7 +25,9 @@ function EmergencyPage() {
             className="flex items-center justify-center gap-3 py-3 px-6 border-[#2BCE98] border-2 rounded-3xl"
           >
             <img src="/icons/call.svg" alt="" className="w-7" />
-            <p className="text-2xl font-medium text-[#2BCE98]">AMBULANCE</p>
+            <p className="text-2xl font-medium text-[#2BCE98]">
+              {t("ambulance")}
+            </p>
           </Badge>
         </Link>
         <Link to={`tel:998`}>
@@ -31,7 +36,7 @@ function EmergencyPage() {
             className="flex items-center justify-center gap-3 py-3 px-6 border-[#2BCE98] border-2 rounded-3xl"
           >
             <img src="/icons/call.svg" alt="" className="w-7" />
-            <p className="text-2xl font-medium text-[#2BCE98]">FIRE</p>
+            <p className="text-2xl font-medium text-[#2BCE98]">{t("fire")}</p>
           </Badge>
         </Link>
 
@@ -41,7 +46,7 @@ function EmergencyPage() {
             className="flex items-center justify-center gap-3 py-3 px-6 border-[#2BCE98] border-2 rounded-3xl"
           >
             <img src="/icons/call.svg" alt="" className="w-7" />
-            <p className="text-2xl font-medium text-[#2BCE98]">POLICE</p>
+            <p className="text-2xl font-medium text-[#2BCE98]">{t("police")}</p>
           </Badge>
         </Link>
       </div>

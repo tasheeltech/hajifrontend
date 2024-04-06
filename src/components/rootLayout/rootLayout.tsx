@@ -1,24 +1,30 @@
 import React, { useEffect, useRef, useState } from "react"
 import { Link, Outlet, useLoaderData, useLocation } from "react-router-dom"
 import Header from "../header/header"
-// import { DefaultLoader } from "../../../src/loaders/defaultLoader"
-// import { useUserState } from "../../../src/helper/userStateHelper"
+import { useTranslation } from "react-i18next"
+import { LuChevronRightCircle } from "react-icons/lu"
 
+import { IconType } from "react-icons"
+import { ImHome } from "react-icons/im"
+import { FaKaaba, FaSignOutAlt } from "react-icons/fa"
+import { PiMountainsFill } from "react-icons/pi"
 
+import { MdBookmarks, MdEmergencyShare, MdGTranslate } from "react-icons/md"
 
 interface MyObject {
   name: string
-  icon: string
+  icon: IconType
   link: string
 }
 
 const data: MyObject[] = [
-  { name: "Home", icon: "/icons/home.svg", link: "/homepage" },
-  { name: "Tawaf Calculator", icon: "/icons/tawaf.svg", link: "/tawaf" },
-  { name: "Saii Calculator", icon: "/icons/saii.svg", link: "/saii" },
-  { name: "Bookmarks", icon: "/icons/bookmarks.svg", link: "/bookmarks" },
-  { name: "Emergency", icon: "/icons/emergency.svg", link: "/emergency" },
-  { name: "Log out", icon: "/icons/logOut.svg", link: "/" },
+  { name: "home", icon: ImHome, link: "/homepage" },
+  { name: "tawafCalc", icon: FaKaaba, link: "/tawaf" },
+  { name: "saiiCalc", icon: PiMountainsFill, link: "/saii" },
+  { name: "bookmarks", icon: MdBookmarks, link: "/bookmarks" },
+  { name: "emergency", icon: MdEmergencyShare, link: "/emergency" },
+  { name: "language", icon: MdGTranslate, link: "/language" },
+  { name: "logOut", icon: FaSignOutAlt, link: "/" },
 ]
 
 function RootLayout() {
@@ -28,6 +34,8 @@ function RootLayout() {
   const [name, setName] = useState("")
 
   const location = useLocation()
+
+  const { t } = useTranslation()
 
   const menuRef = useRef<HTMLDivElement>(null)
 
@@ -81,40 +89,45 @@ function RootLayout() {
           <div className="flex flex-col justify-between h-dvh">
             <div>
               <div className="w-full h-16 px-6 py-12 flex justify-between items-center">
-                <button onClick={toggleMenu}>
-                  <img src="/icons/close.svg" alt="" width={20} height={20} />
-                </button>
+                <div></div>
                 <p className="font-semibold text-lg">
                   {name ? name : "Welcome"}
                 </p>
-                <div></div>
+                <button onClick={toggleMenu}>
+                  <LuChevronRightCircle size={24} />
+                </button>
               </div>
               <div className="px-5">
                 <ul className=" flex flex-col gap-2">
-                  {data.map((obj, index) => (
-                    <li key={index}>
-                      <Link
-                        to={obj.link}
-                        onClick={() => {
-                          if (obj.link === "/") {
-                            localStorage.clear()
-                          }
-                          setSelected(obj.link)
-                          setShowMenu(false)
-                        }}
-                      >
-                        <div
-                          className={`px-5 py-4 rounded-lg font-semibold
+                  {data.map((obj, index) => {
+                    const Icon = data[index].icon
+
+                    return (
+                      <li key={index}>
+                        <Link
+                          to={obj.link}
+                          onClick={() => {
+                            if (obj.link === "/") {
+                              localStorage.clear()
+                            }
+                            setSelected(obj.link)
+                            setShowMenu(false)
+                          }}
+                        >
+                          <div
+                            className={`flex gap-2 items-center px-5 py-4 rounded-lg font-semibold
                          ${selected === obj.link && "bg-[#e9fbf5]"}
                         `}
-                        >
-                          {/* <img src={obj.icon} alt="" /> */}
-
-                          <p className="ml-2 font-medium">{obj.name}</p>
-                        </div>
-                      </Link>
-                    </li>
-                  ))}
+                          >
+                            <Icon />
+                            <p className="ml-2 font-medium">
+                              {t(`${obj.name}`)}
+                            </p>
+                          </div>
+                        </Link>
+                      </li>
+                    )
+                  })}
                 </ul>
               </div>
             </div>

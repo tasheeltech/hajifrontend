@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import { useTranslation } from "react-i18next"
 import { useNavigate } from "react-router-dom"
 
 function TawafCalculator() {
@@ -6,6 +7,8 @@ function TawafCalculator() {
   const [completed, setCompleted] = useState(false)
 
   const navigate = useNavigate()
+
+  const { t } = useTranslation()
 
   useEffect(() => {
     if (counter === 7) {
@@ -36,13 +39,13 @@ function TawafCalculator() {
           <div></div>
           <div className="flex flex-col justify-center">
             <p className="text-2xl font-medium text-[#2bce98] mb-4">
-              Tawaf Completed
+              {t("tawafCompleted")}
             </p>
             <button
               className="bg-[#2bce98] rounded-lg p-3 font-medium"
               onClick={handleNext}
             >
-              Go to Saii Calculator
+              {t("goToSaii")}
             </button>
           </div>
           <div></div>
@@ -50,16 +53,12 @@ function TawafCalculator() {
       ) : (
         <>
           <div className="text-center flex flex-col gap-3 mt-6">
-            <h1 className="text-2xl font-semibold ">Tawaf Calculator</h1>
+            <h1 className="text-2xl font-semibold ">{t("tawafCalc")}</h1>
             <div>
-              <div>
-                Press <span className="font-bold text-lg">"+"</span> when you
-                have completed 1 circle
-              </div>
-              <div className="mt-1">
-                Press <span className="font-bold text-lg">"-"</span> if you have
-                accidentally pressed{" "}
-                <span className="font-bold text-lg">"+"</span>
+              <div className="text-sm">{t("increment")}</div>
+              <div className="mt-1 text-sm">
+                {t("decrement")}
+           
               </div>
             </div>
           </div>
