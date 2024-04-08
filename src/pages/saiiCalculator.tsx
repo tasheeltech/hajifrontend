@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from "react"
 import { useTranslation } from "react-i18next"
 import { ImArrowRight } from "react-icons/im"
+import "../components/counter/counter.css"
+import { FaPlus, FaMinus } from "react-icons/fa6"
 
 function SaiiCalculator() {
   const [counter, setCounter] = useState(0)
   const [completed, setCompleted] = useState(false)
   const [right, setRight] = useState(false)
   const [left, setLeft] = useState(false)
+  const [animated, setAnimated] = useState(false)
+  const [decDisable, setDecDisable] = useState(true)
 
   const { t } = useTranslation()
 
@@ -19,24 +23,31 @@ function SaiiCalculator() {
 
     if (counter % 2 === 0) {
       setRight(true)
-
     } else {
       setLeft(true)
-
     }
   }, [counter])
 
   const handleIncreament = () => {
     if (counter < 7) {
-
       setCounter((prevCounter) => prevCounter + 1)
+      setAnimated(true)
+      setTimeout(() => {
+        setAnimated(false)
+      }, 150)
     }
   }
 
   const handleDecreament = () => {
     if (counter > 0) {
-    
       setCounter((prevCounter) => prevCounter - 1)
+      setAnimated(true)
+      setTimeout(() => {
+        setAnimated(false)
+      }, 150)
+      setDecDisable(false)
+    } else {
+      setDecDisable(true)
     }
   }
 
@@ -57,19 +68,14 @@ function SaiiCalculator() {
           <div className="text-center flex flex-col gap-3 mt-6">
             <h1 className="text-2xl font-semibold ">{t("saiiCalc")}</h1>
             <div>
-              <div className="text-sm">
-                {t("increment")}
-
-              </div>
-              <div className="mt-1 text-sm">
-                {t("decrement")}
-             
-              </div>
+              <div className="text-sm">{t("increment")}</div>
+              <div className="mt-1 text-sm">{t("decrement")}</div>
             </div>
           </div>
           <div className="flex items-center gap-5 font-semibold text-xl">
             <p>{t("safa")}</p>
             <ImArrowRight
+              color="#2bce98"
               style={{
                 transform: right
                   ? "rotate(0deg)"
@@ -79,27 +85,27 @@ function SaiiCalculator() {
               }}
             />
             <p>{t("marwa")}</p>
-
-            {/* <p>{safaMarwa ? "Safa" : "Marwa"}</p>
-            <ImArrowRight />
-            <p>{safaMarwa ? "Marwa" : "Safa"}</p> */}
           </div>
           <div className="flex items-center gap-10">
-            <div className="text-[250px] w-32 leading-none flex justify-center items-center">
-              <div>{counter}</div>
+            <div className="text-[250px]   w-40 flex items-center justify-center ">
+              <p className={`number leading-none ${animated && "animated"}`}>
+                {counter}
+              </p>
             </div>
             <div className="flex flex-col items-center gap-8">
               <button
                 onClick={handleIncreament}
-                className="border-2 rounded-full aspect-square"
+                className="border-4 border-[#a1d8c6] active:bg-[#a1d8c6] p-3 rounded-full aspect-square"
               >
-                <img className="w-16" src="/icons/plus.svg" alt="" />
+                <FaPlus size={28} color="#1e1e1e" />
               </button>
               <button
                 onClick={handleDecreament}
-                className="border-2 rounded-full aspect-square"
+                className={`border-4 p-3 border-[#da9e9e] ${
+                  !decDisable && "active:bg-[#da9e9e]"
+                } rounded-full aspect-square`}
               >
-                <img className="w-16" src="/icons/minus.svg" alt="" />
+                <FaMinus size={28} color="#1e1e1e" />
               </button>
             </div>
           </div>
