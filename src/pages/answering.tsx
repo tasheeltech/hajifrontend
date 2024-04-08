@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react"
 import Map from "../components/map/map"
 import { MdBookmarks } from "react-icons/md"
 import { useTranslation } from "react-i18next"
+import { HiChatBubbleLeftRight, HiMiniMicrophone } from "react-icons/hi2"
 
 interface Props {
   question: string
@@ -134,7 +135,9 @@ const Answer: React.FC<Props> = ({
           className="bg-[#2BCE986B] shadow-[0_4px_4px_-1px_rgba(0,0,0,0.5)] rounded-[30px] px-4 py-3 flex items-center justify-center h-12 w-1/2 max-w-40 active:opacity-50"
         >
           <div className="flex items-center gap-1">
-            <img src={"/icons/chatIcon.svg"} alt="" width={20} height={20} />
+            {/* <img src={"/icons/chatIcon.svg"} alt="" width={20} height={20} /> */}
+            <HiChatBubbleLeftRight size={18} />
+
             <div className="font-bold">{t("chat")}</div>
           </div>
         </button>
@@ -144,7 +147,8 @@ const Answer: React.FC<Props> = ({
           className="bg-[#2BCE986B] shadow-[0_4px_4px_-1px_rgba(0,0,0,0.5)] rounded-[30px] px-4 py-3 flex items-center justify-center h-12 w-1/2 max-w-40 active:opacity-50"
         >
           <div className="flex items-center gap-1">
-            <img src={"/icons/micIcon.svg"} alt="" width={20} height={20} />
+            {/* <img src={"/icons/micIcon.svg"} alt="" width={20} height={20} /> */}
+            <HiMiniMicrophone size={18} />
             <div className="font-bold">{t("record")}</div>
           </div>
         </button>
