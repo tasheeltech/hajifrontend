@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react"
-import { useLocation, useNavigate } from "react-router-dom"
-// import { MdHome } from "react-icons/md"
+import { useNavigate } from "react-router-dom"
 import { ImHome } from "react-icons/im"
+import { GiHamburgerMenu } from "react-icons/gi"
 
 // import { MdOutlineArrowBack } from "react-icons/md"
 
@@ -26,14 +25,13 @@ export default function Header({ toggle }: Props) {
     // }
   }
 
-
   return (
     <div className="flex gap-5 items-center justify-between py-4 px-6">
       <button onClick={goToHome}>
         {/* {backBtn ? (
           <MdOutlineArrowBack style={{ width: 24, height: 24 }} />
         ) : ( */}
-        <ImHome style={{ width: 24, height: 24 }} />
+        <ImHome color="#666362" size={24} />
         {/* )} */}
       </button>
 
@@ -48,7 +46,8 @@ export default function Header({ toggle }: Props) {
         </div>
       </div>
       <button onClick={toggle}>
-        <img src={"/icons/menu.svg"} alt=" " width={24} height={24} />{" "}
+        <GiHamburgerMenu color="#666362" size={24} />
+        {/* <img src={"/icons/menu.svg"} alt=" " width={24} height={24} />{" "} */}
       </button>
     </div>
   )

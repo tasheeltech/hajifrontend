@@ -13,6 +13,8 @@ import { useTranslation } from "react-i18next"
 import { useUserState } from "../helper/userStateHelper"
 import { DefaultLoader } from "../loaders/defaultLoader"
 import i18n from "../i18n"
+import { RxArrowTopRight } from "react-icons/rx"
+
 
 interface Intent {
   type: string
@@ -221,35 +223,23 @@ export default function HomePage() {
               {t("welcome")} {name} 😊️
             </p>
             <div className="flex flex-col gap-3">
-              <div className="flex gap-4 justify-between px-5 py-4 rounded-[36px] border">
+              <div className="flex gap-4 items-center justify-between px-5 py-4 rounded-[36px] border">
                 <p className="text-sm">{t("question1")}</p>
-                <img
-                  className="active:scale-150"
-                  src={"/icons/goToIcon.svg"}
-                  alt=" "
-                  width={8}
-                  height={8}
-                />
+                <div>
+                  <RxArrowTopRight size={14} />
+                </div>
               </div>
-              <div className="flex gap-4 justify-between px-5 py-4 rounded-[36px] border">
+              <div className="flex gap-4 items-center justify-between px-5 py-4 rounded-[36px] border">
                 <p className="text-sm">{t("question2")}</p>
-                <img
-                  className="active:scale-150"
-                  src={"/icons/goToIcon.svg"}
-                  alt=" "
-                  width={8}
-                  height={8}
-                />
+                <div>
+                  <RxArrowTopRight size={14} />
+                </div>
               </div>
-              <div className="flex gap-4 justify-between px-5 py-4 rounded-[36px] border">
+              <div className="flex gap-4 items-center justify-between px-5 py-4 rounded-[36px] border">
                 <p className="text-sm">{t("question3")}</p>
-                <img
-                  className="active:scale-150"
-                  src={"/icons/goToIcon.svg"}
-                  alt=" "
-                  width={8}
-                  height={8}
-                />
+                <div>
+                  <RxArrowTopRight size={14} />
+                </div>
               </div>
             </div>
           </section>

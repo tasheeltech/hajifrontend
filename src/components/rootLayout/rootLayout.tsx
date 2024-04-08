@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react"
-import { Link, Outlet, useLoaderData, useLocation } from "react-router-dom"
+import { Link, Outlet, useLocation } from "react-router-dom"
 import Header from "../header/header"
 import { useTranslation } from "react-i18next"
 import { LuChevronRightCircle } from "react-icons/lu"

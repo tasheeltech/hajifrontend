@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { useTranslation } from "react-i18next"
+import { IoIosSend } from "react-icons/io"
 
 interface Props {
   handleClick: (question: string) => void
@@ -18,12 +19,18 @@ const Search: React.FC<Props> = ({ handleClick, click }) => {
         onChange={(e) => setQuestion(e.target.value)}
         type="text"
         className="w-full max-h-12 border border-[#373535] rounded-[30px] px-6 py-4 focus:outline-none focus:ring focus:ring-[#2BCE986B] focus:border-[#888888]"
-
         placeholder={t("questionPH")}
       />
       {question !== "" ? (
-        <div>
-          <img
+        <button
+          className="bg-[#2BCE98] p-[10px] rounded-full flex items-center justify-center"
+          onClick={() => {
+            handleClick(question)
+            click()
+          }}
+        >
+          <IoIosSend size={28} color="#ffffff" />
+          {/* <img
             onClick={() => {
               handleClick(question)
               click()
@@ -33,18 +40,19 @@ const Search: React.FC<Props> = ({ handleClick, click }) => {
             alt=""
             width={60}
             height={60}
-          />
-        </div>
+          /> */}
+        </button>
       ) : (
-        <div>
-          <img
+        <button className="bg-[#2BCE98] p-[10px] rounded-full opacity-50 flex items-center justify-center">
+          <IoIosSend size={28} color="#ffffff" />
+          {/* <img
             className="opacity-50"
             src={"/button/sendBtn.svg"}
             alt=""
             width={60}
             height={60}
-          />
-        </div>
+          /> */}
+        </button>
       )}
     </div>
   )

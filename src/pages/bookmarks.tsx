@@ -69,9 +69,7 @@ const Bookmarks = () => {
     }
   }, [bookmark])
 
-
   const renderBookmarkButton = () => {
-
     return (
       <button
         onClick={() => {
@@ -107,7 +105,7 @@ const Bookmarks = () => {
                     <div className="flex items-center justify-between gap-4 border-b pl-4 py-3">
                       <div>
                         <div className=" font-medium">{entry.question}</div>
-                        <div className="line-clamp-1 text-[#666666]">
+                        <div className="line-clamp-1 text-[#666666] text-sm">
                           {entry.answer}
                         </div>
                       </div>
