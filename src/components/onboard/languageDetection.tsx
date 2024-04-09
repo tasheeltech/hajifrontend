@@ -16,7 +16,6 @@
 //   onNextStep: () => void;
 // }
 
-
 // const capitaliseFirstLetter = (str: string) =>
 //   str.charAt(0).toUpperCase() + str.slice(1);
 
@@ -267,85 +266,77 @@
 //   );
 // };
 
-
 // export default LanguageDetection;
 
-
-import React from "react";
-import { useState } from "react";
-import CountriesData from "../../components/languages/langlist";
-import { useLoaderData, useNavigate } from "react-router-dom";
-import { useUserState } from "../../helper/userStateHelper";
-import { DefaultLoader } from "../../loaders/defaultLoader";
+import React from "react"
+import CountriesData from "../../components/languages/langlist"
+import { useLoaderData } from "react-router-dom"
+import { useUserState } from "../../helper/userStateHelper"
+import { DefaultLoader } from "../../loaders/defaultLoader"
+import i18n from "../../../src/i18n"
 
 interface Country {
-  language: string;
-  flag: string;
+  language: string
+  flag: string
 }
 interface LanguageDetectionProps {
-  onNextStep: () => void;
+  onNextStep: () => void
 }
 
 const LanguageDetection: React.FC<LanguageDetectionProps> = ({
   onNextStep,
 }) => {
   // Load user state
-  const loadedData = useLoaderData() as DefaultLoader;
-  const {
-    setIsoLanguage,
-  } = useUserState(loadedData);
-  const navigate = useNavigate();
+  const loadedData = useLoaderData() as DefaultLoader
+  const { setIsoLanguage } = useUserState(loadedData)
+  // const navigate = useNavigate()
 
-
-  const [listLang, setListLang] = useState(false);
-
+  // const [listLang, setListLang] = useState(false)
 
   const handleCountrySelection = (
     language: string
   ): React.MouseEventHandler<HTMLDivElement> => {
     return () => {
-      console.log(language);
+      console.log(language)
       const country = CountriesData.countries.find(
         (country) => country.language === language
-      );
-      setListLang(true);
-      console.log(country);
+      )
+      // setListLang(true)
+      console.log(country)
 
       if (country) {
-        //   setSearch(json.payload.name);
-        setIsoLanguage(country);
-        console.log(country);
+        setIsoLanguage(country)
+        i18n.changeLanguage(country.iso ? country.iso : navigator.language)
+        console.log(country)
       } else {
-        console.log("Country not found for language:", language);
+        console.log("Country not found for language:", language)
       }
-    };
-  };
+    }
+  }
 
   return (
     <main className="overflow-scroll no-scrollbar  h-dvh">
-        <div className="flex flex-col items-center">
-          <h2 className="text-lg my-8 font-bold font-urbanist">
-            Please select from the list of languages
-          </h2>
-          <div>
-            {CountriesData.countries.map((country: Country, index: number) => (
-              <button onClick={onNextStep} key={index} className="flex">
-                <div
-                  key={index}
-                  className="flex min-w-72 items-center gap-6 py-2 px-12 border-2 hover:bg-slate-200 cursor-pointer"
-                  onClick={handleCountrySelection(country.language)}
-                >
-                  <span className="text-5xl"> {country.flag}</span>
-                  <span className="text-lg "> {country.language}</span>
-                </div>
-              </button>
-            ))}
-          </div>
+      <div className="flex flex-col items-center">
+        <h2 className="text-lg my-8 font-bold font-urbanist">
+          Please select from the list of languages
+        </h2>
+        <div>
+          {CountriesData.countries.map((country: Country, index: number) => (
+            <button onClick={onNextStep} key={index} className="flex">
+              <div
+                key={index}
+                className="flex min-w-72 items-center gap-6 py-2 px-12 border-2 hover:bg-slate-200 cursor-pointer"
+                onClick={handleCountrySelection(country.language)}
+              >
+                <span className="text-5xl"> {country.flag}</span>
+                <span className="text-lg "> {country.language}</span>
+              </div>
+            </button>
+          ))}
         </div>
+      </div>
     </main>
-  );
-};
+  )
+}
 
-export default LanguageDetection;
-
-
+export default LanguageDetection

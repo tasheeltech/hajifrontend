@@ -15,7 +15,6 @@ import { DefaultLoader } from "../loaders/defaultLoader"
 import i18n from "../i18n"
 import { RxArrowTopRight } from "react-icons/rx"
 
-
 interface Intent {
   type: string
   payload: {
@@ -53,10 +52,9 @@ export default function HomePage() {
 
   useEffect(() => {
     i18n.changeLanguage(isoLanguage ? isoLanguage.iso : navigator.language)
-    console.log(navigator.language)
-
-    console.log(isoLanguage)
-    console.log(i18n.dir())
+    // console.log(navigator.language)
+    // console.log(isoLanguage)
+    // console.log(i18n.dir())
     document.body.dir = i18n.dir()
   }, [])
 
