@@ -19,6 +19,7 @@
   "bookmarks": "Bokmärken",
   "emergency": "Nödsituation",
   "language": "Språkinställningar",
+  "location": "Platsinställningar",
   "selectLanguage": "Vänligen välj från listan över språk",
   "logOut": "Logga ut",
   "stopRecord": "För att stoppa inspelningen, tryck på knappen....",

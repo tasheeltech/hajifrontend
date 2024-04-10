@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { DefaultLoader } from "../loaders/defaultLoader";
+import { useState } from "react"
+import { DefaultLoader } from "../loaders/defaultLoader"
 
 export enum Permission {
   DEFAULT = "DEFAULT",
@@ -12,7 +12,8 @@ export const keyNames = {
   LOCATION_PERMISSION: "LOCATION_PERMISSION",
   ISO_LANUGUAGE: "ISO_LANUGUAGE",
   NAME_OF_USER: "NAME_OF_USER",
-};
+  USER_LOCATION: "USER_LOCATION",
+}
 
 export enum UserScreenOnboarding {
   PERMISSION_SCREEN,
@@ -22,42 +23,57 @@ export enum UserScreenOnboarding {
 }
 
 export interface Country {
-  language: string;
-  iso: string;
-  flag: string;
+  language: string
+  iso: string
+  flag: string
+}
+
+export interface Location {
+  lat: number
+  lng: number
 }
 
 export function useUserState(defaultLoader: DefaultLoader) {
   const [micPermission, setMicPermission] = useState<Permission>(
     defaultLoader.micPermission
-  );
+  )
   const [locationPermission, setLocationPermission] = useState<Permission>(
     defaultLoader.locationPermission
-  );
+  )
   const [isoLanguage, setIsoLanguage] = useState<Country | null>(
     defaultLoader.isoLanguage
-  );
-  const [name, setName] = useState<string | null>(defaultLoader.name);
+  )
+
+  const [location, setLocation] = useState<Location | null>(
+    defaultLoader.location
+  )
+
+  const [name, setName] = useState<string | null>(defaultLoader.name)
 
   const setMicPermissionState = (micPermission: Permission) => {
-    setMicPermission(micPermission);
-    localStorage.setItem(keyNames.MIC_PERMISSION, micPermission);
-  };
+    setMicPermission(micPermission)
+    localStorage.setItem(keyNames.MIC_PERMISSION, micPermission)
+  }
 
   const setLocationPermissionState = (locationPermission: Permission) => {
-    setLocationPermission(locationPermission);
-    localStorage.setItem(keyNames.LOCATION_PERMISSION, locationPermission);
-  };
+    setLocationPermission(locationPermission)
+    localStorage.setItem(keyNames.LOCATION_PERMISSION, locationPermission)
+  }
 
   const setIsoLanguageState = (isoLanguage: Country) => {
-    setIsoLanguage(isoLanguage);
-    localStorage.setItem(keyNames.ISO_LANUGUAGE, JSON.stringify(isoLanguage));
-  };
+    setIsoLanguage(isoLanguage)
+    localStorage.setItem(keyNames.ISO_LANUGUAGE, JSON.stringify(isoLanguage))
+  }
+
+  const setLocationState = (location: Location) => {
+    setLocation(location)
+    localStorage.setItem(keyNames.USER_LOCATION, JSON.stringify(location))
+  }
 
   const setNameState = (name: string) => {
-    setName(name);
-    localStorage.setItem(keyNames.NAME_OF_USER, name);
-  };
+    setName(name)
+    localStorage.setItem(keyNames.NAME_OF_USER, name)
+  }
 
   const getUserScreen = (): UserScreenOnboarding => {
     return computeUserScreen(
@@ -65,8 +81,8 @@ export function useUserState(defaultLoader: DefaultLoader) {
       locationPermission,
       name,
       isoLanguage
-    );
-  };
+    )
+  }
 
   const computeUserScreen = (
     micPermission: Permission,
@@ -80,39 +96,41 @@ export function useUserState(defaultLoader: DefaultLoader) {
       name &&
       isoLanguage
     ) {
-      return UserScreenOnboarding.READY;
+      return UserScreenOnboarding.READY
     } else if (
       micPermission === Permission.DEFAULT ||
       locationPermission === Permission.DEFAULT
     ) {
-      return UserScreenOnboarding.PERMISSION_SCREEN;
+      return UserScreenOnboarding.PERMISSION_SCREEN
     } else if (
       micPermission === Permission.REJECTED &&
       locationPermission === Permission.REJECTED
     ) {
-      return UserScreenOnboarding.READY;
+      return UserScreenOnboarding.READY
     } else if (!isoLanguage) {
-      return UserScreenOnboarding.LANGUAGE_SCREEN;
+      return UserScreenOnboarding.LANGUAGE_SCREEN
     } else if (!name) {
-      return UserScreenOnboarding.NAME_SCREEN;
+      return UserScreenOnboarding.NAME_SCREEN
     }
 
     // By default put them on the first screen
-    return UserScreenOnboarding.PERMISSION_SCREEN;
-  };
+    return UserScreenOnboarding.PERMISSION_SCREEN
+  }
 
   return {
     micPermission,
     locationPermission,
     isoLanguage,
+    location,
     name,
     setMicPermission: setMicPermissionState,
     setLocationPermission: setLocationPermissionState,
     setIsoLanguage: setIsoLanguageState,
+    setLocation: setLocationState,
     setName: setNameState,
     getUserScreen,
     computeUserScreen,
-  };
+  }
 }
 
 // const { micPermission, locationPermission, isoLanguage, name, setMicPermission, setLocationPermission, setIsoLanguage, setName, getUserScreen, computeUserScreen } = useUserState(loadedData);

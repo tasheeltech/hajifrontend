@@ -8,8 +8,8 @@ import { IconType } from "react-icons"
 import { ImHome } from "react-icons/im"
 import { FaKaaba, FaSignOutAlt } from "react-icons/fa"
 import { PiMountainsFill } from "react-icons/pi"
-
 import { MdBookmarks, MdEmergencyShare, MdGTranslate } from "react-icons/md"
+import { FaLocationDot } from "react-icons/fa6"
 
 interface MyObject {
   name: string
@@ -24,6 +24,7 @@ const data: MyObject[] = [
   { name: "bookmarks", icon: MdBookmarks, link: "/bookmarks" },
   { name: "emergency", icon: MdEmergencyShare, link: "/emergency" },
   { name: "language", icon: MdGTranslate, link: "/language" },
+  { name: "location", icon: FaLocationDot, link: "/location" },
   { name: "logOut", icon: FaSignOutAlt, link: "/" },
 ]
 

@@ -23,6 +23,7 @@ import Bookmarks from "./pages/bookmarks"
 import { I18nextProvider } from "react-i18next"
 import i18n from "./i18n"
 import Language from "./pages/language"
+import Location from "./pages/location"
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement)
 
@@ -73,6 +74,12 @@ const router = createBrowserRouter(
       <Route
         path="/language"
         element={<Language />}
+        errorElement={<ErrorPage />}
+        loader={defaultLoader}
+      />
+      <Route
+        path="/location"
+        element={<Location />}
         errorElement={<ErrorPage />}
         loader={defaultLoader}
       />

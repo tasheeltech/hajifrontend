@@ -19,6 +19,7 @@
   "bookmarks": "Kirjanmerkit",
   "emergency": "Hätätilanne",
   "language": "Kieliasetukset",
+  "location": "Sijaintiasetukset",
   "selectLanguage": "Valitse kieli luettelosta",
   "logOut": "Kirjaudu ulos",
   "stopRecord": "Lopettaaksesi tallentamisen paina painiketta....",
