@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import { BiCurrentLocation } from "react-icons/bi"
 
 import { GoogleMap, MarkerF, useJsApiLoader } from "@react-google-maps/api"

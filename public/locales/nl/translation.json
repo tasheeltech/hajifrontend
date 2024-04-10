@@ -33,5 +33,7 @@
   "goToSaii": "Ga naar Saii Calculator",
   "saiiCompleted": "Saii Voltooid",
   "safa": "Safa",
-  "marwa": "Marwa"
+  "marwa": "Marwa",
+  "voiceDisabled": "Voice chat uitgeschakeld",
+  "noMic": "Sta Microfoon toestemming toe of Controleer uw microfoon"
 }

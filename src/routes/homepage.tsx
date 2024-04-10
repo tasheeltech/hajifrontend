@@ -14,6 +14,7 @@ import { useUserState } from "../helper/userStateHelper"
 import { DefaultLoader } from "../loaders/defaultLoader"
 import i18n from "../i18n"
 import { RxArrowTopRight } from "react-icons/rx"
+import { BsMicMuteFill } from "react-icons/bs"
 
 interface Intent {
   type: string
@@ -50,12 +51,53 @@ export default function HomePage() {
   const loadedData = useLoaderData() as DefaultLoader
   const { isoLanguage } = useUserState(loadedData)
 
+  const { doStart, startRecording, stopRecording } = useMic((blob: Blob) => {
+    sendRecording(blob)
+  })
+
+  const [microphonePermission, setMicrophonePermission] = useState<
+    string | null
+  >(null)
+
+  const requestMicrophonePermission = async () => {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true })
+      // Permission granted
+      setMicrophonePermission("granted")
+      doStart()
+      // Don't forget to stop the stream when you're done with it
+      stream.getTracks().forEach((track) => track.stop())
+    } catch (error) {
+      if (
+        error instanceof Error &&
+        (error.name === "NotAllowedError" ||
+          error.name === "PermissionDeniedError")
+      ) {
+        // Permission denied
+        setMicrophonePermission("denied")
+      } else {
+        // Handle other errors
+        console.error("Error accessing microphone:", error)
+        setMicrophonePermission("denied")
+      }
+    }
+  }
+
+  useEffect(() => {
+    // Check microphone permission periodically
+    const interval = setInterval(requestMicrophonePermission, 1000) // Check every second
+    return () => clearInterval(interval)
+  }, [])
+
   useEffect(() => {
     i18n.changeLanguage(isoLanguage ? isoLanguage.iso : navigator.language)
-    // console.log(navigator.language)
-    // console.log(isoLanguage)
-    // console.log(i18n.dir())
     document.body.dir = i18n.dir()
+    let uName: string
+    const userInfo = localStorage.getItem("userInfo")
+    if (userInfo) {
+      uName = JSON.parse(userInfo).name
+      setName(uName)
+    }
   }, [])
 
   useEffect(() => {
@@ -69,15 +111,6 @@ export default function HomePage() {
       }
     }
   }, [question, answer, tempQues])
-
-  useEffect(() => {
-    let uName: string
-    const userInfo = localStorage.getItem("userInfo")
-    if (userInfo) {
-      uName = JSON.parse(userInfo).name
-      setName(uName)
-    }
-  }, [])
 
   const handleSendClick = (chatStr: string) => {
     setHomepage(false)
@@ -120,10 +153,6 @@ export default function HomePage() {
 
     handleTextData(json.payload.text)
   }
-
-  const { startRecording, stopRecording } = useMic((blob: Blob) => {
-    sendRecording(blob)
-  })
 
   const handleTextData = async (input: string) => {
     setNativeQues(input)
@@ -242,17 +271,25 @@ export default function HomePage() {
             </div>
           </section>
           <div className="grid place-content-center my-10">
-            <img
-              onClick={() => {
-                handleStartRecord()
-                startRecording()
-              }}
-              className="active:opacity-50"
-              src={"/button/recordBtn.svg"}
-              alt=""
-              width={100}
-              height={100}
-            />
+            {microphonePermission === "granted" && (
+              <img
+                onClick={() => {
+                  handleStartRecord()
+                  startRecording()
+                }}
+                className="active:opacity-50"
+                src={"/button/recordBtn.svg"}
+                alt=""
+                width={100}
+                height={100}
+              />
+            )}
+            {microphonePermission === "denied" && (
+              <div className="flex flex-col gap-2 items-center ">
+                <BsMicMuteFill size={32} />
+                <div className="max-w-60 text-xs text-center">{t("noMic")}</div>
+              </div>
+            )}
           </div>
           <div className=" py-3 px-4 sticky bottom-0 left-0 w-full bg-white border-t-2">
             <Search handleClick={handleSendClick} click={handleStopRecord} />

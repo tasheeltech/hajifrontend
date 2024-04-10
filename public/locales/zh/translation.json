@@ -33,5 +33,7 @@
   "goToSaii": "前往赛计算器",
   "saiiCompleted": "完成赛",
   "safa": "萨法",
-  "marwa": "马尔瓦"
+  "marwa": "马尔瓦",
+  "voiceDisabled": "语音聊天已禁用",
+  "noMic": "允许麦克风权限或检查您的麦克风"
 }

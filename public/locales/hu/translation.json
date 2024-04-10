@@ -33,5 +33,7 @@
   "goToSaii": "Menj a Saii Számológéphez",
   "saiiCompleted": "Saii Befejezve",
   "safa": "Safa",
-  "marwa": "Marwa"
+  "marwa": "Marwa",
+  "voiceDisabled": "Hangchat letiltva",
+  "noMic": "Engedélyezze a mikrofonengedélyt, vagy ellenőrizze a mikrofonját"
 }

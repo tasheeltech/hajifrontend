@@ -33,5 +33,7 @@
   "goToSaii": "Minge Saii kalkulaatorisse",
   "saiiCompleted": "Saii Lõpetatud",
   "safa": "Safa",
-  "marwa": "Marwa"
+  "marwa": "Marwa",
+  "voiceDisabled": "Häälechat on keelatud",
+  "noMic": "Luba mikrofoni luba või kontrollige oma mikrofoni"
 }

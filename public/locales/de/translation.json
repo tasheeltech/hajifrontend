@@ -33,5 +33,7 @@
   "goToSaii": "Gehe zum Saii-Rechner",
   "saiiCompleted": "Saii Abgeschlossen",
   "safa": "Safa",
-  "marwa": "Marwa"
+  "marwa": "Marwa",
+  "voiceDisabled": "Sprachchat deaktiviert",
+  "noMic": "Mikrofonberechtigung zulassen oder Mikrofon überprüfen"
 }

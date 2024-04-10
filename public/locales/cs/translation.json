@@ -33,5 +33,7 @@
   "goToSaii": "Přejít na Saii Kalkulačku",
   "saiiCompleted": "Saii Dokončen",
   "safa": "Safa",
-  "marwa": "Marwa"
+  "marwa": "Marwa",
+  "voiceDisabled": "Hlasový chat zakázán",
+  "noMic": "Povolte oprávnění k mikrofonu nebo zkontrolujte svůj mikrofon"
 }

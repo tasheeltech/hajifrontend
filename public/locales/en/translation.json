@@ -33,5 +33,7 @@
   "goToSaii": "Go to Saii Calculator",
   "saiiCompleted": "Saii Completed",
   "safa": "Safa",
-  "marwa": "Marwa"
+  "marwa": "Marwa",
+  "voiceDisabled": "Voice chat disabled",
+  "noMic": "Allow Mic permission or Check your microphone"
 }
