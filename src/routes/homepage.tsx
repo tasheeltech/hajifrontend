@@ -346,6 +346,7 @@ export default function HomePage() {
             toHomepage={toHomepage}
             toListening={toListening}
             locations={mapLocations}
+            micPermission={microphonePermission}
           />
         </ImageContext.Provider>
       )}

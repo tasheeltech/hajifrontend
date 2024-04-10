@@ -13,6 +13,7 @@ interface Props {
   toHomepage: () => void
   toListening: () => void
   locations: any
+  micPermission: string | null
 }
 
 interface Entry {
@@ -30,6 +31,7 @@ const Answer: React.FC<Props> = ({
   toHomepage,
   toListening,
   locations,
+  micPermission,
 }) => {
   const [bookmark, setBookmark] = useState(false)
   const [firstClick, setFirstClick] = useState(false)
@@ -142,16 +144,18 @@ const Answer: React.FC<Props> = ({
           </div>
         </button>
 
-        <button
-          onClick={toListening}
-          className="bg-[#2BCE986B] shadow-[0_4px_4px_-1px_rgba(0,0,0,0.5)] rounded-[30px] px-4 py-3 flex items-center justify-center h-12 w-1/2 max-w-40 active:opacity-50"
-        >
-          <div className="flex items-center gap-1">
-            {/* <img src={"/icons/micIcon.svg"} alt="" width={20} height={20} /> */}
-            <HiMiniMicrophone size={18} />
-            <div className="font-bold">{t("record")}</div>
-          </div>
-        </button>
+        {micPermission === "granted" && (
+          <button
+            onClick={toListening}
+            className="bg-[#2BCE986B] shadow-[0_4px_4px_-1px_rgba(0,0,0,0.5)] rounded-[30px] px-4 py-3 flex items-center justify-center h-12 w-1/2 max-w-40 active:opacity-50"
+          >
+            <div className="flex items-center gap-1">
+              {/* <img src={"/icons/micIcon.svg"} alt="" width={20} height={20} /> */}
+              <HiMiniMicrophone size={18} />
+              <div className="font-bold">{t("record")}</div>
+            </div>
+          </button>
+        )}
       </div>
     </div>
   )
