@@ -33,5 +33,7 @@
   "goToSaii": "Ewch i Gyfrifiannell Saii",
   "saiiCompleted": "Saii Wedi'i gwblhau",
   "safa": "Safa",
-  "marwa": "Marwa"
+  "marwa": "Marwa",
+  "voiceDisabled": "Sgwrs lleisio analluogwyd",
+  "noMic": "Rheoli caniatâd Mic neu Gwiriwch eich meicroffon"
 }

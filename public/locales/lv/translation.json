@@ -33,5 +33,7 @@
   "goToSaii": "Doties uz Saii kalkulatoru",
   "saiiCompleted": "Saii Pabeigts",
   "safa": "Safa",
-  "marwa": "Marwa"
+  "marwa": "Marwa",
+  "voiceDisabled": "Balss tērzēšana ir atspējota",
+  "noMic": "Atļaujiet mikrofona atļauju vai pārbaudiet savu mikrofonu"
 }

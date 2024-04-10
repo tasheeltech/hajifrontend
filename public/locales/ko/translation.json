@@ -33,5 +33,7 @@
   "goToSaii": "Saii 계산기로 이동",
   "saiiCompleted": "사이 완료",
   "safa": "사파",
-  "marwa": "마르와"
+  "marwa": "마르와",
+  "voiceDisabled": "음성 채팅이 비활성화되었습니다",
+  "noMic": "마이크 권한을 허용하거나 마이크를 확인하십시오"
 }

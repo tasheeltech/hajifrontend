@@ -33,5 +33,7 @@
   "goToSaii": "Gå till Saii Kalkylatorn",
   "saiiCompleted": "Saii Slutförd",
   "safa": "Safa",
-  "marwa": "Marwa"
+  "marwa": "Marwa",
+  "voiceDisabled": "Röstchat inaktiverad",
+  "noMic": "Tillåt mikrofonbehörighet eller Kontrollera din mikrofon"
 }

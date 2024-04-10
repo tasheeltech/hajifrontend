@@ -1,6 +1,7 @@
-import { useNavigate } from "react-router-dom"
+import { useLocation, useNavigate } from "react-router-dom"
 import { ImHome } from "react-icons/im"
 import { GiHamburgerMenu } from "react-icons/gi"
+import { useEffect, useState } from "react"
 
 // import { MdOutlineArrowBack } from "react-icons/md"
 
@@ -9,9 +10,18 @@ interface Props {
 }
 
 export default function Header({ toggle }: Props) {
-  // const [backBtn, setBackBtn] = useState(false)
+  const [showHomeBtn, setShowHomeBtn] = useState(true)
 
   const navigate = useNavigate()
+
+  const location = useLocation()
+
+  useEffect(() => {
+    setShowHomeBtn(true)
+    if (location.pathname === "/homepage") {
+      setShowHomeBtn(false)
+    }
+  }, [location])
 
   // const location = useLocation()
 
@@ -19,21 +29,23 @@ export default function Header({ toggle }: Props) {
   // setSelected(location.pathname)
 
   const goToHome = () => {
-    // if (location.pathname === "/viewPage") {
     navigate("/homepage")
+    // if (location.pathname === "/viewPage") {
     // setBackBtn(true)
     // }
   }
 
   return (
     <div className="flex gap-5 items-center justify-between py-4 px-6">
-      <button onClick={goToHome}>
-        {/* {backBtn ? (
+      {showHomeBtn && (
+        <button onClick={goToHome}>
+          {/* {backBtn ? (
           <MdOutlineArrowBack style={{ width: 24, height: 24 }} />
         ) : ( */}
-        <ImHome color="#666362" size={24} />
-        {/* )} */}
-      </button>
+          <ImHome color="#666362" size={24} />
+          {/* )} */}
+        </button>
+      )}
 
       <div className="flex gap-2 items-center">
         <img src={"HajiAnsariLogo.svg"} alt="" width={38} height={38} />

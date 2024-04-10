@@ -33,5 +33,7 @@
   "goToSaii": "Prejsť na kalkulačku Saii",
   "saiiCompleted": "Saii Dokončený",
   "safa": "Safa",
-  "marwa": "Marwa"
+  "marwa": "Marwa",
+  "voiceDisabled": "Hlasový chat deaktivovaný",
+  "noMic": "Povoľte povolenie na mikrofón alebo skontrolujte svoj mikrofón"
 }

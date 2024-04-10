@@ -33,5 +33,7 @@
   "goToSaii": "Đi đến máy tính Saii",
   "saiiCompleted": "Saii Đã hoàn thành",
   "safa": "Safa",
-  "marwa": "Marwa"
+  "marwa": "Marwa",
+  "voiceDisabled": "Trò chuyện bằng giọng nói bị vô hiệu hóa",
+  "noMic": "Cho phép Quyền mic hoặc Kiểm tra mic của bạn"
 }

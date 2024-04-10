@@ -33,5 +33,7 @@
   "goToSaii": "Idi na Saii Kalkulator",
   "saiiCompleted": "Saii Završen",
   "safa": "Safa",
-  "marwa": "Marwa"
+  "marwa": "Marwa",
+  "voiceDisabled": "Glasovni chat onemogućen",
+  "noMic": "Dozvolite mikrofonsko dozvolu ili provjerite svoj mikrofon"
 }

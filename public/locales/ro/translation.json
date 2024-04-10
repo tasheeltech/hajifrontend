@@ -33,5 +33,7 @@
   "goToSaii": "Mergi la Calculatorul Saii",
   "saiiCompleted": "Saii Finalizat",
   "safa": "Safa",
-  "marwa": "Marwa"
+  "marwa": "Marwa",
+  "voiceDisabled": "Chat vocal dezactivat",
+  "noMic": "Permiteți permisiunea Microfonului sau Verificați-vă microfonul"
 }

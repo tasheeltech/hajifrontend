@@ -33,5 +33,7 @@
   "goToSaii": "Saii Kalkulyatoruna keçid",
   "saiiCompleted": "Saii Tamamlandı",
   "safa": "Safa",
-  "marwa": "Marwa"
+  "marwa": "Marwa",
+  "voiceDisabled": "Səsli söhbət deaktiv edildi",
+  "noMic": "Mikrofon icazəsini verin və ya mikrofonunuzu yoxlayın"
 }

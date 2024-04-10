@@ -33,5 +33,7 @@
   "goToSaii": "Saii Hesap Makinesine Git",
   "saiiCompleted": "Saii Tamamlandı",
   "safa": "Safa",
-  "marwa": "Marwa"
+  "marwa": "Marwa",
+  "voiceDisabled": "Sesli sohbet devre dışı bırakıldı",
+  "noMic": "Mikrofon iznini etkinleştirin veya mikrofonunuzu kontrol edin"
 }

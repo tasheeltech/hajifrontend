@@ -33,5 +33,7 @@
   "goToSaii": "Siirry Saii-laskimeen",
   "saiiCompleted": "Saii Valmis",
   "safa": "Safa",
-  "marwa": "Marwa"
+  "marwa": "Marwa",
+  "voiceDisabled": "Äänipuhelu poistettu käytöstä",
+  "noMic": "Salli mikrofonilupa tai tarkista mikrofonisi"
 }

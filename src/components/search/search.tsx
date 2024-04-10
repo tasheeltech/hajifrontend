@@ -30,28 +30,10 @@ const Search: React.FC<Props> = ({ handleClick, click }) => {
           }}
         >
           <IoIosSend size={28} color="#ffffff" />
-          {/* <img
-            onClick={() => {
-              handleClick(question)
-              click()
-            }}
-            className=" opacity-100"
-            src={"/button/sendBtn.svg"}
-            alt=""
-            width={60}
-            height={60}
-          /> */}
         </button>
       ) : (
         <button className="bg-[#2BCE98] p-[10px] rounded-full opacity-50 flex items-center justify-center">
           <IoIosSend size={28} color="#ffffff" />
-          {/* <img
-            className="opacity-50"
-            src={"/button/sendBtn.svg"}
-            alt=""
-            width={60}
-            height={60}
-          /> */}
         </button>
       )}
     </div>

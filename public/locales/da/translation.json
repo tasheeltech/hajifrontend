@@ -33,5 +33,7 @@
   "goToSaii": "Gå til Saii Beregner",
   "saiiCompleted": "Saii Fuldført",
   "safa": "Safa",
-  "marwa": "Marwa"
+  "marwa": "Marwa",
+  "voiceDisabled": "Voice chat deaktiveret",
+  "noMic": "Tillad mikrofon tilladelse eller Kontroller din mikrofon"
 }

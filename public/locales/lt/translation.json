@@ -33,5 +33,7 @@
   "goToSaii": "Eikite į Saii Skaičiuotuvą",
   "saiiCompleted": "Saii Baigtas",
   "safa": "Safa",
-  "marwa": "Marwa"
+  "marwa": "Marwa",
+  "voiceDisabled": "Garso pokalbis išjungtas",
+  "noMic": "Leiskite mikrofono leidimą arba patikrinkite savo mikrofoną"
 }
