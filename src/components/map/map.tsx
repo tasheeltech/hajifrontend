@@ -6,6 +6,9 @@ import {
   MarkerF,
   useJsApiLoader,
 } from "@react-google-maps/api"
+import { useLoaderData } from "react-router-dom"
+import { DefaultLoader } from "../../../src/loaders/defaultLoader"
+import { useUserState } from "../../../src/helper/userStateHelper"
 
 type MapProps = {
   places: {
@@ -51,7 +54,13 @@ const containerStyle = {
 }
 
 const Map: React.FC<MapProps> = ({ places }) => {
-  const [center, setCenter] = useState({ lat: 21.4225, lng: 39.8262 })
+  const loadedData = useLoaderData() as DefaultLoader
+  const { location } = useUserState(loadedData)
+
+  // const [center, setCenter] = useState({ lat: 21.4225, lng: 39.8262 })
+  const [center, setCenter] = useState(
+    location ? location : { lat: 21.4225, lng: 39.8262 }
+  )
   // const [points, setPoints] = useState<any>([])
 
   // eslint-disable-next-line no-use-before-define
@@ -117,9 +126,13 @@ const Map: React.FC<MapProps> = ({ places }) => {
           <GoogleMap
             mapContainerStyle={containerStyle}
             center={center}
-            zoom={17}
+            zoom={12}
             onLoad={onLoad}
             onUnmount={onUnmount}
+            onClick={(e) => {
+              console.log("latitide = ", e.latLng!.lat())
+              console.log("longitude = ", e.latLng!.lng())
+            }}
           >
             <MarkerF position={center} />
 

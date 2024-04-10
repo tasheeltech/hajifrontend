@@ -19,6 +19,7 @@
   "bookmarks": "ブックマーク",
   "emergency": "緊急事態",
   "language": "言語設定",
+  "location": "位置設定",
   "selectLanguage": "言語リストから選択してください",
   "logOut": "ログアウト",
   "stopRecord": "録音を停止するには、ボタンを押してください....",
