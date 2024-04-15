@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next"
 import { ImArrowRight } from "react-icons/im"
 import "../components/counter/counter.css"
 import { FaPlus, FaMinus } from "react-icons/fa6"
+import { useNavigate } from "react-router-dom"
 
 function SaiiCalculator() {
   const [counter, setCounter] = useState(0)
@@ -13,6 +14,8 @@ function SaiiCalculator() {
   const [decDisable, setDecDisable] = useState(true)
 
   const { t } = useTranslation()
+
+  const navigate = useNavigate()
 
   useEffect(() => {
     setRight(false)
@@ -56,10 +59,16 @@ function SaiiCalculator() {
       {completed ? (
         <>
           <div></div>
-          <div>
-            <p className="text-2xl font-medium text-[#2bce98]">
+          <div className="flex flex-col justify-center">
+            <p className="text-2xl font-medium text-[#2bce98] mb-4">
               {t("saiiCompleted")}
             </p>
+            <button
+              className="bg-[#2bce98] rounded-lg p-3 font-medium"
+              onClick={() => navigate("/homepage")}
+            >
+              {t("goToHome")}
+            </button>
           </div>
           <div></div>
         </>

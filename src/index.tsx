@@ -16,7 +16,7 @@ import Testing from "./routes/testing"
 import TawafCalculator from "./pages/tawafCalculator"
 import SaiiCalculator from "./pages/saiiCalculator"
 import EmergencyPage from "./pages/emergency"
-import HomePage from "./routes/homepage"
+
 import RootLayout from "./components/rootLayout/rootLayout"
 
 import Bookmarks from "./pages/bookmarks"
@@ -24,6 +24,9 @@ import { I18nextProvider } from "react-i18next"
 import i18n from "./i18n"
 import Language from "./pages/language"
 import Location from "./pages/location"
+import ChatPage from "./pages/chatPage"
+import HomePage from "./routes/homepage"
+import Tools from "./pages/tools"
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement)
 
@@ -44,6 +47,18 @@ const router = createBrowserRouter(
       <Route
         path="/homepage"
         element={<HomePage />}
+        errorElement={<ErrorPage />}
+        loader={defaultLoader}
+      />
+      <Route
+        path="/chat"
+        element={<ChatPage />}
+        errorElement={<ErrorPage />}
+        loader={defaultLoader}
+      />
+      <Route
+        path="/tools"
+        element={<Tools />}
         errorElement={<ErrorPage />}
         loader={defaultLoader}
       />

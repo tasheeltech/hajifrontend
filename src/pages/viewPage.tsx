@@ -22,7 +22,13 @@ const ViewPage: React.FC<EntryProps> = ({
   bookmarkButton,
 }) => {
   return (
-    <div className="flex flex-col justify-between h-full">
+    <div className="flex flex-col h-full">
+      <div className="w-full flex justify-left py-3 sticky top-0 left-0 p-3 bg-white border-b">
+        <button onClick={bookmarkPage} className="flex items-center">
+          <MdChevronLeft className="-ml-1" style={{ width: 24, height: 24 }} />
+          <p className="text-sm ">Bookmarks</p>
+        </button>
+      </div>
       <div
         className={`flex flex-col gap-5  pt-3 ${
           !selectedEntry.answerWithMap && "px-6"
@@ -57,12 +63,6 @@ const ViewPage: React.FC<EntryProps> = ({
             <Map places={selectedEntry.locations} />
           </div>
         )}
-      </div>
-      <div className="w-full flex justify-center py-3 sticky bottom-0 left-0 p-3 bg-white border-t">
-        <button onClick={bookmarkPage} className="flex items-center">
-          <MdChevronLeft className="-ml-1" style={{ width: 24, height: 24 }} />
-          <p className="text-sm ">Bookmarks</p>
-        </button>
       </div>
     </div>
   )

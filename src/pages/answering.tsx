@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react"
 import Map from "../components/map/map"
-import { MdBookmarks } from "react-icons/md"
+import { MdBookmarks, MdChevronLeft } from "react-icons/md"
 import { useTranslation } from "react-i18next"
 import { HiChatBubbleLeftRight, HiMiniMicrophone } from "react-icons/hi2"
 
@@ -10,7 +10,7 @@ interface Props {
   question: string
   answer: string
   answerWithMap: boolean
-  toHomepage: () => void
+  toChatPage: () => void
   toListening: () => void
   locations: any
   micPermission: string | null
@@ -28,7 +28,7 @@ const Answer: React.FC<Props> = ({
   question,
   answer,
   answerWithMap,
-  toHomepage,
+  toChatPage,
   toListening,
   locations,
   micPermission,
@@ -89,6 +89,12 @@ const Answer: React.FC<Props> = ({
 
   return (
     <div className="flex flex-col justify-between h-full">
+    <div className="w-full flex justify-left py-3 sticky top-0 left-0 p-3 bg-white border-b">
+        <button onClick={toChatPage} className="flex items-center">
+          <MdChevronLeft className="-ml-1" style={{ width: 24, height: 24 }} />
+          <p className="text-sm ">New Chat</p>
+        </button>
+      </div>
       <div className={`flex flex-col gap-5  pt-3 ${!answerWithMap && "px-6"}`}>
         <div className={`${answerWithMap && "px-6"}`}>
           <p className="text-[#8a8a8a] font-medium">
@@ -131,13 +137,13 @@ const Answer: React.FC<Props> = ({
           </div>
         )}
       </div>
-      <div className="flex gap-8 items-center justify-center py-3 px-6 sticky bottom-0 left-0 w-full bg-white border-t-2 ">
+      {/* <div className="flex gap-8 items-center justify-center py-3 px-6 sticky bottom-0 left-0 w-full bg-white border-t-2 ">
         <button
-          onClick={toHomepage}
+          onClick={toChatPage}
           className="bg-[#2BCE986B] shadow-[0_4px_4px_-1px_rgba(0,0,0,0.5)] rounded-[30px] px-4 py-3 flex items-center justify-center h-12 w-1/2 max-w-40 active:opacity-50"
         >
           <div className="flex items-center gap-1">
-            {/* <img src={"/icons/chatIcon.svg"} alt="" width={20} height={20} /> */}
+
             <HiChatBubbleLeftRight size={18} />
 
             <div className="font-bold">{t("chat")}</div>
@@ -150,13 +156,13 @@ const Answer: React.FC<Props> = ({
             className="bg-[#2BCE986B] shadow-[0_4px_4px_-1px_rgba(0,0,0,0.5)] rounded-[30px] px-4 py-3 flex items-center justify-center h-12 w-1/2 max-w-40 active:opacity-50"
           >
             <div className="flex items-center gap-1">
-              {/* <img src={"/icons/micIcon.svg"} alt="" width={20} height={20} /> */}
+
               <HiMiniMicrophone size={18} />
               <div className="font-bold">{t("record")}</div>
             </div>
           </button>
         )}
-      </div>
+      </div> */}
     </div>
   )
 }

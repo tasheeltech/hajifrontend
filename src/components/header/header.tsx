@@ -16,39 +16,33 @@ export default function Header({ toggle }: Props) {
 
   const location = useLocation()
 
-  useEffect(() => {
-    setShowHomeBtn(true)
-    if (location.pathname === "/homepage") {
-      setShowHomeBtn(false)
-    }
-  }, [location])
-
-  // const location = useLocation()
-
   // useEffect(() => {
-  // setSelected(location.pathname)
+  //   setShowHomeBtn(true)
+  //   if (location.pathname === "/homepage") {
+  //     setShowHomeBtn(false)
+  //   }
+  // }, [location])
 
   const goToHome = () => {
     navigate("/homepage")
-    // if (location.pathname === "/viewPage") {
-    // setBackBtn(true)
-    // }
   }
 
   return (
     <div className="flex gap-5 items-center justify-between py-4 px-6">
-      {showHomeBtn && (
+      {/* {showHomeBtn && (
         <button onClick={goToHome}>
-          {/* {backBtn ? (
-          <MdOutlineArrowBack style={{ width: 24, height: 24 }} />
-        ) : ( */}
           <ImHome color="#666362" size={24} />
-          {/* )} */}
         </button>
-      )}
+      )} */}
 
       <div className="flex gap-2 items-center">
-        <img src={"HajiAnsariLogo.svg"} alt="" width={38} height={38} />
+        <img
+          onClick={goToHome}
+          src={"HajiAnsariLogo.svg"}
+          alt=""
+          width={38}
+          height={38}
+        />
 
         <div className="flex flex-col gap-1 justify-center">
           <p className="text-xl font-semibold leading-none">HajiAnsari</p>

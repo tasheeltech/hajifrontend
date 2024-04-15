@@ -101,15 +101,22 @@ const Bookmarks = () => {
             {bookmarked.length ? (
               <>
                 {bookmarked.map((entry: Entry, index: number) => (
-                  <div className="border-l-4 border-[#2BCE98]" key={index}>
-                    <div className="flex items-center justify-between gap-4 border-b pl-4 py-3">
-                      <div>
-                        <div className=" font-medium">{entry.question}</div>
-                        <div className="line-clamp-1 text-[#666666] text-sm">
-                          {entry.answer}
-                        </div>
+                  <div
+                    className="border-l-4 border-[#2BCE98] active:pl-2"
+                    key={index}
+                    onClick={() => {
+                      setView(true)
+                      setSelectedEntry(entry)
+                    }}
+                  >
+                    <div className="border-b pl-4 py-3">
+                      {/* <div> */}
+                      <div className=" font-medium">{entry.question}</div>
+                      <div className="line-clamp-1 text-[#666666] text-sm">
+                        {entry.answer}
                       </div>
-                      <button
+                    </div>
+                    {/* <button
                         onClick={() => {
                           setView(true)
                           setSelectedEntry(entry)
@@ -121,8 +128,8 @@ const Bookmarks = () => {
                           className="-ml-1"
                           style={{ width: 24, height: 24, color: " #17CE92" }}
                         />
-                      </button>
-                    </div>
+                      </button> */}
+                    {/* </div> */}
                   </div>
                 ))}
               </>
