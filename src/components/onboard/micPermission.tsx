@@ -45,14 +45,7 @@ const MicPermission: React.FC<MicPermissionProps> = ({ onNextStep }) => {
 
   return (
     <main className="overflow-scroll no-scrollbar  h-dvh">
-      <div className="flex flex-col items-center h-dvh px-5">
-        <div className="flex items-center justify-center gap-10 py-6 w-full">
-          <div className="w-56 rounded-full h-3 bg-zinc-100">
-            <div className="bg-emerald-400 h-3 rounded-full w-1/5"></div>
-          </div>
-          <p className="text-xl">1/5</p>
-        </div>
-
+      <div className="flex flex-col items-center  justify-center h-screen text-center  px-5">
         <div className="flex flex-col gap-2">
           <h1 className="font-urbanist text-2xl leading-6 text-neutral-700">
             Give Mic Permission

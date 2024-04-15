@@ -164,19 +164,9 @@ const LanguageDetection: React.FC<LanguageDetectionProps> = ({
   return (
     <main className="overflow-scroll no-scrollbar  h-dvh">
       {!wrongButtonClicked && languageDetected && (
-        <div className="flex flex-col items-center h-dvh px-5">
-          <div className="flex items-center justify-center gap-10 py-6 w-full">
-            {/* <Link href="/autoDetectLanguage"> */}
-            <img className="w-7 h-7" alt="back-button" src="/icons/back.svg" />
-            {/* </Link> */}
-            <div className="w-56 rounded-full h-3 bg-zinc-100">
-              <div className="bg-emerald-400 h-3 rounded-full w-4/5"></div>
-            </div>
-            <p className="text-xl">4/5</p>
-          </div>
-
+        <div className="flex flex-col items-center justify-center h-screen text-center px-5">
           <div className="flex flex-col gap-2 max-w-[21.5rem]">
-            <h1 className="font-urbanist text-2xl leading-6 text-neutral-700">
+            <h1 className="font-urbanist text-2xl leading-6 mb-6 font-semibold text-neutral-700">
               Language Detected
             </h1>
             <div
@@ -212,7 +202,7 @@ const LanguageDetection: React.FC<LanguageDetectionProps> = ({
         </div>
       )}
       {wrongButtonClicked && !listLang && (
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center justify-center text-center ">
           <h2 className="text-lg my-8 font-bold font-urbanist">
             Please select from the list of languages
           </h2>
@@ -243,14 +233,7 @@ const LanguageDetection: React.FC<LanguageDetectionProps> = ({
 
       {listLang && (
         <div>
-          <div className="flex flex-col items-center h-dvh px-5">
-            <div className="flex items-center justify-center gap-10 py-6 w-full">
-              <div className="w-56 rounded-full h-3 bg-zinc-100">
-                <div className="bg-emerald-400 h-3 rounded-full w-2/5"></div>
-              </div>
-              <p className="text-xl">2/5</p>
-            </div>
-
+          <div className="flex flex-col items-center justify-center h-screen text-center px-5">
             <div className="flex flex-col gap-2 max-w-[21.5rem]">
               <h1 className="font-urbanist text-2xl leading-6 text-neutral-700">
                 Running Auto-detect..

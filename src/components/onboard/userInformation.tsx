@@ -60,18 +60,8 @@ const UserInformation: React.FC<UserInformationProps> = ({
   }, [onboardingComplete]);
 
   return (
-    <main className="overflow-scroll no-scrollbar  h-dvh">
-      <div className="flex flex-col items-center h-dvh px-5">
-        <div className="flex items-center justify-center gap-10 py-6 w-full">
-          {/* <Link href="/languageDetected"> */}
-          <img className="w-7 h-7" alt="back-button" src="/icons/back.svg" />
-          {/* </Link> */}
-          <div className="w-56 rounded-full h-3 bg-zinc-100">
-            <div className="bg-emerald-400 h-3 rounded-full w-5/5"></div>
-          </div>
-          <p className="text-xl">5/5</p>
-        </div>
-
+    <main className="overflow-scroll no-scrollbar  h-dvh ">
+      <div className="flex flex-col items-center h-dvh  justify-center text-center  px-5">
         <div className="flex flex-col gap-2 max-w-[21.5rem]">
           {/* <h1 className="font-urbanist text-2xl leading-6 text-neutral-700">
             What's Your Name?
