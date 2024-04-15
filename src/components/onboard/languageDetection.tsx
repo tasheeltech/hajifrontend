@@ -53,6 +53,7 @@ const LanguageDetection: React.FC<LanguageDetectionProps> = ({
   const [wrongButtonClicked, setWrongButtonClicked] = useState(false);
   const [listLang, setListLang] = useState(false);
   const [autoDetectClicked, setAutoDetectClicked] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
   const { t, i18n } = useTranslation();
 
   useEffect(() => {
@@ -140,6 +141,10 @@ const LanguageDetection: React.FC<LanguageDetectionProps> = ({
     setAutoDetectClicked(true);
   };
 
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(event.target.value);
+  };
+
   const handleCountrySelection = (
     language: string
   ): React.MouseEventHandler<HTMLDivElement> => {
@@ -160,6 +165,10 @@ const LanguageDetection: React.FC<LanguageDetectionProps> = ({
       }
     };
   };
+
+  const filteredCountries = CountriesData.countries.filter((country: Country) =>
+    country.language.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
     <main className="overflow-scroll no-scrollbar  h-dvh">
@@ -215,7 +224,14 @@ const LanguageDetection: React.FC<LanguageDetectionProps> = ({
             </button>
           )}
           <div>
-            {CountriesData.countries.map((country: Country, index: number) => (
+            <input
+              type="text"
+              placeholder="Search language..."
+              value={searchTerm}
+              onChange={handleSearchChange}
+              className="px-4 py-2 mb-4 rounded-sm border border-gray-300"
+            />
+            {filteredCountries.map((country: Country, index: number) => (
               <button onClick={onNextStep} key={index} className="flex">
                 <div
                   key={index}
