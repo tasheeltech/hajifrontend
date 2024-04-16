@@ -181,7 +181,7 @@ function RootLayout() {
               // }}
               // onClick={handleChatButtonClick}
               onClick={() => {
-                navigate("/chat", { replace: true })
+                navigate("/chat")
                 setChat(true)
                 setHome(false)
                 setTools(false)

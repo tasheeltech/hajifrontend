@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useCallback, useRef, useState } from "react"
 import { BiCurrentLocation } from "react-icons/bi"
 
 import { GoogleMap, MarkerF, useJsApiLoader } from "@react-google-maps/api"
@@ -54,30 +54,40 @@ const Location: React.FC = () => {
   //   }
   // }, [])
 
+  const refMap = useRef<google.maps.Map | null>(null)
+
+  const handleBoundsChanged = () => {
+    if (refMap.current) {
+      const mapCenter = refMap.current.getCenter()
+      console.log(mapCenter)
+      setCenter({
+        lat: mapCenter!.lat(),
+        lng: mapCenter!.lng(),
+      })
+      console.log(center)
+    }
+  }
+
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
     googleMapsApiKey: process.env.REACT_APP_JAVASCRIPT_API!,
   })
 
-  const onLoad = React.useCallback(
-    function callback(map: any) {
-      // This is just an example of getting and using the map instance!!! don't just blindly copy!
-      const bounds = new window.google.maps.LatLngBounds(center)
-      map.fitBounds(bounds)
+  const onLoad = React.useCallback(function callback(map: any) {
+    // This is just an example of getting and using the map instance!!! don't just blindly copy!
+    const bounds = new window.google.maps.LatLngBounds(center)
+    map.fitBounds(bounds)
 
-      setMap(map)
-    },
-    [center]
-  )
+    refMap.current = map
 
-  const onUnmount = React.useCallback(
-    function callback() {
-      if (map) {
-        setMap(null)
-      }
-    },
-    [map]
-  )
+    setMap(map)
+  }, [])
+
+  const onUnmount = React.useCallback(function callback() {
+    if (map) {
+      setMap(null)
+    }
+  }, [])
 
   return (
     <div className="flex flex-col items-stretch h-full relative">
@@ -85,20 +95,21 @@ const Location: React.FC = () => {
         {isLoaded ? (
           <GoogleMap
             mapContainerStyle={containerStyle}
-            center={center}
+            // center={center}
             zoom={12}
             onLoad={onLoad}
             onUnmount={onUnmount}
+            onBoundsChanged={handleBoundsChanged}
             options={{
               disableDefaultUI: true,
             }}
-            onClick={(e) => {
-              console.log("latitide = ", e.latLng!.lat())
-              console.log("longitude = ", e.latLng!.lng())
-              const lat = e.latLng!.lat()
-              const lng = e.latLng!.lng()
-              setCenter({ lat, lng })
-            }}
+            // onClick={(e) => {
+            //   console.log("latitide = ", e.latLng!.lat())
+            //   console.log("longitude = ", e.latLng!.lng())
+            //   const lat = e.latLng!.lat()
+            //   const lng = e.latLng!.lng()
+            //   setCenter({ lat, lng })
+            // }}
           >
             <MarkerF position={center} />
           </GoogleMap>
