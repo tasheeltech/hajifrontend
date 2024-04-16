@@ -80,8 +80,8 @@ const Location: React.FC = () => {
   )
 
   return (
-    <div className="flex flex-col">
-      <div className="w-full grow h-[100vh] bg-[#F1F1F1] shadow-inner">
+    <div className="flex flex-col items-stretch h-full relative">
+      <div className="bg-[#F1F1F1] shadow-inner h-full ">
         {isLoaded ? (
           <GoogleMap
             mapContainerStyle={containerStyle}
@@ -107,14 +107,14 @@ const Location: React.FC = () => {
         )}
       </div>
       <button
-        className="w-full flex items-center justify-center gap-1 absolute bottom-0 left-0 text-lg bg-[#c3ffeb] p-3 font-semibold active:bg-[#4a7b6b] active:text-white"
+        className=" flex items-center justify-center rounded-full px-4 gap-1 border-2 border-[#a3a3a3] absolute bottom-4 right-4 text-sm bg-white p-3 font-semibold active:bg-[#4a7b6b] active:text-white"
         onClick={() => {
           setLocation(center)
           console.log(location)
           alert("Your location has been updated")
         }}
       >
-        <BiCurrentLocation size={20} />
+        <BiCurrentLocation size={16} />
         Set Location
       </button>
     </div>

@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next"
 import { useNavigate } from "react-router-dom"
 import "../components/counter/counter.css"
 import { FaMinus, FaPlus } from "react-icons/fa6"
+import { ImArrowRight } from "react-icons/im"
 
 function TawafCalculator() {
   const [counter, setCounter] = useState(0)
@@ -73,6 +74,11 @@ function TawafCalculator() {
               <div className="text-sm">{t("increment")}</div>
               <div className="mt-1 text-sm">{t("decrement")}</div>
             </div>
+          </div>
+          <div className="flex items-center gap-5 font-semibold text-xl">
+            <p>{counter}</p>
+            <ImArrowRight color="#2bce98" />
+            <p>{counter + 1}</p>
           </div>
           <div className="flex items-center gap-10">
             <div className="text-[250px] w-32 leading-none flex justify-center items-center">
