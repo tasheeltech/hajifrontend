@@ -104,8 +104,7 @@ const LanguageDetection: React.FC<LanguageDetectionProps> = ({
       );
       const json = await body.json();
       if (json) {
-        // onNextStep()
-        setListLang(false);
+        onNextStep()
         console.log(json.payload.name);
 
         const country = CountriesData.countries.find(
