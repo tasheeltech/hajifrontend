@@ -6,9 +6,10 @@ import { LuChevronRightCircle } from "react-icons/lu"
 
 import { IconType } from "react-icons"
 import { FaSignOutAlt } from "react-icons/fa"
-import { MdMessage } from "react-icons/md"
+import { MdGTranslate, MdMessage } from "react-icons/md"
 import { MdCategory } from "react-icons/md"
 import { RiHome3Fill } from "react-icons/ri"
+import { FaLocationDot } from "react-icons/fa6"
 
 interface MyObject {
   name: string
@@ -22,8 +23,8 @@ const data: MyObject[] = [
   // { name: "saiiCalc", icon: PiMountainsFill, link: "/saii" },
   // { name: "bookmarks", icon: MdBookmarks, link: "/bookmarks" },
   // { name: "emergency", icon: MdEmergencyShare, link: "/emergency" },
-  // { name: "language", icon: MdGTranslate, link: "/language" },
-  // { name: "location", icon: FaLocationDot, link: "/location" },
+  { name: "language", icon: MdGTranslate, link: "/language" },
+  { name: "location", icon: FaLocationDot, link: "/location" },
   { name: "logOut", icon: FaSignOutAlt, link: "/" },
 ]
 

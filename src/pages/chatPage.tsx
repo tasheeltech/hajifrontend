@@ -8,9 +8,11 @@ import Timer from "../components/timer/timer"
 import Search from "../components/search/search"
 import { ImageContext } from "../components/map/context"
 // import Emergency from "../components/emergency/emergency"
-import { useNavigate } from "react-router-dom"
+import { useLoaderData, useNavigate } from "react-router-dom"
 import { useTranslation } from "react-i18next"
 import { BsMicMuteFill } from "react-icons/bs"
+import { DefaultLoader } from "../loaders/defaultLoader"
+import { useUserState } from "../helper/userStateHelper"
 
 interface Intent {
   type: string
@@ -43,6 +45,36 @@ export default function ChatPage() {
   const { t } = useTranslation()
 
   const navigate = useNavigate()
+
+  const loadedData = useLoaderData() as DefaultLoader
+  const { isoLanguage, location } = useUserState(loadedData)
+
+  const [center, setCenter] = useState(
+    location ? location : { lat: 21.4225, lng: 39.8262 }
+  )
+
+  useEffect(() => {
+    // Check if geolocation is supported by the browser
+    if (navigator.geolocation) {
+      // Get the current position
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords
+          if (center.lat !== latitude || center.lng !== longitude) {
+            // setTimeout(() => {
+            const loc = { lat: latitude, lng: longitude }
+            setCenter(loc)
+            // }, 50000)
+          }
+        },
+        (error) => {
+          console.error("Error getting geolocation:", error)
+        }
+      )
+    } else {
+      console.error("Geolocation is not supported by this browser.")
+    }
+  }, [center])
 
   const { doStart, startRecording, stopRecording } = useMic((blob: Blob) => {
     sendRecording(blob)
@@ -120,8 +152,11 @@ export default function ChatPage() {
   const sendRecording = async (blob: Blob) => {
     console.log("Sending recording!!!")
     formData.append("audio", blob, "audio.webm")
-    // formData.append("isoLanguage", isoLanguage!.iso)
-    formData.append("isoLanguage", "en")
+    formData.append("isoLanguage", JSON.stringify(isoLanguage))
+    formData.append("location", JSON.stringify(center))
+    console.log(isoLanguage)
+
+    // formData.append("isoLanguage", "en")
     const getProcessPath =
       "https://hajibackend.tasheel-tech.workers.dev/transcript"
     const body = await fetch(getProcessPath, {
@@ -140,9 +175,10 @@ export default function ChatPage() {
     setNativeQues(input)
 
     formData.append("text", input)
-    // formData.append("isoLanguage", isoLanguage!.iso)
-    // console.log(isoLanguage!.iso)
-    formData.append("isoLanguage", "en")
+    formData.append("isoLanguage", JSON.stringify(isoLanguage))
+    console.log(isoLanguage)
+
+    // formData.append("isoLanguage", "en")
 
     const body = await fetch(
       "https://hajibackend.tasheel-tech.workers.dev/processText",
@@ -185,7 +221,7 @@ export default function ChatPage() {
     ) {
       // setEmergency(true)
       navigate("/emergency")
-      setQuestion(res.payload.input)
+      // setQuestion(res.payload.input)
     }
 
     if (res.type.startsWith("AUDIO")) {
@@ -195,16 +231,22 @@ export default function ChatPage() {
       setAnswer(res.payload.message)
     }
     if (res.type === "INTENT:OTHER") {
-      if (res.payload.input) {
-        let ques = res.payload.input.toLowerCase()
-        console.log(ques)
-        if (ques.includes("tawaf") && ques.includes("calc")) {
-          navigate("/tawaf")
-        }
-        if (ques.includes("saii") && ques.includes("calc")) {
-          navigate("/saii")
-        }
-      }
+      // if (res.payload.input) {
+      //   let ques = res.payload.input.toLowerCase()
+      //   console.log(ques)
+      //   if (ques.includes("tawaf") && ques.includes("calc")) {
+      //     navigate("/tawaf")
+      //   }
+      //   if (ques.includes("saii") && ques.includes("calc")) {
+      //     navigate("/saii")
+      //   }
+      // }
+    }
+    if (res.type === "INTENT:CALCUALTE_MY_TAWAF") {
+      navigate("/tawaf")
+    }
+    if (res.type === "INTENT:CALCULATE_MY_SAII") {
+      navigate("/saii")
     }
   }
 
