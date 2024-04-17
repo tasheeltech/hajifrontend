@@ -44,7 +44,7 @@ function Language() {
       </h2>
       <div>
         <div>
-          <div className="bg-white sticky top-0 py-5">
+          <div className="bg-white sticky top-0 my-5">
             <input
               type="text"
               placeholder="Search language..."
