@@ -3,8 +3,7 @@ import { Link, useNavigate } from "react-router-dom"
 import { IconType } from "react-icons"
 import { FaKaaba } from "react-icons/fa"
 import { PiMountainsFill } from "react-icons/pi"
-import { MdBookmarks, MdEmergencyShare, MdGTranslate } from "react-icons/md"
-import { FaLocationDot } from "react-icons/fa6"
+import { MdBookmarks, MdEmergencyShare } from "react-icons/md"
 
 import { useTranslation } from "react-i18next"
 
@@ -20,8 +19,8 @@ const data: MyObject[] = [
   { name: "saiiCalc", icon: PiMountainsFill, link: "/saii" },
   { name: "bookmarks", icon: MdBookmarks, link: "/bookmarks" },
   { name: "emergency", icon: MdEmergencyShare, link: "/emergency" },
-  { name: "language", icon: MdGTranslate, link: "/language" },
-  { name: "location", icon: FaLocationDot, link: "/location" },
+  // { name: "language", icon: MdGTranslate, link: "/language" },
+  // { name: "location", icon: FaLocationDot, link: "/location" },
   //   { name: "logOut", icon: FaSignOutAlt, link: "/" },
 ]
 

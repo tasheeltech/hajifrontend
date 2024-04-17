@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react"
 import Map from "../components/map/map"
 import { MdBookmarks, MdChevronLeft } from "react-icons/md"
 import { useTranslation } from "react-i18next"
-import { HiChatBubbleLeftRight, HiMiniMicrophone } from "react-icons/hi2"
 
 interface Props {
   question: string
@@ -88,7 +87,7 @@ const Answer: React.FC<Props> = ({
   }, [bookmark])
 
   return (
-    <div className="flex flex-col justify-between h-full">
+    <div className="flex flex-col h-full">
     <div className="w-full flex justify-left py-3 sticky top-0 left-0 p-3 bg-white border-b">
         <button onClick={toChatPage} className="flex items-center">
           <MdChevronLeft className="-ml-1" style={{ width: 24, height: 24 }} />
