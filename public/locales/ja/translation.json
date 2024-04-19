@@ -25,8 +25,6 @@
   "yourQuestion": "あなたの質問",
   "processing": "処理中...",
   "bookmark": "ブックマーク",
-  "chat": "チャット",
-  "record": "記録",
   "noBookmarks": "まだブックマークは追加されていません",
   "tawafCompleted": "タワーフ完了",
   "goToSaii": "サイイ計算機に移動",
@@ -39,6 +37,10 @@
   "train": "電車",
   "landmarks": "ランドマーク",
   "home": "家",
+  "chat": "チャット",
   "tools": "ツール",
-  "goToHome": "ホームに戻る"
+  "goToHome": "ホームに戻る",
+  "menu": "メニュー",
+  "showPrayerTimes": "祈りの時間を表示するために場所の許可を許可してください。",
+  "record": "記録"
 }

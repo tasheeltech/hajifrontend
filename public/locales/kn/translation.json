@@ -25,8 +25,6 @@
   "yourQuestion": "ನಿಮ್ಮ ಪ್ರಶ್ನೆ",
   "processing": "ಪ್ರಕ್ರಿಯಾಜಾಲ....",
   "bookmark": "ಗುರುತು",
-  "chat": "ಚಾಟ್",
-  "record": "ದಾಖಲೆ",
   "noBookmarks": "No bookmarks added yet",
   "tawafCompleted": "Tawaf Completed",
   "goToSaii": "Go to Saii Calculator",
@@ -39,6 +37,10 @@
   "train": "ರೈಲು",
   "landmarks": "ಗಮನಾರ್ಹ ಸ್ಥಳಗಳು",
   "home": "ಮನೆ",
+  "chat": "ಚಾಟ್",
   "tools": "ಸಾಧನಗಳು",
-  "goToHome": "ಮನೆಗೆ ಹೋಗಿ"
+  "goToHome": "ಮನೆಗೆ ಹೋಗಿ",
+  "menu": "ಮೆನು",
+  "showPrayerTimes": "ಪ್ರಾರ್ಥನೆಯ ಸಮಯವನ್ನು ತೋರಿಸಲು ಸ್ಥಳ ಅನುಮತಿಯನ್ನು ಅನುಮತಿಸಿ.",
+  "record": "ದಾಖಲೆ"
 }

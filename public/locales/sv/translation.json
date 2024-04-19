@@ -25,8 +25,6 @@
   "yourQuestion": "Din fråga",
   "processing": "Bearbetning...",
   "bookmark": "Bokmärke",
-  "chat": "Chatt",
-  "record": "Inspelning",
   "noBookmarks": "Inga bokmärken har lagts till ännu",
   "tawafCompleted": "Tawaf Slutförd",
   "goToSaii": "Gå till Saii Kalkylatorn",
@@ -39,6 +37,10 @@
   "train": "Tåg",
   "landmarks": "Sevärdheter",
   "home": "Hem",
+  "chat": "Chatt",
   "tools": "Verktyg",
-  "goToHome": "Gå till Hem"
+  "goToHome": "Gå till Hem",
+  "menu": "Meny",
+  "showPrayerTimes": "Vänligen bevilja platsbehörighet för att visa bönstider.",
+  "record": "Inspelning"
 }

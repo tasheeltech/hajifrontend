@@ -25,8 +25,6 @@
   "yourQuestion": "La teva pregunta",
   "processing": "Processant...",
   "bookmark": "Adreça d'interès",
-  "chat": "Xat",
-  "record": "Gravació",
   "noBookmarks": "Encara no s'han afegit marcadors",
   "tawafCompleted": "Tawaf Completat",
   "goToSaii": "Anar al calculador de Saii",
@@ -39,6 +37,10 @@
   "train": "Tren",
   "landmarks": "Punts d'interès",
   "home": "Casa",
+  "chat": "Xat",
   "tools": "Eines",
-  "goToHome": "Anar a la Pàgina d'Inici"
+  "goToHome": "Anar a la Pàgina d'Inici",
+  "menu": "Menú",
+  "showPrayerTimes": "Si us plau, concedeixi permís de ubicació per mostrar els horaris de pregària.",
+  "record": "Gravació"
 }

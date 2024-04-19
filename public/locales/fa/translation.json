@@ -25,8 +25,6 @@
   "yourQuestion": "سوال شما",
   "processing": "در حال پردازش...",
   "bookmark": "نشان‌گذاری",
-  "chat": "گپ",
-  "record": "ضبط",
   "noBookmarks": "هنوز هیچ نشانی اضافه نشده است",
   "tawafCompleted": "طواف تکمیل شده",
   "goToSaii": "رفتن به ماشین حساب Saii",
@@ -39,6 +37,10 @@
   "train": "قطار",
   "landmarks": "نشانه ها",
   "home": "خانه",
+  "chat": "گپ",
   "tools": "ابزارها",
-  "goToHome": "برو به خانه"
+  "goToHome": "برو به خانه",
+  "menu": "منو",
+  "showPrayerTimes": "لطفاً مجوز موقعیت را برای نمایش اوقات نماز بدهید.",
+  "record": "ضبط"
 }

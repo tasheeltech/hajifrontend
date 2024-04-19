@@ -25,8 +25,6 @@
   "yourQuestion": "Tō pātai",
   "processing": "Te whakaputa ...",
   "bookmark": "Pukamata",
-  "chat": "Kōrero",
-  "record": "Rēkata",
   "noBookmarks": "Kāore anō he tohu pukapuka i tāpiri",
   "tawafCompleted": "Kua Mutu te Tawaf",
   "goToSaii": "Haere ki te Tuharua Saii",
@@ -39,6 +37,10 @@
   "train": "Reri",
   "landmarks": "Mātāpono",
   "home": "Whare",
+  "chat": "Kōrero",
   "tools": "Tino",
-  "goToHome": "Haere ki te Kainga"
+  "goToHome": "Haere ki te Kainga",
+  "menu": "Kaiwhakarite",
+  "showPrayerTimes": "Whakaae atu ki te whakawhiwhi i te whakaaetanga wāhi ki te whakaatu i ngā wā roopu.",
+  "record": "Rēkata"
 }

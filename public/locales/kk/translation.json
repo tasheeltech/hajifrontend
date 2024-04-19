@@ -25,8 +25,6 @@
   "yourQuestion": "Сіздің сұрағыңыз",
   "processing": "Өңделуде...",
   "bookmark": "Қаламба",
-  "chat": "Чат",
-  "record": "Жазу",
   "noBookmarks": "No bookmarks added yet",
   "tawafCompleted": "Tawaf Completed",
   "goToSaii": "Go to Saii Calculator",
@@ -39,6 +37,10 @@
   "train": "Поезд",
   "landmarks": "Маңызды нұсқаулықтар",
   "home": "ҮЙ",
+  "chat": "Чат",
   "tools": "Құралдар",
-  "goToHome": "Басты бетке өту"
+  "goToHome": "Басты бетке өту",
+  "menu": "Меню",
+  "showPrayerTimes": "Намаз уақыттарын көрсету үшін орналасу рұқсатын беріңіз.",
+  "record": "Жазу"
 }

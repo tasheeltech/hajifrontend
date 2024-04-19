@@ -25,8 +25,6 @@
   "yourQuestion": "Jūsu jautājums",
   "processing": "Apstrāde...",
   "bookmark": "Grāmatzīme",
-  "chat": "Čats",
-  "record": "Ieraksts",
   "noBookmarks": "Vēl nav pievienoti grāmatzīmes",
   "tawafCompleted": "Tawaf Pabeigts",
   "goToSaii": "Doties uz Saii kalkulatoru",
@@ -39,6 +37,10 @@
   "train": "Vilciens",
   "landmarks": "Landmark",
   "home": "MĀJA",
+  "chat": "Čats",
   "tools": "RĪKI",
-  "goToHome": "Iet uz mājas"
+  "goToHome": "Iet uz mājas",
+  "menu": "Izvēlne",
+  "showPrayerTimes": "Lūdzu, piešķiriet atrašanās vietas atļauju, lai parādītu lūgšanu laikus.",
+  "record": "Ieraksts"
 }

@@ -25,8 +25,6 @@
   "yourQuestion": "Ditt spørsmål",
   "processing": "Behandler...",
   "bookmark": "Bokmerke",
-  "chat": "Prat",
-  "record": "Opptak",
   "noBookmarks": "Ingen bokmerker er lagt til ennå",
   "tawafCompleted": "Tawaf Fullført",
   "goToSaii": "Gå til Saii Kalkulator",
@@ -39,6 +37,10 @@
   "train": "Tog",
   "landmarks": "Landemerker",
   "home": "HJEM",
+  "chat": "Prat",
   "tools": "VERKTØY",
-  "goToHome": "Gå til Hjem"
+  "goToHome": "Gå til Hjem",
+  "menu": "Meny",
+  "showPrayerTimes": "Vennligst gi stedstillatelse for å vise bønnetider.",
+  "record": "Opptak"
 }

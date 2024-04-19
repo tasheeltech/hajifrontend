@@ -25,8 +25,6 @@
   "yourQuestion": "Þín spurning",
   "processing": "Í vinnslu...",
   "bookmark": "Bókamerki",
-  "chat": "Spjall",
-  "record": "Upptaka",
   "noBookmarks": "No bookmarks added yet",
   "tawafCompleted": "Tawaf Completed",
   "goToSaii": "Go to Saii Calculator",
@@ -39,6 +37,10 @@
   "train": "Lest",
   "landmarks": "Landmerki",
   "home": "Heim",
+  "chat": "Spjall",
   "tools": "Tæki",
-  "goToHome": "Fara heim"
+  "goToHome": "Fara heim",
+  "menu": "Valmynd",
+  "showPrayerTimes": "Vinsamlegast veitið staðsetningarleyfi til að sýna bænatíma.",
+  "record": "Upptaka"
 }

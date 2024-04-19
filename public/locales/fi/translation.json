@@ -25,8 +25,6 @@
   "yourQuestion": "Sinun kysymyksesi",
   "processing": "Käsittely...",
   "bookmark": "Kirjanmerkki",
-  "chat": "Jutella",
-  "record": "Tallenna",
   "noBookmarks": "Kirjanmerkkejä ei ole vielä lisätty",
   "tawafCompleted": "Tawaf Valmis",
   "goToSaii": "Siirry Saii-laskimeen",
@@ -39,6 +37,10 @@
   "train": "Juna",
   "landmarks": "Maamerkit",
   "home": "KOTI",
+  "chat": "Jutella",
   "tools": "TYÖKALUT",
-  "goToHome": "Mene kotiin"
+  "goToHome": "Mene kotiin",
+  "menu": "Valikko",
+  "showPrayerTimes": "Myönnä sijaintilupa näyttääksesi rukousajat.",
+  "record": "Tallenna"
 }

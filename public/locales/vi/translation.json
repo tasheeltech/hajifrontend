@@ -25,8 +25,6 @@
   "yourQuestion": "Câu hỏi của bạn",
   "processing": "Đang xử lý...",
   "bookmark": "Đánh dấu",
-  "chat": "Trò chuyện",
-  "record": "Ghi âm",
   "noBookmarks": "Chưa thêm dấu trang nào",
   "tawafCompleted": "Tawaf Đã hoàn thành",
   "goToSaii": "Đi đến máy tính Saii",
@@ -39,6 +37,10 @@
   "train": "Tàu hỏa",
   "landmarks": "Địa danh",
   "home": "Nhà",
+  "chat": "Trò chuyện",
   "tools": "Công cụ",
-  "goToHome": "Đi đến Nhà"
+  "goToHome": "Đi đến Nhà",
+  "menu": "Thực đơn",
+  "showPrayerTimes": "Vui lòng cấp quyền vị trí để hiển thị thời gian cầu nguyện.",
+  "record": "Ghi âm"
 }

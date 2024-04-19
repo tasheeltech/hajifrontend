@@ -25,8 +25,6 @@
   "yourQuestion": "Tu pregunta",
   "processing": "Procesando...",
   "bookmark": "Marcador",
-  "chat": "Chat",
-  "record": "Grabar",
   "noBookmarks": "Todavía no se han añadido marcadores",
   "tawafCompleted": "Tawaf Completado",
   "goToSaii": "Ir al calculadora de Saii",
@@ -39,6 +37,10 @@
   "train": "Tren",
   "landmarks": "Lugares de interés",
   "home": "Casa",
+  "chat": "Chat",
   "tools": "Herramientas",
-  "goToHome": "Ir a Casa"
+  "goToHome": "Ir a Casa",
+  "menu": "Menú",
+  "showPrayerTimes": "Por favor, conceda permiso de ubicación para mostrar los horarios de oración.",
+  "record": "Grabar"
 }

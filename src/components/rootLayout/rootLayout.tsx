@@ -53,6 +53,29 @@ function RootLayout() {
     setShowMenu(!showMenu)
   }
 
+  useEffect(() => {
+    console.log("pathname")
+    if (location.pathname === "/homepage") {
+      setHome(true)
+      setChat(false)
+      setTools(false)
+    } else if (location.pathname === "/chat") {
+      setChat(true)
+      setHome(false)
+      setTools(false)
+    }
+    else if (location.pathname === "/language" || location.pathname === "/location") {
+      setChat(false)
+      setHome(false)
+      setTools(false)
+    }
+    else {
+      setTools(true)
+      setHome(false)
+      setChat(false)
+    }
+  }, [location.pathname])
+
   // useEffect(() => {
   //   let uName: string
   //   const userInfo = localStorage.getItem("userInfo")
@@ -97,7 +120,7 @@ function RootLayout() {
             <div>
               <div className="w-full h-16 px-6 py-12 flex justify-between items-center border-b">
                 <div></div>
-                <p className="text-[#4a4a4a] font-medium">Menu</p>
+                <p className="text-[#4a4a4a] font-medium">{t("menu")}</p>
                 <button onClick={toggleMenu}>
                   <LuChevronRightCircle size={24} />
                 </button>
@@ -154,9 +177,6 @@ function RootLayout() {
             <button
               onClick={() => {
                 navigate("/homepage")
-                setHome(true)
-                setChat(false)
-                setTools(false)
               }}
               // to={"/tools"}
             >
@@ -172,8 +192,7 @@ function RootLayout() {
                     home ? "text-[#51d1a6]" : "text-[#a6a6a6]"
                   }`}
                 >
-              {t("home")}
-
+                  {t("home")}
                 </p>
               </div>
             </button>
@@ -184,9 +203,6 @@ function RootLayout() {
               // onClick={handleChatButtonClick}
               onClick={() => {
                 navigate("/chat")
-                setChat(true)
-                setHome(false)
-                setTools(false)
               }}
               // to={"/chat"}
             >
@@ -202,17 +218,13 @@ function RootLayout() {
                     chat ? "text-[#51d1a6]" : "text-[#a6a6a6]"
                   }`}
                 >
-              {t("chat")}
-
+                  {t("chat")}
                 </p>
               </div>
             </button>
             <button
               onClick={() => {
                 navigate("/tools")
-                setTools(true)
-                setChat(false)
-                setHome(false)
               }}
               // to={"/tools"}
             >
@@ -228,8 +240,7 @@ function RootLayout() {
                     tools ? "text-[#51d1a6]" : "text-[#a6a6a6]"
                   }`}
                 >
-              {t("tools")}
-
+                  {t("tools")}
                 </p>
               </div>
             </button>

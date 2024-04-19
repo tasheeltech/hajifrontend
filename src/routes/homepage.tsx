@@ -91,7 +91,7 @@ function HomePage() {
         {coordinates === null && (
           <div className="bg-gray-500 bg-opacity-70 flex items-center justify-center">
             <p className="text-white font-bold text-2xl">
-              Please grant location permission to show prayer times.
+            {t("showPrayerTimes")}
             </p>
           </div>
         )}

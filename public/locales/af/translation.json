@@ -25,8 +25,6 @@
   "yourQuestion": "Jou vraag",
   "processing": "Verwerking...",
   "bookmark": "Bladmerk",
-  "chat": "Klets",
-  "record": "Rekord",
   "noBookmarks": "Nog geen bladwysers bygevoeg nie",
   "tawafCompleted": "Tawaf Voltooid",
   "goToSaii": "Gaan na Saii Kalkulator",
@@ -39,6 +37,10 @@
   "train": "Trein",
   "landmarks": "Bakens",
   "home": "Huis",
+  "chat": "Klets",
   "tools": "Gereedskap",
-  "goToHome": "Gaan na die Huis"
+  "goToHome": "Gaan na die Huis",
+  "menu": "Kieslys",
+  "showPrayerTimes": "Gee asseblief liggingstoestemming om gebedstye te wys.",
+  "record": "Rekord"
 }

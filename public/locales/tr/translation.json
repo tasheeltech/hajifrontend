@@ -25,8 +25,6 @@
   "yourQuestion": "Sorunuz",
   "processing": "İşleniyor...",
   "bookmark": "Yer imi",
-  "chat": "Sohbet",
-  "record": "Kayıt",
   "noBookmarks": "Henüz yer imleri eklenmedi",
   "tawafCompleted": "Tawaf Tamamlandı",
   "goToSaii": "Saii Hesap Makinesine Git",
@@ -39,6 +37,10 @@
   "train": "Tren",
   "landmarks": "Yer İşaretleri",
   "home": "Ev",
+  "chat": "Sohbet",
   "tools": "Araçlar",
-  "goToHome": "Eve Git"
+  "goToHome": "Eve Git",
+  "menu": "Menü",
+  "showPrayerTimes": "Namaz saatlerini göstermek için lütfen konum izni verin.",
+  "record": "Kayıt"
 }

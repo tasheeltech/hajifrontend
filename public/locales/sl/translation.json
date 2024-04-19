@@ -25,8 +25,6 @@
   "yourQuestion": "Vaše vprašanje",
   "processing": "Obdelava...",
   "bookmark": "Zaznamek",
-  "chat": "Pogovor",
-  "record": "Snemanje",
   "noBookmarks": "Še niso dodane zaznamke",
   "tawafCompleted": "Tawaf Dokončan",
   "goToSaii": "Pojdi na kalkulator Saii",
@@ -39,6 +37,10 @@
   "train": "Vlak",
   "landmarks": "Znamenitosti",
   "home": "Doma",
+  "chat": "Pogovor",
   "tools": "Orodja",
-  "goToHome": "Pojdi na Domačo Stran"
+  "goToHome": "Pojdi na Domačo Stran",
+  "menu": "Meni",
+  "showPrayerTimes": "Prosim, dovolite lokacijsko dovoljenje za prikaz molitvenih časov.",
+  "record": "Snemanje"
 }

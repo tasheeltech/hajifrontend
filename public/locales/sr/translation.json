@@ -25,8 +25,6 @@
   "yourQuestion": "Ваше питање",
   "processing": "Обрада...",
   "bookmark": "Обележивач",
-  "chat": "Чет",
-  "record": "Запис",
   "noBookmarks": "Још нису додати обележивачи",
   "tawafCompleted": "Tawaf Завршен",
   "goToSaii": "Иди на Saii Калкулатор",
@@ -39,6 +37,10 @@
   "train": "Voz",
   "landmarks": "Znamenitosti",
   "home": "Kuća",
+  "chat": "Чет",
   "tools": "Alati",
-  "goToHome": "Idi na Početnu Stranicu"
+  "goToHome": "Idi na Početnu Stranicu",
+  "menu": "Мени",
+  "showPrayerTimes": "Молимо вас да одобрите дозволу за локацију како бисте приказали време молитве.",
+  "record": "Запис"
 }

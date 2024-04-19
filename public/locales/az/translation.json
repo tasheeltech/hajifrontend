@@ -25,8 +25,6 @@
   "yourQuestion": "Sizin sualınız",
   "processing": "İşlənir...",
   "bookmark": "Əlfəci",
-  "chat": "Çat",
-  "record": "Qeyd",
   "noBookmarks": "Hələ belə işarələr əlavə edilməyib",
   "tawafCompleted": "Tawaf Tamamlandı",
   "goToSaii": "Saii Kalkulyatoruna keçid",
@@ -39,6 +37,10 @@
   "train": "Qatar",
   "landmarks": "Landmarklar",
   "home": "Ev",
+  "chat": "Çat",
   "tools": "Alətlər",
-  "goToHome": "Əsas Səhifəyə Keç"
+  "goToHome": "Əsas Səhifəyə Keç",
+  "menu": "Menyu",
+  "showPrayerTimes": "Namaz vaxtlarını göstərmək üçün yer izni verin.",
+  "record": "Qeyd"
 }

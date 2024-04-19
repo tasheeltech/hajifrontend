@@ -6,34 +6,23 @@ interface Props {
   handleClick: (question: string) => void
   click: () => void
   value: string
+  dummy: number
 }
 
-const Search: React.FC<Props> = ({ handleClick, click, value }) => {
-  // const [tempQues, setTempQues] = useState("")
-  const [question, setQuestion] = useState("")
+const Search: React.FC<Props> = ({ handleClick, click, value, dummy }) => {
+
+  const [question, setQuestion] = useState(value)
 
   useEffect(() => {
+    // Update question whenever the value prop changes
     setQuestion(value)
-    const timer = setInterval(() => {
-      console.log(question, "ques")
-    }, 2000)
-    // setTempQues(value)
-    // if (value === tempQues) {
-    //   setQuestion(tempQues)
-    // }
-
-    return () => {
-      // whenever the component removes it will executes
-      clearInterval(timer)
-    }
-  }, [value])
-
+  }, [value, dummy])
+  
   const { t } = useTranslation()
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = event.target.value
     setQuestion(newValue)
-    console.log(question) // This will log the updated value
   }
 
   return (

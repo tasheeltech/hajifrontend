@@ -25,8 +25,6 @@
   "yourQuestion": "La tua domanda",
   "processing": "Elaborazione...",
   "bookmark": "Segnalibro",
-  "chat": "Chat",
-  "record": "Registrazione",
   "noBookmarks": "Ancora nessun segnalibro aggiunto",
   "tawafCompleted": "Tawaf Completato",
   "goToSaii": "Vai al Calcolatore di Saii",
@@ -39,6 +37,10 @@
   "train": "Treno",
   "landmarks": "Punti di riferimento",
   "home": "CASA",
+  "chat": "Chat",
   "tools": "STRUmenti",
-  "goToHome": "Vai a Casa"
+  "goToHome": "Vai a Casa",
+  "menu": "Menu",
+  "showPrayerTimes": "Si prega di concedere il permesso di localizzazione per mostrare gli orari delle preghiere.",
+  "record": "Registrazione"
 }

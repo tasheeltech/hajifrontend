@@ -25,8 +25,6 @@
   "yourQuestion": "Votre question",
   "processing": "Traitement...",
   "bookmark": "Signet",
-  "chat": "Discussion",
-  "record": "Enregistrer",
   "noBookmarks": "Aucun signet n'a encore été ajouté",
   "tawafCompleted": "Tawaf Terminé",
   "goToSaii": "Aller au calculateur de Saii",
@@ -39,6 +37,10 @@
   "train": "Train",
   "landmarks": "Sites remarquables",
   "home": "ACCUEIL",
+  "chat": "Discussion",
   "tools": "OUTILS",
-  "goToHome": "Aller à la Maison"
+  "goToHome": "Aller à la Maison",
+  "menu": "Menu",
+  "showPrayerTimes": "Veuillez accorder l'autorisation d'emplacement pour afficher les heures de prière.",
+  "record": "Enregistrer"
 }

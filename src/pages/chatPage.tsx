@@ -284,6 +284,12 @@ export default function ChatPage() {
 
   const [name, setName] = useState("Welcome")
   const [value, setValue] = useState("")
+  const [dummy, setDummy] = useState(0)
+
+  const handleForceUpdate = () => {
+    // Update dummy to force the effect to run again
+    setDummy((prevDummy) => prevDummy + 1)
+  }
 
   return (
     <>
@@ -299,6 +305,7 @@ export default function ChatPage() {
                 <p className="text-sm">{t("question1")}</p>
                 <div
                   onClick={() => {
+                    handleForceUpdate()
                     setValue(t("question1"))
                   }}
                 >
@@ -307,13 +314,23 @@ export default function ChatPage() {
               </div>
               <div className="flex gap-4 items-center justify-between px-5 py-4 rounded-[36px] border">
                 <p className="text-sm">{t("question2")}</p>
-                <div onClick={() => setValue(t("question2"))}>
+                <div
+                  onClick={() => {
+                    handleForceUpdate()
+                    setValue(t("question2"))
+                  }}
+                >
                   <RxArrowTopRight size={14} />
                 </div>
               </div>
               <div className="flex gap-4 items-center justify-between px-5 py-4 rounded-[36px] border">
                 <p className="text-sm">{t("question3")}</p>
-                <div onClick={() => setValue(t("question3"))}>
+                <div
+                  onClick={() => {
+                    handleForceUpdate()
+                    setValue(t("question3"))
+                  }}
+                >
                   <RxArrowTopRight size={14} />
                 </div>
               </div>
@@ -346,6 +363,7 @@ export default function ChatPage() {
               handleClick={handleSendClick}
               click={handleStopRecord}
               value={value}
+              dummy={dummy}
             />
           </div>
         </div>
