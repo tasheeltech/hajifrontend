@@ -1,88 +1,78 @@
-import React, { useEffect, useState } from "react";
-import { MdOutlineMessage } from "react-icons/md";
-import { TbTools } from "react-icons/tb";
-import i18n from "../i18n";
-import { useLoaderData, useNavigate } from "react-router-dom";
-import { useUserState } from "../helper/userStateHelper";
-import { DefaultLoader } from "../loaders/defaultLoader";
-import { RxArrowTopRight } from "react-icons/rx";
-import { useTranslation } from "react-i18next";
-import { Coordinates, CalculationMethod, PrayerTimes, Prayer } from "adhan";
-import moment from "moment-timezone";
+import React, { useEffect, useState } from "react"
+import i18n from "../i18n"
+import { useLoaderData } from "react-router-dom"
+import { useUserState } from "../helper/userStateHelper"
+import { DefaultLoader } from "../loaders/defaultLoader"
+import { useTranslation } from "react-i18next"
+import { Coordinates, CalculationMethod, PrayerTimes, Prayer } from "adhan"
+import moment from "moment-timezone"
 
 function HomePage() {
-  const [coordinates, setCoordinates] = useState<Coordinates | null>(null);
+  const [coordinates, setCoordinates] = useState<Coordinates | null>(null)
   // const [remainingTime, setRemainingTime] = useState("");
   // const coordinates = new Coordinates(10.342005, 79.380153);
-  const params = CalculationMethod.MoonsightingCommittee();
-  const date = new Date();
+  const params = CalculationMethod.MoonsightingCommittee()
+  const date = new Date()
   // const prayerTimes = new PrayerTimes(coordinates, date, params);
-  const timeZone = moment.tz.guess();
-  const currentTime = moment().tz(timeZone);
-
-
+  const timeZone = moment.tz.guess()
+  const currentTime = moment().tz(timeZone)
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
       (position) => {
-        const { latitude, longitude } = position.coords;
-        setCoordinates(new Coordinates(latitude, longitude));
+        const { latitude, longitude } = position.coords
+        setCoordinates(new Coordinates(latitude, longitude))
       },
       (error) => {
-        console.error("Error getting user location:", error);
-        setCoordinates(null);
+        console.error("Error getting user location:", error)
+        setCoordinates(null)
       }
-    );
-  }, []);
+    )
+  }, [])
 
   const prayerTimes = coordinates
     ? new PrayerTimes(coordinates, date, params)
-    : null;
+    : null
 
   function prayerName(prayer: any) {
     if (prayer === Prayer.Fajr || prayer === Prayer.None) {
-      return "Fajr";
+      return "Fajr"
     } else if (prayer === Prayer.Sunrise || Prayer.Dhuhr) {
-      return "Dhuhr";
+      return "Dhuhr"
     } else if (prayer === Prayer.Asr) {
-      return "Asr";
+      return "Asr"
     } else if (prayer === Prayer.Maghrib) {
-      return "Maghrib";
+      return "Maghrib"
     } else if (prayer === Prayer.Isha) {
-      return "Isha";
+      return "Isha"
     }
   }
-  const currentPrayer = prayerName(prayerTimes?.currentPrayer()!);
-  const prayerDate = moment(date).format("MMMM DD, YYYY");
-  const fajrTime = moment(prayerTimes?.fajr).tz(timeZone).format(" h:mm A");
-  const fajrMoment = moment(prayerTimes?.fajr).tz(timeZone);
+  const currentPrayer = prayerName(prayerTimes?.currentPrayer()!)
+  const prayerDate = moment(date).format("MMMM DD, YYYY")
+  const fajrTime = moment(prayerTimes?.fajr).tz(timeZone).format(" h:mm A")
+  const fajrMoment = moment(prayerTimes?.fajr).tz(timeZone)
   const sunriseTime = moment(prayerTimes?.sunrise)
     .tz(timeZone)
-    .format(" h:mm A");
-  const dhuhrTime = moment(prayerTimes?.dhuhr).tz(timeZone).format(" h:mm A");
-  const asrTime = moment(prayerTimes?.asr).tz(timeZone).format(" h:mm A");
+    .format(" h:mm A")
+  const dhuhrTime = moment(prayerTimes?.dhuhr).tz(timeZone).format(" h:mm A")
+  const asrTime = moment(prayerTimes?.asr).tz(timeZone).format(" h:mm A")
   const maghribTime = moment(prayerTimes?.maghrib)
     .tz(timeZone)
-    .format(" h:mm A");
-  const ishaTime = moment(prayerTimes?.isha).tz(timeZone).format(" h:mm A");
+    .format(" h:mm A")
+  const ishaTime = moment(prayerTimes?.isha).tz(timeZone).format(" h:mm A")
 
-  
-  const remainingTime = moment.duration(fajrMoment.diff(currentTime));
-  
+  const remainingTime = moment.duration(fajrMoment.diff(currentTime))
+
   const remainingTimeFormatted = `${Math.floor(
     remainingTime.asHours()
-  )} hour : ${remainingTime.minutes()} minutes left`;
+  )} hour : ${remainingTime.minutes()} minutes left`
 
+  const [name, setName] = useState("Welcome")
 
+  const { t } = useTranslation()
 
-
-
-  const [name, setName] = useState("Welcome");
-
-  const { t } = useTranslation();
-
-  const loadedData = useLoaderData() as DefaultLoader;
-  const { isoLanguage } = useUserState(loadedData);
+  const loadedData = useLoaderData() as DefaultLoader
+  const { isoLanguage } = useUserState(loadedData)
 
   useEffect(() => {
     i18n.changeLanguage(isoLanguage ? isoLanguage.iso : navigator.language)
@@ -122,7 +112,7 @@ function HomePage() {
         )}
       </section>
     </div>
-  );
+  )
 }
 
-export default HomePage;
+export default HomePage
