@@ -13,7 +13,6 @@
   "fire": "ПОЖАР",
   "police": "ПОЛИЦИЈА",
   "questionPH": "Postavite pitanje ...",
-  "home": "Почетна",
   "tawafCalc": "Таваф Калкулатор",
   "saiiCalc": "Саии Калкулатор",
   "bookmarks": "Обележивачи",
@@ -35,5 +34,11 @@
   "safa": "Сафа",
   "marwa": "Марва",
   "voiceDisabled": "Гласовни чат онемогућен",
-  "noMic": "Дозволите дозволу за микрофон или проверите свој микрофон"
+  "noMic": "Дозволите дозволу за микрофон или проверите свој микрофон",
+  "visa": "Viza",
+  "train": "Voz",
+  "landmarks": "Znamenitosti",
+  "home": "Kuća",
+  "tools": "Alati",
+  "goToHome": "Idi na Početnu Stranicu"
 }

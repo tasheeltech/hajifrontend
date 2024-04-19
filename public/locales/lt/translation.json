@@ -13,7 +13,6 @@
   "fire": "UGNIS",
   "police": "POLICIJA",
   "questionPH": "Užduokite klausimą ...",
-  "home": "Pagrindinis",
   "tawafCalc": "Tawaf Skaičiuotuvas",
   "saiiCalc": "Saii Skaičiuotuvas",
   "bookmarks": "Erdvės žymos",
@@ -35,5 +34,11 @@
   "safa": "Safa",
   "marwa": "Marwa",
   "voiceDisabled": "Garso pokalbis išjungtas",
-  "noMic": "Leiskite mikrofono leidimą arba patikrinkite savo mikrofoną"
+  "noMic": "Leiskite mikrofono leidimą arba patikrinkite savo mikrofoną",
+  "visa": "Viza",
+  "train": "Traukinys",
+  "landmarks": "Paminklai",
+  "home": "Namai",
+  "tools": "Įrankiai",
+  "goToHome": "Eiti į Pagrindinį puslapį"
 }

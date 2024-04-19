@@ -13,7 +13,6 @@
   "fire": "FOC",
   "police": "POLICIA",
   "questionPH": "Fes una pregunta ...",
-  "home": "Inici",
   "tawafCalc": "Calculadora de Tawaf",
   "saiiCalc": "Calculadora de Saii",
   "bookmarks": "Adreces d'interès",
@@ -35,5 +34,11 @@
   "safa": "Safa",
   "marwa": "Marwa",
   "voiceDisabled": "Xat de veu desactivat",
-  "noMic": "Permeteu el permís del micròfon o comproveu el vostre micròfon"
+  "noMic": "Permeteu el permís del micròfon o comproveu el vostre micròfon",
+  "visa": "Visa",
+  "train": "Tren",
+  "landmarks": "Punts d'interès",
+  "home": "Casa",
+  "tools": "Eines",
+  "goToHome": "Anar a la Pàgina d'Inici"
 }

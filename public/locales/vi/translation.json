@@ -13,7 +13,6 @@
   "fire": "LỬA",
   "police": "CẢNH SÁT",
   "questionPH": "Hãy đặt câu hỏi ...",
-  "home": "Trang chủ",
   "tawafCalc": "Máy tính Tawaf",
   "saiiCalc": "Máy tính Saii",
   "bookmarks": "Đánh dấu",
@@ -35,5 +34,11 @@
   "safa": "Safa",
   "marwa": "Marwa",
   "voiceDisabled": "Trò chuyện bằng giọng nói bị vô hiệu hóa",
-  "noMic": "Cho phép Quyền mic hoặc Kiểm tra mic của bạn"
+  "noMic": "Cho phép Quyền mic hoặc Kiểm tra mic của bạn",
+  "visa": "Thị thực",
+  "train": "Tàu hỏa",
+  "landmarks": "Địa danh",
+  "home": "Nhà",
+  "tools": "Công cụ",
+  "goToHome": "Đi đến Nhà"
 }

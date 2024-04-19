@@ -13,7 +13,6 @@
   "fire": "MOTO",
   "police": "POLISI",
   "questionPH": "Uliza swali ...",
-  "home": "Nyumbani",
   "tawafCalc": "Kalkulator ya Tawaf",
   "saiiCalc": "Kalkulator ya Saii",
   "bookmarks": "Alamisho",
@@ -35,5 +34,11 @@
   "safa": "Safa",
   "marwa": "Marwa",
   "voiceDisabled": "Mazungumzo ya sauti imelemazwa",
-  "noMic": "Ruhusu ruhusa ya Mic au Angalia sauti yako"
+  "noMic": "Ruhusu ruhusa ya Mic au Angalia sauti yako",
+  "visa": "Visa",
+  "train": "Treni",
+  "landmarks": "Alama",
+  "home": "Nyumbani",
+  "tools": "Vifaa",
+  "goToHome": "Nenda Nyumbani"
 }

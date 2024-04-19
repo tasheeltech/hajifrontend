@@ -13,7 +13,6 @@
   "fire": "FIRE",
   "police": "POLICE",
   "questionPH": "Ask a question ...",
-  "home": "Home",
   "tawafCalc": "Tawaf Calculator",
   "saiiCalc": "Saii Calculator",
   "bookmarks": "Bookmarks",
@@ -35,5 +34,11 @@
   "safa": "Safa",
   "marwa": "Marwa",
   "voiceDisabled": "Voice chat disabled",
-  "noMic": "Allow Mic permission or Check your microphone"
+  "noMic": "Allow Mic permission or Check your microphone",
+  "visa": "Visa",
+  "train": "Train",
+  "landmarks": "Landmarks",
+  "home": "HOME",
+  "tools": "TOOLS",
+  "goToHome": "Go to Home"
 }

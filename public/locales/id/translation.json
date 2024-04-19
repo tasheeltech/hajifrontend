@@ -13,7 +13,6 @@
   "fire": "KEBAKARAN",
   "police": "POLISI",
   "questionPH": "Tanyakan pertanyaan ...",
-  "home": "Beranda",
   "tawafCalc": "Kalkulator Tawaf",
   "saiiCalc": "Kalkulator Saii",
   "bookmarks": "Penanda",
@@ -35,5 +34,11 @@
   "safa": "Safa",
   "marwa": "Marwa",
   "voiceDisabled": "Obrolan suara dinonaktifkan",
-  "noMic": "Izinkan Izin Mic atau Periksa mikrofon Anda"
+  "noMic": "Izinkan Izin Mic atau Periksa mikrofon Anda",
+  "visa": "Visa",
+  "train": "Kereta",
+  "landmarks": "Tempat-tempat Bersejarah",
+  "home": "RUMAH",
+  "tools": "PERALATAN",
+  "goToHome": "Pergi ke Rumah"
 }

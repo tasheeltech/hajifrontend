@@ -13,7 +13,6 @@
   "fire": "FOC",
   "police": "POLIȚIE",
   "questionPH": "Pune o întrebare ...",
-  "home": "Acasă",
   "tawafCalc": "Calculator Tawaf",
   "saiiCalc": "Calculator Saii",
   "bookmarks": "Semne de carte",
@@ -35,5 +34,11 @@
   "safa": "Safa",
   "marwa": "Marwa",
   "voiceDisabled": "Chat vocal dezactivat",
-  "noMic": "Permiteți permisiunea Microfonului sau Verificați-vă microfonul"
+  "noMic": "Permiteți permisiunea Microfonului sau Verificați-vă microfonul",
+  "visa": "Viză",
+  "train": "Tren",
+  "landmarks": "Obiective turistice",
+  "home": "Acasă",
+  "tools": "Unelte",
+  "goToHome": "Mergi Acasă"
 }

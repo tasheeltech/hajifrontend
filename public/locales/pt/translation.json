@@ -13,7 +13,6 @@
   "fire": "FOGO",
   "police": "POLÍCIA",
   "questionPH": "Faça uma pergunta ...",
-  "home": "Casa",
   "tawafCalc": "Calculadora de Tawaf",
   "saiiCalc": "Calculadora de Saii",
   "bookmarks": "Marcadores",
@@ -35,5 +34,11 @@
   "safa": "Safa",
   "marwa": "Marwa",
   "voiceDisabled": "Chat de voz desativado",
-  "noMic": "Permita a permissão do microfone ou Verifique o seu microfone"
+  "noMic": "Permita a permissão do microfone ou Verifique o seu microfone",
+  "visa": "Visto",
+  "train": "Trem",
+  "landmarks": "Pontos Turísticos",
+  "home": "Casa",
+  "tools": "Ferramentas",
+  "goToHome": "Ir para Casa"
 }

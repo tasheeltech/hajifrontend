@@ -13,7 +13,6 @@
   "fire": "YANGIN",
   "police": "POLİS",
   "questionPH": "Bir soru sorun ...",
-  "home": "Ev",
   "tawafCalc": "Tavaf Hesaplayıcı",
   "saiiCalc": "Saii Hesaplayıcı",
   "bookmarks": "Yer imleri",
@@ -35,5 +34,11 @@
   "safa": "Safa",
   "marwa": "Marwa",
   "voiceDisabled": "Sesli sohbet devre dışı bırakıldı",
-  "noMic": "Mikrofon iznini etkinleştirin veya mikrofonunuzu kontrol edin"
+  "noMic": "Mikrofon iznini etkinleştirin veya mikrofonunuzu kontrol edin",
+  "visa": "Vize",
+  "train": "Tren",
+  "landmarks": "Yer İşaretleri",
+  "home": "Ev",
+  "tools": "Araçlar",
+  "goToHome": "Eve Git"
 }

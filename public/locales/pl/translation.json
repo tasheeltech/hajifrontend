@@ -13,7 +13,6 @@
   "fire": "OGIEŃ",
   "police": "POLICJA",
   "questionPH": "Zadaj pytanie ...",
-  "home": "Dom",
   "tawafCalc": "Kalkulator Tawaf",
   "saiiCalc": "Kalkulator Saii",
   "bookmarks": "Zakładki",
@@ -35,5 +34,11 @@
   "safa": "Safa",
   "marwa": "Marwa",
   "voiceDisabled": "Czat głosowy wyłączony",
-  "noMic": "Włącz uprawnienie do mikrofonu lub sprawdź swój mikrofon"
+  "noMic": "Włącz uprawnienie do mikrofonu lub sprawdź swój mikrofon",
+  "visa": "Wiza",
+  "train": "Pociąg",
+  "landmarks": "Zabytki",
+  "home": "Dom",
+  "tools": "Narzędzia",
+  "goToHome": "Przejdź do Domu"
 }

@@ -13,7 +13,6 @@
   "fire": "TULEKUSTUTAJAD",
   "police": "POLITSEI",
   "questionPH": "Küsi küsimus ...",
-  "home": "Kodu",
   "tawafCalc": "Tawaf Kalkulaator",
   "saiiCalc": "Saii Kalkulaator",
   "bookmarks": "Järjehoidjad",
@@ -35,5 +34,11 @@
   "safa": "Safa",
   "marwa": "Marwa",
   "voiceDisabled": "Häälechat on keelatud",
-  "noMic": "Luba mikrofoni luba või kontrollige oma mikrofoni"
+  "noMic": "Luba mikrofoni luba või kontrollige oma mikrofoni",
+  "visa": "Viisa",
+  "train": "Rong",
+  "landmarks": "Tuntud kohad",
+  "home": "KODU",
+  "tools": "TÖÖRIISTAD",
+  "goToHome": "Mine koju"
 }

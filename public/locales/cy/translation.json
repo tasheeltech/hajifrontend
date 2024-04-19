@@ -13,7 +13,6 @@
   "fire": "TAN",
   "police": "HEDDLU",
   "questionPH": "Gofynnwch cwestiwn ...",
-  "home": "Cartref",
   "tawafCalc": "Cyfrifiannell Tawaf",
   "saiiCalc": "Cyfrifiannell Saii",
   "bookmarks": "Nodiadau",
@@ -35,5 +34,11 @@
   "safa": "Safa",
   "marwa": "Marwa",
   "voiceDisabled": "Sgwrs lleisio analluogwyd",
-  "noMic": "Rheoli caniatâd Mic neu Gwiriwch eich meicroffon"
+  "noMic": "Rheoli caniatâd Mic neu Gwiriwch eich meicroffon",
+  "visa": "Fisa",
+  "train": "Tren",
+  "landmarks": "Manions",
+  "home": "Cartref",
+  "tools": "Offer",
+  "goToHome": "Mynd i'r Cartref"
 }

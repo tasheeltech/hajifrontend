@@ -13,7 +13,6 @@
   "fire": "FEU",
   "police": "POLICE",
   "questionPH": "Posez une question ...",
-  "home": "Accueil",
   "tawafCalc": "Calculateur de Tawaf",
   "saiiCalc": "Calculateur de Saii",
   "bookmarks": "Signets",
@@ -35,5 +34,11 @@
   "safa": "Safa",
   "marwa": "Marwa",
   "voiceDisabled": "Chat vocal désactivé",
-  "noMic": "Autoriser la permission du micro ou Vérifier votre microphone"
+  "noMic": "Autoriser la permission du micro ou Vérifier votre microphone",
+  "visa": "Visa",
+  "train": "Train",
+  "landmarks": "Sites remarquables",
+  "home": "ACCUEIL",
+  "tools": "OUTILS",
+  "goToHome": "Aller à la Maison"
 }

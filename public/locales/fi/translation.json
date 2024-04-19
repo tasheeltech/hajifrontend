@@ -13,7 +13,6 @@
   "fire": "TULIPALO",
   "police": "POLIISI",
   "questionPH": "Kysy kysymys ...",
-  "home": "Koti",
   "tawafCalc": "Tawaf-laskin",
   "saiiCalc": "Saii-laskin",
   "bookmarks": "Kirjanmerkit",
@@ -35,5 +34,11 @@
   "safa": "Safa",
   "marwa": "Marwa",
   "voiceDisabled": "Äänipuhelu poistettu käytöstä",
-  "noMic": "Salli mikrofonilupa tai tarkista mikrofonisi"
+  "noMic": "Salli mikrofonilupa tai tarkista mikrofonisi",
+  "visa": "Viisumi",
+  "train": "Juna",
+  "landmarks": "Maamerkit",
+  "home": "KOTI",
+  "tools": "TYÖKALUT",
+  "goToHome": "Mene kotiin"
 }

@@ -172,7 +172,8 @@ function RootLayout() {
                     home ? "text-[#51d1a6]" : "text-[#a6a6a6]"
                   }`}
                 >
-                  HOME
+              {t("home")}
+
                 </p>
               </div>
             </button>
@@ -201,7 +202,8 @@ function RootLayout() {
                     chat ? "text-[#51d1a6]" : "text-[#a6a6a6]"
                   }`}
                 >
-                  CHAT
+              {t("chat")}
+
                 </p>
               </div>
             </button>
@@ -226,7 +228,8 @@ function RootLayout() {
                     tools ? "text-[#51d1a6]" : "text-[#a6a6a6]"
                   }`}
                 >
-                  TOOLS
+              {t("tools")}
+
                 </p>
               </div>
             </button>

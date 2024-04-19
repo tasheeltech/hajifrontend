@@ -13,7 +13,6 @@
   "fire": "火灾",
   "police": "警察",
   "questionPH": "问一个问题...",
-  "home": "主页",
   "tawafCalc": "Tawaf计算器",
   "saiiCalc": "Saii计算器",
   "bookmarks": "书签",
@@ -35,5 +34,11 @@
   "safa": "萨法",
   "marwa": "马尔瓦",
   "voiceDisabled": "语音聊天已禁用",
-  "noMic": "允许麦克风权限或检查您的麦克风"
+  "noMic": "允许麦克风权限或检查您的麦克风",
+  "visa": "签证",
+  "train": "火车",
+  "landmarks": "地标",
+  "home": "家",
+  "tools": "工具",
+  "goToHome": "前往主页"
 }

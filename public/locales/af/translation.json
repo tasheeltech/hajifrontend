@@ -13,7 +13,6 @@
   "fire": "BRAND",
   "police": "POLISIE",
   "questionPH": "Vra 'n vraag ...",
-  "home": "Tuisblad",
   "tawafCalc": "Tawaf-rekenaar",
   "saiiCalc": "Saii-rekenaar",
   "bookmarks": "Bladmerke",
@@ -35,5 +34,11 @@
   "safa": "Safa",
   "marwa": "Marwa",
   "voiceDisabled": "Stemgesprek gedeaktiveer",
-  "noMic": "Staan mikrofoon toestemming toe of Kontroleer jou mikrofoon"
+  "noMic": "Staan mikrofoon toestemming toe of Kontroleer jou mikrofoon",
+  "visa": "Visum",
+  "train": "Trein",
+  "landmarks": "Bakens",
+  "home": "Huis",
+  "tools": "Gereedskap",
+  "goToHome": "Gaan na die Huis"
 }

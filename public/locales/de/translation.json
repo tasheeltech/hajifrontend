@@ -13,7 +13,6 @@
   "fire": "FEUER",
   "police": "POLIZEI",
   "questionPH": "Stellen Sie eine Frage ...",
-  "home": "Startseite",
   "tawafCalc": "Tawaf-Rechner",
   "saiiCalc": "Saii-Rechner",
   "bookmarks": "Lesezeichen",
@@ -35,5 +34,11 @@
   "safa": "Safa",
   "marwa": "Marwa",
   "voiceDisabled": "Sprachchat deaktiviert",
-  "noMic": "Mikrofonberechtigung zulassen oder Mikrofon überprüfen"
+  "noMic": "Mikrofonberechtigung zulassen oder Mikrofon überprüfen",
+  "visa": "Visum",
+  "train": "Zug",
+  "landmarks": "Sehenswürdigkeiten",
+  "home": "Zuhause",
+  "tools": "Werkzeuge",
+  "goToHome": "Zur Startseite"
 }

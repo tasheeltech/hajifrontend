@@ -13,7 +13,6 @@
   "fire": "화재",
   "police": "경찰",
   "questionPH": "질문을 하다 ...",
-  "home": "홈",
   "tawafCalc": "타와프 계산기",
   "saiiCalc": "사이 계산기",
   "bookmarks": "책갈피",
@@ -35,5 +34,11 @@
   "safa": "사파",
   "marwa": "마르와",
   "voiceDisabled": "음성 채팅이 비활성화되었습니다",
-  "noMic": "마이크 권한을 허용하거나 마이크를 확인하십시오"
+  "noMic": "마이크 권한을 허용하거나 마이크를 확인하십시오",
+  "visa": "비자",
+  "train": "기차",
+  "landmarks": "랜드마크",
+  "home": "집",
+  "tools": "도구",
+  "goToHome": "집으로 이동"
 }

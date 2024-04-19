@@ -13,6 +13,7 @@ import { useTranslation } from "react-i18next"
 import { BsMicMuteFill } from "react-icons/bs"
 import { DefaultLoader } from "../loaders/defaultLoader"
 import { useUserState } from "../helper/userStateHelper"
+import { RxArrowTopRight } from "react-icons/rx"
 
 interface Intent {
   type: string
@@ -248,6 +249,12 @@ export default function ChatPage() {
     if (res.type === "INTENT:CALCULATE_MY_SAII") {
       navigate("/saii")
     }
+    if (res.type === "INTENT:VISA_QUERIES") {
+      navigate("/visa")
+    }
+    if (res.type === "INTENT:TRAIN_QUERIES") {
+      navigate("/train")
+    }
   }
 
   const toChatPage = () => {
@@ -266,11 +273,53 @@ export default function ChatPage() {
     setProcessing(false)
   }
 
+  useEffect(() => {
+    let uName: string
+    const userInfo = localStorage.getItem("userInfo")
+    if (userInfo) {
+      uName = JSON.parse(userInfo).name
+      setName(uName)
+    }
+  }, [])
+
+  const [name, setName] = useState("Welcome")
+  const [value, setValue] = useState("")
+
   return (
     <>
       {homepage && (
         <div className="flex flex-col justify-between h-full">
-          <div></div>
+          {/* <div></div> */}
+          <section className="flex flex-col gap-5 p-6 border-b">
+            <p className="font-semibold text-lg text-center">
+              {t("welcome")} {name} 😊️
+            </p>
+            <div className="flex flex-col gap-3">
+              <div className="flex gap-4 items-center justify-between px-5 py-4 rounded-[36px] border">
+                <p className="text-sm">{t("question1")}</p>
+                <div
+                  onClick={() => {
+                    setValue(t("question1"))
+                  }}
+                >
+                  <RxArrowTopRight size={14} />
+                </div>
+              </div>
+              <div className="flex gap-4 items-center justify-between px-5 py-4 rounded-[36px] border">
+                <p className="text-sm">{t("question2")}</p>
+                <div onClick={() => setValue(t("question2"))}>
+                  <RxArrowTopRight size={14} />
+                </div>
+              </div>
+              <div className="flex gap-4 items-center justify-between px-5 py-4 rounded-[36px] border">
+                <p className="text-sm">{t("question3")}</p>
+                <div onClick={() => setValue(t("question3"))}>
+                  <RxArrowTopRight size={14} />
+                </div>
+              </div>
+            </div>
+          </section>
+
           <div className="grid place-content-center my-10">
             {microphonePermission === "granted" && (
               <img
@@ -293,7 +342,11 @@ export default function ChatPage() {
             )}
           </div>
           <div className=" py-4 px-4 sticky bottom-0 left-0 w-full bg-white border-t-2">
-            <Search handleClick={handleSendClick} click={handleStopRecord} />
+            <Search
+              handleClick={handleSendClick}
+              click={handleStopRecord}
+              value={value}
+            />
           </div>
         </div>
       )}

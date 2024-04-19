@@ -13,7 +13,6 @@
   "fire": "TŰZ",
   "police": "RENDŐRSÉG",
   "questionPH": "Kérdezzen ...",
-  "home": "Kezdőlap",
   "tawafCalc": "Tawaf Kalkulátor",
   "saiiCalc": "Saii Kalkulátor",
   "bookmarks": "Könyvjelzők",
@@ -35,5 +34,11 @@
   "safa": "Safa",
   "marwa": "Marwa",
   "voiceDisabled": "Hangchat letiltva",
-  "noMic": "Engedélyezze a mikrofonengedélyt, vagy ellenőrizze a mikrofonját"
+  "noMic": "Engedélyezze a mikrofonengedélyt, vagy ellenőrizze a mikrofonját",
+  "visa": "Vízum",
+  "train": "Vonat",
+  "landmarks": "Nevezetességek",
+  "home": "Otthon",
+  "tools": "Eszközök",
+  "goToHome": "Ugrás a Főoldalra"
 }

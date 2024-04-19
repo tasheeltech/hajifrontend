@@ -13,7 +13,6 @@
   "fire": "POŽÁR",
   "police": "POLICIE",
   "questionPH": "Zeptejte se otázku ...",
-  "home": "Domovská stránka",
   "tawafCalc": "Tawaf Kalkulačka",
   "saiiCalc": "Saii Kalkulačka",
   "bookmarks": "Záložky",
@@ -35,5 +34,11 @@
   "safa": "Safa",
   "marwa": "Marwa",
   "voiceDisabled": "Hlasový chat zakázán",
-  "noMic": "Povolte oprávnění k mikrofonu nebo zkontrolujte svůj mikrofon"
+  "noMic": "Povolte oprávnění k mikrofonu nebo zkontrolujte svůj mikrofon",
+  "visa": "Vízum",
+  "train": "Vlak",
+  "landmarks": "Památky",
+  "home": "Domov",
+  "tools": "Nástroje",
+  "goToHome": "Jít na Domovskou Stránku"
 }

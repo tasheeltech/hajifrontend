@@ -13,7 +13,6 @@
   "fire": "POŽAR",
   "police": "POLICIJA",
   "questionPH": "Postavite pitanje ...",
-  "home": "Početna",
   "tawafCalc": "Tawaf Kalkulator",
   "saiiCalc": "Saii Kalkulator",
   "bookmarks": "Oznake",
@@ -35,5 +34,11 @@
   "safa": "Safa",
   "marwa": "Marwa",
   "voiceDisabled": "Glasovni chat onemogućen",
-  "noMic": "Dozvolite mikrofonsko dozvolu ili provjerite svoj mikrofon"
+  "noMic": "Dozvolite mikrofonsko dozvolu ili provjerite svoj mikrofon",
+  "visa": "Viza",
+  "train": "Voz",
+  "landmarks": "Znamenitosti",
+  "home": "Kuća",
+  "tools": "Alati",
+  "goToHome": "Idi na Početnu Stranicu"
 }

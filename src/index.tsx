@@ -27,6 +27,9 @@ import Location from "./pages/location"
 import ChatPage from "./pages/chatPage"
 import HomePage from "./routes/homepage"
 import Tools from "./pages/tools"
+import Visa from "./pages/visa"
+import Train from "./pages/train"
+import Landmarks from "./pages/landmarks"
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement)
 
@@ -95,6 +98,24 @@ const router = createBrowserRouter(
       <Route
         path="/location"
         element={<Location />}
+        errorElement={<ErrorPage />}
+        loader={defaultLoader}
+      />
+      <Route
+        path="/visa"
+        element={<Visa />}
+        errorElement={<ErrorPage />}
+        loader={defaultLoader}
+      />
+      <Route
+        path="/train"
+        element={<Train />}
+        errorElement={<ErrorPage />}
+        loader={defaultLoader}
+      />
+         <Route
+        path="/landmarks"
+        element={<Landmarks />}
         errorElement={<ErrorPage />}
         loader={defaultLoader}
       />

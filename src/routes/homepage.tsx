@@ -9,7 +9,7 @@ import { RxArrowTopRight } from "react-icons/rx"
 import { useTranslation } from "react-i18next"
 
 function HomePage() {
-  const [name, setName] = useState("Welcome")
+  // const [name, setName] = useState("Welcome")
 
   const { t } = useTranslation()
 
@@ -19,17 +19,17 @@ function HomePage() {
   useEffect(() => {
     i18n.changeLanguage(isoLanguage ? isoLanguage.iso : navigator.language)
     document.body.dir = i18n.dir()
-    let uName: string
-    const userInfo = localStorage.getItem("userInfo")
-    if (userInfo) {
-      uName = JSON.parse(userInfo).name
-      setName(uName)
-    }
+    // let uName: string
+    // const userInfo = localStorage.getItem("userInfo")
+    // if (userInfo) {
+    //   uName = JSON.parse(userInfo).name
+    //   setName(uName)
+    // }
   }, [])
 
   return (
     <div className="flex flex-col justify-between h-full">
-      <section className="flex flex-col gap-5 p-6 border-b">
+      {/* <section className="flex flex-col gap-5 p-6 border-b">
         <p className="font-semibold text-lg text-center">
           {t("welcome")} {name} 😊️
         </p>
@@ -53,7 +53,7 @@ function HomePage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       
     </div>

@@ -13,7 +13,6 @@
   "fire": "ILD",
   "police": "POLITI",
   "questionPH": "Still et spørsmål ...",
-  "home": "Hjem",
   "tawafCalc": "Tawaf Kalkulator",
   "saiiCalc": "Saii Kalkulator",
   "bookmarks": "Bokmerker",
@@ -35,5 +34,11 @@
   "safa": "Safa",
   "marwa": "Marwa",
   "voiceDisabled": "Stemmechat deaktivert",
-  "noMic": "Tillat mikrofon tillatelse eller Sjekk mikrofonen din"
+  "noMic": "Tillat mikrofon tillatelse eller Sjekk mikrofonen din",
+  "visa": "Visum",
+  "train": "Tog",
+  "landmarks": "Landemerker",
+  "home": "HJEM",
+  "tools": "VERKTØY",
+  "goToHome": "Gå til Hjem"
 }

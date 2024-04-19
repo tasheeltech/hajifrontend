@@ -13,7 +13,6 @@
   "fire": "BRAND",
   "police": "POLIS",
   "questionPH": "Ställ en fråga ...",
-  "home": "Hem",
   "tawafCalc": "Tawaf Kalkylator",
   "saiiCalc": "Saii Kalkylator",
   "bookmarks": "Bokmärken",
@@ -35,5 +34,11 @@
   "safa": "Safa",
   "marwa": "Marwa",
   "voiceDisabled": "Röstchat inaktiverad",
-  "noMic": "Tillåt mikrofonbehörighet eller Kontrollera din mikrofon"
+  "noMic": "Tillåt mikrofonbehörighet eller Kontrollera din mikrofon",
+  "visa": "Visum",
+  "train": "Tåg",
+  "landmarks": "Sevärdheter",
+  "home": "Hem",
+  "tools": "Verktyg",
+  "goToHome": "Gå till Hem"
 }
