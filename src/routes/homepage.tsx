@@ -12,11 +12,15 @@ import moment from "moment-timezone";
 
 function HomePage() {
   const [coordinates, setCoordinates] = useState<Coordinates | null>(null);
+  // const [remainingTime, setRemainingTime] = useState("");
   // const coordinates = new Coordinates(10.342005, 79.380153);
   const params = CalculationMethod.MoonsightingCommittee();
   const date = new Date();
   // const prayerTimes = new PrayerTimes(coordinates, date, params);
   const timeZone = moment.tz.guess();
+  const currentTime = moment().tz(timeZone);
+
+
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
@@ -36,11 +40,9 @@ function HomePage() {
     : null;
 
   function prayerName(prayer: any) {
-    if (prayer === Prayer.Fajr) {
+    if (prayer === Prayer.Fajr || prayer === Prayer.None) {
       return "Fajr";
-    } else if (prayer === Prayer.Sunrise) {
-      return "Sunrise";
-    } else if (prayer === Prayer.Dhuhr) {
+    } else if (prayer === Prayer.Sunrise || Prayer.Dhuhr) {
       return "Dhuhr";
     } else if (prayer === Prayer.Asr) {
       return "Asr";
@@ -48,10 +50,32 @@ function HomePage() {
       return "Maghrib";
     } else if (prayer === Prayer.Isha) {
       return "Isha";
-    } else if (prayer === Prayer.None) {
-      return "None";
     }
   }
+  const currentPrayer = prayerName(prayerTimes?.currentPrayer()!);
+  const prayerDate = moment(date).format("MMMM DD, YYYY");
+  const fajrTime = moment(prayerTimes?.fajr).tz(timeZone).format(" h:mm A");
+  const fajrMoment = moment(prayerTimes?.fajr).tz(timeZone);
+  const sunriseTime = moment(prayerTimes?.sunrise)
+    .tz(timeZone)
+    .format(" h:mm A");
+  const dhuhrTime = moment(prayerTimes?.dhuhr).tz(timeZone).format(" h:mm A");
+  const asrTime = moment(prayerTimes?.asr).tz(timeZone).format(" h:mm A");
+  const maghribTime = moment(prayerTimes?.maghrib)
+    .tz(timeZone)
+    .format(" h:mm A");
+  const ishaTime = moment(prayerTimes?.isha).tz(timeZone).format(" h:mm A");
+
+  
+  const remainingTime = moment.duration(fajrMoment.diff(currentTime));
+  
+  const remainingTimeFormatted = `${Math.floor(
+    remainingTime.asHours()
+  )} hour : ${remainingTime.minutes()} minutes left`;
+
+
+
+
 
   const [name, setName] = useState("Welcome");
 
@@ -83,32 +107,16 @@ function HomePage() {
         )}
         {coordinates && (
           <div className="flex flex-col justify-center items-center">
-            <p className="my-8 font-bold">
-              Prayer times for {moment(date).format("MMMM DD, YYYY")}
-            </p>
+            <p className="text-5xl mt-8">{currentPrayer}</p>
+            <p>{remainingTimeFormatted} </p>
+            <p className="my-4 font-bold">Prayer times for {prayerDate}</p>
             <div className="flex flex-col  mb-4">
-              <p>
-                Fajr: {moment(prayerTimes?.fajr).tz(timeZone).format(" h:mm A")}
-              </p>
-              <p>
-                Sunrise:{" "}
-                {moment(prayerTimes?.sunrise).tz(timeZone).format(" h:mm A")}
-              </p>
-              <p>
-                Dhuhr:{" "}
-                {moment(prayerTimes?.dhuhr).tz(timeZone).format(" h:mm A")}
-              </p>
-              <p>
-                Asr: {moment(prayerTimes?.asr).tz(timeZone).format(" h:mm A")}
-              </p>
-              <p>
-                Maghrib:{" "}
-                {moment(prayerTimes?.maghrib).tz(timeZone).format(" h:mm A")}
-              </p>
-              <p>
-                Isha: {moment(prayerTimes?.isha).tz(timeZone).format(" h:mm A")}
-              </p>
-              <p>Current Prayer: {prayerName(prayerTimes?.currentPrayer()!)}</p>
+              <p>Fajr: {fajrTime}</p>
+              <p>Sunrise: {sunriseTime}</p>
+              <p>Dhuhr: {dhuhrTime}</p>
+              <p>Asr: {asrTime}</p>
+              <p>Maghrib: {maghribTime}</p>
+              <p>Isha: {ishaTime}</p>
             </div>
           </div>
         )}
