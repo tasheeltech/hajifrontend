@@ -13,7 +13,6 @@
   "fire": "TŰZ",
   "police": "RENDŐRSÉG",
   "questionPH": "Kérdezzen ...",
-  "home": "Kezdőlap",
   "tawafCalc": "Tawaf Kalkulátor",
   "saiiCalc": "Saii Kalkulátor",
   "bookmarks": "Könyvjelzők",
@@ -26,8 +25,6 @@
   "yourQuestion": "A te kérdésed",
   "processing": "Feldolgozás...",
   "bookmark": "Könyvjelző",
-  "chat": "Csevegés",
-  "record": "Felvétel",
   "noBookmarks": "Még nincsenek könyvjelzők hozzáadva",
   "tawafCompleted": "Tawaf Befejezve",
   "goToSaii": "Menj a Saii Számológéphez",
@@ -35,5 +32,15 @@
   "safa": "Safa",
   "marwa": "Marwa",
   "voiceDisabled": "Hangchat letiltva",
-  "noMic": "Engedélyezze a mikrofonengedélyt, vagy ellenőrizze a mikrofonját"
+  "noMic": "Engedélyezze a mikrofonengedélyt, vagy ellenőrizze a mikrofonját",
+  "visa": "Vízum",
+  "train": "Vonat",
+  "landmarks": "Nevezetességek",
+  "home": "Otthon",
+  "chat": "Csevegés",
+  "tools": "Eszközök",
+  "goToHome": "Ugrás a Főoldalra",
+  "menu": "Menü",
+  "showPrayerTimes": "Kérjük, adjon meg helymeghatározási engedélyt az imaidők megjelenítéséhez.",
+  "record": "Felvétel"
 }

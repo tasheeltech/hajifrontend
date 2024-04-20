@@ -13,7 +13,6 @@
   "fire": "화재",
   "police": "경찰",
   "questionPH": "질문을 하다 ...",
-  "home": "홈",
   "tawafCalc": "타와프 계산기",
   "saiiCalc": "사이 계산기",
   "bookmarks": "책갈피",
@@ -26,8 +25,6 @@
   "yourQuestion": "당신의 질문",
   "processing": "처리 중...",
   "bookmark": "책갈피",
-  "chat": "채팅",
-  "record": "기록",
   "noBookmarks": "아직 북마크가 추가되지 않았습니다",
   "tawafCompleted": "타와프 완료",
   "goToSaii": "Saii 계산기로 이동",
@@ -35,5 +32,15 @@
   "safa": "사파",
   "marwa": "마르와",
   "voiceDisabled": "음성 채팅이 비활성화되었습니다",
-  "noMic": "마이크 권한을 허용하거나 마이크를 확인하십시오"
+  "noMic": "마이크 권한을 허용하거나 마이크를 확인하십시오",
+  "visa": "비자",
+  "train": "기차",
+  "landmarks": "랜드마크",
+  "home": "집",
+  "chat": "채팅",
+  "tools": "도구",
+  "goToHome": "집으로 이동",
+  "menu": "메뉴",
+  "showPrayerTimes": "기도 시간을 표시하려면 위치 권한을 부여하십시오.",
+  "record": "기록"
 }

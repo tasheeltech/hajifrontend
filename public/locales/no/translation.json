@@ -13,7 +13,6 @@
   "fire": "ILD",
   "police": "POLITI",
   "questionPH": "Still et spørsmål ...",
-  "home": "Hjem",
   "tawafCalc": "Tawaf Kalkulator",
   "saiiCalc": "Saii Kalkulator",
   "bookmarks": "Bokmerker",
@@ -26,8 +25,6 @@
   "yourQuestion": "Ditt spørsmål",
   "processing": "Behandler...",
   "bookmark": "Bokmerke",
-  "chat": "Prat",
-  "record": "Opptak",
   "noBookmarks": "Ingen bokmerker er lagt til ennå",
   "tawafCompleted": "Tawaf Fullført",
   "goToSaii": "Gå til Saii Kalkulator",
@@ -35,5 +32,15 @@
   "safa": "Safa",
   "marwa": "Marwa",
   "voiceDisabled": "Stemmechat deaktivert",
-  "noMic": "Tillat mikrofon tillatelse eller Sjekk mikrofonen din"
+  "noMic": "Tillat mikrofon tillatelse eller Sjekk mikrofonen din",
+  "visa": "Visum",
+  "train": "Tog",
+  "landmarks": "Landemerker",
+  "home": "HJEM",
+  "chat": "Prat",
+  "tools": "VERKTØY",
+  "goToHome": "Gå til Hjem",
+  "menu": "Meny",
+  "showPrayerTimes": "Vennligst gi stedstillatelse for å vise bønnetider.",
+  "record": "Opptak"
 }

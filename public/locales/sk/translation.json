@@ -13,7 +13,6 @@
   "fire": "POŽIAR",
   "police": "POLÍCIA",
   "questionPH": "Položte otázku ...",
-  "home": "Domov",
   "tawafCalc": "Kalkulačka Tawaf",
   "saiiCalc": "Kalkulačka Saii",
   "bookmarks": "Záložky",
@@ -26,8 +25,6 @@
   "yourQuestion": "Vaša otázka",
   "processing": "Spracovanie...",
   "bookmark": "Záložka",
-  "chat": "Chat",
-  "record": "Záznam",
   "noBookmarks": "Zatiaľ neboli pridané žiadne záložky",
   "tawafCompleted": "Tawaf Dokončený",
   "goToSaii": "Prejsť na kalkulačku Saii",
@@ -35,5 +32,15 @@
   "safa": "Safa",
   "marwa": "Marwa",
   "voiceDisabled": "Hlasový chat deaktivovaný",
-  "noMic": "Povoľte povolenie na mikrofón alebo skontrolujte svoj mikrofón"
+  "noMic": "Povoľte povolenie na mikrofón alebo skontrolujte svoj mikrofón",
+  "visa": "Víza",
+  "train": "Vlak",
+  "landmarks": "Pamiatky",
+  "home": "Domov",
+  "chat": "Chat",
+  "tools": "Nástroje",
+  "goToHome": "Prejsť na Domovskú Stránku",
+  "menu": "Menu",
+  "showPrayerTimes": "Prosím, udeľte povolenie na umiestnenie, aby ste mohli zobraziť časy modlitieb.",
+  "record": "Záznam"
 }

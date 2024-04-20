@@ -13,7 +13,6 @@
   "fire": "YANGIN",
   "police": "POLİS",
   "questionPH": "Bir soru sorun ...",
-  "home": "Ev",
   "tawafCalc": "Tavaf Hesaplayıcı",
   "saiiCalc": "Saii Hesaplayıcı",
   "bookmarks": "Yer imleri",
@@ -26,8 +25,6 @@
   "yourQuestion": "Sorunuz",
   "processing": "İşleniyor...",
   "bookmark": "Yer imi",
-  "chat": "Sohbet",
-  "record": "Kayıt",
   "noBookmarks": "Henüz yer imleri eklenmedi",
   "tawafCompleted": "Tawaf Tamamlandı",
   "goToSaii": "Saii Hesap Makinesine Git",
@@ -35,5 +32,15 @@
   "safa": "Safa",
   "marwa": "Marwa",
   "voiceDisabled": "Sesli sohbet devre dışı bırakıldı",
-  "noMic": "Mikrofon iznini etkinleştirin veya mikrofonunuzu kontrol edin"
+  "noMic": "Mikrofon iznini etkinleştirin veya mikrofonunuzu kontrol edin",
+  "visa": "Vize",
+  "train": "Tren",
+  "landmarks": "Yer İşaretleri",
+  "home": "Ev",
+  "chat": "Sohbet",
+  "tools": "Araçlar",
+  "goToHome": "Eve Git",
+  "menu": "Menü",
+  "showPrayerTimes": "Namaz saatlerini göstermek için lütfen konum izni verin.",
+  "record": "Kayıt"
 }

@@ -13,7 +13,6 @@
   "fire": "TULIPALO",
   "police": "POLIISI",
   "questionPH": "Kysy kysymys ...",
-  "home": "Koti",
   "tawafCalc": "Tawaf-laskin",
   "saiiCalc": "Saii-laskin",
   "bookmarks": "Kirjanmerkit",
@@ -26,8 +25,6 @@
   "yourQuestion": "Sinun kysymyksesi",
   "processing": "Käsittely...",
   "bookmark": "Kirjanmerkki",
-  "chat": "Jutella",
-  "record": "Tallenna",
   "noBookmarks": "Kirjanmerkkejä ei ole vielä lisätty",
   "tawafCompleted": "Tawaf Valmis",
   "goToSaii": "Siirry Saii-laskimeen",
@@ -35,5 +32,15 @@
   "safa": "Safa",
   "marwa": "Marwa",
   "voiceDisabled": "Äänipuhelu poistettu käytöstä",
-  "noMic": "Salli mikrofonilupa tai tarkista mikrofonisi"
+  "noMic": "Salli mikrofonilupa tai tarkista mikrofonisi",
+  "visa": "Viisumi",
+  "train": "Juna",
+  "landmarks": "Maamerkit",
+  "home": "KOTI",
+  "chat": "Jutella",
+  "tools": "TYÖKALUT",
+  "goToHome": "Mene kotiin",
+  "menu": "Valikko",
+  "showPrayerTimes": "Myönnä sijaintilupa näyttääksesi rukousajat.",
+  "record": "Tallenna"
 }

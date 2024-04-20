@@ -13,7 +13,6 @@
   "fire": "YANğıN",
   "police": "POLİS",
   "questionPH": "Sual verin ...",
-  "home": "Ana səhifə",
   "tawafCalc": "Tawaf Kalkulyatoru",
   "saiiCalc": "Saii Kalkulyatoru",
   "bookmarks": "Əlfəcinlər",
@@ -26,8 +25,6 @@
   "yourQuestion": "Sizin sualınız",
   "processing": "İşlənir...",
   "bookmark": "Əlfəci",
-  "chat": "Çat",
-  "record": "Qeyd",
   "noBookmarks": "Hələ belə işarələr əlavə edilməyib",
   "tawafCompleted": "Tawaf Tamamlandı",
   "goToSaii": "Saii Kalkulyatoruna keçid",
@@ -35,5 +32,15 @@
   "safa": "Safa",
   "marwa": "Marwa",
   "voiceDisabled": "Səsli söhbət deaktiv edildi",
-  "noMic": "Mikrofon icazəsini verin və ya mikrofonunuzu yoxlayın"
+  "noMic": "Mikrofon icazəsini verin və ya mikrofonunuzu yoxlayın",
+  "visa": "Viza",
+  "train": "Qatar",
+  "landmarks": "Landmarklar",
+  "home": "Ev",
+  "chat": "Çat",
+  "tools": "Alətlər",
+  "goToHome": "Əsas Səhifəyə Keç",
+  "menu": "Menyu",
+  "showPrayerTimes": "Namaz vaxtlarını göstərmək üçün yer izni verin.",
+  "record": "Qeyd"
 }

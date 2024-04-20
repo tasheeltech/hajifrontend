@@ -13,7 +13,6 @@
   "fire": "TAN",
   "police": "HEDDLU",
   "questionPH": "Gofynnwch cwestiwn ...",
-  "home": "Cartref",
   "tawafCalc": "Cyfrifiannell Tawaf",
   "saiiCalc": "Cyfrifiannell Saii",
   "bookmarks": "Nodiadau",
@@ -26,8 +25,6 @@
   "yourQuestion": "Eich cwestiwn",
   "processing": "Prosesu...",
   "bookmark": "Nodi",
-  "chat": "Sgwrs",
-  "record": "Cofnod",
   "noBookmarks": "Ni fedrwyd ychwaith eitemau nodau",
   "tawafCompleted": "Tawaf Wedi'i gwblhau",
   "goToSaii": "Ewch i Gyfrifiannell Saii",
@@ -35,5 +32,15 @@
   "safa": "Safa",
   "marwa": "Marwa",
   "voiceDisabled": "Sgwrs lleisio analluogwyd",
-  "noMic": "Rheoli caniatâd Mic neu Gwiriwch eich meicroffon"
+  "noMic": "Rheoli caniatâd Mic neu Gwiriwch eich meicroffon",
+  "visa": "Fisa",
+  "train": "Tren",
+  "landmarks": "Manions",
+  "home": "Cartref",
+  "chat": "Sgwrs",
+  "tools": "Offer",
+  "goToHome": "Mynd i'r Cartref",
+  "menu": "Dewislen",
+  "showPrayerTimes": "Rhowch ganiatâd lleoliad i ddangos amserau gweddi.",
+  "record": "Cofnod"
 }

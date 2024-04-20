@@ -13,7 +13,6 @@
   "fire": "SUNOG",
   "police": "PULIS",
   "questionPH": "Magtanong ...",
-  "home": "Bahay",
   "tawafCalc": "Tawaf Kalkulator",
   "saiiCalc": "Saii Kalkulator",
   "bookmarks": "Mga Talaan",
@@ -26,8 +25,6 @@
   "yourQuestion": "Ang iyong tanong",
   "processing": "Nagpoproseso...",
   "bookmark": "Talaan",
-  "chat": "Chat",
-  "record": "Rekord",
   "noBookmarks": "Walang mga bookmark na idinagdag pa",
   "tawafCompleted": "Tawaf Natapos",
   "goToSaii": "Pumunta sa Kalkulator ng Saii",
@@ -35,5 +32,15 @@
   "safa": "Safa",
   "marwa": "Marwa",
   "voiceDisabled": "Nakapagpatay ng Voice chat",
-  "noMic": "Pahintulutan ang Pahintulot ng Mic o Check ang iyong mikropono"
+  "noMic": "Pahintulutan ang Pahintulot ng Mic o Check ang iyong mikropono",
+  "visa": "Visa",
+  "train": "Tren",
+  "landmarks": "Mga Tanawin",
+  "home": "Bahay",
+  "chat": "Chat",
+  "tools": "Mga Kasangkapan",
+  "goToHome": "Pumunta sa Bahay",
+  "menu": "Menu",
+  "showPrayerTimes": "Paki-grant ng pahintulot sa lokasyon upang ipakita ang mga oras ng panalangin.",
+  "record": "Rekord"
 }

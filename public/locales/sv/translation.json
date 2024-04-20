@@ -13,7 +13,6 @@
   "fire": "BRAND",
   "police": "POLIS",
   "questionPH": "Ställ en fråga ...",
-  "home": "Hem",
   "tawafCalc": "Tawaf Kalkylator",
   "saiiCalc": "Saii Kalkylator",
   "bookmarks": "Bokmärken",
@@ -26,8 +25,6 @@
   "yourQuestion": "Din fråga",
   "processing": "Bearbetning...",
   "bookmark": "Bokmärke",
-  "chat": "Chatt",
-  "record": "Inspelning",
   "noBookmarks": "Inga bokmärken har lagts till ännu",
   "tawafCompleted": "Tawaf Slutförd",
   "goToSaii": "Gå till Saii Kalkylatorn",
@@ -35,5 +32,15 @@
   "safa": "Safa",
   "marwa": "Marwa",
   "voiceDisabled": "Röstchat inaktiverad",
-  "noMic": "Tillåt mikrofonbehörighet eller Kontrollera din mikrofon"
+  "noMic": "Tillåt mikrofonbehörighet eller Kontrollera din mikrofon",
+  "visa": "Visum",
+  "train": "Tåg",
+  "landmarks": "Sevärdheter",
+  "home": "Hem",
+  "chat": "Chatt",
+  "tools": "Verktyg",
+  "goToHome": "Gå till Hem",
+  "menu": "Meny",
+  "showPrayerTimes": "Vänligen bevilja platsbehörighet för att visa bönstider.",
+  "record": "Inspelning"
 }

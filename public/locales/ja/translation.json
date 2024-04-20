@@ -13,7 +13,6 @@
   "fire": "火災",
   "police": "警察",
   "questionPH": "質問してください...",
-  "home": "ホーム",
   "tawafCalc": "タワーフ計算機",
   "saiiCalc": "サイイ計算機",
   "bookmarks": "ブックマーク",
@@ -26,8 +25,6 @@
   "yourQuestion": "あなたの質問",
   "processing": "処理中...",
   "bookmark": "ブックマーク",
-  "chat": "チャット",
-  "record": "記録",
   "noBookmarks": "まだブックマークは追加されていません",
   "tawafCompleted": "タワーフ完了",
   "goToSaii": "サイイ計算機に移動",
@@ -35,5 +32,15 @@
   "safa": "サファー",
   "marwa": "マルワ",
   "voiceDisabled": "ボイスチャットが無効になっています",
-  "noMic": "マイクの許可を許可するか、マイクを確認してください"
+  "noMic": "マイクの許可を許可するか、マイクを確認してください",
+  "visa": "ビザ",
+  "train": "電車",
+  "landmarks": "ランドマーク",
+  "home": "家",
+  "chat": "チャット",
+  "tools": "ツール",
+  "goToHome": "ホームに戻る",
+  "menu": "メニュー",
+  "showPrayerTimes": "祈りの時間を表示するために場所の許可を許可してください。",
+  "record": "記録"
 }

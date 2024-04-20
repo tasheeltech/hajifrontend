@@ -13,7 +13,6 @@
   "fire": "POŽAR",
   "police": "POLICIJA",
   "questionPH": "Postavite pitanje ...",
-  "home": "Početna",
   "tawafCalc": "Tawaf Kalkulator",
   "saiiCalc": "Saii Kalkulator",
   "bookmarks": "Oznake",
@@ -26,8 +25,6 @@
   "yourQuestion": "Vaše pitanje",
   "processing": "Obrada...",
   "bookmark": "Oznaka",
-  "chat": "Čavrljanje",
-  "record": "Zapis",
   "noBookmarks": "Još nisu dodane oznake",
   "tawafCompleted": "Tawaf Završen",
   "goToSaii": "Idi na Saii Kalkulator",
@@ -35,5 +32,15 @@
   "safa": "Safa",
   "marwa": "Marwa",
   "voiceDisabled": "Glasovni chat onemogućen",
-  "noMic": "Omogućite dozvolu za mikrofon ili provjerite svoj mikrofon"
+  "noMic": "Omogućite dozvolu za mikrofon ili provjerite svoj mikrofon",
+  "visa": "Viza",
+  "train": "Vlak",
+  "landmarks": "Znamenitosti",
+  "home": "Kuća",
+  "chat": "Čavrljanje",
+  "tools": "Alati",
+  "goToHome": "Idi na Početnu Stranicu",
+  "menu": "Izbornik",
+  "showPrayerTimes": "Molimo vas da odobrite dozvolu za lokaciju kako biste prikazali vrijeme molitve.",
+  "record": "Zapis"
 }

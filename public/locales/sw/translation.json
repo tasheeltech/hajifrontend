@@ -13,7 +13,6 @@
   "fire": "MOTO",
   "police": "POLISI",
   "questionPH": "Uliza swali ...",
-  "home": "Nyumbani",
   "tawafCalc": "Kalkulator ya Tawaf",
   "saiiCalc": "Kalkulator ya Saii",
   "bookmarks": "Alamisho",
@@ -26,8 +25,6 @@
   "yourQuestion": "Swali lako",
   "processing": "Inaprocess...",
   "bookmark": "Alamisho",
-  "chat": "Mazungumzo",
-  "record": "Rekodi",
   "noBookmarks": "Hakuna alama za vitabu zilizoongezwa bado",
   "tawafCompleted": "Tawaf Imekamilika",
   "goToSaii": "Nenda kwa Kikokotoo cha Saii",
@@ -35,5 +32,15 @@
   "safa": "Safa",
   "marwa": "Marwa",
   "voiceDisabled": "Mazungumzo ya sauti imelemazwa",
-  "noMic": "Ruhusu ruhusa ya Mic au Angalia sauti yako"
+  "noMic": "Ruhusu ruhusa ya Mic au Angalia sauti yako",
+  "visa": "Visa",
+  "train": "Treni",
+  "landmarks": "Alama",
+  "home": "Nyumbani",
+  "chat": "Mazungumzo",
+  "tools": "Vifaa",
+  "goToHome": "Nenda Nyumbani",
+  "menu": "Menyu",
+  "showPrayerTimes": "Tafadhali kubali idhini ya eneo ili kuonyesha nyakati za sala.",
+  "record": "Rekodi"
 }
