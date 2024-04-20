@@ -17,7 +17,7 @@ const Processing: React.FC<ProcessingProps> = ({ question }) => {
           <div className="font-medium text-[#373535] text-lg underline">
             {t("yourQuestion")}
           </div>
-          <TextTypingEffect text={question} />
+          {question && <TextTypingEffect text={question} />}
         </div>
       </div>
       <div className="flex items-center gap-2">
