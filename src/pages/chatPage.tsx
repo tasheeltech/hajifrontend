@@ -177,6 +177,7 @@ export default function ChatPage() {
 
     formData.append("text", input)
     formData.append("isoLanguage", JSON.stringify(isoLanguage))
+    formData.append("location", JSON.stringify(center))
     console.log(isoLanguage)
 
     // formData.append("isoLanguage", "en")
