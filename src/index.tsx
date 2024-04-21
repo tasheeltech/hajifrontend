@@ -12,24 +12,30 @@ import ErrorPage from "./error-page"
 import AnotherPage from "./routes/anotherPage"
 import defaultLoader from "./loaders/defaultLoader"
 import OnBoard from "./routes/onBoard"
-import Testing from "./routes/testing"
-import TawafCalculator from "./pages/tawafCalculator"
-import SaiiCalculator from "./pages/saiiCalculator"
-import EmergencyPage from "./pages/emergency"
+
 
 import RootLayout from "./components/rootLayout/rootLayout"
 
-import Bookmarks from "./pages/bookmarks"
+
 import { I18nextProvider } from "react-i18next"
 import i18n from "./i18n"
-import Language from "./pages/language"
-import Location from "./pages/location"
-import ChatPage from "./pages/chatPage"
+
 import HomePage from "./routes/homepage"
-import Tools from "./pages/tools"
-import Visa from "./pages/visa"
-import Train from "./pages/train"
-import Landmarks from "./pages/landmarks"
+
+
+// Lazy Loaded Pages
+const Language = React.lazy(() => import("./pages/language"))
+const Location = React.lazy(() => import("./pages/location"))
+const ChatPage = React.lazy(() => import("./pages/chatPage"))
+const Tools = React.lazy(() => import("./pages/tools"))
+const Visa = React.lazy(() => import("./pages/visa"))
+const Train = React.lazy(() => import("./pages/train"))
+const Landmarks = React.lazy(() => import("./pages/landmarks"))
+const Testing = React.lazy(() => import("./routes/testing"))
+const TawafCalculator = React.lazy(() => import("./pages/tawafCalculator"))
+const SaiiCalculator = React.lazy(() => import("./pages/saiiCalculator"))
+const EmergencyPage = React.lazy(() => import("./pages/emergency"))
+const Bookmarks = React.lazy(() => import("./pages/bookmarks"))
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement)
 
@@ -113,7 +119,7 @@ const router = createBrowserRouter(
         errorElement={<ErrorPage />}
         loader={defaultLoader}
       />
-         <Route
+      <Route
         path="/landmarks"
         element={<Landmarks />}
         errorElement={<ErrorPage />}
