@@ -14,6 +14,7 @@ import { BsMicMuteFill } from "react-icons/bs"
 import { DefaultLoader } from "../loaders/defaultLoader"
 import { useUserState } from "../helper/userStateHelper"
 import { RxArrowTopRight } from "react-icons/rx"
+import { HAJI_BACKEND_URL } from "../helper/url"
 
 interface Intent {
   type: string
@@ -159,7 +160,7 @@ export default function ChatPage() {
 
     // formData.append("isoLanguage", "en")
     const getProcessPath =
-      "https://hajibackend.tasheel-tech.workers.dev/transcript"
+      HAJI_BACKEND_URL + "transcript"
     const body = await fetch(getProcessPath, {
       method: "POST",
       body: formData,
@@ -183,7 +184,7 @@ export default function ChatPage() {
     // formData.append("isoLanguage", "en")
 
     const body = await fetch(
-      "https://hajibackend.tasheel-tech.workers.dev/processText",
+      HAJI_BACKEND_URL + "processText",
       {
         method: "POST",
         body: formData,
