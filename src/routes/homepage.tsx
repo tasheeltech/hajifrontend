@@ -17,10 +17,14 @@ function HomePage() {
   const timeZone = moment.tz.guess()
   const currentTime = moment().tz(timeZone)
 
+  const loadedData = useLoaderData() as DefaultLoader
+  const { isoLanguage, setLocation } = useUserState(loadedData)
+
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
       (position) => {
         const { latitude, longitude } = position.coords
+        setLocation({lat: latitude, lng: longitude})
         setCoordinates(new Coordinates(latitude, longitude))
       },
       (error) => {
@@ -71,9 +75,6 @@ function HomePage() {
 
   const { t } = useTranslation()
 
-  const loadedData = useLoaderData() as DefaultLoader
-  const { isoLanguage } = useUserState(loadedData)
-
   useEffect(() => {
     i18n.changeLanguage(isoLanguage ? isoLanguage.iso : navigator.language)
     document.body.dir = i18n.dir()
@@ -97,8 +98,8 @@ function HomePage() {
         )}
         {coordinates && (
           <div className="flex flex-col justify-center items-center">
-            <p className="text-5xl mt-8">{currentPrayer}</p>
-            <p>{remainingTimeFormatted} </p>
+            {/* <p className="text-5xl mt-8">{currentPrayer}</p>
+            <p>{remainingTimeFormatted} </p> */}
             <p className="my-4 font-bold">Prayer times for {prayerDate}</p>
             <div className="flex flex-col  mb-4">
               <p>Fajr: {fajrTime}</p>
