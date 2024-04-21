@@ -13,7 +13,6 @@
   "fire": "FOGO",
   "police": "POLÍCIA",
   "questionPH": "Faça uma pergunta ...",
-  "home": "Casa",
   "tawafCalc": "Calculadora de Tawaf",
   "saiiCalc": "Calculadora de Saii",
   "bookmarks": "Marcadores",
@@ -26,8 +25,6 @@
   "yourQuestion": "Sua pergunta",
   "processing": "Processando...",
   "bookmark": "Marcador",
-  "chat": "Bate-papo",
-  "record": "Gravação",
   "noBookmarks": "Ainda não foram adicionados favoritos",
   "tawafCompleted": "Tawaf Concluído",
   "goToSaii": "Ir para a Calculadora Saii",
@@ -35,5 +32,15 @@
   "safa": "Safa",
   "marwa": "Marwa",
   "voiceDisabled": "Chat de voz desativado",
-  "noMic": "Permita a permissão do microfone ou Verifique o seu microfone"
+  "noMic": "Permita a permissão do microfone ou Verifique o seu microfone",
+  "visa": "Visto",
+  "train": "Trem",
+  "landmarks": "Pontos Turísticos",
+  "home": "Casa",
+  "chat": "Bate-papo",
+  "tools": "Ferramentas",
+  "goToHome": "Ir para Casa",
+  "menu": "Menu",
+  "showPrayerTimes": "Por favor, conceda permissão de localização para mostrar os horários de oração.",
+  "record": "Gravação"
 }

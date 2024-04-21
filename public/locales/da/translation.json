@@ -13,7 +13,6 @@
   "fire": "ILD",
   "police": "POLITI",
   "questionPH": "Stil et spørgsmål ...",
-  "home": "Hjem",
   "tawafCalc": "Tawaf-regnemaskine",
   "saiiCalc": "Saii-regnemaskine",
   "bookmarks": "Bogmærker",
@@ -26,8 +25,6 @@
   "yourQuestion": "Dit spørgsmål",
   "processing": "Behandler...",
   "bookmark": "Bogmærke",
-  "chat": "Chat",
-  "record": "Optagelse",
   "noBookmarks": "Ingen bogmærker er tilføjet endnu",
   "tawafCompleted": "Tawaf Fuldført",
   "goToSaii": "Gå til Saii Beregner",
@@ -35,5 +32,15 @@
   "safa": "Safa",
   "marwa": "Marwa",
   "voiceDisabled": "Voice chat deaktiveret",
-  "noMic": "Tillad mikrofon tilladelse eller Kontroller din mikrofon"
+  "noMic": "Tillad mikrofon tilladelse eller Kontroller din mikrofon",
+  "visa": "Visum",
+  "train": "Tog",
+  "landmarks": "Seværdigheder",
+  "home": "Hjem",
+  "chat": "Chat",
+  "tools": "Værktøjer",
+  "goToHome": "Gå til Startside",
+  "menu": "Menu",
+  "showPrayerTimes": "Vær venlig at give tilladelse til placering for at vise bønnetider.",
+  "record": "Optagelse"
 }

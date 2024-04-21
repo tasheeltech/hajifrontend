@@ -13,7 +13,6 @@
   "fire": "KEBAKARAN",
   "police": "POLISI",
   "questionPH": "Tanyakan pertanyaan ...",
-  "home": "Beranda",
   "tawafCalc": "Kalkulator Tawaf",
   "saiiCalc": "Kalkulator Saii",
   "bookmarks": "Penanda",
@@ -26,8 +25,6 @@
   "yourQuestion": "Pertanyaan Anda",
   "processing": "Memproses...",
   "bookmark": "Penanda",
-  "chat": "Obrolan",
-  "record": "Rekaman",
   "noBookmarks": "Belum ada bookmark yang ditambahkan",
   "tawafCompleted": "Tawaf Selesai",
   "goToSaii": "Pergi ke Kalkulator Saii",
@@ -35,5 +32,15 @@
   "safa": "Safa",
   "marwa": "Marwa",
   "voiceDisabled": "Obrolan suara dinonaktifkan",
-  "noMic": "Izinkan Izin Mic atau Periksa mikrofon Anda"
+  "noMic": "Izinkan Izin Mic atau Periksa mikrofon Anda",
+  "visa": "Visa",
+  "train": "Kereta",
+  "landmarks": "Tempat-tempat Bersejarah",
+  "home": "RUMAH",
+  "chat": "Obrolan",
+  "tools": "PERALATAN",
+  "goToHome": "Pergi ke Rumah",
+  "menu": "Menu",
+  "showPrayerTimes": "Harap berikan izin lokasi untuk menampilkan waktu salat.",
+  "record": "Rekaman"
 }

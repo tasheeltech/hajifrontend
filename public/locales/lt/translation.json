@@ -13,7 +13,6 @@
   "fire": "UGNIS",
   "police": "POLICIJA",
   "questionPH": "Užduokite klausimą ...",
-  "home": "Pagrindinis",
   "tawafCalc": "Tawaf Skaičiuotuvas",
   "saiiCalc": "Saii Skaičiuotuvas",
   "bookmarks": "Erdvės žymos",
@@ -26,8 +25,6 @@
   "yourQuestion": "Jūsų klausimas",
   "processing": "Apdorojimas...",
   "bookmark": "Erdvės žymos",
-  "chat": "Pokalbis",
-  "record": "Įrašas",
   "noBookmarks": "Dar nėra pridėta žymenų",
   "tawafCompleted": "Tawaf Baigtas",
   "goToSaii": "Eikite į Saii Skaičiuotuvą",
@@ -35,5 +32,15 @@
   "safa": "Safa",
   "marwa": "Marwa",
   "voiceDisabled": "Garso pokalbis išjungtas",
-  "noMic": "Leiskite mikrofono leidimą arba patikrinkite savo mikrofoną"
+  "noMic": "Leiskite mikrofono leidimą arba patikrinkite savo mikrofoną",
+  "visa": "Viza",
+  "train": "Traukinys",
+  "landmarks": "Paminklai",
+  "home": "Namai",
+  "chat": "Pokalbis",
+  "tools": "Įrankiai",
+  "goToHome": "Eiti į Pagrindinį puslapį",
+  "menu": "Meniu",
+  "showPrayerTimes": "Norėdami rodyti maldos laikus, prašome suteikti vietos leidimą.",
+  "record": "Įrašas"
 }

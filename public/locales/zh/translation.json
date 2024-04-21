@@ -13,7 +13,6 @@
   "fire": "火灾",
   "police": "警察",
   "questionPH": "问一个问题...",
-  "home": "主页",
   "tawafCalc": "Tawaf计算器",
   "saiiCalc": "Saii计算器",
   "bookmarks": "书签",
@@ -26,8 +25,6 @@
   "yourQuestion": "您的问题",
   "processing": "处理中...",
   "bookmark": "书签",
-  "chat": "聊天",
-  "record": "记录",
   "noBookmarks": "尚未添加书签",
   "tawafCompleted": "完成了巡礼",
   "goToSaii": "前往赛计算器",
@@ -35,5 +32,15 @@
   "safa": "萨法",
   "marwa": "马尔瓦",
   "voiceDisabled": "语音聊天已禁用",
-  "noMic": "允许麦克风权限或检查您的麦克风"
+  "noMic": "允许麦克风权限或检查您的麦克风",
+  "visa": "签证",
+  "train": "火车",
+  "landmarks": "地标",
+  "home": "家",
+  "chat": "聊天",
+  "tools": "工具",
+  "goToHome": "前往主页",
+  "menu": "菜单",
+  "showPrayerTimes": "请授予位置权限以显示祷告时间。",
+  "record": "记录"
 }

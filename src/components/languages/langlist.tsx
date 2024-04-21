@@ -1,14 +1,39 @@
 const CountriesData = {
   countries: [
     {
-      language: "Afrikaans",
-      iso: "af",
-      flag: "🇿🇦",
-    },
-    {
       language: "Arabic",
       iso: "ar",
       flag: "🇸🇦",
+    },
+    {
+      language: "English",
+      iso: "en",
+      flag: "🇬🇧",
+    },
+    {
+      language: "Urdu",
+      iso: "ur",
+      flag: "🇵🇰",
+    },
+    {
+      language: "Indonesian",
+      iso: "id",
+      flag: "🇮🇩",
+    },
+    {
+      language: "Turkish",
+      iso: "tr",
+      flag: "🇹🇷",
+    },
+    {
+      language: "Malay",
+      iso: "ms",
+      flag: "🇲🇾",
+    },
+    {
+      language: "Afrikaans",
+      iso: "af",
+      flag: "🇿🇦",
     },
     {
       language: "Armenian",
@@ -65,11 +90,7 @@ const CountriesData = {
       iso: "nl",
       flag: "🇳🇱",
     },
-    {
-      language: "English",
-      iso: "en",
-      flag: "🇬🇧",
-    },
+
     {
       language: "Estonian",
       iso: "et",
@@ -115,11 +136,7 @@ const CountriesData = {
       iso: "is",
       flag: "🇮🇸",
     },
-    {
-      language: "Indonesian",
-      iso: "id",
-      flag: "🇮🇩",
-    },
+
     {
       language: "Italian",
       iso: "it",
@@ -160,11 +177,7 @@ const CountriesData = {
       iso: "mk",
       flag: "🇲🇰",
     },
-    {
-      language: "Malay",
-      iso: "ms",
-      flag: "🇲🇾",
-    },
+
     {
       language: "Marathi",
       iso: "mr",
@@ -255,21 +268,13 @@ const CountriesData = {
       iso: "th",
       flag: "🇹🇭",
     },
-    {
-      language: "Turkish",
-      iso: "tr",
-      flag: "🇹🇷",
-    },
+
     {
       language: "Ukrainian",
       iso: "uk",
       flag: "🇺🇦",
     },
-    {
-      language: "Urdu",
-      iso: "ur",
-      flag: "🇵🇰",
-    },
+
     {
       language: "Vietnamese",
       iso: "vi",

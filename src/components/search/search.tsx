@@ -1,22 +1,35 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { useTranslation } from "react-i18next"
 import { IoIosSend } from "react-icons/io"
 
 interface Props {
   handleClick: (question: string) => void
   click: () => void
+  value: string
+  dummy: number
 }
 
-const Search: React.FC<Props> = ({ handleClick, click }) => {
-  const [question, setQuestion] = useState("")
+const Search: React.FC<Props> = ({ handleClick, click, value, dummy }) => {
 
+  const [question, setQuestion] = useState(value)
+
+  useEffect(() => {
+    // Update question whenever the value prop changes
+    setQuestion(value)
+  }, [value, dummy])
+  
   const { t } = useTranslation()
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const newValue = event.target.value
+    setQuestion(newValue)
+  }
 
   return (
     <div className="flex gap-4 items-center">
       <input
         value={question}
-        onChange={(e) => setQuestion(e.target.value)}
+        onChange={handleChange}
         type="text"
         className="w-full max-h-12 border border-[#373535] rounded-[30px] px-6 py-4 focus:outline-none focus:ring focus:ring-[#2BCE986B] focus:border-[#888888]"
         placeholder={t("questionPH")}

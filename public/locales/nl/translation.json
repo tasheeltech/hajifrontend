@@ -13,7 +13,6 @@
   "fire": "BRAND",
   "police": "POLITIE",
   "questionPH": "Stel een vraag ...",
-  "home": "Startpagina",
   "tawafCalc": "Tawaf-rekenmachine",
   "saiiCalc": "Saii-rekenmachine",
   "bookmarks": "Bladwijzers",
@@ -26,8 +25,6 @@
   "yourQuestion": "Uw vraag",
   "processing": "Bezig met verwerken...",
   "bookmark": "Bladwijzer",
-  "chat": "Chat",
-  "record": "Opname",
   "noBookmarks": "Nog geen bladwijzers toegevoegd",
   "tawafCompleted": "Tawaf Voltooid",
   "goToSaii": "Ga naar Saii Calculator",
@@ -35,5 +32,15 @@
   "safa": "Safa",
   "marwa": "Marwa",
   "voiceDisabled": "Voice chat uitgeschakeld",
-  "noMic": "Sta Microfoon toestemming toe of Controleer uw microfoon"
+  "noMic": "Sta Microfoon toestemming toe of Controleer uw microfoon",
+  "visa": "Visum",
+  "train": "Trein",
+  "landmarks": "Bezienswaardigheden",
+  "home": "Thuis",
+  "chat": "Chat",
+  "tools": "Gereedschap",
+  "goToHome": "Ga naar Huis",
+  "menu": "Menu",
+  "showPrayerTimes": "Geef alstublieft locatietoestemming om gebedstijden te tonen.",
+  "record": "Opname"
 }

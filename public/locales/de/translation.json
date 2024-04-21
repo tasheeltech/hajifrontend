@@ -13,7 +13,6 @@
   "fire": "FEUER",
   "police": "POLIZEI",
   "questionPH": "Stellen Sie eine Frage ...",
-  "home": "Startseite",
   "tawafCalc": "Tawaf-Rechner",
   "saiiCalc": "Saii-Rechner",
   "bookmarks": "Lesezeichen",
@@ -26,8 +25,6 @@
   "yourQuestion": "Ihre Frage",
   "processing": "Verarbeitung...",
   "bookmark": "Lesezeichen",
-  "chat": "Chat",
-  "record": "Aufzeichnung",
   "noBookmarks": "Noch keine Lesezeichen hinzugefügt",
   "tawafCompleted": "Tawaf Abgeschlossen",
   "goToSaii": "Gehe zum Saii-Rechner",
@@ -35,5 +32,15 @@
   "safa": "Safa",
   "marwa": "Marwa",
   "voiceDisabled": "Sprachchat deaktiviert",
-  "noMic": "Mikrofonberechtigung zulassen oder Mikrofon überprüfen"
+  "noMic": "Mikrofonberechtigung zulassen oder Mikrofon überprüfen",
+  "visa": "Visum",
+  "train": "Zug",
+  "landmarks": "Sehenswürdigkeiten",
+  "home": "Zuhause",
+  "chat": "Chat",
+  "tools": "Werkzeuge",
+  "goToHome": "Zur Startseite",
+  "menu": "Menü",
+  "showPrayerTimes": "Bitte gewähren Sie Standortberechtigungen, um Gebetszeiten anzuzeigen.",
+  "record": "Aufzeichnung"
 }

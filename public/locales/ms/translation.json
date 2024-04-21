@@ -13,7 +13,6 @@
   "fire": "API",
   "police": "POLIS",
   "questionPH": "Tanyakan soalan ...",
-  "home": "Laman utama",
   "tawafCalc": "Kalkulator Tawaf",
   "saiiCalc": "Kalkulator Saii",
   "bookmarks": "Penanda buku",
@@ -26,8 +25,6 @@
   "yourQuestion": "Soalan anda",
   "processing": "Sedang diproses...",
   "bookmark": "Penanda buku",
-  "chat": "Sembang",
-  "record": "Rekod",
   "noBookmarks": "Tiada penanda buku ditambah lagi",
   "tawafCompleted": "Tawaf Selesai",
   "goToSaii": "Pergi ke Kalkulator Saii",
@@ -35,5 +32,15 @@
   "safa": "Safa",
   "marwa": "Marwa",
   "voiceDisabled": "Perbualan suara dilumpuhkan",
-  "noMic": "Benarkan Kebenaran Mic atau Periksa mikrofon anda"
+  "noMic": "Benarkan Kebenaran Mic atau Periksa mikrofon anda",
+  "visa": "Visa",
+  "train": "Kereta api",
+  "landmarks": "Tanda tanah",
+  "home": "RUMAH",
+  "chat": "Sembang",
+  "tools": "Alat",
+  "goToHome": "Pergi ke Rumah",
+  "menu": "Menu",
+  "showPrayerTimes": "Sila berikan kebenaran lokasi untuk menunjukkan waktu solat.",
+  "record": "Rekod"
 }
