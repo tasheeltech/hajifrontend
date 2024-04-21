@@ -7,6 +7,7 @@ import { MdBookmarks } from "react-icons/md"
 import { FaCcVisa, FaLandmarkDome, FaTrainSubway } from "react-icons/fa6"
 import { useTranslation } from "react-i18next"
 import { TbHelpTriangleFilled } from "react-icons/tb"
+import React from "react"
 
 interface MyObject {
   name: string

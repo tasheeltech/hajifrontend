@@ -208,9 +208,6 @@ export default function ChatPage() {
       console.log(res.payload.message)
       setAnswer("Please try again")
     }
-    if (res.payload.input === "undefined") {
-      setQuestion("?")
-    }
 
     if (res.type.startsWith("INTENT:NEAREST")) {
       setMapLocations(res.payload.locations.places)
