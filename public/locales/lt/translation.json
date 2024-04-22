@@ -45,5 +45,11 @@
   "q3": "Norėčiau suskaičiuoti savo Tawaf?",
   "q4": "Esu skubioje situacijoje",
   "q5": "Parodyk man žymiausius objektus Mekoje",
-  "q6": "Suskaičiuokite mano Sa'ii"
+  "q6": "Suskaičiuokite mano Sa'ii",
+  "selectMadhab": "Pasirinkite savo Madhab",
+  "prayer": "Maldos nustatymai",
+  "makkah": "Meka",
+  "madinah": "Medina",
+  "hanafi": "Hanafis",
+  "shafi": "Shafis"
 }

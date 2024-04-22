@@ -45,5 +45,11 @@
   "q3": "Vull comptar el meu Tawaf?",
   "q4": "Estic en una emergència",
   "q5": "Mostra'm llocs d'interès a Meca",
-  "q6": "Compte el meu Sa'ii"
+  "q6": "Compte el meu Sa'ii",
+  "selectMadhab": "Seleccioneu el vostre Madhab",
+  "prayer": "Configuració de la pregària",
+  "makkah": "Makkah",
+  "madinah": "Madinah",
+  "hanafi": "Hanafi",
+  "shafi": "Shafi"
 }

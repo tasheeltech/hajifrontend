@@ -45,5 +45,11 @@
   "q3": "Nataka kuhesabu Tawaf yangu?",
   "q4": "Niko katika dharura",
   "q5": "Nionyeshe Landmarks huko Makkah",
-  "q6": "Hesabu Sa'ii yangu"
+  "q6": "Hesabu Sa'ii yangu",
+  "selectMadhab": "Chagua Madhab yako",
+  "prayer": "Vipimo vya Maombi",
+  "makkah": "Makkah",
+  "madinah": "Madinah",
+  "hanafi": "Hanafi",
+  "shafi": "Shafi"
 }

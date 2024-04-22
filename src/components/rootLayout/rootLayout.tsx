@@ -1,5 +1,10 @@
 import React, { useEffect, useRef, useState } from "react"
-import { Link, Outlet, useLocation, useNavigate } from "react-router-dom"
+import {
+  Link,
+  Outlet,
+  useLocation,
+  useNavigate,
+} from "react-router-dom"
 import Header from "../header/header"
 import { useTranslation } from "react-i18next"
 import { LuChevronRightCircle } from "react-icons/lu"
@@ -10,6 +15,7 @@ import { MdGTranslate, MdMessage, MdPrivacyTip } from "react-icons/md"
 import { MdCategory } from "react-icons/md"
 import { RiHome3Fill } from "react-icons/ri"
 import { FaLocationDot } from "react-icons/fa6"
+import { RiUserSettingsFill } from "react-icons/ri"
 
 interface MyObject {
   name: string
@@ -18,13 +24,9 @@ interface MyObject {
 }
 
 const data: MyObject[] = [
-  // { name: "home", icon: ImHome, link: "/homepage" },
-  // { name: "tawafCalc", icon: FaKaaba, link: "/tawaf" },
-  // { name: "saiiCalc", icon: PiMountainsFill, link: "/saii" },
-  // { name: "bookmarks", icon: MdBookmarks, link: "/bookmarks" },
-  // { name: "emergency", icon: MdEmergencyShare, link: "/emergency" },
   { name: "language", icon: MdGTranslate, link: "/language" },
   { name: "location", icon: FaLocationDot, link: "/location" },
+  { name: "prayer", icon: RiUserSettingsFill, link: "/prayer" },
   { name: "privacy", icon: MdPrivacyTip, link: "/privacy" },
   { name: "logOut", icon: FaSignOutAlt, link: "/" },
 ]
@@ -48,7 +50,12 @@ function RootLayout() {
   const menuRef = useRef<HTMLDivElement>(null)
 
   // const loadedData = useLoaderData() as DefaultLoader
-  // const { name } = useUserState(loadedData)
+  // const { isoLanguage } = useUserState(loadedData)
+
+  // useEffect(() => {
+  //   i18n.changeLanguage(isoLanguage ? isoLanguage.iso : navigator.language)
+  //   document.body.dir = i18n.dir()
+  // }, [i18n, i18n.language])
 
   const toggleMenu = () => {
     setShowMenu(!showMenu)
@@ -67,6 +74,7 @@ function RootLayout() {
     } else if (
       location.pathname === "/language" ||
       location.pathname === "/location" ||
+      location.pathname === "/prayer" ||
       location.pathname === "/privacy"
     ) {
       setChat(false)
@@ -78,15 +86,6 @@ function RootLayout() {
       setChat(false)
     }
   }, [location.pathname])
-
-  // useEffect(() => {
-  //   let uName: string
-  //   const userInfo = localStorage.getItem("userInfo")
-  //   if (userInfo) {
-  //     uName = JSON.parse(userInfo).name
-  //     setName(uName)
-  //   }
-  // }, [name, showMenu])
 
   useEffect(() => {
     setSelectedMenuItem(location.pathname)
@@ -176,14 +175,14 @@ function RootLayout() {
       </main>
       {layout && (
         <footer>
-          <div className=" py-1 flex items-baseline justify-around w-full bg-white border-t-2">
+          <div className=" py-1 flex gap-2 items-baseline justify-around w-full bg-white border-t-2">
             <button
               onClick={() => {
                 navigate("/homepage")
               }}
               // to={"/tools"}
             >
-              <div className="flex flex-col gap-1 items-center justify-center rounded-lg px-4 py-2 ">
+              <div className="flex flex-col gap-1 items-center justify-center rounded-lg px-4 py-2 max-w-16">
                 <div>
                   <RiHome3Fill
                     size={28}
@@ -191,7 +190,7 @@ function RootLayout() {
                   />
                 </div>
                 <p
-                  className={`text-xs font-bold ${
+                  className={`text-xs font-bold truncate ${
                     home ? "text-[#51d1a6]" : "text-[#a6a6a6]"
                   }`}
                 >
@@ -217,7 +216,7 @@ function RootLayout() {
                   />
                 </div>
                 <p
-                  className={`text-xs font-bold ${
+                  className={`text-xs font-bold truncate ${
                     chat ? "text-[#51d1a6]" : "text-[#a6a6a6]"
                   }`}
                 >
@@ -239,7 +238,7 @@ function RootLayout() {
                   />
                 </div>
                 <p
-                  className={`text-xs font-bold ${
+                  className={`text-xs font-bold truncate ${
                     tools ? "text-[#51d1a6]" : "text-[#a6a6a6]"
                   }`}
                 >

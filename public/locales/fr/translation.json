@@ -45,5 +45,11 @@
   "q3": "Je veux compter mon Tawaf?",
   "q4": "Je suis en situation d'urgence",
   "q5": "Montrez-moi les sites remarquables à La Mecque",
-  "q6": "Compter mon Sa'ii"
+  "q6": "Compter mon Sa'ii",
+  "selectMadhab": "Choisissez votre Madhab",
+  "prayer": "Paramètres de prière",
+  "makkah": "La Mecque",
+  "madinah": "Médine",
+  "hanafi": "Hanafite",
+  "shafi": "Shaféite"
 }

@@ -45,5 +45,11 @@
   "q3": "Mənim Tawafı saymaq istəyirəm?",
   "q4": "Mən bir fəlakətəyəm",
   "q5": "Məkkədə böyük binaları göstərin",
-  "q6": "Sa'ii sayım"
+  "q6": "Sa'ii sayım",
+  "selectMadhab": "Məzhebinizi seçin",
+  "prayer": "Namaz ayarları",
+  "makkah": "Məkkə",
+  "madinah": "Mədinə",
+  "hanafi": "Hanafi",
+  "shafi": "Shafi"
 }

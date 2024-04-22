@@ -45,5 +45,11 @@
   "q3": "Vreau să-mi număr Tawaf-ul?",
   "q4": "Sunt într-o situație de urgență",
   "q5": "Arată-mi reperele din Makkah",
-  "q6": "Numără-mi Sa'ii"
+  "q6": "Numără-mi Sa'ii",
+  "selectMadhab": "Selectați-vă Madhab-ul",
+  "prayer": "Setări de rugăciune",
+  "makkah": "Makkah",
+  "madinah": "Madinah",
+  "hanafi": "Hanafi",
+  "shafi": "Shafi"
 }
