@@ -45,5 +45,11 @@
   "q3": "Ik wil mijn Tawaf tellen?",
   "q4": "Ik ben in een noodgeval",
   "q5": "Toon mij Landmarks in Mekka",
-  "q6": "Tel mijn Sa'ii"
+  "q6": "Tel mijn Sa'ii",
+  "selectMadhab": "Selecteer uw Madhab",
+  "prayer": "Gebedsinstellingen",
+  "makkah": "Mekka",
+  "madinah": "Madinah",
+  "hanafi": "Hanafi",
+  "shafi": "Shafi"
 }

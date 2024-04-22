@@ -45,5 +45,11 @@
   "q3": "I want to count my Tawaf?",
   "q4": "I am in an Emergency",
   "q5": "Show me Landmarks in Makkah",
-  "q6": "Count my Sa'ii"
+  "q6": "Count my Sa'ii",
+  "selectMadhab": "Dewiswch eich Madhab",
+  "prayer": "Gosodiadau Weddi",
+  "makkah": "Makkah",
+  "madinah": "Madinah",
+  "hanafi": "Hanafi",
+  "shafi": "Shafi"
 }

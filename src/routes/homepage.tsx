@@ -4,27 +4,34 @@ import { useLoaderData } from "react-router-dom"
 import { useUserState } from "../helper/userStateHelper"
 import { DefaultLoader } from "../loaders/defaultLoader"
 import { useTranslation } from "react-i18next"
-import { Coordinates, CalculationMethod, PrayerTimes, Prayer } from "adhan"
+import {
+  Coordinates,
+  CalculationMethod,
+  PrayerTimes,
+  Prayer,
+  Madhab,
+} from "adhan"
 import moment from "moment-timezone"
 
 function HomePage() {
+  const loadedData = useLoaderData() as DefaultLoader
+  const { isoLanguage, madhab, setLocation } = useUserState(loadedData)
+
   const [coordinates, setCoordinates] = useState<Coordinates | null>(null)
   // const [remainingTime, setRemainingTime] = useState("");
   // const coordinates = new Coordinates(10.342005, 79.380153);
   const params = CalculationMethod.MoonsightingCommittee()
+  params.madhab = madhab === "Hanafi" ? Madhab.Hanafi : Madhab.Shafi
   const date = new Date()
   // const prayerTimes = new PrayerTimes(coordinates, date, params);
   const timeZone = moment.tz.guess()
   const currentTime = moment().tz(timeZone)
 
-  const loadedData = useLoaderData() as DefaultLoader
-  const { isoLanguage, setLocation } = useUserState(loadedData)
-
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
       (position) => {
         const { latitude, longitude } = position.coords
-        setLocation({lat: latitude, lng: longitude})
+        setLocation({ lat: latitude, lng: longitude })
         setCoordinates(new Coordinates(latitude, longitude))
       },
       (error) => {
@@ -71,20 +78,12 @@ function HomePage() {
     remainingTime.asHours()
   )} hour : ${remainingTime.minutes()} minutes left`
 
-  const [name, setName] = useState("Welcome")
-
   const { t } = useTranslation()
 
   useEffect(() => {
     i18n.changeLanguage(isoLanguage ? isoLanguage.iso : navigator.language)
     document.body.dir = i18n.dir()
-    let uName: string
-    const userInfo = localStorage.getItem("userInfo")
-    if (userInfo) {
-      uName = JSON.parse(userInfo).name
-      setName(uName)
-    }
-  }, [])
+  }, [i18n, i18n.language])
 
   return (
     <div className="flex flex-col justify-between h-full">
@@ -92,7 +91,7 @@ function HomePage() {
         {coordinates === null && (
           <div className="bg-gray-500 bg-opacity-70 flex items-center justify-center">
             <p className="text-white font-bold text-2xl">
-            {t("showPrayerTimes")}
+              {t("showPrayerTimes")}
             </p>
           </div>
         )}

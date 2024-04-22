@@ -45,5 +45,11 @@
   "q3": "Jag vill räkna min Tawaf?",
   "q4": "Jag är i en nödsituation",
   "q5": "Visa mig Landmärken i Makkah",
-  "q6": "Räkna min Sa'ii"
+  "q6": "Räkna min Sa'ii",
+  "selectMadhab": "Välj din Madhab",
+  "prayer": "Böninställningar",
+  "makkah": "Mekka",
+  "madinah": "Madinah",
+  "hanafi": "Hanafi",
+  "shafi": "Shafi"
 }

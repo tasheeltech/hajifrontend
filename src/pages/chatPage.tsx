@@ -50,7 +50,7 @@ export default function ChatPage() {
   const navigate = useNavigate()
 
   const loadedData = useLoaderData() as DefaultLoader
-  const { isoLanguage, location } = useUserState(loadedData)
+  const { isoLanguage, location, setLandmark } = useUserState(loadedData)
 
   const [center, setCenter] = useState(
     location ? location : { lat: 21.4225, lng: 39.8262 }
@@ -261,6 +261,19 @@ export default function ChatPage() {
     if (res.type === "INTENT:TRAIN_QUERIES") {
       navigate("/train")
     }
+    if (res.type === "INTENT:SHOW_LANDMARKS") {
+      setLandmark("Makkah")
+      navigate("/landmarks")
+    }
+    if (res.type === "INTENT:SHOW_LANDMARKS_MAKKAH") {
+      setLandmark("Makkah")
+
+      navigate("/landmarks")
+    }
+    if (res.type === "INTENT:SHOW_LANDMARKS_MADINA") {
+      setLandmark("Madinah")
+      navigate("/landmarks")
+    }
     if (res.type === "INTENT:TRANSLATE") {
       setTranslate(true)
     }
@@ -281,6 +294,8 @@ export default function ChatPage() {
   const proccessed = () => {
     setProcessing(false)
   }
+
+  const [name, setName] = useState("")
 
   useEffect(() => {
     let uName: string
@@ -303,7 +318,6 @@ export default function ChatPage() {
 
   const qs = [t("q1"), t("q2"), t("q3"), t("q4"), t("q5"), t("q6")]
 
-  const [name, setName] = useState("Welcome")
   const [value, setValue] = useState("")
   const [dummy, setDummy] = useState(0)
 
@@ -329,7 +343,7 @@ export default function ChatPage() {
                 >
                   <p className="text-sm">{q}</p>
                   <div
-                  className="p-2"
+                    className="p-2"
                     onClick={() => {
                       handleForceUpdate()
                       setValue(q)

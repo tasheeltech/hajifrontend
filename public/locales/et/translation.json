@@ -45,5 +45,11 @@
   "q3": "Tahan oma Tawaf'i lugeda?",
   "q4": "Olen hädaolukorras",
   "q5": "Näita mulle Mekkas märke",
-  "q6": "Lugeda minu Sa'ii"
+  "q6": "Lugeda minu Sa'ii",
+  "selectMadhab": "Valige oma Madhab",
+  "prayer": "Palve seaded",
+  "makkah": "Makkah",
+  "madinah": "Madinah",
+  "hanafi": "Hanafi",
+  "shafi": "Shafi"
 }

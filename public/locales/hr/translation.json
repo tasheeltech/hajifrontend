@@ -45,5 +45,11 @@
   "q3": "Želim izbrojati svoj Tawaf?",
   "q4": "Ja sam u hitnom slučaju",
   "q5": "Pokažite mi znamenitosti u Meki",
-  "q6": "Izbroj moj Sa'ii"
+  "q6": "Izbroj moj Sa'ii",
+  "selectMadhab": "Odaberite svoj mezheb",
+  "prayer": "Postavke molitve",
+  "makkah": "Mekka",
+  "madinah": "Madinah",
+  "hanafi": "Hanafi",
+  "shafi": "Shafi"
 }

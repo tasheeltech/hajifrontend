@@ -45,5 +45,11 @@
   "q3": "Tawaf'ımı saymak istiyorum?",
   "q4": "Ben acil durumdayım",
   "q5": "Mekke'deki önemli yerleri göster",
-  "q6": "Sa'ii sayım"
+  "q6": "Sa'ii sayım",
+  "selectMadhab": "Madhab'ınızı seçin",
+  "prayer": "Dua Ayarları",
+  "makkah": "Mekke",
+  "madinah": "Medine",
+  "hanafi": "Hanefi",
+  "shafi": "Şafi"
 }

@@ -45,5 +45,11 @@
   "q3": "Tôi muốn đếm Tawaf của mình?",
   "q4": "Tôi đang trong tình huống khẩn cấp",
   "q5": "Cho tôi xem các điểm địa lý ở Makkah",
-  "q6": "Đếm Sa'ii của tôi"
+  "q6": "Đếm Sa'ii của tôi",
+  "selectMadhab": "Chọn Madhab của bạn",
+  "prayer": "Thiết lập lời cầu nguyện",
+  "makkah": "Makkah",
+  "madinah": "Madinah",
+  "hanafi": "Hanafi",
+  "shafi": "Shafi"
 }

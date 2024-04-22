@@ -45,5 +45,11 @@
   "q3": "Chcem spočítať svoj Tawaf?",
   "q4": "Som v núdzovej situácii",
   "q5": "Ukážte mi pamiatky v Mekke",
-  "q6": "Spočítať môj Sa'ii"
+  "q6": "Spočítať môj Sa'ii",
+  "selectMadhab": "Vyberte svoj Madhab",
+  "prayer": "Nastavenia modlitby",
+  "makkah": "Mekka",
+  "madinah": "Madinah",
+  "hanafi": "Hanafi",
+  "shafi": "Shafi"
 }

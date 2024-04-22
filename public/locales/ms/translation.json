@@ -45,5 +45,11 @@
   "q3": "Saya ingin mengira Tawaf saya?",
   "q4": "Saya berada dalam kecemasan",
   "q5": "Tunjukkan Saya Landmarks di Makkah",
-  "q6": "Hitung Sa'ii saya"
+  "q6": "Hitung Sa'ii saya",
+  "selectMadhab": "Pilih Madhab Anda",
+  "prayer": "Tetapan Doa",
+  "makkah": "Makkah",
+  "madinah": "Madinah",
+  "hanafi": "Hanafi",
+  "shafi": "Shafi"
 }

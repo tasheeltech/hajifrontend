@@ -13,6 +13,8 @@ export interface DefaultLoader {
   tawafCount: string | null
   saiiCount: string | null
   name: string | null
+  madhab: string | null
+  landmark: string | null
 }
 
 export default async function loader(): Promise<DefaultLoader> {
@@ -48,5 +50,7 @@ export default async function loader(): Promise<DefaultLoader> {
     name: localStorage.getItem(keyNames.NAME_OF_USER),
     tawafCount: localStorage.getItem(keyNames.TAWAF_COUNT),
     saiiCount: localStorage.getItem(keyNames.SAII_COUNT),
+    madhab: localStorage.getItem(keyNames.MADHAB),
+    landmark: localStorage.getItem(keyNames.LANDMARK),
   }
 }

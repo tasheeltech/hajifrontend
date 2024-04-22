@@ -45,5 +45,11 @@
   "q3": "Haluan laskea Tawafini?",
   "q4": "Olen hätätilanteessa",
   "q5": "Näytä minulle maamerkkejä Mekassa",
-  "q6": "Laske minun Sa'ii"
+  "q6": "Laske minun Sa'ii",
+  "selectMadhab": "Valitse Madhab",
+  "prayer": "Rukousasetukset",
+  "makkah": "Mekka",
+  "madinah": "Madinah",
+  "hanafi": "Hanafi",
+  "shafi": "Shafi"
 }

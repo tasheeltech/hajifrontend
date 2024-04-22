@@ -45,5 +45,11 @@
   "q3": "Voglio contare il mio Tawaf?",
   "q4": "Sono in emergenza",
   "q5": "Mostrami i Luoghi di interesse a Makkah",
-  "q6": "Conta il mio Sa'ii"
+  "q6": "Conta il mio Sa'ii",
+  "selectMadhab": "Seleziona il tuo Madhab",
+  "prayer": "Impostazioni di preghiera",
+  "makkah": "Makkah",
+  "madinah": "Madinah",
+  "hanafi": "Hanafi",
+  "shafi": "Shafi"
 }

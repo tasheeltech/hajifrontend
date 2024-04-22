@@ -45,5 +45,11 @@
   "q3": "Rwyf am gyfri fy Tawaf?",
   "q4": "Rwyf mewn Argyfwng",
   "q5": "Dangoswch imi Adeiladau hanesyddol yn Makkah",
-  "q6": "Cyfrwch fy Sa'ii"
+  "q6": "Cyfrwch fy Sa'ii",
+  "selectMadhab": "选择您的教派",
+  "prayer": "祈祷设置",
+  "makkah": "麦加",
+  "madinah": "麦地那",
+  "hanafi": "哈纳菲",
+  "shafi": "沙菲"
 }

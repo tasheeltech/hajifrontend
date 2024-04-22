@@ -45,5 +45,11 @@
   "q3": "Szeretném megszámolni a Tawafomat?",
   "q4": "Vészhelyzetben vagyok",
   "q5": "Mutassa meg nekem a Mekka nevezetességeit",
-  "q6": "Számolja meg a Sa'ii-met"
+  "q6": "Számolja meg a Sa'ii-met",
+  "selectMadhab": "Válassza ki a Madhab-ot",
+  "prayer": "Imádság beállítások",
+  "makkah": "Mekka",
+  "madinah": "Madinah",
+  "hanafi": "Hanafi",
+  "shafi": "Shafi"
 }

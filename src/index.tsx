@@ -33,6 +33,7 @@ const TawafCalculator = React.lazy(() => import("./pages/tawafCalculator"))
 const SaiiCalculator = React.lazy(() => import("./pages/saiiCalculator"))
 const EmergencyPage = React.lazy(() => import("./pages/emergency"))
 const Bookmarks = React.lazy(() => import("./pages/bookmarks"))
+const Prayer = React.lazy(() => import("./pages/prayer"))
 const Privacy = React.lazy(() => import("./pages/privacy"))
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement)
@@ -120,6 +121,12 @@ const router = createBrowserRouter(
       <Route
         path="/landmarks"
         element={<Landmarks />}
+        errorElement={<ErrorPage />}
+        loader={defaultLoader}
+      />
+      <Route
+        path="/prayer"
+        element={<Prayer />}
         errorElement={<ErrorPage />}
         loader={defaultLoader}
       />
