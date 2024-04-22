@@ -4,9 +4,6 @@
   "haji": "hajj",
   "umrah": "umrah",
   "welcome": "Buna ziua",
-  "question1": "Unde este toaleta cea mai apropiată pentru femei?",
-  "question2": "unde este Muzdalifa?",
-  "question3": "Traduceți întrebarea mea în arabă pentru a vorbi cu un localnic.",
   "increment": "Apăsați '+' când ați terminat 1 cerc",
   "decrement": "Apăsați '-' dacă ați apăsat accidental '+'",
   "ambulance": "AMBULANȚĂ",
@@ -42,5 +39,11 @@
   "goToHome": "Mergi Acasă",
   "menu": "Meniu",
   "showPrayerTimes": "Vă rugăm să acordați permisiunea de localizare pentru a afișa orele de rugăciune.",
-  "record": "Înregistrare"
+  "privacy": "Politica de Confidențialitate",
+  "q1": "Cum să efectuezi Umrah?",
+  "q2": "Cât timp trebuie să-mi tund părul?",
+  "q3": "Vreau să-mi număr Tawaf-ul?",
+  "q4": "Sunt într-o situație de urgență",
+  "q5": "Arată-mi reperele din Makkah",
+  "q6": "Numără-mi Sa'ii"
 }

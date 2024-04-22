@@ -4,9 +4,6 @@
   "haji": "hajj",
   "umrah": "umrah",
   "welcome": "Ciao",
-  "question1": "Dov'è il bagno più vicino per le donne?",
-  "question2": "dov'è Muzdalifa?",
-  "question3": "Traduci la mia domanda in arabo per parlare con un locale.",
   "increment": "Premi '+' quando hai completato 1 cerchio",
   "decrement": "Premi '-' se hai premuto '+' per errore",
   "ambulance": "AMBULANZA",
@@ -42,5 +39,11 @@
   "goToHome": "Vai a Casa",
   "menu": "Menu",
   "showPrayerTimes": "Si prega di concedere il permesso di localizzazione per mostrare gli orari delle preghiere.",
-  "record": "Registrazione"
+  "privacy": "Informativa sulla privacy",
+  "q1": "Come eseguire Umrah?",
+  "q2": "Quanto tempo devo tagliare i capelli?",
+  "q3": "Voglio contare il mio Tawaf?",
+  "q4": "Sono in emergenza",
+  "q5": "Mostrami i Luoghi di interesse a Makkah",
+  "q6": "Conta il mio Sa'ii"
 }

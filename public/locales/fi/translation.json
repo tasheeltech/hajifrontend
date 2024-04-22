@@ -4,9 +4,6 @@
   "haji": "hajj",
   "umrah": "umrah",
   "welcome": "Hei",
-  "question1": "Missä on lähin naisten wc?",
-  "question2": "Missä on Muzdalifa?",
-  "question3": "Käännä kysymykseni arabialaiseksi puhuaksesi paikallisen kanssa.",
   "increment": "Paina '+' kun olet suorittanut 1 ympyrän",
   "decrement": "Paina '-' jos olet vahingossa painanut '+'",
   "ambulance": "AMBULANSSI",
@@ -42,5 +39,11 @@
   "goToHome": "Mene kotiin",
   "menu": "Valikko",
   "showPrayerTimes": "Myönnä sijaintilupa näyttääksesi rukousajat.",
-  "record": "Tallenna"
+  "privacy": "Tietosuojakäytäntö",
+  "q1": "Kuinka suorittaa Umrah?",
+  "q2": "Kuinka kauan minun täytyy leikata hiukseni?",
+  "q3": "Haluan laskea Tawafini?",
+  "q4": "Olen hätätilanteessa",
+  "q5": "Näytä minulle maamerkkejä Mekassa",
+  "q6": "Laske minun Sa'ii"
 }

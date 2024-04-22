@@ -4,9 +4,6 @@
   "haji": "haddzs",
   "umrah": "umrah",
   "welcome": "Szia",
-  "question1": "Hol van a legközelebbi női WC?",
-  "question2": "Hol van Muzdalifa?",
-  "question3": "Fordítsa le a kérdésemet arab nyelvre, hogy beszélhessen egy helyivel.",
   "increment": "Nyomja meg a '+' billentyűt, ha befejezte az 1 kört",
   "decrement": "Nyomja meg a '-' billentyűt, ha véletlenül megnyomta a '+' billentyűt",
   "ambulance": "MENTŐ",
@@ -42,5 +39,11 @@
   "goToHome": "Ugrás a Főoldalra",
   "menu": "Menü",
   "showPrayerTimes": "Kérjük, adjon meg helymeghatározási engedélyt az imaidők megjelenítéséhez.",
-  "record": "Felvétel"
+  "privacy": "Adatvédelmi irányelv",
+  "q1": "Hogyan végezhetem el az Umrah-t?",
+  "q2": "Mennyi ideig kell levágnom a hajam?",
+  "q3": "Szeretném megszámolni a Tawafomat?",
+  "q4": "Vészhelyzetben vagyok",
+  "q5": "Mutassa meg nekem a Mekka nevezetességeit",
+  "q6": "Számolja meg a Sa'ii-met"
 }

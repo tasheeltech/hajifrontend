@@ -4,9 +4,6 @@
   "haji": "hac",
   "umrah": "umrah",
   "welcome": "Salam",
-  "question1": "Qadınlar üçün ən yaxın tualet harada?",
-  "question2": "Muzdalifa haradadır?",
-  "question3": "Mənim sualımı yerli biri ilə danışmaq üçün ərəb dildə tərcümə edin.",
   "increment": "1 dövriyyə tamamlandıqda '+' düyməsinə basın",
   "decrement": "Əgər '+' yı səhvən basdınızsa '-' düyməsinə basın",
   "ambulance": "NƏFƏR",
@@ -42,5 +39,11 @@
   "goToHome": "Əsas Səhifəyə Keç",
   "menu": "Menyu",
   "showPrayerTimes": "Namaz vaxtlarını göstərmək üçün yer izni verin.",
-  "record": "Qeyd"
+  "privacy": "Gizlilik Siyasəti",
+  "q1": "Umrahı necə həyata keçirmək olar?",
+  "q2": "Saçımı neçə müddət qısa saxlamalıyam?",
+  "q3": "Mənim Tawafı saymaq istəyirəm?",
+  "q4": "Mən bir fəlakətəyəm",
+  "q5": "Məkkədə böyük binaları göstərin",
+  "q6": "Sa'ii sayım"
 }

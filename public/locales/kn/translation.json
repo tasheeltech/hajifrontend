@@ -4,9 +4,6 @@
   "haji": "ಹಜ್",
   "umrah": "ಉಂರಹ್",
   "welcome": "ಹಲೋ",
-  "question1": "Where's nearest toilet for women?",
-  "question2": "Where is Muzdalifa?",
-  "question3": "Translate my question in Arabic to talk to a local.",
   "increment": "Press '+' when you have completed 1 circle",
   "decrement": "Press '-' if you have accidentally pressed '+'",
   "ambulance": "AMBULANS",
@@ -42,5 +39,11 @@
   "goToHome": "ಮನೆಗೆ ಹೋಗಿ",
   "menu": "ಮೆನು",
   "showPrayerTimes": "ಪ್ರಾರ್ಥನೆಯ ಸಮಯವನ್ನು ತೋರಿಸಲು ಸ್ಥಳ ಅನುಮತಿಯನ್ನು ಅನುಮತಿಸಿ.",
-  "record": "ದಾಖಲೆ"
+  "privacy": "ಗೌಪ್ಯತೆ ನೀತಿ",
+  "q1": "ಉಮ್ರಾಹ್‌ನೆನ್ನು ಹೇಗೆ ಮಾಡಬೇಕು?",
+  "q2": "ನನ್ನ ಕೂದಲನ್ನು ಎಷ್ಟು ಹೊತ್ತು ಕತ್ತರಿಸಬೇಕು?",
+  "q3": "ನಾನು ನನ್ನ ತವಾಫ್‌ನನ್ನು ಎಣಿಸಬೇಕಾಗಿದೆ?",
+  "q4": "ನಾನು ತುರ್ತುತ್ವದಲ್ಲಿದ್ದೇನೆ",
+  "q5": "ಮೆಕ್ಕಾದಲ್ಲಿ ನನಗೆ ಭೂಮಿಕೆಗಳನ್ನು ತೋರಿಸಿ",
+  "q6": "ನನ್ನ Sa'ii ಗಳನ್ನು ಎಣಿಸಿ"
 }

@@ -4,9 +4,6 @@
   "haji": "hajj",
   "umrah": "umrah",
   "welcome": "Hej",
-  "question1": "Var finns närmaste toalett för kvinnor?",
-  "question2": "var är Muzdalifa?",
-  "question3": "Översätt min fråga till arabiska för att prata med en lokal.",
   "increment": "Tryck på '+' när du har slutfört 1 cirkel",
   "decrement": "Tryck på '-' om du har tryckt på '+' av misstag",
   "ambulance": "AMBULANS",
@@ -42,5 +39,11 @@
   "goToHome": "Gå till Hem",
   "menu": "Meny",
   "showPrayerTimes": "Vänligen bevilja platsbehörighet för att visa bönstider.",
-  "record": "Inspelning"
+  "privacy": "Integritetspolicy",
+  "q1": "Hur man utför Umrah?",
+  "q2": "Hur länge behöver jag klippa mitt hår?",
+  "q3": "Jag vill räkna min Tawaf?",
+  "q4": "Jag är i en nödsituation",
+  "q5": "Visa mig Landmärken i Makkah",
+  "q6": "Räkna min Sa'ii"
 }

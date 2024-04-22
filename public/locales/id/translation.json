@@ -4,9 +4,6 @@
   "haji": "haji",
   "umrah": "umrah",
   "welcome": "Halo",
-  "question1": "Di mana toilet terdekat untuk wanita?",
-  "question2": "di mana Muzdalifa?",
-  "question3": "Terjemahkan pertanyaan saya ke dalam bahasa Arab untuk berbicara dengan penduduk lokal.",
   "increment": "Tekan '+' ketika Anda telah menyelesaikan 1 lingkaran",
   "decrement": "Tekan '-' jika Anda secara tidak sengaja menekan '+'",
   "ambulance": "AMBULANS",
@@ -42,5 +39,11 @@
   "goToHome": "Pergi ke Rumah",
   "menu": "Menu",
   "showPrayerTimes": "Harap berikan izin lokasi untuk menampilkan waktu salat.",
-  "record": "Rekaman"
+  "privacy": "Kebijakan Privasi",
+  "q1": "Bagaimana cara melakukan Umrah?",
+  "q2": "Berapa lama saya harus memotong rambut saya?",
+  "q3": "Saya ingin menghitung Tawaf saya?",
+  "q4": "Saya dalam keadaan darurat",
+  "q5": "Tunjukkan Tanda-tanda di Makkah",
+  "q6": "Hitung Sa'ii saya"
 }

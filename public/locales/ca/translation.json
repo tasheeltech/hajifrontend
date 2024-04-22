@@ -4,9 +4,6 @@
   "haji": "haji",
   "umrah": "umrah",
   "welcome": "Hola",
-  "question1": "On és el bany més proper per a dones?",
-  "question2": "On és Muzdalifa?",
-  "question3": "Tradueix la meva pregunta a l'àrab per parlar amb un local.",
   "increment": "Premi '+' quan hàgiu completat 1 cercle",
   "decrement": "Premi '-' si per error has premut '+'",
   "ambulance": "AMBULÀNCIA",
@@ -42,5 +39,11 @@
   "goToHome": "Anar a la Pàgina d'Inici",
   "menu": "Menú",
   "showPrayerTimes": "Si us plau, concedeixi permís de ubicació per mostrar els horaris de pregària.",
-  "record": "Gravació"
+  "privacy": "Política de privacitat",
+  "q1": "Com fer Umrah?",
+  "q2": "Quant de temps he de tallar-me els cabells?",
+  "q3": "Vull comptar el meu Tawaf?",
+  "q4": "Estic en una emergència",
+  "q5": "Mostra'm llocs d'interès a Meca",
+  "q6": "Compte el meu Sa'ii"
 }

@@ -4,9 +4,6 @@
   "haji": "haji",
   "umrah": "umrah",
   "welcome": "Kia ora",
-  "question1": "Where's nearest toilet for women?",
-  "question2": "Where is Muzdalifa?",
-  "question3": "Translate my question in Arabic to talk to a local.",
   "increment": "Press '+' when you have completed 1 circle",
   "decrement": "Press '-' if you have accidentally pressed '+'",
   "ambulance": "AMBULANS",
@@ -42,5 +39,11 @@
   "goToHome": "Haere ki te Kainga",
   "menu": "Kaiwhakarite",
   "showPrayerTimes": "Whakaae atu ki te whakawhiwhi i te whakaaetanga wāhi ki te whakaatu i ngā wā roopu.",
-  "record": "Rēkata"
+  "privacy": "Kaupapahere Tiakina",
+  "q1": "Me pehea te whakahaere i te Umrah?",
+  "q2": "He aha te roa me te motuka i taku makawe?",
+  "q3": "Hei konei i te Tawaf?",
+  "q4": "Kei roto ahau i tetahi arorangi",
+  "q5": "Whakaatu mai ki ahau nga Whenua Whakamaharatanga i Makkah",
+  "q6": "Whakamahara i taku Sa'ii"
 }

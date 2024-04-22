@@ -4,9 +4,6 @@
   "haji": "朝觐",
   "umrah": "umrah",
   "welcome": "你好",
-  "question1": "女性最近的洗手间在哪里？",
-  "question2": "Muzdalifa在哪里？",
-  "question3": "将我的问题翻译成阿拉伯语以与当地人交谈。",
   "increment": "完成1个圆圈后按 '+'",
   "decrement": "如果您不小心按了 '+'，请按 '-'",
   "ambulance": "救护车",
@@ -42,5 +39,11 @@
   "goToHome": "前往主页",
   "menu": "菜单",
   "showPrayerTimes": "请授予位置权限以显示祷告时间。",
-  "record": "记录"
+  "privacy": "Polisi Preifatezza",
+  "q1": "Sut i berfynnu Umrah?",
+  "q2": "Pa mor hir sydd angen i mi dorri fy ngwallt?",
+  "q3": "Rwyf am gyfri fy Tawaf?",
+  "q4": "Rwyf mewn Argyfwng",
+  "q5": "Dangoswch imi Adeiladau hanesyddol yn Makkah",
+  "q6": "Cyfrwch fy Sa'ii"
 }

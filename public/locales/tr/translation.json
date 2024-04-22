@@ -4,9 +4,6 @@
   "haji": "hac",
   "umrah": "umre",
   "welcome": "Merhaba",
-  "question1": "Kadınlar için en yakın tuvalet nerede?",
-  "question2": "Muzdalifa nerede?",
-  "question3": "Yerel biriyle konuşmak için sorumu Arapça'ya çevirin.",
   "increment": "1 döngüyü tamamladığınızda '+' tuşuna basın",
   "decrement": "Eğer '+' yanlışlıkla bastıysanız '-' tuşuna basın",
   "ambulance": "AMBULANS",
@@ -42,5 +39,11 @@
   "goToHome": "Eve Git",
   "menu": "Menü",
   "showPrayerTimes": "Namaz saatlerini göstermek için lütfen konum izni verin.",
-  "record": "Kayıt"
+  "privacy": "Gizlilik Politikası",
+  "q1": "Umrah Nasıl Yapılır?",
+  "q2": "Saçlarımı ne kadar süre kesmeliyim?",
+  "q3": "Tawaf'ımı saymak istiyorum?",
+  "q4": "Ben acil durumdayım",
+  "q5": "Mekke'deki önemli yerleri göster",
+  "q6": "Sa'ii sayım"
 }

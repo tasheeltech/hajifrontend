@@ -4,9 +4,6 @@
   "haji": "hadžs",
   "umrah": "umrah",
   "welcome": "Sveiki",
-  "question1": "Kur ir tuvākais tualets sievietēm?",
-  "question2": "kur ir Muzdalifa?",
-  "question3": "Tulkojiet manu jautājumu arābu valodā, lai runātu ar vietējo iedzīvotāju.",
   "increment": "Nospiediet '+' kad esat pabeidzis 1 apli",
   "decrement": "Nospiediet '-' ja esat nejauši nospiedis '+'",
   "ambulance": "NOLĪGUMS",
@@ -42,5 +39,11 @@
   "goToHome": "Iet uz mājas",
   "menu": "Izvēlne",
   "showPrayerTimes": "Lūdzu, piešķiriet atrašanās vietas atļauju, lai parādītu lūgšanu laikus.",
-  "record": "Ieraksts"
+  "privacy": "Konfidencialitātes politika",
+  "q1": "Kā veikt Umrah?",
+  "q2": "Cik ilgi man vajadzētu šķelt matus?",
+  "q3": "Es gribu saskaitīt savu Tawaf?",
+  "q4": "Es esmu ārkārtas situācijā",
+  "q5": "Rādīt man ievērojamus objektus Mekkā",
+  "q6": "Saskaitiet manu Sa'ii"
 }

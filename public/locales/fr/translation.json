@@ -4,9 +4,6 @@
   "haji": "hajj",
   "umrah": "omra",
   "welcome": "Bonjour",
-  "question1": "Où se trouve les toilettes pour femmes les plus proches ?",
-  "question2": "Où est Muzdalifa ?",
-  "question3": "Traduisez ma question en arabe pour parler à un local.",
   "increment": "Appuyez sur '+' lorsque vous avez terminé 1 cercle",
   "decrement": "Appuyez sur '-' si vous avez appuyé accidentellement sur '+'",
   "ambulance": "AMBULANCE",
@@ -42,5 +39,11 @@
   "goToHome": "Aller à la Maison",
   "menu": "Menu",
   "showPrayerTimes": "Veuillez accorder l'autorisation d'emplacement pour afficher les heures de prière.",
-  "record": "Enregistrer"
+  "privacy": "Politique de confidentialité",
+  "q1": "Comment effectuer Umrah?",
+  "q2": "Combien de temps dois-je couper mes cheveux?",
+  "q3": "Je veux compter mon Tawaf?",
+  "q4": "Je suis en situation d'urgence",
+  "q5": "Montrez-moi les sites remarquables à La Mecque",
+  "q6": "Compter mon Sa'ii"
 }

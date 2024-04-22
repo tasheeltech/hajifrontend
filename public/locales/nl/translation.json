@@ -4,9 +4,6 @@
   "haji": "hadj",
   "umrah": "umrah",
   "welcome": "Hallo",
-  "question1": "Waar is het dichtstbijzijnde toilet voor vrouwen?",
-  "question2": "Waar is Muzdalifa?",
-  "question3": "Vertaal mijn vraag naar het Arabisch om met een lokale te praten.",
   "increment": "Druk op '+' als je 1 cirkel hebt voltooid",
   "decrement": "Druk op '-' als je per ongeluk op '+' hebt gedrukt",
   "ambulance": "AMBULANCE",
@@ -42,5 +39,11 @@
   "goToHome": "Ga naar Huis",
   "menu": "Menu",
   "showPrayerTimes": "Geef alstublieft locatietoestemming om gebedstijden te tonen.",
-  "record": "Opname"
+  "privacy": "Privacybeleid",
+  "q1": "Hoe voer ik Umrah uit?",
+  "q2": "Hoe lang moet ik mijn haar knippen?",
+  "q3": "Ik wil mijn Tawaf tellen?",
+  "q4": "Ik ben in een noodgeval",
+  "q5": "Toon mij Landmarks in Mekka",
+  "q6": "Tel mijn Sa'ii"
 }

@@ -4,9 +4,6 @@
   "haji": "hajj",
   "umrah": "umrah",
   "welcome": "Xin chào",
-  "question1": "Nhà vệ sinh gần nhất cho phụ nữ ở đâu?",
-  "question2": "nơi nào là Muzdalifa?",
-  "question3": "Dịch câu hỏi của tôi sang tiếng Ả Rập để nói chuyện với người địa phương.",
   "increment": "Nhấn '+' khi bạn đã hoàn thành 1 vòng",
   "decrement": "Nhấn '-' nếu bạn vô tình nhấn '+'",
   "ambulance": "XE CỨU THƯƠNG",
@@ -42,5 +39,11 @@
   "goToHome": "Đi đến Nhà",
   "menu": "Thực đơn",
   "showPrayerTimes": "Vui lòng cấp quyền vị trí để hiển thị thời gian cầu nguyện.",
-  "record": "Ghi âm"
+  "privacy": "Chính sách bảo mật",
+  "q1": "Làm thế nào để thực hiện Umrah?",
+  "q2": "Tôi cần cắt tóc trong bao lâu?",
+  "q3": "Tôi muốn đếm Tawaf của mình?",
+  "q4": "Tôi đang trong tình huống khẩn cấp",
+  "q5": "Cho tôi xem các điểm địa lý ở Makkah",
+  "q6": "Đếm Sa'ii của tôi"
 }
