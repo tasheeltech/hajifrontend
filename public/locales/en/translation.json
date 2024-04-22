@@ -4,9 +4,6 @@
   "haji": "hajj",
   "umrah": "umrah",
   "welcome": "Hello",
-  "question1": "Where's nearest toilet for women?",
-  "question2": "Where is Muzdalifa?",
-  "question3": "Translate my question in Arabic to talk to a local.",
   "increment": "Press '+' when you have completed 1 circle",
   "decrement": "Press '-' if you have accidentally pressed '+'",
   "ambulance": "AMBULANCE",
@@ -42,5 +39,11 @@
   "goToHome": "Go to Home",
   "menu": "Menu",
   "showPrayerTimes": "Please grant location permission to show prayer times.",
-  "record": "Record"
+  "privacy": "Privacy Policy",
+  "q1": "How to perform Umrah?",
+  "q2": "How long do I need to cut my hair?",
+  "q3": "I want to count my Tawaf?",
+  "q4": "I am in an Emergency",
+  "q5": "Show me Landmarks in Makkah",
+  "q6": "Count my Sa'ii"
 }

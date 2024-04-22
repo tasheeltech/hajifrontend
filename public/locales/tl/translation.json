@@ -4,9 +4,6 @@
   "haji": "hajj",
   "umrah": "umrah",
   "welcome": "Kamusta",
-  "question1": "Nasaan ang pinakamalapit na banyo para sa mga babae?",
-  "question2": "saan ang Muzdalifa?",
-  "question3": "Isalin ang aking tanong sa Arabe upang makipag-usap sa isang lokal.",
   "increment": "I-prito ang '+' kapag natapos mo na ang 1 bilog",
   "decrement": "I-prito ang '-' kung sa di sinasadyang na prito ang '+'",
   "ambulance": "AMBULANSIYA",
@@ -42,5 +39,11 @@
   "goToHome": "Pumunta sa Bahay",
   "menu": "Menu",
   "showPrayerTimes": "Paki-grant ng pahintulot sa lokasyon upang ipakita ang mga oras ng panalangin.",
-  "record": "Rekord"
+  "privacy": "Privacy Policy",
+  "q1": "How to perform Umrah?",
+  "q2": "How long do I need to cut my hair?",
+  "q3": "I want to count my Tawaf?",
+  "q4": "I am in an Emergency",
+  "q5": "Show me Landmarks in Makkah",
+  "q6": "Count my Sa'ii"
 }

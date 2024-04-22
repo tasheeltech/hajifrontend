@@ -4,9 +4,6 @@
   "haji": "хадж",
   "umrah": "умра",
   "welcome": "Сәлем",
-  "question1": "Where's nearest toilet for women?",
-  "question2": "Where is Muzdalifa?",
-  "question3": "Translate my question in Arabic to talk to a local.",
   "increment": "Press '+' when you have completed 1 circle",
   "decrement": "Press '-' if you have accidentally pressed '+'",
   "ambulance": "AMBULANS",
@@ -42,5 +39,11 @@
   "goToHome": "Басты бетке өту",
   "menu": "Меню",
   "showPrayerTimes": "Намаз уақыттарын көрсету үшін орналасу рұқсатын беріңіз.",
-  "record": "Жазу"
+  "privacy": "Құпиялылық саясаты",
+  "q1": "Umrah қалай орындау керек?",
+  "q2": "Күдерігімді қашу үшін қанша уақыт кетерім керек?",
+  "q3": "Менің Tawaf-ымды санау керек?",
+  "q4": "Мен кездейсоқ жағдайда",
+  "q5": "Меккада мәртебелі орындарды көрсетіңіз",
+  "q6": "Менің Sa'ii-мі санау"
 }

@@ -4,9 +4,6 @@
   "haji": "hajj",
   "umrah": "umrah",
   "welcome": "Tere",
-  "question1": "Kus on lähim naiste tualett?",
-  "question2": "Kus on Muzdalifa?",
-  "question3": "Tõlgi mu küsimus araabia keelde, et rääkida kohalikuga.",
   "increment": "Vajutage '+' kui olete lõpetanud 1 ringi",
   "decrement": "Vajutage '-' kui olete kogemata vajutanud '+'",
   "ambulance": "KIIRABI",
@@ -42,5 +39,11 @@
   "goToHome": "Mine koju",
   "menu": "Menüü",
   "showPrayerTimes": "Palun andke asukoha luba, et näidata palveaegu.",
-  "record": "Salvestus"
+  "privacy": "Privaatsuspoliitika",
+  "q1": "Kuidas teha Umrah?",
+  "q2": "Kui kaua pean oma juukseid lõikama?",
+  "q3": "Tahan oma Tawaf'i lugeda?",
+  "q4": "Olen hädaolukorras",
+  "q5": "Näita mulle Mekkas märke",
+  "q6": "Lugeda minu Sa'ii"
 }

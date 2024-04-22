@@ -4,9 +4,6 @@
   "haji": "hadž",
   "umrah": "umra",
   "welcome": "Ahoj",
-  "question1": "Kde je nejbližší toaleta pro ženy?",
-  "question2": "Kde je Muzdalifa?",
-  "question3": "Přeložte mé otázky do arabštiny, abyste mohli mluvit s místními.",
   "increment": "Stiskněte '+' po dokončení 1 kruhu",
   "decrement": "Stiskněte '-' pokud jste omylem stiskli '+'",
   "ambulance": "SANITA",
@@ -42,5 +39,11 @@
   "goToHome": "Jít na Domovskou Stránku",
   "menu": "Menu",
   "showPrayerTimes": "Prosím, udělte povolení k umístění, abyste mohli zobrazit časy modliteb.",
-  "record": "Záznam"
+  "privacy": "Zásady ochrany osobních údajů",
+  "q1": "Jak provést Umrah?",
+  "q2": "Jak dlouho si musím stříhat vlasy?",
+  "q3": "Chci spočítat svůj Tawaf?",
+  "q4": "Jsem v nouzové situaci",
+  "q5": "Ukažte mi památky v Mekce",
+  "q6": "Spočítejte můj Sa'ii"
 }

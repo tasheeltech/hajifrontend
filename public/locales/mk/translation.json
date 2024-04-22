@@ -4,9 +4,6 @@
   "haji": "хаџилук",
   "umrah": "умра",
   "welcome": "Здраво",
-  "question1": "Where's nearest toilet for women?",
-  "question2": "Where is Muzdalifa?",
-  "question3": "Translate my question in Arabic to talk to a local.",
   "increment": "Press '+' when you have completed 1 circle",
   "decrement": "Press '-' if you have accidentally pressed '+'",
   "ambulance": "AMBULANS",
@@ -42,5 +39,11 @@
   "goToHome": "Оди на Почетна",
   "menu": "Мени",
   "showPrayerTimes": "Ве молиме дозволете место за да ги прикажете времињата за молитва.",
-  "record": "Запис"
+  "privacy": "Политика за приватност",
+  "q1": "Како да изведете Умра?",
+  "q2": "Колку долго треба да ги скратам косите?",
+  "q3": "Сакам да го пребројам својот Tawaf?",
+  "q4": "Сум во извонредна состојба",
+  "q5": "Покажете ми знаменитости во Мека",
+  "q6": "Преброј мој Sa'ii"
 }

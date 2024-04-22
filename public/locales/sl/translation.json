@@ -4,9 +4,6 @@
   "haji": "hajj",
   "umrah": "umrah",
   "welcome": "Zdravo",
-  "question1": "Kje je najbližji WC za ženske?",
-  "question2": "kje je Muzdalifa?",
-  "question3": "Prevedite moje vprašanje v arabščino, da se pogovorite s tamkajšnjimi ljudmi.",
   "increment": "Pritisnite '+' ko končate 1 krog",
   "decrement": "Pritisnite '-' če ste po pomoti pritisnili '+'",
   "ambulance": "REŠEVALNO VOZILO",
@@ -42,5 +39,11 @@
   "goToHome": "Pojdi na Domačo Stran",
   "menu": "Meni",
   "showPrayerTimes": "Prosim, dovolite lokacijsko dovoljenje za prikaz molitvenih časov.",
-  "record": "Snemanje"
+  "privacy": "Pravilnik o zasebnosti",
+  "q1": "Kako izvesti Umrah?",
+  "q2": "Koliko časa moram striči lase?",
+  "q3": "Želim prešteti moj Tawaf?",
+  "q4": "Sem v sili",
+  "q5": "Pokaži mi znamenitosti v Meki",
+  "q6": "Preštej moj Sa'ii"
 }

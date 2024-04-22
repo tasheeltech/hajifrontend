@@ -291,6 +291,18 @@ export default function ChatPage() {
     }
   }, [])
 
+  // const questions = [
+  //   "How to perform Umrah?",
+  //   "How long do I need to cut my hair?",
+  //   "I want to count my Tawaf?",
+  //   "I am in an Emergency",
+  //   "Show me Landmarks in Makkah",
+  //   "Count my Sa'ii",
+  //   "Say to the security guard, I want to find my son",
+  // ]
+
+  const qs = [t("q1"), t("q2"), t("q3"), t("q4"), t("q5"), t("q6")]
+
   const [name, setName] = useState("Welcome")
   const [value, setValue] = useState("")
   const [dummy, setDummy] = useState(0)
@@ -310,39 +322,23 @@ export default function ChatPage() {
               {t("welcome")} {name} 😊️
             </p>
             <div className="flex flex-col gap-3">
-              <div className="flex gap-4 items-center justify-between px-5 py-4 rounded-[36px] border">
-                <p className="text-sm">{t("question1")}</p>
+              {qs.map((q, index) => (
                 <div
-                  onClick={() => {
-                    handleForceUpdate()
-                    setValue(t("question1"))
-                  }}
+                  className="flex gap-4 items-center justify-between px-5 py-2 rounded-[36px] border"
+                  key={index}
                 >
-                  <RxArrowTopRight size={14} />
+                  <p className="text-sm">{q}</p>
+                  <div
+                  className="p-2"
+                    onClick={() => {
+                      handleForceUpdate()
+                      setValue(q)
+                    }}
+                  >
+                    <RxArrowTopRight size={14} />
+                  </div>
                 </div>
-              </div>
-              <div className="flex gap-4 items-center justify-between px-5 py-4 rounded-[36px] border">
-                <p className="text-sm">{t("question2")}</p>
-                <div
-                  onClick={() => {
-                    handleForceUpdate()
-                    setValue(t("question2"))
-                  }}
-                >
-                  <RxArrowTopRight size={14} />
-                </div>
-              </div>
-              <div className="flex gap-4 items-center justify-between px-5 py-4 rounded-[36px] border">
-                <p className="text-sm">{t("question3")}</p>
-                <div
-                  onClick={() => {
-                    handleForceUpdate()
-                    setValue(t("question3"))
-                  }}
-                >
-                  <RxArrowTopRight size={14} />
-                </div>
-              </div>
+              ))}
             </div>
           </section>
 

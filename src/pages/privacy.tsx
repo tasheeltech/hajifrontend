@@ -11,14 +11,11 @@ function Privacy() {
         <div className="bg-[#B2CE2B80] w-1/4"></div>
         <div className="bg-[#472BCE80] w-1/4"></div>
       </div>
-      {/* <div> */}
       <div className="flex flex-col items-center gap-5">
         <div className="flex items-center gap-3">
           <h1 className="font-semibold text-2xl font-[numbers]">
             Privacy Policy
           </h1>
-          {/* #2BCE98 #472BCE #CE2B61 #B2CE2B */}
-          {/* <img src="/favicon.ico" alt="" className="w-16" /> */}
           <FaLock color="#2bce98" size={20} />
         </div>
         <p className="text-center">

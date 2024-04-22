@@ -4,9 +4,6 @@
   "haji": "Hadsch",
   "umrah": "umrah",
   "welcome": "Hallo",
-  "question1": "Wo befindet sich die nächste Toilette für Frauen?",
-  "question2": "Wo ist Muzdalifa?",
-  "question3": "Übersetzen Sie meine Frage ins Arabische, um mit Einheimischen zu sprechen.",
   "increment": "Drücken Sie '+' wenn Sie 1 Kreis vollendet haben",
   "decrement": "Drücken Sie '-' wenn Sie aus Versehen '+' gedrückt haben",
   "ambulance": "KRANKENWAGEN",
@@ -42,5 +39,11 @@
   "goToHome": "Zur Startseite",
   "menu": "Menü",
   "showPrayerTimes": "Bitte gewähren Sie Standortberechtigungen, um Gebetszeiten anzuzeigen.",
-  "record": "Aufzeichnung"
+  "privacy": "Datenschutzrichtlinie",
+  "q1": "Wie führe ich Umrah durch?",
+  "q2": "Wie lange muss ich meine Haare schneiden?",
+  "q3": "Ich möchte meinen Tawaf zählen?",
+  "q4": "Ich bin in einer Notlage",
+  "q5": "Zeigen Sie mir Sehenswürdigkeiten in Mekka",
+  "q6": "Zählen Sie meinen Sa'ii"
 }

@@ -4,9 +4,6 @@
   "haji": "hija",
   "umrah": "umrah",
   "welcome": "Hujambo",
-  "question1": "Wapi choo cha karibu kwa wanawake?",
-  "question2": "wapi Muzdalifa?",
-  "question3": "Tafsiri swali langu kwa Kiarabu ili kuongea na mtu wa eneo.",
   "increment": "Bonyeza '+' unapokamilisha mzunguko 1",
   "decrement": "Bonyeza '-' ikiwa kwa bahati mbaya umebonyeza '+'",
   "ambulance": "GARI LA HUDUMA",
@@ -42,5 +39,11 @@
   "goToHome": "Nenda Nyumbani",
   "menu": "Menyu",
   "showPrayerTimes": "Tafadhali kubali idhini ya eneo ili kuonyesha nyakati za sala.",
-  "record": "Rekodi"
+  "privacy": "Sera ya Faragha",
+  "q1": "Vipi kufanya Umrah?",
+  "q2": "Kwa muda gani ninahitaji kunyoa nywele zangu?",
+  "q3": "Nataka kuhesabu Tawaf yangu?",
+  "q4": "Niko katika dharura",
+  "q5": "Nionyeshe Landmarks huko Makkah",
+  "q6": "Hesabu Sa'ii yangu"
 }

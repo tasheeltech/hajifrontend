@@ -4,9 +4,6 @@
   "haji": "hajj",
   "umrah": "umrah",
   "welcome": "Halló",
-  "question1": "Where's nearest toilet for women?",
-  "question2": "Where is Muzdalifa?",
-  "question3": "Translate my question in Arabic to talk to a local.",
   "increment": "Press '+' when you have completed 1 circle",
   "decrement": "Press '-' if you have accidentally pressed '+'",
   "ambulance": "AMBULANS",
@@ -42,5 +39,11 @@
   "goToHome": "Fara heim",
   "menu": "Valmynd",
   "showPrayerTimes": "Vinsamlegast veitið staðsetningarleyfi til að sýna bænatíma.",
-  "record": "Upptaka"
+  "privacy": "Persónuverndarstefna",
+  "q1": "Hvernig á að framkvæma Umrah?",
+  "q2": "Hversu lengi þarf ég að klippa hár mitt?",
+  "q3": "Ég vil tala um Tawaf mitt?",
+  "q4": "Ég er í neyðarástandi",
+  "q5": "Sýndu mér vottun í Mekka",
+  "q6": "Telja mitt Sa'ii"
 }

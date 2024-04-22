@@ -4,9 +4,6 @@
   "haji": "hajj",
   "umrah": "umrah",
   "welcome": "Helô",
-  "question1": "Ble mae'r toiled agosaf i fenywod?",
-  "question2": "ble mae Muzdalifa?",
-  "question3": "Cyfieithwch fy nghwestiwn i Arabeg i siarad â lleol.",
   "increment": "Pwyswch '+' pan fyddwch wedi cwblhau 1 cylch",
   "decrement": "Pwyswch '-' os ydych wedi pwyso '+' mewn camgymeriad",
   "ambulance": "AMBWLANS",
@@ -42,5 +39,11 @@
   "goToHome": "Mynd i'r Cartref",
   "menu": "Dewislen",
   "showPrayerTimes": "Rhowch ganiatâd lleoliad i ddangos amserau gweddi.",
-  "record": "Cofnod"
+  "privacy": "Privacy Policy",
+  "q1": "How to perform Umrah?",
+  "q2": "How long do I need to cut my hair?",
+  "q3": "I want to count my Tawaf?",
+  "q4": "I am in an Emergency",
+  "q5": "Show me Landmarks in Makkah",
+  "q6": "Count my Sa'ii"
 }
