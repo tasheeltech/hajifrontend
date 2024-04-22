@@ -1,21 +1,28 @@
 import React, { useEffect, useState } from "react"
 import { useTranslation } from "react-i18next"
-import { useNavigate } from "react-router-dom"
+import { useLoaderData, useNavigate } from "react-router-dom"
 import "../components/counter/counter.css"
 import { FaMinus, FaPlus } from "react-icons/fa6"
 import { ImArrowRight } from "react-icons/im"
+import { DefaultLoader } from "../loaders/defaultLoader"
+import { useUserState } from "../helper/userStateHelper"
 
 function TawafCalculator() {
-  const [counter, setCounter] = useState(0)
   const [completed, setCompleted] = useState(false)
   const [animated, setAnimated] = useState(false)
   const [decDisable, setDecDisable] = useState(true)
+
+  const loadedData = useLoaderData() as DefaultLoader
+  const { tawafCount, setTawafCount } = useUserState(loadedData)
+
+  const [counter, setCounter] = useState(tawafCount ? parseInt(tawafCount) : 0)
 
   const navigate = useNavigate()
 
   const { t } = useTranslation()
 
   useEffect(() => {
+    setTawafCount(counter.toString())
     if (counter === 7) {
       setCompleted(true)
     }
@@ -23,7 +30,7 @@ function TawafCalculator() {
 
   const handleIncreament = () => {
     if (counter < 7) {
-      setCounter(counter + 1)
+      setCounter((prevCounter) => prevCounter + 1)
       setAnimated(true)
       setTimeout(() => {
         setAnimated(false)
@@ -33,7 +40,7 @@ function TawafCalculator() {
 
   const handleDecreament = () => {
     if (counter > 0) {
-      setCounter(counter - 1)
+      setCounter((prevCounter) => prevCounter - 1)
       setTimeout(() => {
         setAnimated(false)
       }, 200)

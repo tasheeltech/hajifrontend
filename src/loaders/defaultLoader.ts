@@ -1,10 +1,17 @@
-import { Country,Location, Permission, keyNames } from "../helper/userStateHelper"
+import {
+  Country,
+  Location,
+  Permission,
+  keyNames,
+} from "../helper/userStateHelper"
 
 export interface DefaultLoader {
   micPermission: Permission
   locationPermission: Permission
   isoLanguage: Country | null
   location: Location | null
+  tawafCount: string | null
+  saiiCount: string | null
   name: string | null
 }
 
@@ -39,5 +46,7 @@ export default async function loader(): Promise<DefaultLoader> {
     isoLanguage,
     location,
     name: localStorage.getItem(keyNames.NAME_OF_USER),
+    tawafCount: localStorage.getItem(keyNames.TAWAF_COUNT),
+    saiiCount: localStorage.getItem(keyNames.SAII_COUNT),
   }
 }
