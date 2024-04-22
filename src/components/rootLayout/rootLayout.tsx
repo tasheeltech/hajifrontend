@@ -6,7 +6,7 @@ import { LuChevronRightCircle } from "react-icons/lu"
 
 import { IconType } from "react-icons"
 import { FaSignOutAlt } from "react-icons/fa"
-import { MdGTranslate, MdMessage } from "react-icons/md"
+import { MdGTranslate, MdMessage, MdPrivacyTip } from "react-icons/md"
 import { MdCategory } from "react-icons/md"
 import { RiHome3Fill } from "react-icons/ri"
 import { FaLocationDot } from "react-icons/fa6"
@@ -25,6 +25,7 @@ const data: MyObject[] = [
   // { name: "emergency", icon: MdEmergencyShare, link: "/emergency" },
   { name: "language", icon: MdGTranslate, link: "/language" },
   { name: "location", icon: FaLocationDot, link: "/location" },
+  { name: "privacy", icon: MdPrivacyTip, link: "/privacy" },
   { name: "logOut", icon: FaSignOutAlt, link: "/" },
 ]
 
@@ -63,13 +64,15 @@ function RootLayout() {
       setChat(true)
       setHome(false)
       setTools(false)
-    }
-    else if (location.pathname === "/language" || location.pathname === "/location") {
+    } else if (
+      location.pathname === "/language" ||
+      location.pathname === "/location" ||
+      location.pathname === "/privacy"
+    ) {
       setChat(false)
       setHome(false)
       setTools(false)
-    }
-    else {
+    } else {
       setTools(true)
       setHome(false)
       setChat(false)
