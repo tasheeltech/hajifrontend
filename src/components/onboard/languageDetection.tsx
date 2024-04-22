@@ -7,6 +7,7 @@ import { useLoaderData, useNavigate } from "react-router-dom";
 import { Permission, useUserState } from "../../helper/userStateHelper";
 import { DefaultLoader } from "../../loaders/defaultLoader";
 import { useTranslation } from "react-i18next";
+import { HAJI_BACKEND_URL } from "../../helper/url";
 
 interface Country {
   language: string;
@@ -96,7 +97,7 @@ const LanguageDetection: React.FC<LanguageDetectionProps> = ({
 
     try {
       const body = await fetch(
-        "https://hajibackend.tasheel-tech.workers.dev/getLanguage",
+        HAJI_BACKEND_URL + "getLanguage",
         {
           method: "POST",
           body: formData,
