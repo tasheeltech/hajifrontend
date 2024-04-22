@@ -39,6 +39,7 @@ export default function ChatPage() {
   const [mapLocations, setMapLocations] = useState([])
   const [image, setImage] = useState("")
   const [emergency, setEmergency] = useState(false)
+  const [translate, setTranslate] = useState(false)
 
   const [answerWithMap, setAnswerwithMap] = useState(false)
 
@@ -159,8 +160,7 @@ export default function ChatPage() {
     console.log(isoLanguage)
 
     // formData.append("isoLanguage", "en")
-    const getProcessPath =
-      HAJI_BACKEND_URL + "transcript"
+    const getProcessPath = HAJI_BACKEND_URL + "transcript"
     const body = await fetch(getProcessPath, {
       method: "POST",
       body: formData,
@@ -183,13 +183,10 @@ export default function ChatPage() {
 
     // formData.append("isoLanguage", "en")
 
-    const body = await fetch(
-      HAJI_BACKEND_URL + "processText",
-      {
-        method: "POST",
-        body: formData,
-      }
-    )
+    const body = await fetch(HAJI_BACKEND_URL + "processText", {
+      method: "POST",
+      body: formData,
+    })
     const res = await body.json()
 
     console.log(res)
@@ -263,6 +260,9 @@ export default function ChatPage() {
     }
     if (res.type === "INTENT:TRAIN_QUERIES") {
       navigate("/train")
+    }
+    if (res.type === "INTENT:TRANSLATE") {
+      setTranslate(true)
     }
   }
 
@@ -428,6 +428,7 @@ export default function ChatPage() {
             toListening={toListening}
             locations={mapLocations}
             micPermission={microphonePermission}
+            translate={translate}
           />
         </ImageContext.Provider>
       )}

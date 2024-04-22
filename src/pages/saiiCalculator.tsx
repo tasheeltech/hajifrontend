@@ -3,25 +3,34 @@ import { useTranslation } from "react-i18next"
 import { ImArrowRight } from "react-icons/im"
 import "../components/counter/counter.css"
 import { FaPlus, FaMinus } from "react-icons/fa6"
-import { useNavigate } from "react-router-dom"
+import { useLoaderData, useNavigate } from "react-router-dom"
+import { useUserState } from "../helper/userStateHelper"
+import { DefaultLoader } from "../loaders/defaultLoader"
 
 function SaiiCalculator() {
-  const [counter, setCounter] = useState(0)
   const [completed, setCompleted] = useState(false)
   const [right, setRight] = useState(false)
   const [left, setLeft] = useState(false)
   const [animated, setAnimated] = useState(false)
   const [decDisable, setDecDisable] = useState(true)
 
+  const loadedData = useLoaderData() as DefaultLoader
+  const { saiiCount, setSaiiCount, setTawafCount } = useUserState(loadedData)
+
+  const [counter, setCounter] = useState(saiiCount ? parseInt(saiiCount) : 0)
+
   const { t } = useTranslation()
 
   const navigate = useNavigate()
 
   useEffect(() => {
+    setSaiiCount(counter.toString())
     setRight(false)
     setLeft(false)
     if (counter === 7) {
       setCompleted(true)
+      setTawafCount("0")
+      setSaiiCount("0")
     }
 
     if (counter % 2 === 0) {

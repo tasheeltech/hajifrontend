@@ -13,6 +13,8 @@ export const keyNames = {
   ISO_LANUGUAGE: "ISO_LANUGUAGE",
   NAME_OF_USER: "NAME_OF_USER",
   USER_LOCATION: "USER_LOCATION",
+  TAWAF_COUNT: "TAWAF_COUNT",
+  SAII_COUNT: "SAII_COUNT",
 }
 
 export enum UserScreenOnboarding {
@@ -48,6 +50,14 @@ export function useUserState(defaultLoader: DefaultLoader) {
     defaultLoader.location
   )
 
+  const [tawafCount, setTawafCount] = useState<string | null>(
+    defaultLoader.tawafCount
+  )
+
+  const [saiiCount, setSaiiCount] = useState<string | null>(
+    defaultLoader.saiiCount
+  )
+
   const [name, setName] = useState<string | null>(defaultLoader.name)
 
   const setMicPermissionState = (micPermission: Permission) => {
@@ -68,6 +78,16 @@ export function useUserState(defaultLoader: DefaultLoader) {
   const setLocationState = (location: Location) => {
     setLocation(location)
     localStorage.setItem(keyNames.USER_LOCATION, JSON.stringify(location))
+  }
+
+  const setTawafCountState = (tawafCount: string) => {
+    setTawafCount(tawafCount)
+    localStorage.setItem(keyNames.TAWAF_COUNT, tawafCount)
+  }
+
+  const setSaiiCountState = (saiiCount: string) => {
+    setSaiiCount(saiiCount)
+    localStorage.setItem(keyNames.SAII_COUNT, saiiCount)
   }
 
   const setNameState = (name: string) => {
@@ -123,11 +143,15 @@ export function useUserState(defaultLoader: DefaultLoader) {
     isoLanguage,
     location,
     name,
+    tawafCount,
+    saiiCount,
     setMicPermission: setMicPermissionState,
     setLocationPermission: setLocationPermissionState,
     setIsoLanguage: setIsoLanguageState,
     setLocation: setLocationState,
     setName: setNameState,
+    setTawafCount: setTawafCountState,
+    setSaiiCount: setSaiiCountState,
     getUserScreen,
     computeUserScreen,
   }
