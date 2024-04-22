@@ -47,12 +47,16 @@ function HomePage() {
       },
       (error) => {
         console.error("Error getting user location:", error)
-        setCoordinates(null)
+        setCoordinates(new Coordinates(24.470901, 39.612236));
       }
     )
   }, [])
 
-  const myLocation: Location = { lat: 10.342504, lon: 79.389483 };
+  const myLocation: Location = {
+    lat: coordinates?.latitude ?? 24.470901,
+    lon: coordinates?.longitude ?? 39.612236,
+  };
+  console.log(myLocation)
   let lowestDistance: number = 99999;
   let lowestCity: City | null = null;
 
@@ -85,7 +89,7 @@ function HomePage() {
       try {
         const response = await fetch("/cities.csv");
         const responseText = await response.text();
-        console.log(responseText);
+        // console.log(responseText);
         const cities = responseText
           .trim()
           .split("\n")
@@ -104,7 +108,7 @@ function HomePage() {
               },
             };
           });
-        console.log(cities);
+        // console.log(cities);
         let lowestDistance = 99999;
         let lowestCity = null;
 
@@ -119,7 +123,7 @@ function HomePage() {
             myLocation.lat,
             myLocation.lon
           );
-          console.log(distance);
+          // console.log(distance);
           if (distance < lowestDistance) {
             lowestDistance = distance;
             console.log(lowestDistance);
@@ -139,6 +143,7 @@ function HomePage() {
   const prayerTimes = coordinates
     ? new PrayerTimes(coordinates, date, params)
     : null
+  console.log(coordinates)
 
   function prayerName(prayer: any) {
     if (prayer === Prayer.Fajr || prayer === Prayer.None) {
@@ -183,14 +188,6 @@ function HomePage() {
   return (
     <div className="flex flex-col justify-between h-full">
       <section className="flex flex-col border-b ">
-        {coordinates === null && (
-          <div className="bg-gray-500 bg-opacity-70 flex items-center justify-center">
-            <p className="text-white font-bold text-2xl">
-              {t("showPrayerTimes")}
-            </p>
-          </div>
-        )}
-        {coordinates && (
           <div className="flex flex-col justify-center items-center">
             {/* <p className="text-5xl mt-8">{currentPrayer}</p>
             <p>{remainingTimeFormatted} </p> */}
@@ -204,7 +201,6 @@ function HomePage() {
               <p>Isha: {ishaTime}</p>
             </div>
           </div>
-        )}
       </section>
     </div>
   )
