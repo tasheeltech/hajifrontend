@@ -13,15 +13,12 @@ import AnotherPage from "./routes/anotherPage"
 import defaultLoader from "./loaders/defaultLoader"
 import OnBoard from "./routes/onBoard"
 
-
 import RootLayout from "./components/rootLayout/rootLayout"
-
 
 import { I18nextProvider } from "react-i18next"
 import i18n from "./i18n"
 
 import HomePage from "./routes/homepage"
-
 
 // Lazy Loaded Pages
 const Language = React.lazy(() => import("./pages/language"))
@@ -36,6 +33,7 @@ const TawafCalculator = React.lazy(() => import("./pages/tawafCalculator"))
 const SaiiCalculator = React.lazy(() => import("./pages/saiiCalculator"))
 const EmergencyPage = React.lazy(() => import("./pages/emergency"))
 const Bookmarks = React.lazy(() => import("./pages/bookmarks"))
+const Privacy = React.lazy(() => import("./pages/privacy"))
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement)
 
@@ -122,6 +120,12 @@ const router = createBrowserRouter(
       <Route
         path="/landmarks"
         element={<Landmarks />}
+        errorElement={<ErrorPage />}
+        loader={defaultLoader}
+      />
+      <Route
+        path="/privacy"
+        element={<Privacy />}
         errorElement={<ErrorPage />}
         loader={defaultLoader}
       />
