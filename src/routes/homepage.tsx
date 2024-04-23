@@ -49,9 +49,39 @@ function HomePage() {
   const [coordinates, setCoordinates] = useState<Coordinates | null>(null)
   // const [remainingTime, setRemainingTime] = useState("");
   // const coordinates = new Coordinates(10.342005, 79.380153);
-  const calMethodValue = calMethod !== null ? parseInt(calMethod) : 4
+  // const calMethodValue = calMethod !== null ? parseInt(calMethod) : 4
   //@ts-ignore
-  const params = CalculationMethod[arrayvalue[calMethodValue]]()
+  const params = (() => {
+    switch (calMethod) {
+      case "MuslimWorldLeague":
+        return CalculationMethod.MuslimWorldLeague();
+      case "Egyptian":
+        return CalculationMethod.Egyptian();
+      case "Karachi":
+        return CalculationMethod.Karachi();
+      case "UmmAlQura":
+        return CalculationMethod.UmmAlQura();
+      case "Dubai":
+        return CalculationMethod.Dubai();
+      case "Qatar":
+        return CalculationMethod.Qatar();
+      case "Kuwait":
+        return CalculationMethod.Kuwait();
+      case "MoonsightingCommittee":
+        return CalculationMethod.MoonsightingCommittee();
+      case "Singapore":
+        return CalculationMethod.Singapore();
+      case "Turkey":
+        return CalculationMethod.Turkey();
+      case "Tehran":
+        return CalculationMethod.Tehran();
+      case "NorthAmerica":
+        return CalculationMethod.NorthAmerica();
+      default:
+        // Handle the case where calMethodValue is out of range or invalid
+        return CalculationMethod.UmmAlQura();
+    }
+  })();
   console.log(params)
   params.madhab = madhab === "Hanafi" ? Madhab.Hanafi : Madhab.Shafi
   const date = new Date()
