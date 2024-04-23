@@ -46,10 +46,18 @@
   "q4": "Es esmu ārkārtas situācijā",
   "q5": "Rādīt man ievērojamus objektus Mekkā",
   "q6": "Saskaitiet manu Sa'ii",
+  "q7": "Pateikt apsardzi, ka es gribu atrast savu dēlu",
   "selectMadhab": "Izvēlieties savu Madhab",
   "prayer": "Lūgšanas iestatījumi",
   "makkah": "Mekka",
   "madinah": "Madinah",
   "hanafi": "Hanafi",
-  "shafi": "Shafi"
+  "shafi": "Shafi",
+  "prayerTimesFor": "Lūgšanu laiki",
+  "fajr": "Fadžr",
+  "sunrise": "Saules lēkts",
+  "duhr": "Dzūr",
+  "asr": "Asra",
+  "maghrib": "Maģrib",
+  "isha": "Iša"
 }

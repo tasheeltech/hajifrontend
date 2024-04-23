@@ -46,10 +46,18 @@
   "q4": "Tôi đang trong tình huống khẩn cấp",
   "q5": "Cho tôi xem các điểm địa lý ở Makkah",
   "q6": "Đếm Sa'ii của tôi",
+  "q7": "Nói với bảo vệ, tôi muốn tìm con trai của tôi",
   "selectMadhab": "Chọn Madhab của bạn",
   "prayer": "Thiết lập lời cầu nguyện",
   "makkah": "Makkah",
   "madinah": "Madinah",
   "hanafi": "Hanafi",
-  "shafi": "Shafi"
+  "shafi": "Shafi",
+  "prayerTimesFor": "Thời gian lễ cầu nguyện cho",
+  "fajr": "Bình minh",
+  "sunrise": "Mặt trời mọc",
+  "duhr": "Duhr",
+  "asr": "Asr",
+  "maghrib": "Maghrib",
+  "isha": "Isha"
 }

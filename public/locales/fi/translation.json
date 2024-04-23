@@ -46,10 +46,18 @@
   "q4": "Olen hätätilanteessa",
   "q5": "Näytä minulle maamerkkejä Mekassa",
   "q6": "Laske minun Sa'ii",
+  "q7": "Sano vartijalle, että haluan löytää poikani",
   "selectMadhab": "Valitse Madhab",
   "prayer": "Rukousasetukset",
   "makkah": "Mekka",
   "madinah": "Madinah",
   "hanafi": "Hanafi",
-  "shafi": "Shafi"
+  "shafi": "Shafi",
+  "prayerTimesFor": "Rukousajat",
+  "fajr": "Fajr",
+  "sunrise": "Auringonnousu",
+  "duhr": "Duhr",
+  "asr": "Asr",
+  "maghrib": "Maghrib",
+  "isha": "Isha"
 }

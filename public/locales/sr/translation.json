@@ -46,10 +46,18 @@
   "q4": "Ја сам у хитном случају",
   "q5": "Прикажите ми знаменитости у Меки",
   "q6": "Преброј мој Са'ии",
+  "q7": "Recite čuvaru, želim da nađem svog sina",
   "selectMadhab": "Изаберите свој мезхеб",
   "prayer": "Поставке молитве",
   "makkah": "Мека",
   "madinah": "Медина",
   "hanafi": "Ханафи",
-  "shafi": "Шафи"
+  "shafi": "Шафи",
+  "prayerTimesFor": "Времена намаза за",
+  "fajr": "Fadžr",
+  "sunrise": "Izlazak sunca",
+  "duhr": "Podne",
+  "asr": "Ikindija",
+  "maghrib": "Akšam",
+  "isha": "Iša"
 }

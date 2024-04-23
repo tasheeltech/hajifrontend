@@ -46,10 +46,18 @@
   "q4": "Ben acil durumdayım",
   "q5": "Mekke'deki önemli yerleri göster",
   "q6": "Sa'ii sayım",
+  "q7": "Güvenlik görevlisine deyin, oğlumu bulmak istiyorum",
   "selectMadhab": "Madhab'ınızı seçin",
   "prayer": "Dua Ayarları",
   "makkah": "Mekke",
   "madinah": "Medine",
   "hanafi": "Hanefi",
-  "shafi": "Şafi"
+  "shafi": "Şafi",
+  "prayerTimesFor": "için Namaz Vakitleri",
+  "fajr": "Fecr",
+  "sunrise": "Güneş Doğuşu",
+  "duhr": "Duhur",
+  "asr": "Asr",
+  "maghrib": "Akşam",
+  "isha": "İşa"
 }

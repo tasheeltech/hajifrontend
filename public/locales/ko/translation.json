@@ -46,10 +46,18 @@
   "q4": "긴급 상황입니다",
   "q5": "마카에서 나를 명소로 안내하다",
   "q6": "내 Sa'ii를 세다",
+  "q7": "경비원에게 말해서 내 아들을 찾고 싶어",
   "selectMadhab": "당신의 맛합을 선택하십시오",
   "prayer": "기도 설정",
   "makkah": "마카",
   "madinah": "마디나",
   "hanafi": "하나피",
-  "shafi": "샤피"
+  "shafi": "샤피",
+  "prayerTimesFor": "을위한기도시간",
+  "fajr": "푸자",
+  "sunrise": "해돋이",
+  "duhr": "Dhuhr",
+  "asr": "아스르",
+  "maghrib": "막리브",
+  "isha": "이샤"
 }

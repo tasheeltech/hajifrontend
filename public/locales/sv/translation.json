@@ -46,10 +46,18 @@
   "q4": "Jag är i en nödsituation",
   "q5": "Visa mig Landmärken i Makkah",
   "q6": "Räkna min Sa'ii",
+  "q7": "Säg till vakten, jag vill hitta min son",
   "selectMadhab": "Välj din Madhab",
   "prayer": "Böninställningar",
   "makkah": "Mekka",
   "madinah": "Madinah",
   "hanafi": "Hanafi",
-  "shafi": "Shafi"
+  "shafi": "Shafi",
+  "prayerTimesFor": "Bönstider för",
+  "fajr": "Fajr",
+  "sunrise": "Soluppgång",
+  "duhr": "Duhr",
+  "asr": "Asr",
+  "maghrib": "Maghrib",
+  "isha": "Isha"
 }

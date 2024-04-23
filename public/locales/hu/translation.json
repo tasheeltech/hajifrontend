@@ -46,10 +46,18 @@
   "q4": "Vészhelyzetben vagyok",
   "q5": "Mutassa meg nekem a Mekka nevezetességeit",
   "q6": "Számolja meg a Sa'ii-met",
+  "q7": "Mondd el az őrnek, hogy szeretném megtalálni a fiamat",
   "selectMadhab": "Válassza ki a Madhab-ot",
   "prayer": "Imádság beállítások",
   "makkah": "Mekka",
   "madinah": "Madinah",
   "hanafi": "Hanafi",
-  "shafi": "Shafi"
+  "shafi": "Shafi",
+  "prayerTimesFor": "Imaidők",
+  "fajr": "Fajr",
+  "sunrise": "Napkelte",
+  "duhr": "Duhr",
+  "asr": "Aszr",
+  "maghrib": "Maghrib",
+  "isha": "Isha"
 }

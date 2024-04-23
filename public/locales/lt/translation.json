@@ -46,10 +46,18 @@
   "q4": "Esu skubioje situacijoje",
   "q5": "Parodyk man žymiausius objektus Mekoje",
   "q6": "Suskaičiuokite mano Sa'ii",
+  "q7": "Pasakykite saugumui, kad noriu rasti savo sūnų",
   "selectMadhab": "Pasirinkite savo Madhab",
   "prayer": "Maldos nustatymai",
   "makkah": "Meka",
   "madinah": "Medina",
   "hanafi": "Hanafis",
-  "shafi": "Shafis"
+  "shafi": "Shafis",
+  "prayerTimesFor": "Maldų laikai",
+  "fajr": "Fadžras",
+  "sunrise": "Saulėtekis",
+  "duhr": "Duhra",
+  "asr": "Asras",
+  "maghrib": "Magrib",
+  "isha": "Iša"
 }

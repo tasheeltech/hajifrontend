@@ -46,10 +46,18 @@
   "q4": "Ek is in 'n noodgeval",
   "q5": "Wys my baken in Mekka",
   "q6": "Tel my Sa'ii",
+  "q7": "Sê vir die sekuriteitswag, Ek wil my seun vind",
   "selectMadhab": "Kies jou Madhab",
   "prayer": "Gebedsinstellings",
   "makkah": "Makkah",
   "madinah": "Madinah",
   "hanafi": "Hanafi",
-  "shafi": "Shafi"
+  "shafi": "Shafi",
+  "prayerTimesFor": "Gebedstye vir",
+  "fajr": "Fajr",
+  "sunrise": "Sonsopkoms",
+  "duhr": "Duhr",
+  "asr": "Asr",
+  "maghrib": "Maghrib",
+  "isha": "Isha"
 }

@@ -46,10 +46,18 @@
   "q4": "Ich bin in einer Notlage",
   "q5": "Zeigen Sie mir Sehenswürdigkeiten in Mekka",
   "q6": "Zählen Sie meinen Sa'ii",
+  "q7": "Sagen Sie dem Sicherheitsbeamten, dass ich meinen Sohn finden möchte",
   "selectMadhab": "Wählen Sie Ihren Madhab",
   "prayer": "Gebetseinstellungen",
   "makkah": "Mekka",
   "madinah": "Madinah",
   "hanafi": "Hanafi",
-  "shafi": "Shafi"
+  "shafi": "Shafi",
+  "prayerTimesFor": "Gebetszeiten für",
+  "fajr": "Fadschr",
+  "sunrise": "Sonnenaufgang",
+  "duhr": "Dhuhr",
+  "asr": "Asr",
+  "maghrib": "Maghrib",
+  "isha": "Isha"
 }
