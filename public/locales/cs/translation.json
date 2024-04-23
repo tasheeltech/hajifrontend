@@ -59,5 +59,8 @@
   "duhr": "Poledne",
   "asr": "Odpoledne",
   "maghrib": "Západ slunce",
-  "isha": "Isha"
+  "isha": "Isha",
+  "toKnowVisaQueries": "Klikněte na níže uvedený odkaz, abyste zjistili více o dotazech souvisejících s vízy",
+  "toKnowTrainQueries": "Klikněte na níže uvedený odkaz, abyste zjistili více o dotazech souvisejících s vlaky",
+  "privacyDetails": "Naše zásady ochrany osobních údajů jsou opravdu jednoduché: nevybíráme ani neukládáme žádná vaše data ani nesledujeme váš postup jakýmkoli způsobem"
 }

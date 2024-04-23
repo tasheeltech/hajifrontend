@@ -59,5 +59,8 @@
   "duhr": "正午",
   "asr": "下午",
   "maghrib": "黄昏",
-  "isha": "晚礼"
+  "isha": "晚礼",
+  "toKnowVisaQueries": "单击下面的链接以了解有关签证的更多查询",
+  "toKnowTrainQueries": "单击下面的链接以了解有关火车的更多查询",
+  "privacyDetails": "我们的隐私政策非常简单：我们不会收集或存储您的任何数据，也不会以任何方式跟踪您的使用"
 }

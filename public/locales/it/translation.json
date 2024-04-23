@@ -59,5 +59,8 @@
   "duhr": "Mezzogiorno",
   "asr": "Asr",
   "maghrib": "Maghrib",
-  "isha": "Isha"
+  "isha": "Isha",
+  "toKnowVisaQueries": "Fare clic sul collegamento sottostante per conoscere le richieste relative ai visti",
+  "toKnowTrainQueries": "Fare clic sul collegamento sottostante per conoscere le richieste relative ai treni",
+  "privacyDetails": "La nostra politica sulla privacy è davvero semplice: non raccogliamo o conserviamo nessuno dei tuoi dati, né monitoriamo il tuo utilizzo in alcun modo"
 }

@@ -59,5 +59,8 @@
   "duhr": "Miðdagur",
   "asr": "Asr",
   "maghrib": "Maghrib",
-  "isha": "Isha"
+  "isha": "Isha",
+  "toKnowVisaQueries": "Smelltu á hlekkinn hér fyrir neðan til að fá frekari upplýsingar um vegna tengda fyrirspurnir",
+  "toKnowTrainQueries": "Smelltu á hlekkinn hér fyrir neðan til að fá frekari upplýsingar um lest tengda fyrirspurnir",
+  "privacyDetails": "Persónuverndarstefnan okkar er raunverulega einföld: við safnum eða geymum ekki neinar af gögnum ykkar, eða fylgjum notkun ykkar á neinn hátt"
 }

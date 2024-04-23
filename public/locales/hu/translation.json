@@ -59,5 +59,8 @@
   "duhr": "Duhr",
   "asr": "Aszr",
   "maghrib": "Maghrib",
-  "isha": "Isha"
+  "isha": "Isha",
+  "toKnowVisaQueries": "Kattintson az alábbi linkre, hogy többet tudjon meg a vízummal kapcsolatos kérdésekről",
+  "toKnowTrainQueries": "Kattintson az alábbi linkre, hogy többet tudjon meg a vonattal kapcsolatos kérdésekről",
+  "privacyDetails": "Adatvédelmi irányelveink valóban egyszerűek: nem gyűjtünk vagy tárolunk az Ön adataiból, és nem követjük nyomon az Ön felhasználását semmilyen módon"
 }

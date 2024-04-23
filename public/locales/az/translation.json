@@ -59,5 +59,8 @@
   "duhr": "Gün ortası",
   "asr": "Axşam",
   "maghrib": "Gün batımı",
-  "isha": "Isha"
+  "isha": "Isha",
+  "toKnowVisaQueries": "Viza ilə bağlı sorğular haqqında daha çox məlumat almaq üçün aşağıdakı bağlantıya klikləyin",
+  "toKnowTrainQueries": "Dəməli sorğular barədə ətraflı məlumat almaq üçün aşağıdakı bağlantıya klikləyin",
+  "privacyDetails": "Bizim gizlilik siyasətimiz həqiqətən sadədir: sizin məlumatlarınızı toplamır və saxlamırıq və ya sizin istifadənizi heç bir şəkildə izləmirik"
 }
