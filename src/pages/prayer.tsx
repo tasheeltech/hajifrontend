@@ -23,7 +23,7 @@ function Prayer() {
 
   return (
     <div>
-      <h1 className="text-4xl text-center mt-6  mb-12">Prayer Settings</h1>
+      <h1 className="text-4xl text-center mt-6  mb-12">{t("prayer")}</h1>
       <div className="flex flex-col text-center gap-24 justify-center items-center h-full m-6">
         <div>
           <button
@@ -55,7 +55,7 @@ function Prayer() {
             className="flex justify-center items-center  py-4 px-8 rounded-md text-xl font-medium bg-gray-600 text-center text-white "
             // onClick={handleToggleCalMethodOptions}
           >
-            select prayer calculation method
+           {t("selectPrayerCalc")}
           </button>
           <div className="overflow-x-auto w-full max-h-48">
             {[
