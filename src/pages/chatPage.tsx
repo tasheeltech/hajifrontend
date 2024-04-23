@@ -316,7 +316,7 @@ export default function ChatPage() {
   //   "Say to the security guard, I want to find my son",
   // ]
 
-  const qs = [t("q1"), t("q2"), t("q3"), t("q4"), t("q5"), t("q6")]
+  const qs = [t("q1"), t("q2"), t("q3"), t("q4"), t("q5"), t("q6"), t("q7")]
 
   const [value, setValue] = useState("")
   const [dummy, setDummy] = useState(0)
