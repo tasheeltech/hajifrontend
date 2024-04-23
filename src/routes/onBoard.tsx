@@ -4,6 +4,7 @@ import MicPermission from "../components/onboard/micPermission"
 import LocationPermission from "../components/onboard/locationPermission"
 import LanguageDetection from "../components/onboard/languageDetection"
 import UserInformation from "../components/onboard/userInformation"
+import i18n from "../i18n"
 
 const OnBoard: React.FC = () => {
   const [step, setStep] = useState<number>(1)
@@ -17,6 +18,11 @@ const OnBoard: React.FC = () => {
       console.log("Onboarding completed")
     }
   }, [navigate])
+
+  useEffect(() => {
+    i18n.changeLanguage(navigator.language)
+    document.body.dir = i18n.dir()
+  }, [])
 
   const handleNextStep = () => {
     setStep((prevStep) => prevStep + 1)
