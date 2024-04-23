@@ -18,19 +18,19 @@ import { FaMapMarkerAlt } from "react-icons/fa"
 import { BiSolidTime } from "react-icons/bi"
 
 interface Location {
-  lat: number;
-  lon: number;
+  lat: number
+  lon: number
 }
 
 interface City {
-  geo: string;
+  geo: string
   // Add other properties of the city data here
 }
 
 function HomePage() {
-  const loadedData = useLoaderData() as DefaultLoader;
+  const loadedData = useLoaderData() as DefaultLoader
   const { isoLanguage, madhab, calMethod, setLocation, setCalMethod } =
-    useUserState(loadedData);
+    useUserState(loadedData)
   const arrayvalue = [
     "UmmAlQura",
     "Egyptian",
@@ -44,7 +44,7 @@ function HomePage() {
     "Turkey",
     "Tehran",
     "NorthAmerica",
-  ];
+  ]
 
   const [coordinates, setCoordinates] = useState<Coordinates | null>(null)
   const [defaultToMadinah, setDefaultToMadinah] = useState(false)
@@ -56,13 +56,13 @@ function HomePage() {
   const params = (() => {
     switch (calMethod) {
       case "UmmAlQura":
-        return CalculationMethod.UmmAlQura();
+        return CalculationMethod.UmmAlQura()
       case "Egyptian":
         return CalculationMethod.Egyptian()
       case "Karachi":
-        return CalculationMethod.Karachi();
+        return CalculationMethod.Karachi()
       case "MuslimWorldLeague":
-        return CalculationMethod.MuslimWorldLeague();
+        return CalculationMethod.MuslimWorldLeague()
       case "Dubai":
         return CalculationMethod.Dubai()
       case "Qatar":
@@ -107,88 +107,88 @@ function HomePage() {
         setCoordinates(new Coordinates(24.470901, 39.612236))
         setDefaultToMadinah(true)
       }
-    );
-  }, []);
+    )
+  }, [])
 
-  const myLocation: Location = {
-    lat: coordinates?.latitude ?? 24.470901,
-    lon: coordinates?.longitude ?? 39.612236,
-  }
+  // const myLocation: Location = {
+  //   lat: coordinates?.latitude ?? 24.470901,
+  //   lon: coordinates?.longitude ?? 39.612236,
+  // }
 
-  let lowestDistance: number = 99999
-  let lowestCity: City | null = null
+  // let lowestDistance: number = 99999
+  // let lowestCity: City | null = null
 
-  function calculateDistance(
-    lat1: number,
-    lon1: number,
-    lat2: number,
-    lon2: number
-  ): number {
-    const R = 6371 // Radius of the Earth in kilometers
-    const dLat = ((lat2 - lat1) * Math.PI) / 180 // Convert degrees to radians
-    const dLon = ((lon2 - lon1) * Math.PI) / 180 // Convert degrees to radians
-    const a =
-      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-      Math.cos((lat1 * Math.PI) / 180) *
-        Math.cos((lat2 * Math.PI) / 180) *
-        Math.sin(dLon / 2) *
-        Math.sin(dLon / 2)
-    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
-    const distance = R * c // Distance in kilometers
+  // function calculateDistance(
+  //   lat1: number,
+  //   lon1: number,
+  //   lat2: number,
+  //   lon2: number
+  // ): number {
+  //   const R = 6371 // Radius of the Earth in kilometers
+  //   const dLat = ((lat2 - lat1) * Math.PI) / 180 // Convert degrees to radians
+  //   const dLon = ((lon2 - lon1) * Math.PI) / 180 // Convert degrees to radians
+  //   const a =
+  //     Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+  //     Math.cos((lat1 * Math.PI) / 180) *
+  //       Math.cos((lat2 * Math.PI) / 180) *
+  //       Math.sin(dLon / 2) *
+  //       Math.sin(dLon / 2)
+  //   const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
+  //   const distance = R * c // Distance in kilometers
 
-    return distance
-  }
+  //   return distance
+  // }
 
-  useEffect(() => {
-    const load = async function (): Promise<void> {
-      try {
-        const response = await fetch("/cities.csv")
-        const responseText = await response.text()
+  // useEffect(() => {
+  //   const load = async function (): Promise<void> {
+  //     try {
+  //       const response = await fetch("/cities.csv")
+  //       const responseText = await response.text()
 
-        const cities = responseText
-          .trim()
-          .split("\n")
-          .map((line) => {
-            const [name, cc, tz, geolat, geolon] = line.split(",")
+  //       const cities = responseText
+  //         .trim()
+  //         .split("\n")
+  //         .map((line) => {
+  //           const [name, cc, tz, geolat, geolon] = line.split(",")
 
-            return {
-              name,
-              cc,
-              tz,
-              geo: {
-                geolat: geolat.substring(1), // Remove first letter from geolat
-                geolon, // Remove last letter from geolon
-              },
-            }
-          })
+  //           return {
+  //             name,
+  //             cc,
+  //             tz,
+  //             geo: {
+  //               geolat: geolat.substring(1), // Remove first letter from geolat
+  //               geolon, // Remove last letter from geolon
+  //             },
+  //           }
+  //         })
 
-        let lowestDistance = 99999
-        let lowestCity = null
+  //       let lowestDistance = 99999
+  //       let lowestCity = null
 
-        cities.forEach((city) => {
-          const { geolat, geolon } = city.geo;
-          const parsedGeolat = parseFloat(geolat);
-          const parsedGeolon = parseFloat(geolon);
+  //       cities.forEach((city) => {
+  //         const { geolat, geolon } = city.geo
+  //         const parsedGeolat = parseFloat(geolat)
+  //         const parsedGeolon = parseFloat(geolon)
 
-          const distance = calculateDistance(
-            parsedGeolat,
-            parsedGeolon,
-            myLocation.lat,
-            myLocation.lon
-          )
+  //         const distance = calculateDistance(
+  //           parsedGeolat,
+  //           parsedGeolon,
+  //           myLocation.lat,
+  //           myLocation.lon
+  //         )
 
-          if (distance < lowestDistance) {
-            lowestDistance = distance
-            lowestCity = city
-            // console.log(lowestCity)
-          }
-        })
-      } catch (error) {
-        console.error("Error fetching cities.csv:", error);
-      }
-    };
-    load();
-  }, []);
+  //         if (distance < lowestDistance) {
+  //           lowestDistance = distance
+  //           lowestCity = city
+  //           // console.log(lowestCity)
+  //         }
+  //       })
+  //     } catch (error) {
+  //       console.error("Error fetching cities.csv:", error)
+  //     }
+  //   }
+  //   load()
+  // }, [])
 
   const prayerTimes = coordinates
     ? new PrayerTimes(coordinates, date, params)
@@ -221,7 +221,7 @@ function HomePage() {
   //   .format(" h:mm a")
   // const ishaTime = moment(prayerTimes?.isha).tz(timeZone).format(" h:mm a")
 
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
   useEffect(() => {
     i18n.changeLanguage(isoLanguage ? isoLanguage.iso : navigator.language)
@@ -305,11 +305,11 @@ function HomePage() {
         <div className="absolute bottom-0 w-full h-[70%] bg-[#EFF0F2] rounded-tl-3xl rounded-tr-3xl z-20"></div>
         <div className="relative flex flex-col gap-6 justify-between h-full p-6 z-40">
           <div className="">
-            <p className="text-white text-4xl">Assalamu aliakum, Sadiya! 😊</p>
+            <p className="text-white text-4xl">{t("welcome")}, Sadiya! 😊</p>
           </div>
           <div className="prayer flex flex-col gap-4 bg-white py-5 px-6 rounded-[30px] items-center">
             <div className="top text-center w-full">
-              <div className="top flex justify-between w-full">
+              {/* <div className="top flex justify-between w-full">
                 <div className="left">
                   <div className="flex items-center gap-[6px]">
                     <BiSolidTime color="#2BCE98" />
@@ -317,7 +317,7 @@ function HomePage() {
                   </div>
                   <div className="flex items-center gap-[6px]">
                     <div className="w-4"></div>
-                    <p className="text-[#6a6a6a] font-medium">{`${remainingHours} hr ${remainingMinutes} mins left`}</p>
+                    <p className="text-[#6a6a6a] font-medium">{prayerDate}</p>
                   </div>
                 </div>
                 <div className="right">
@@ -335,17 +335,19 @@ function HomePage() {
                     </p>
                   </div>
                 </div>
-              </div>
-              {/* <p className="font-bold">
+              </div> */}
+              <p className="font-bold">
                 {t("prayerTimesFor")} {prayerDate}
-              </p> */}
+              </p>
             </div>
             <div className="h-[2px] w-full bg-[#ACACAC]"></div>
             <div className="timings flex items-center gap-[6px] overflow-x-scroll no-scrollbar">
               <div
-                className={`${
-                  nextPrayerName === "Fajr" ? "bg-[#373535]" : "bg-[#37353573]"
-                } h-[78px] max-w-[58px]  flex flex-col justify-between items-center g-2 p-[6px] rounded-sm`}
+                //   className={`${
+                //     nextPrayerName === "Fajr" ? "bg-[#373535]" : "bg-[#37353573]"
+                //   } h-[78px] max-w-[58px]  flex flex-col justify-between items-center g-2 p-[6px] rounded-sm`}
+                // >
+                className="bg-[#373535] h-[78px] max-w-[58px]  flex flex-col justify-between items-center g-2 p-[6px] rounded-sm"
               >
                 <p className="text-[10px] text-white">
                   {fajrTime.format(" h:mm a")}
@@ -356,9 +358,11 @@ function HomePage() {
                 <p className="text-[10px] text-white">{t("fajr")}</p>
               </div>
               <div
-                className={`${
-                  nextPrayerName === "Dhuhr" ? "bg-[#373535]" : "bg-[#37353573]"
-                } h-[78px] max-w-[58px]  flex flex-col justify-between items-center g-2 p-[6px] rounded-sm`}
+                //   className={`${
+                //     nextPrayerName === "Dhuhr" ? "bg-[#373535]" : "bg-[#37353573]"
+                //   } h-[78px] max-w-[58px]  flex flex-col justify-between items-center g-2 p-[6px] rounded-sm`}
+                // >
+                className="bg-[#373535] h-[78px] max-w-[58px]  flex flex-col justify-between items-center g-2 p-[6px] rounded-sm"
               >
                 <p className="text-[10px] text-white">
                   {dhuhrTime.format(" h:mm a")}
@@ -369,9 +373,11 @@ function HomePage() {
                 <p className="text-[10px] text-white">{t("duhr")}</p>
               </div>
               <div
-                className={`${
-                  nextPrayerName === "Asr" ? "bg-[#373535]" : "bg-[#37353573]"
-                } h-[78px] max-w-[58px]  flex flex-col justify-between items-center g-2 p-[6px] rounded-sm`}
+                //   className={`${
+                //     nextPrayerName === "Asr" ? "bg-[#373535]" : "bg-[#37353573]"
+                //   } h-[78px] max-w-[58px]  flex flex-col justify-between items-center g-2 p-[6px] rounded-sm`}
+                // >
+                className="bg-[#373535] h-[78px] max-w-[58px]  flex flex-col justify-between items-center g-2 p-[6px] rounded-sm"
               >
                 <p className="text-[10px] text-white">
                   {asrTime.format(" h:mm a")}
@@ -382,11 +388,13 @@ function HomePage() {
                 <p className="text-[10px] text-white">{t("asr")}</p>
               </div>
               <div
-                className={`${
-                  nextPrayerName === "Maghrib"
-                    ? "bg-[#373535]"
-                    : "bg-[#37353573]"
-                } h-[78px] max-w-[58px]  flex flex-col justify-between items-center g-2 p-[6px] rounded-sm`}
+                //   className={`${
+                //     nextPrayerName === "Maghrib"
+                //       ? "bg-[#373535]"
+                //       : "bg-[#37353573]"
+                //   } h-[78px] max-w-[58px]  flex flex-col justify-between items-center g-2 p-[6px] rounded-sm`}
+                // >
+                className="bg-[#373535] h-[78px] max-w-[58px]  flex flex-col justify-between items-center g-2 p-[6px] rounded-sm"
               >
                 <p className="text-[10px] text-white">
                   {maghribTime.format(" h:mm a")}
@@ -397,9 +405,11 @@ function HomePage() {
                 <p className="text-[10px] text-white">{t("maghrib")}</p>
               </div>
               <div
-                className={`${
-                  nextPrayerName === "Isha" ? "bg-[#373535]" : "bg-[#37353573]"
-                } h-[78px] max-w-[58px]  flex flex-col justify-between items-center g-2 p-[6px] rounded-sm`}
+                //   className={`${
+                //     nextPrayerName === "Isha" ? "bg-[#373535]" : "bg-[#37353573]"
+                //   } h-[78px] max-w-[58px]  flex flex-col justify-between items-center g-2 p-[6px] rounded-sm`}
+                // >
+                className="bg-[#373535] h-[78px] max-w-[58px]  flex flex-col justify-between items-center g-2 p-[6px] rounded-sm"
               >
                 <p className="text-[10px] text-white">
                   {ishaTime.format(" h:mm a")}
@@ -419,13 +429,10 @@ function HomePage() {
                 alt=""
               />
             </div>
-            <h1 className="pt-10 text-3xl font-bold">Welcome to HajiAnsari</h1>
-            <p className="text-[#373535] text px-3">
-              HajiAnsari is on a mission to become a true “supporter” of
-              pilgrims throughout their Umrah and Hajj journey.
-            </p>
+            <h1 className="pt-10 text-3xl font-bold">{t("homeWelcome")}</h1>
+            <p className="text-[#373535] text px-3">{t("homePara")}</p>
             <Link to="/chat" className="flex flex-col items-center pb-2">
-              <p className="text-[#0097B2]">Start a new chat</p>
+              <p className="text-[#0097B2]">{t("startChat")}</p>
               <IoIosArrowDown color="#0097B2" />
             </Link>
           </div>
@@ -460,7 +467,7 @@ function HomePage() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default HomePage;
+export default HomePage

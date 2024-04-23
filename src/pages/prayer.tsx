@@ -1,29 +1,29 @@
-import React, { useState } from "react";
-import { useLoaderData } from "react-router-dom";
-import { useUserState } from "../helper/userStateHelper";
-import { DefaultLoader } from "../loaders/defaultLoader";
-import { t } from "i18next";
+import React, { useState } from "react"
+import { useLoaderData } from "react-router-dom"
+import { useUserState } from "../helper/userStateHelper"
+import { DefaultLoader } from "../loaders/defaultLoader"
+import { t } from "i18next"
 
 function Prayer() {
-  const loadedData = useLoaderData() as DefaultLoader;
+  const loadedData = useLoaderData() as DefaultLoader
   const { madhab, setMadhab, calMethod, setCalMethod } =
-    useUserState(loadedData);
+    useUserState(loadedData)
 
-  const [showMadhabOptions, setShowMadhabOptions] = useState(false);
-  const [calMethodindex, setcalMethodindex] = useState(0 as number);
+  const [showMadhabOptions, setShowMadhabOptions] = useState(false)
+  const [calMethodindex, setcalMethodindex] = useState(0 as number)
   const handleMadhabClick = (madhab: string) => {
-    setMadhab(madhab);
-    setShowMadhabOptions(false);
-  };
+    setMadhab(madhab)
+    setShowMadhabOptions(false)
+  }
 
   const handleCalMethodClick = (calMethod: string) => {
-    setCalMethod(calMethod);
-    setcalMethodindex(parseInt(calMethod));
-  };
+    setCalMethod(calMethod)
+    setcalMethodindex(parseInt(calMethod))
+  }
 
   return (
     <div>
-      <h1 className="text-4xl text-center mt-6  mb-12">Prayer Settings</h1>
+      <h1 className="text-4xl text-center mt-6  mb-12">{t("prayer")}</h1>
       <div className="flex flex-col text-center gap-24 justify-center items-center h-full m-6">
         <div>
           <button
@@ -55,7 +55,7 @@ function Prayer() {
             className="flex justify-center items-center  py-4 px-8 rounded-md text-xl font-medium bg-gray-600 text-center text-white "
             // onClick={handleToggleCalMethodOptions}
           >
-            select prayer calculation method
+            {t("selectPrayerCalc")}
           </button>
           <div className="overflow-x-auto w-full max-h-48">
             {[
@@ -88,7 +88,7 @@ function Prayer() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default Prayer;
+export default Prayer

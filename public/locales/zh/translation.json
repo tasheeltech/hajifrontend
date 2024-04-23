@@ -62,5 +62,10 @@
   "isha": "晚礼",
   "toKnowVisaQueries": "单击下面的链接以了解有关签证的更多查询",
   "toKnowTrainQueries": "单击下面的链接以了解有关火车的更多查询",
-  "privacyDetails": "我们的隐私政策非常简单：我们不会收集或存储您的任何数据，也不会以任何方式跟踪您的使用"
+  "privacyDetails": "我们的隐私政策非常简单：我们不会收集或存储您的任何数据，也不会以任何方式跟踪您的使用",
+  "homeWelcome": "欢迎来到HajiAnsari",
+  "homePara": "HajiAnsari的使命是在他们的Umrah和Hajj旅程中成为真正的“支持者”。",
+  "startChat": "开始新的聊天",
+  "selectPrayerCalc": "选择祈祷计算方法：",
+  "setLocation": "设置位置"
 }
