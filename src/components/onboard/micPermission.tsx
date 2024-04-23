@@ -12,8 +12,10 @@ const MicPermission: React.FC<MicPermissionProps> = ({ onNextStep }) => {
   const { micPermission, setMicPermission } = useUserState(loadedData);
   // const [permissionRequests, setPermissionRequests] = useState(0);
   const [permissionGranted, setPermissionGranted] = useState(false); // State to track permission grant
+  const [showSkipButton, setShowSkipButton] = useState(false);
 
   useEffect(() => {
+    let timeout: ReturnType<typeof setTimeout> | null = null;
     if (permissionGranted) {
       onNextStep(); // Call onNextStep if permission is already granted
     } else {
@@ -24,6 +26,16 @@ const MicPermission: React.FC<MicPermissionProps> = ({ onNextStep }) => {
           setPermissionGranted(true); // Set permissionGranted to true
         })
         .catch(() => setMicPermission(Permission.DEFAULT));
+      // Call onNextStep after 3 seconds, regardless of permission status
+      timeout = setTimeout(() => {
+        setShowSkipButton(true);
+      }, 3000);
+
+      return () => {
+        if (timeout) {
+          clearTimeout(timeout);
+        }
+      };
     }
   }, [setMicPermission, onNextStep, permissionGranted]);
 
@@ -67,6 +79,14 @@ const MicPermission: React.FC<MicPermissionProps> = ({ onNextStep }) => {
                   src="/icons/microphone.svg"
                 />
               </button>
+              {showSkipButton && (
+                <button
+                  className="bg-blue-500 px-12 py-3 hover:bg-blue-700 text-white font-bold rounded mt-4"
+                  onClick={onNextStep}
+                >
+                  Skip
+                </button>
+              )}
             </div>
           </div>
         </div>
