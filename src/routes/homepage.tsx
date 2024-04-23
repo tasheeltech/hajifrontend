@@ -13,6 +13,17 @@ import {
 } from "adhan"
 import moment from "moment-timezone"
 
+interface Location {
+  lat: number;
+  lon: number;
+}
+
+interface City {
+  geo: string;
+  // Add other properties of the city data here
+}
+
+
 function HomePage() {
   const loadedData = useLoaderData() as DefaultLoader
   const { isoLanguage, madhab, setLocation } = useUserState(loadedData)
@@ -26,6 +37,7 @@ function HomePage() {
   // const prayerTimes = new PrayerTimes(coordinates, date, params);
   const timeZone = moment.tz.guess()
   const currentTime = moment().tz(timeZone)
+  console.log(timeZone)
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
@@ -36,14 +48,103 @@ function HomePage() {
       },
       (error) => {
         console.error("Error getting user location:", error)
-        setCoordinates(null)
+        setCoordinates(new Coordinates(24.470901, 39.612236));
       }
     )
   }, [])
 
+  const myLocation: Location = {
+    lat: coordinates?.latitude ?? 24.470901,
+    lon: coordinates?.longitude ?? 39.612236,
+  };
+  console.log(myLocation)
+  let lowestDistance: number = 99999;
+  let lowestCity: City | null = null;
+
+  function calculateDistance(
+    lat1: number,
+    lon1: number,
+    lat2: number,
+    lon2: number
+  ): number {
+    // console.log(lat1,lat2,lon1,lon2)
+    const R = 6371; // Radius of the Earth in kilometers
+    const dLat = ((lat2 - lat1) * Math.PI) / 180; // Convert degrees to radians
+    const dLon = ((lon2 - lon1) * Math.PI) / 180; // Convert degrees to radians
+    const a =
+      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos((lat1 * Math.PI) / 180) *
+        Math.cos((lat2 * Math.PI) / 180) *
+        Math.sin(dLon / 2) *
+        Math.sin(dLon / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    const distance = R * c; // Distance in kilometers
+    // console.log(distance)
+    return distance;
+  }
+
+  const [text, setText] = useState<string | undefined>();
+
+  useEffect(() => {
+    const load = async function (): Promise<void> {
+      try {
+        const response = await fetch("/cities.csv");
+        const responseText = await response.text();
+        // console.log(responseText);
+        const cities = responseText
+          .trim()
+          .split("\n")
+          .map((line) => {
+            const [name, cc, tz, geolat, geolon] = line.split(",");
+            // console.log(name, cc, tz, geolat, geolon);
+
+            // console.log(lat, lon);
+            return {
+              name,
+              cc,
+              tz,
+              geo: {
+                geolat: geolat.substring(1), // Remove first letter from geolat
+                geolon, // Remove last letter from geolon
+              },
+            };
+          });
+        // console.log(cities);
+        let lowestDistance = 99999;
+        let lowestCity = null;
+
+        cities.forEach((city) => {
+          const { geolat, geolon } = city.geo;
+          const parsedGeolat = parseFloat(geolat);
+          const parsedGeolon = parseFloat(geolon);
+
+          const distance = calculateDistance(
+            parsedGeolat,
+            parsedGeolon,
+            myLocation.lat,
+            myLocation.lon
+          );
+          // console.log(distance);
+          if (distance < lowestDistance) {
+            lowestDistance = distance;
+            console.log(lowestDistance);
+            lowestCity = city;
+          }
+        });
+
+        console.log("finished...");
+        console.log(lowestCity);
+      } catch (error) {
+        console.error("Error fetching cities.csv:", error);
+      }
+    };
+    load();
+  }, []);
+
   const prayerTimes = coordinates
     ? new PrayerTimes(coordinates, date, params)
     : null
+  console.log(coordinates)
 
   function prayerName(prayer: any) {
     if (prayer === Prayer.Fajr || prayer === Prayer.None) {
@@ -88,14 +189,6 @@ function HomePage() {
   return (
     <div className="flex flex-col justify-between h-full">
       <section className="flex flex-col border-b ">
-        {coordinates === null && (
-          <div className="bg-gray-500 bg-opacity-70 flex items-center justify-center">
-            <p className="text-white font-bold text-2xl">
-              {t("showPrayerTimes")}
-            </p>
-          </div>
-        )}
-        {coordinates && (
           <div className="flex flex-col justify-center items-center">
             {/* <p className="text-5xl mt-8">{currentPrayer}</p>
             <p>{remainingTimeFormatted} </p> */}
@@ -109,7 +202,6 @@ function HomePage() {
               <p>Isha: {ishaTime}</p>
             </div>
           </div>
-        )}
       </section>
     </div>
   )
