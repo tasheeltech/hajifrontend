@@ -62,5 +62,10 @@
   "isha": "Isha",
   "toKnowVisaQueries": "Napsauta alla olevaa linkki saadakses lisätietoja viisaa koskevista kyselyistä",
   "toKnowTrainQueries": "Napsauta alla olevaa linkkiä saadaksesi lisätietoja junaa koskevista kyselyistä",
-  "privacyDetails": "Yksityisyydensuojakäytäntömme on todella yksinkertainen: emme kerää tai tallenna mitään tietojasi, emmekä seuraa käyttöäsi millään tavalla"
+  "privacyDetails": "Yksityisyydensuojakäytäntömme on todella yksinkertainen: emme kerää tai tallenna mitään tietojasi, emmekä seuraa käyttöäsi millään tavalla",
+  "homeWelcome": "Tervetuloa HajiAnsariin",
+  "homePara": "HajiAnsari on tehtävänä tulla todelliseksi 'tukijaksi' pyhiinvaeltajille heidän Umrah- ja Hajj-matkansa aikana.",
+  "startChat": "Aloita uusi keskustelu",
+  "selectPrayerCalc": "Valitse rukouksen laskentamenetelmä:",
+  "setLocation": "Aseta sijainti"
 }

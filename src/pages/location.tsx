@@ -6,6 +6,7 @@ import { useLoaderData } from "react-router-dom"
 import { DefaultLoader } from "../loaders/defaultLoader"
 import { useUserState } from "../helper/userStateHelper"
 import "../components/location/location.css"
+import { t } from "i18next"
 
 const containerStyle = {
   width: "100%",
@@ -74,7 +75,6 @@ const Location: React.FC = () => {
   })
 
   const onLoad = React.useCallback(function callback(map: any) {
-
     const bounds = new window.google.maps.LatLngBounds(center)
     map.fitBounds(bounds)
 
@@ -126,7 +126,7 @@ const Location: React.FC = () => {
         }}
       >
         <BiCurrentLocation size={16} />
-        Set Location
+        {t("setLocation")}
       </button>
     </div>
   )
