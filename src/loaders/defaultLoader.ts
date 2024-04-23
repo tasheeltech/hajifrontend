@@ -6,15 +6,16 @@ import {
 } from "../helper/userStateHelper"
 
 export interface DefaultLoader {
-  micPermission: Permission
-  locationPermission: Permission
-  isoLanguage: Country | null
-  location: Location | null
-  tawafCount: string | null
-  saiiCount: string | null
-  name: string | null
-  madhab: string | null
-  landmark: string | null
+  micPermission: Permission;
+  locationPermission: Permission;
+  isoLanguage: Country | null;
+  location: Location | null;
+  tawafCount: string | null;
+  saiiCount: string | null;
+  name: string | null;
+  madhab: string | null;
+  calMethod: string | null;
+  landmark: string | null;
 }
 
 export default async function loader(): Promise<DefaultLoader> {
@@ -51,6 +52,7 @@ export default async function loader(): Promise<DefaultLoader> {
     tawafCount: localStorage.getItem(keyNames.TAWAF_COUNT),
     saiiCount: localStorage.getItem(keyNames.SAII_COUNT),
     madhab: localStorage.getItem(keyNames.MADHAB),
+    calMethod: localStorage.getItem(keyNames.CALCULATIONMETHOD),
     landmark: localStorage.getItem(keyNames.LANDMARK),
-  }
+  };
 }

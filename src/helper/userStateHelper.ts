@@ -16,8 +16,9 @@ export const keyNames = {
   TAWAF_COUNT: "TAWAF_COUNT",
   SAII_COUNT: "SAII_COUNT",
   MADHAB: "MADHAB",
+  CALCULATIONMETHOD: "CALCULATIONMETHOD",
   LANDMARK: "LANDMARK",
-}
+};
 
 export enum UserScreenOnboarding {
   PERMISSION_SCREEN,
@@ -64,6 +65,8 @@ export function useUserState(defaultLoader: DefaultLoader) {
 
   const [madhab, setMadhab] = useState<string | null>(defaultLoader.madhab)
 
+  const [calMethod, setCalMethod] = useState<string | null>(defaultLoader.calMethod);
+
   const [landmark, setLandmark] = useState<string | null>(defaultLoader.landmark)
 
 
@@ -107,6 +110,11 @@ export function useUserState(defaultLoader: DefaultLoader) {
     setMadhab(madhab)
     localStorage.setItem(keyNames.MADHAB, madhab)
   }
+
+  const setCalMethodState = (calMethod: string) => {
+    setCalMethod(calMethod);
+    localStorage.setItem(keyNames.CALCULATIONMETHOD, calMethod);
+  };
 
   const setLandmarkState = (landmark: string) => {
     setLandmark(landmark)
@@ -165,6 +173,7 @@ export function useUserState(defaultLoader: DefaultLoader) {
     tawafCount,
     saiiCount,
     madhab,
+    calMethod,
     landmark,
     setMicPermission: setMicPermissionState,
     setLocationPermission: setLocationPermissionState,
@@ -174,6 +183,7 @@ export function useUserState(defaultLoader: DefaultLoader) {
     setTawafCount: setTawafCountState,
     setSaiiCount: setSaiiCountState,
     setMadhab: setMadhabState,
+    setCalMethod: setCalMethodState,
     setLandmark: setLandmarkState,
     getUserScreen,
     computeUserScreen,
