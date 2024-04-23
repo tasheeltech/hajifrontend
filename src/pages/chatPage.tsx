@@ -339,15 +339,15 @@ export default function ChatPage() {
               {qs.map((q, index) => (
                 <div
                   className="flex gap-4 items-center justify-between px-5 py-2 rounded-[36px] border"
+                  onClick={() => {
+                    handleForceUpdate()
+                    setValue(q)
+                  }}
                   key={index}
                 >
                   <p className="text-sm">{q}</p>
                   <div
                     className="p-2"
-                    onClick={() => {
-                      handleForceUpdate()
-                      setValue(q)
-                    }}
                   >
                     <RxArrowTopRight size={14} />
                   </div>
