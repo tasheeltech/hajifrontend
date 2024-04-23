@@ -7,6 +7,7 @@ interface Props {
   click: () => void
   startRecord: () => void
   micPermission: string | null
+  micAvailable: boolean
   value: string
   dummy: number
 }
@@ -16,6 +17,7 @@ const Search: React.FC<Props> = ({
   click,
   startRecord,
   micPermission,
+  micAvailable,
   value,
   dummy,
 }) => {
@@ -52,7 +54,7 @@ const Search: React.FC<Props> = ({
         >
           <IoIosSend size={28} color="#ffffff" />
         </button>
-      ) : micPermission === "granted" ? (
+      ) : micPermission === "granted" && micAvailable ? (
         <button
           className="bg-[#2BCE98] p-[10px] rounded-full flex items-center justify-center"
           onClick={() => startRecord()}
