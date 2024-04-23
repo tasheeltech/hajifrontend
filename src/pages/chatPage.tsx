@@ -86,6 +86,7 @@ export default function ChatPage() {
   const [microphonePermission, setMicrophonePermission] = useState<
     string | null
   >(null)
+  const [micAvailable, setMicAvailable] = useState<boolean>(false)
 
   useEffect(() => {
     const requestMicrophonePermission = async () => {
@@ -95,7 +96,7 @@ export default function ChatPage() {
         })
         // Permission granted
         setMicrophonePermission("granted")
-        doStart()
+        handleDeviceChange()
         // Don't forget to stop the stream when you're done with it
         stream.getTracks().forEach((track) => track.stop())
       } catch (error) {
@@ -123,11 +124,14 @@ export default function ChatPage() {
         )
         if (!microphone) {
           // Microphone is disconnected
-          setMicrophonePermission("disconnected")
+          // setMicrophonePermission("disconnected")
+          setMicAvailable(false)
         } else {
           // Microphone is reconnected
           setTimeout(() => {
-            setMicrophonePermission("granted")
+            // setMicrophonePermission("granted")
+            setMicAvailable(true)
+            console.log(micAvailable)
             doStart()
           }, 500)
         }
@@ -141,7 +145,7 @@ export default function ChatPage() {
 
     // Listen for changes in media devices
     navigator.mediaDevices.addEventListener("devicechange", handleDeviceChange)
-
+ 
     // Clean up event listener
     return () => {
       navigator.mediaDevices.removeEventListener(
@@ -477,6 +481,7 @@ export default function ChatPage() {
               click={handleStopRecord}
               startRecord={handleStartRecord}
               micPermission={microphonePermission}
+              micAvailable={micAvailable}
               value={value}
               dummy={dummy}
             />
