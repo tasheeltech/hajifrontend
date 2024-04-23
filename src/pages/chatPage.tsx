@@ -87,35 +87,130 @@ export default function ChatPage() {
     string | null
   >(null)
 
-  const requestMicrophonePermission = async () => {
-    try {
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true })
-      // Permission granted
-      setMicrophonePermission("granted")
-      doStart()
-      // Don't forget to stop the stream when you're done with it
-      stream.getTracks().forEach((track) => track.stop())
-    } catch (error) {
-      if (
-        error instanceof Error &&
-        (error.name === "NotAllowedError" ||
-          error.name === "PermissionDeniedError")
-      ) {
-        // Permission denied
-        setMicrophonePermission("denied")
-      } else {
-        // Handle other errors
-        console.error("Error accessing microphone:", error)
-        setMicrophonePermission("denied")
+  useEffect(() => {
+    const requestMicrophonePermission = async () => {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({
+          audio: true,
+        })
+        // Permission granted
+        setMicrophonePermission("granted")
+        doStart()
+        // Don't forget to stop the stream when you're done with it
+        stream.getTracks().forEach((track) => track.stop())
+      } catch (error) {
+        if (
+          error instanceof Error &&
+          (error.name === "NotAllowedError" ||
+            error.name === "PermissionDeniedError")
+        ) {
+          // Permission denied
+          setMicrophonePermission("denied")
+        } else {
+          // Handle other errors
+          console.error("Error accessing microphone:", error)
+          setMicrophonePermission("denied")
+        }
       }
     }
-  }
 
-  useEffect(() => {
-    // Check microphone permission periodically
-    const interval = setInterval(requestMicrophonePermission, 1000) // Check every second
-    return () => clearInterval(interval)
+    const handleDeviceChange = async () => {
+      // Check if the microphone is still available
+      try {
+        const devices = await navigator.mediaDevices.enumerateDevices()
+        const microphone = devices.find(
+          (device) => device.kind === "audioinput"
+        )
+        if (!microphone) {
+          // Microphone is disconnected
+          setMicrophonePermission("disconnected")
+        } else {
+          // Microphone is reconnected
+          setTimeout(() => {
+            setMicrophonePermission("granted")
+            doStart()
+          }, 500)
+        }
+      } catch (error) {
+        console.error("Error checking media devices:", error)
+      }
+    }
+
+    // Request microphone permission when the component mounts
+    requestMicrophonePermission()
+
+    // Listen for changes in media devices
+    navigator.mediaDevices.addEventListener("devicechange", handleDeviceChange)
+
+    // Clean up event listener
+    return () => {
+      navigator.mediaDevices.removeEventListener(
+        "devicechange",
+        handleDeviceChange
+      )
+    }
   }, [])
+
+  // useEffect(() => {
+  //   const requestMicrophonePermission = async () => {
+  //     try {
+  //       const stream = await navigator.mediaDevices.getUserMedia({
+  //         audio: true,
+  //       })
+  //       // Permission granted
+  //       setMicrophonePermission("granted")
+  //       doStart()
+  //       // Don't forget to stop the stream when you're done with it
+  //       stream.getTracks().forEach((track) => track.stop())
+  //     } catch (error) {
+  //       if (
+  //         error instanceof Error &&
+  //         (error.name === "NotAllowedError" ||
+  //           error.name === "PermissionDeniedError")
+  //       ) {
+  //         // Permission denied
+  //         setMicrophonePermission("denied")
+  //       } else {
+  //         // Handle other errors
+  //         console.error("Error accessing microphone:", error)
+  //         setMicrophonePermission("denied")
+  //       }
+  //     }
+  //   }
+
+  //   // Request microphone permission when the component mounts
+  //   requestMicrophonePermission()
+  // }, [])
+
+  // const requestMicrophonePermission = async () => {
+  //   try {
+  //     const stream = await navigator.mediaDevices.getUserMedia({ audio: true })
+  //     // Permission granted
+  //     setMicrophonePermission("granted")
+  //     doStart()
+  //     // Don't forget to stop the stream when you're done with it
+  //     stream.getTracks().forEach((track) => track.stop())
+  //   } catch (error) {
+  //     if (
+  //       error instanceof Error &&
+  //       (error.name === "NotAllowedError" ||
+  //         error.name === "PermissionDeniedError")
+  //     ) {
+  //       // Permission denied
+  //       setMicrophonePermission("denied")
+  //     } else {
+  //       // Handle other errors
+  //       console.error("Error accessing microphone:", error)
+  //       setMicrophonePermission("denied")
+  //     }
+  //   }
+  // }
+
+  // useEffect(() => {
+  //   // Check microphone permission periodically
+  //   const interval = setInterval(requestMicrophonePermission, 1000) // Check every second
+  //   return () => clearInterval(interval)
+  // }, [])
 
   useEffect(() => {
     if (question !== "" && answer !== "") {
@@ -212,10 +307,10 @@ export default function ChatPage() {
       setQuestion("?")
       setAnswer("Please speak clearly and try again")
     }
-    if (res.payload.input === "undefined") {
+    if (res.payload.input === "undefined" || res.type === "INTENT:") {
       setQuestion("?")
+      setAnswer("Unfortunately error occured, Please try again")
     }
-
     if (res.type.startsWith("INTENT:NEAREST")) {
       setMapLocations(res.payload.locations.places)
       setAnswerwithMap(true)
