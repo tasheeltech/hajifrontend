@@ -139,6 +139,7 @@ export default function ChatPage() {
   }
 
   const handleStartRecord = () => {
+    startRecording()
     setHomepage(false)
     setListening(true)
     setProcessing(false)
@@ -346,9 +347,7 @@ export default function ChatPage() {
                   key={index}
                 >
                   <p className="text-sm">{q}</p>
-                  <div
-                    className="p-2"
-                  >
+                  <div className="p-2">
                     <RxArrowTopRight size={14} />
                   </div>
                 </div>
@@ -357,11 +356,11 @@ export default function ChatPage() {
           </section>
 
           <div className="grid place-content-center my-10">
-            {microphonePermission === "granted" && (
+            {/* {microphonePermission === "granted" && (
               <img
                 onClick={() => {
                   handleStartRecord()
-                  startRecording()
+                  // startRecording()
                 }}
                 className="active:opacity-50"
                 src={"/button/recordBtn.svg"}
@@ -369,7 +368,7 @@ export default function ChatPage() {
                 width={100}
                 height={100}
               />
-            )}
+            )} */}
             {microphonePermission === "denied" && (
               <div className="flex flex-col gap-2 items-center ">
                 <BsMicMuteFill size={32} />
@@ -381,6 +380,8 @@ export default function ChatPage() {
             <Search
               handleClick={handleSendClick}
               click={handleStopRecord}
+              startRecord={handleStartRecord}
+              micPermission={microphonePermission}
               value={value}
               dummy={dummy}
             />
