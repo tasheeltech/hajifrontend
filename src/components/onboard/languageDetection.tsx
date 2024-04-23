@@ -1,24 +1,24 @@
-import React from "react";
-import { useEffect, useState } from "react";
-import { MicState, useMic } from "../../helper/micHelper";
-import { Link } from "react-router-dom";
-import CountriesData from "../../components/languages/langlist";
-import { useLoaderData, useNavigate } from "react-router-dom";
-import { Permission, useUserState } from "../../helper/userStateHelper";
-import { DefaultLoader } from "../../loaders/defaultLoader";
-import { useTranslation } from "react-i18next";
-import { HAJI_BACKEND_URL } from "../../helper/url";
+import React from "react"
+import { useEffect, useState } from "react"
+import { MicState, useMic } from "../../helper/micHelper"
+import { Link } from "react-router-dom"
+import CountriesData from "../../components/languages/langlist"
+import { useLoaderData, useNavigate } from "react-router-dom"
+import { Permission, useUserState } from "../../helper/userStateHelper"
+import { DefaultLoader } from "../../loaders/defaultLoader"
+import { useTranslation } from "react-i18next"
+import { HAJI_BACKEND_URL } from "../../helper/url"
 
 interface Country {
-  language: string;
-  flag: string;
+  language: string
+  flag: string
 }
 interface LanguageDetectionProps {
-  onNextStep: () => void;
+  onNextStep: () => void
 }
 
 const capitaliseFirstLetter = (str: string) =>
-  str.charAt(0).toUpperCase() + str.slice(1);
+  str.charAt(0).toUpperCase() + str.slice(1)
 
 const sentences = [
   { language: "Arabic", sentence: "أريد التحدث بلغتي" },
@@ -30,13 +30,13 @@ const sentences = [
   },
   { language: "Turkish", sentence: "Kendi dilimde konuşmak istiyorum" },
   { language: "Malay", sentence: "Saya mahu bercakap dalam bahasa saya" },
-];
+]
 
 const LanguageDetection: React.FC<LanguageDetectionProps> = ({
   onNextStep,
 }) => {
   // Load user state
-  const loadedData = useLoaderData() as DefaultLoader;
+  const loadedData = useLoaderData() as DefaultLoader
   const {
     isoLanguage,
     name,
@@ -44,131 +44,130 @@ const LanguageDetection: React.FC<LanguageDetectionProps> = ({
     setName,
     getUserScreen,
     computeUserScreen,
-  } = useUserState(loadedData);
-  const navigate = useNavigate();
+  } = useUserState(loadedData)
+  const navigate = useNavigate()
 
   // State variables
-  const [isMicButtonHidden, setIsMicButtonHidden] = useState(false);
-  const [isStopButtonDisabled, setIsStopButtonDisabled] = useState(false);
-  const [languageDetected, setLanguageDetected] = useState(false);
-  const [wrongButtonClicked, setWrongButtonClicked] = useState(false);
-  const [listLang, setListLang] = useState(false);
-  const [autoDetectClicked, setAutoDetectClicked] = useState(false);
-  const [searchTerm, setSearchTerm] = useState("");
-  const { t, i18n } = useTranslation();
+  const [isMicButtonHidden, setIsMicButtonHidden] = useState(false)
+  const [isStopButtonDisabled, setIsStopButtonDisabled] = useState(false)
+  const [languageDetected, setLanguageDetected] = useState(false)
+  const [wrongButtonClicked, setWrongButtonClicked] = useState(false)
+  const [listLang, setListLang] = useState(false)
+  const [autoDetectClicked, setAutoDetectClicked] = useState(false)
+  const [searchTerm, setSearchTerm] = useState("")
+  const { t, i18n } = useTranslation()
 
   useEffect(() => {
     // Get the user's browser language
-    const userLanguage = navigator.language.toLowerCase().substring(0, 2);
+    const userLanguage = navigator.language.toLowerCase().substring(0, 2)
 
-    console.log(navigator.language);
-    console.log(userLanguage);
+    console.log(navigator.language)
+    console.log(userLanguage)
 
     // Check if the user's language matches any of the available languages
     const country = CountriesData.countries.find(
       (country) => country.iso.toLowerCase() === userLanguage
-    );
-    console.log(country);
+    )
+    console.log(country)
 
     // If the user's language is detected, set the language and update state
     if (country) {
-      setIsoLanguage(country);
-      setLanguageDetected(true);
+      setIsoLanguage(country)
+      setLanguageDetected(true)
     }
-  }, []);
+  }, [])
 
   // Handle mic button click
   const handleMicButtonClick = () => {
-    setIsMicButtonHidden(true);
-    startRecording();
-  };
+    setIsMicButtonHidden(true)
+    startRecording()
+  }
 
   // Handle stop button click
   const handleStopButtonClick = () => {
-    setIsStopButtonDisabled(true);
-    stopRecording();
-  };
+    setIsStopButtonDisabled(true)
+    stopRecording()
+  }
 
   // Send recording for language detection
   const sendRecording = async (blob: Blob) => {
-    console.log("Sending recording!!!");
-    const formData = new FormData();
-    formData.append("audio", blob, "audio.webm");
+    console.log("Sending recording!!!")
+    const formData = new FormData()
+    formData.append("audio", blob, "audio.webm")
 
     try {
-      const body = await fetch(
-        HAJI_BACKEND_URL + "getLanguage",
-        {
-          method: "POST",
-          body: formData,
-        }
-      );
-      const json = await body.json();
+      const body = await fetch(HAJI_BACKEND_URL + "getLanguage", {
+        method: "POST",
+        body: formData,
+      })
+      const json = await body.json()
       if (json) {
         onNextStep()
-        console.log(json.payload.name);
+        console.log(json.payload.name)
 
         const country = CountriesData.countries.find(
           (country) =>
             country.language.toLocaleLowerCase() === json.payload.name
-        );
+        )
 
         if (country) {
           //   setSearch(json.payload.name);
-          setIsoLanguage(country);
-          console.log(country);
+          setIsoLanguage(country)
+          console.log(country)
         } else {
-          setListLang(false);
-          console.log("Country not found for language:", json.payload.name);
+          setListLang(false)
+          console.log("Country not found for language:", json.payload.name)
         }
       }
     } catch (error) {
-      console.error("Error sending recording:", error);
+      console.error("Error sending recording:", error)
     }
-  };
+  }
 
   const { micState, startRecording, stopRecording } = useMic((blob: Blob) => {
-    sendRecording(blob);
-  });
+    sendRecording(blob)
+  })
 
   // Handle wrong button click
   const handleWrongButtonClick = () => {
-    setWrongButtonClicked(true);
-  };
+    setWrongButtonClicked(true)
+  }
 
   const handleAutoDetectButtonClick = () => {
-    setListLang(true);
-    setAutoDetectClicked(true);
-  };
+    setListLang(true)
+    setAutoDetectClicked(true)
+  }
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(event.target.value);
-  };
+    setSearchTerm(event.target.value)
+  }
 
   const handleCountrySelection = (
     language: string
   ): React.MouseEventHandler<HTMLDivElement> => {
     return () => {
-      console.log(language);
+      console.log(language)
       const country = CountriesData.countries.find(
         (country) => country.language === language
-      );
-      setListLang(true);
-      console.log(country);
+      )
+      setListLang(true)
+      console.log(country)
 
       if (country) {
         //   setSearch(json.payload.name);
-        setIsoLanguage(country);
-        console.log(country);
+        setIsoLanguage(country)
+        i18n.changeLanguage(country.iso)
+        document.body.dir = i18n.dir()
+        console.log(country)
       } else {
-        console.log("Country not found for language:", language);
+        console.log("Country not found for language:", language)
       }
-    };
-  };
+    }
+  }
 
   const filteredCountries = CountriesData.countries.filter((country: Country) =>
     country.language.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  )
 
   return (
     <main className="overflow-scroll no-scrollbar  h-dvh">
@@ -298,7 +297,7 @@ const LanguageDetection: React.FC<LanguageDetectionProps> = ({
         </div>
       )}
     </main>
-  );
-};
+  )
+}
 
-export default LanguageDetection;
+export default LanguageDetection
