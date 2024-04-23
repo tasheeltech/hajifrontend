@@ -59,5 +59,8 @@
   "duhr": "Keskpäev",
   "asr": "Pärastlõuna",
   "maghrib": "Maghrib",
-  "isha": "Isha"
+  "isha": "Isha",
+  "toKnowVisaQueries": "Klõpsake allolevat linki, et teada saada rohkem viisaga seotud päringute kohta",
+  "toKnowTrainQueries": "Klõpsake allolevat linki, et teada saada rohkem rongidega seotud päringute kohta",
+  "privacyDetails": "Meie privaatsuspoliitika on tõesti lihtne: me ei kogu ega salvesta teie andmeid ega jälgi teie kasutamist mingil viisil"
 }
