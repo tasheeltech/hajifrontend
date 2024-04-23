@@ -14,8 +14,10 @@ const LocationPermission: React.FC<LocationPermissionProps> = ({
   const { locationPermission, setLocationPermission } =
     useUserState(loadedData);
   const [permissionGranted, setPermissionGranted] = useState(false);
+  const [showSkipButton, setShowSkipButton] = useState(false);
 
   useEffect(() => {
+    let timeout: ReturnType<typeof setTimeout> | null = null;
     if (permissionGranted) {
       onNextStep();
     } else {
@@ -31,6 +33,17 @@ const LocationPermission: React.FC<LocationPermissionProps> = ({
         setLocationPermission(Permission.DEFAULT);
       }
     }
+    // Call onNextStep after 3 seconds, regardless of permission status
+    timeout = setTimeout(() => {
+      setShowSkipButton(true);
+    }, 3000);
+
+    // Clean up the timeout when the component unmounts or the effect re-runs
+    return () => {
+      if (timeout) {
+        clearTimeout(timeout);
+      }
+    };
   }, [setLocationPermission, onNextStep, permissionGranted]);
 
   const handleLocationPermissionClick = async () => {
@@ -79,6 +92,14 @@ const LocationPermission: React.FC<LocationPermissionProps> = ({
                   src="/icons/location.svg"
                 />
               </button>
+              {showSkipButton && (
+                <button
+                  className="bg-blue-500 px-12 py-3 hover:bg-blue-700 text-white font-bold rounded mt-4"
+                  onClick={onNextStep}
+                >
+                  Skip
+                </button>
+              )}
             </div>
           </div>
         </div>

@@ -18,24 +18,24 @@ import { FaMapMarkerAlt } from "react-icons/fa"
 import { BiSolidTime } from "react-icons/bi"
 
 interface Location {
-  lat: number
-  lon: number
+  lat: number;
+  lon: number;
 }
 
 interface City {
-  geo: string
+  geo: string;
   // Add other properties of the city data here
 }
 
 function HomePage() {
-  const loadedData = useLoaderData() as DefaultLoader
+  const loadedData = useLoaderData() as DefaultLoader;
   const { isoLanguage, madhab, calMethod, setLocation, setCalMethod } =
-    useUserState(loadedData)
+    useUserState(loadedData);
   const arrayvalue = [
-    "MuslimWorldLeague",
+    "UmmAlQura",
     "Egyptian",
     "Karachi",
-    "UmmAlQura",
+    "MuslimWorldLeague",
     "Dubai",
     "Qatar",
     "Kuwait",
@@ -44,7 +44,7 @@ function HomePage() {
     "Turkey",
     "Tehran",
     "NorthAmerica",
-  ]
+  ];
 
   const [coordinates, setCoordinates] = useState<Coordinates | null>(null)
   const [defaultToMadinah, setDefaultToMadinah] = useState(false)
@@ -55,14 +55,14 @@ function HomePage() {
   //@ts-ignore
   const params = (() => {
     switch (calMethod) {
-      case "MuslimWorldLeague":
-        return CalculationMethod.MuslimWorldLeague()
+      case "UmmAlQura":
+        return CalculationMethod.UmmAlQura();
       case "Egyptian":
         return CalculationMethod.Egyptian()
       case "Karachi":
-        return CalculationMethod.Karachi()
-      case "UmmAlQura":
-        return CalculationMethod.UmmAlQura()
+        return CalculationMethod.Karachi();
+      case "MuslimWorldLeague":
+        return CalculationMethod.MuslimWorldLeague();
       case "Dubai":
         return CalculationMethod.Dubai()
       case "Qatar":
@@ -107,8 +107,8 @@ function HomePage() {
         setCoordinates(new Coordinates(24.470901, 39.612236))
         setDefaultToMadinah(true)
       }
-    )
-  }, [])
+    );
+  }, []);
 
   const myLocation: Location = {
     lat: coordinates?.latitude ?? 24.470901,
@@ -166,9 +166,9 @@ function HomePage() {
         let lowestCity = null
 
         cities.forEach((city) => {
-          const { geolat, geolon } = city.geo
-          const parsedGeolat = parseFloat(geolat)
-          const parsedGeolon = parseFloat(geolon)
+          const { geolat, geolon } = city.geo;
+          const parsedGeolat = parseFloat(geolat);
+          const parsedGeolon = parseFloat(geolon);
 
           const distance = calculateDistance(
             parsedGeolat,
@@ -184,11 +184,11 @@ function HomePage() {
           }
         })
       } catch (error) {
-        console.error("Error fetching cities.csv:", error)
+        console.error("Error fetching cities.csv:", error);
       }
-    }
-    load()
-  }, [])
+    };
+    load();
+  }, []);
 
   const prayerTimes = coordinates
     ? new PrayerTimes(coordinates, date, params)
@@ -221,7 +221,7 @@ function HomePage() {
   //   .format(" h:mm a")
   // const ishaTime = moment(prayerTimes?.isha).tz(timeZone).format(" h:mm a")
 
-  const { t } = useTranslation()
+  const { t } = useTranslation();
 
   useEffect(() => {
     i18n.changeLanguage(isoLanguage ? isoLanguage.iso : navigator.language)
@@ -460,7 +460,7 @@ function HomePage() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default HomePage
+export default HomePage;
