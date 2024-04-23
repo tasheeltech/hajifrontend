@@ -46,10 +46,18 @@
   "q4": "Rwyf mewn Argyfwng",
   "q5": "Dangoswch imi Adeiladau hanesyddol yn Makkah",
   "q6": "Cyfrwch fy Sa'ii",
+  "q7": "告诉保安，我想找到我的儿子",
   "selectMadhab": "选择您的教派",
   "prayer": "祈祷设置",
   "makkah": "麦加",
   "madinah": "麦地那",
   "hanafi": "哈纳菲",
-  "shafi": "沙菲"
+  "shafi": "沙菲",
+  "prayerTimesFor": "祈祷时间为",
+  "fajr": "晨礼",
+  "sunrise": "日出",
+  "duhr": "正午",
+  "asr": "下午",
+  "maghrib": "黄昏",
+  "isha": "晚礼"
 }

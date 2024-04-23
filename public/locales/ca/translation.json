@@ -46,10 +46,18 @@
   "q4": "Estic en una emergència",
   "q5": "Mostra'm llocs d'interès a Meca",
   "q6": "Compte el meu Sa'ii",
+  "q7": "Digueu al guardià, vull trobar el meu fill",
   "selectMadhab": "Seleccioneu el vostre Madhab",
   "prayer": "Configuració de la pregària",
   "makkah": "Makkah",
   "madinah": "Madinah",
   "hanafi": "Hanafi",
-  "shafi": "Shafi"
+  "shafi": "Shafi",
+  "prayerTimesFor": "Hores de pregària per a",
+  "fajr": "Albada",
+  "sunrise": "Sortida del sol",
+  "duhr": "Dhuhr",
+  "asr": "Asr",
+  "maghrib": "Magrib",
+  "isha": "Isha"
 }

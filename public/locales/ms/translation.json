@@ -46,10 +46,18 @@
   "q4": "Saya berada dalam kecemasan",
   "q5": "Tunjukkan Saya Landmarks di Makkah",
   "q6": "Hitung Sa'ii saya",
+  "q7": "Katakan kepada pengawal keselamatan, saya ingin mencari anak lelaki saya",
   "selectMadhab": "Pilih Madhab Anda",
   "prayer": "Tetapan Doa",
   "makkah": "Makkah",
   "madinah": "Madinah",
   "hanafi": "Hanafi",
-  "shafi": "Shafi"
+  "shafi": "Shafi",
+  "prayerTimesFor": "Masa solat untuk",
+  "fajr": "Fajar",
+  "sunrise": "Terbit matahari",
+  "duhr": "Duhr",
+  "asr": "Asar",
+  "maghrib": "Maghrib",
+  "isha": "Isya"
 }

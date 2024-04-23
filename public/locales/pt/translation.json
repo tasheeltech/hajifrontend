@@ -46,10 +46,18 @@
   "q4": "Estou em uma emergência",
   "q5": "Mostre-me Pontos de Referência em Makkah",
   "q6": "Conte meu Sa'ii",
+  "q7": "Diga ao guarda de segurança que quero encontrar meu filho",
   "selectMadhab": "Selecione seu Madhab",
   "prayer": "Configurações de oração",
   "makkah": "Meca",
   "madinah": "Madinah",
   "hanafi": "Hanafi",
-  "shafi": "Shafi"
+  "shafi": "Shafi",
+  "prayerTimesFor": "Horários de oração para",
+  "fajr": "Fajr",
+  "sunrise": "Nascer do sol",
+  "duhr": "Duhr",
+  "asr": "Asr",
+  "maghrib": "Maghrib",
+  "isha": "Isha"
 }

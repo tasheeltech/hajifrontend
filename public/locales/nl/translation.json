@@ -46,10 +46,18 @@
   "q4": "Ik ben in een noodgeval",
   "q5": "Toon mij Landmarks in Mekka",
   "q6": "Tel mijn Sa'ii",
+  "q7": "Zeg tegen de beveiliger, ik wil mijn zoon vinden",
   "selectMadhab": "Selecteer uw Madhab",
   "prayer": "Gebedsinstellingen",
   "makkah": "Mekka",
   "madinah": "Madinah",
   "hanafi": "Hanafi",
-  "shafi": "Shafi"
+  "shafi": "Shafi",
+  "prayerTimesFor": "Gebedstijden voor",
+  "fajr": "Fajr",
+  "sunrise": "Zonsopgang",
+  "duhr": "Duhr",
+  "asr": "Asr",
+  "maghrib": "Maghrib",
+  "isha": "Isha"
 }

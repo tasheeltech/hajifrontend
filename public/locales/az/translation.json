@@ -46,10 +46,18 @@
   "q4": "Mən bir fəlakətəyəm",
   "q5": "Məkkədə böyük binaları göstərin",
   "q6": "Sa'ii sayım",
+  "q7": "Mühafizəçiyə deyin, oğlumu tapmaq istəyirəm",
   "selectMadhab": "Məzhebinizi seçin",
   "prayer": "Namaz ayarları",
   "makkah": "Məkkə",
   "madinah": "Mədinə",
   "hanafi": "Hanafi",
-  "shafi": "Shafi"
+  "shafi": "Shafi",
+  "prayerTimesFor": "Namaz vaxtları",
+  "fajr": "Fəcrlər",
+  "sunrise": "Günəş doğuşu",
+  "duhr": "Gün ortası",
+  "asr": "Axşam",
+  "maghrib": "Gün batımı",
+  "isha": "Isha"
 }

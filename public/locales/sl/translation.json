@@ -46,10 +46,18 @@
   "q4": "Sem v sili",
   "q5": "Pokaži mi znamenitosti v Meki",
   "q6": "Preštej moj Sa'ii",
+  "q7": "Reci varnostniku, da želim najti svojega sina",
   "selectMadhab": "Izberite svoj mezheb",
   "prayer": "Nastavitve molitve",
   "makkah": "Makka",
   "madinah": "Madinah",
   "hanafi": "Hanafi",
-  "shafi": "Shafi"
+  "shafi": "Shafi",
+  "prayerTimesFor": "Molitveni časi za",
+  "fajr": "Fajr",
+  "sunrise": "Sončni vzhod",
+  "duhr": "Duhr",
+  "asr": "Asr",
+  "maghrib": "Maghrib",
+  "isha": "Isha"
 }

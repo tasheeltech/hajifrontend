@@ -46,10 +46,18 @@
   "q4": "Olen hädaolukorras",
   "q5": "Näita mulle Mekkas märke",
   "q6": "Lugeda minu Sa'ii",
+  "q7": "Öelge turvamehele, et tahan oma poega leida",
   "selectMadhab": "Valige oma Madhab",
   "prayer": "Palve seaded",
   "makkah": "Makkah",
   "madinah": "Madinah",
   "hanafi": "Hanafi",
-  "shafi": "Shafi"
+  "shafi": "Shafi",
+  "prayerTimesFor": "Palveajad",
+  "fajr": "Fajr",
+  "sunrise": "Päikesetõus",
+  "duhr": "Keskpäev",
+  "asr": "Pärastlõuna",
+  "maghrib": "Maghrib",
+  "isha": "Isha"
 }

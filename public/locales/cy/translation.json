@@ -46,11 +46,18 @@
   "q4": "I am in an Emergency",
   "q5": "Show me Landmarks in Makkah",
   "q6": "Count my Sa'ii",
-  "q7": "Say to the security guard, I want to find my son",
+  "q7": "Dweud wrth y gwyliwr, rwy'n moyn dod o hyd i'm mab",
   "selectMadhab": "Dewiswch eich Madhab",
   "prayer": "Gosodiadau Weddi",
   "makkah": "Makkah",
   "madinah": "Madinah",
   "hanafi": "Hanafi",
-  "shafi": "Shafi"
+  "shafi": "Shafi",
+  "prayerTimesFor": "Amserion gweddi ar gyfer",
+  "fajr": "Fajr",
+  "sunrise": "Yr haul yn codi",
+  "duhr": "Dhuhr",
+  "asr": "Asr",
+  "maghrib": "Maghrib",
+  "isha": "Isha"
 }

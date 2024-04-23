@@ -46,10 +46,18 @@
   "q4": "Kei roto ahau i tetahi arorangi",
   "q5": "Whakaatu mai ki ahau nga Whenua Whakamaharatanga i Makkah",
   "q6": "Whakamahara i taku Sa'ii",
+  "q7": "Kī ki te kaiwhakamarumaru, e hiahia ana ahau ki te kite i taku tama",
   "selectMadhab": "Tīpakohia tō Madhab",
   "prayer": "Tautuhinga Karakia",
   "makkah": "Makkah",
   "madinah": "Madinah",
   "hanafi": "Hanafi",
-  "shafi": "Shafi"
+  "shafi": "Shafi",
+  "prayerTimesFor": "Wā mihinare mō",
+  "fajr": "Fajr",
+  "sunrise": "Te Ao Mārama",
+  "duhr": "Te Kōhā",
+  "asr": "Asr",
+  "maghrib": "Maghrib",
+  "isha": "Isha"
 }

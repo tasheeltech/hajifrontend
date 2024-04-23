@@ -46,10 +46,18 @@
   "q4": "Ég er í neyðarástandi",
   "q5": "Sýndu mér vottun í Mekka",
   "q6": "Telja mitt Sa'ii",
+  "q7": "Segið öryggisverðinum, að ég vil finna son minn",
   "selectMadhab": "Veljið Madhab þinn",
   "prayer": "Bænastillingar",
   "makkah": "Mekka",
   "madinah": "Madinah",
   "hanafi": "Hanafi",
-  "shafi": "Shafi"
+  "shafi": "Shafi",
+  "prayerTimesFor": "Bænartímar fyrir",
+  "fajr": "Fajr",
+  "sunrise": "Sólarupprás",
+  "duhr": "Miðdagur",
+  "asr": "Asr",
+  "maghrib": "Maghrib",
+  "isha": "Isha"
 }

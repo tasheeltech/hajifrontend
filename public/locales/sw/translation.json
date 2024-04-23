@@ -46,10 +46,18 @@
   "q4": "Niko katika dharura",
   "q5": "Nionyeshe Landmarks huko Makkah",
   "q6": "Hesabu Sa'ii yangu",
+  "q7": "Sema kwa mlinzi, ninataka kupata mwana wangu",
   "selectMadhab": "Chagua Madhab yako",
   "prayer": "Vipimo vya Maombi",
   "makkah": "Makkah",
   "madinah": "Madinah",
   "hanafi": "Hanafi",
-  "shafi": "Shafi"
+  "shafi": "Shafi",
+  "prayerTimesFor": "Nyakati za Sala kwa",
+  "fajr": "Fajr",
+  "sunrise": "Kupambazuka",
+  "duhr": "Duhr",
+  "asr": "Asr",
+  "maghrib": "Maghrib",
+  "isha": "Isha"
 }
