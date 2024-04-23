@@ -46,10 +46,21 @@
   "q4": "Jestem w sytuacji awaryjnej",
   "q5": "Pokaż mi zabytki w Mekce",
   "q6": "Policz mój Sa'ii",
+  "q7": "Powiedz ochroniarzowi, że chcę znaleźć swojego syna",
   "selectMadhab": "Wybierz swoje Madhab",
   "prayer": "Ustawienia modlitwy",
   "makkah": "Mekka",
   "madinah": "Mekka",
   "hanafi": "Hanaficki",
-  "shafi": "Shaficki"
+  "shafi": "Shaficki",
+  "prayerTimesFor": "Czasy modlitwy dla",
+  "fajr": "Fadżr",
+  "sunrise": "Wschód słońca",
+  "duhr": "Dżuma",
+  "asr": "Asr",
+  "maghrib": "Maghrib",
+  "isha": "Isha",
+  "toKnowVisaQueries": "Kliknij poniższy link, aby dowiedzieć się więcej o zapytaniach dotyczących wiz",
+  "toKnowTrainQueries": "Kliknij poniższy link, aby dowiedzieć się więcej o zapytaniach dotyczących pociągów",
+  "privacyDetails": "Nasza polityka prywatności jest naprawdę prosta: nie zbieramy ani nie przechowujemy żadnych danych, ani nie śledzimy twojego użytkowania w żaden sposób"
 }

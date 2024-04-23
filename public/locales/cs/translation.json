@@ -46,10 +46,21 @@
   "q4": "Jsem v nouzové situaci",
   "q5": "Ukažte mi památky v Mekce",
   "q6": "Spočítejte můj Sa'ii",
+  "q7": "Řekněte strážníkovi, že chci najít svého syna",
   "selectMadhab": "Vyberte svůj Madhab",
   "prayer": "Nastavení modlitby",
   "makkah": "Mekka",
   "madinah": "Madinah",
   "hanafi": "Hanafi",
-  "shafi": "Shafi"
+  "shafi": "Shafi",
+  "prayerTimesFor": "Časy modliteb pro",
+  "fajr": "Úsvit",
+  "sunrise": "Východ slunce",
+  "duhr": "Poledne",
+  "asr": "Odpoledne",
+  "maghrib": "Západ slunce",
+  "isha": "Isha",
+  "toKnowVisaQueries": "Klikněte na níže uvedený odkaz, abyste zjistili více o dotazech souvisejících s vízy",
+  "toKnowTrainQueries": "Klikněte na níže uvedený odkaz, abyste zjistili více o dotazech souvisejících s vlaky",
+  "privacyDetails": "Naše zásady ochrany osobních údajů jsou opravdu jednoduché: nevybíráme ani neukládáme žádná vaše data ani nesledujeme váš postup jakýmkoli způsobem"
 }

@@ -46,10 +46,21 @@
   "q4": "Ik ben in een noodgeval",
   "q5": "Toon mij Landmarks in Mekka",
   "q6": "Tel mijn Sa'ii",
+  "q7": "Zeg tegen de beveiliger, ik wil mijn zoon vinden",
   "selectMadhab": "Selecteer uw Madhab",
   "prayer": "Gebedsinstellingen",
   "makkah": "Mekka",
   "madinah": "Madinah",
   "hanafi": "Hanafi",
-  "shafi": "Shafi"
+  "shafi": "Shafi",
+  "prayerTimesFor": "Gebedstijden voor",
+  "fajr": "Fajr",
+  "sunrise": "Zonsopgang",
+  "duhr": "Duhr",
+  "asr": "Asr",
+  "maghrib": "Maghrib",
+  "isha": "Isha",
+  "toKnowVisaQueries": "Klik op de onderstaande link om meer te weten te komen over visumgerelateerde vragen",
+  "toKnowTrainQueries": "Klik op de onderstaande link om meer te weten te komen over treingerelateerde vragen",
+  "privacyDetails": "Ons privacybeleid is echt eenvoudig: we verzamelen of bewaren geen van uw gegevens, of volgen uw gebruik op geen enkele manier"
 }

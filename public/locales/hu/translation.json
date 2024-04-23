@@ -46,10 +46,21 @@
   "q4": "Vészhelyzetben vagyok",
   "q5": "Mutassa meg nekem a Mekka nevezetességeit",
   "q6": "Számolja meg a Sa'ii-met",
+  "q7": "Mondd el az őrnek, hogy szeretném megtalálni a fiamat",
   "selectMadhab": "Válassza ki a Madhab-ot",
   "prayer": "Imádság beállítások",
   "makkah": "Mekka",
   "madinah": "Madinah",
   "hanafi": "Hanafi",
-  "shafi": "Shafi"
+  "shafi": "Shafi",
+  "prayerTimesFor": "Imaidők",
+  "fajr": "Fajr",
+  "sunrise": "Napkelte",
+  "duhr": "Duhr",
+  "asr": "Aszr",
+  "maghrib": "Maghrib",
+  "isha": "Isha",
+  "toKnowVisaQueries": "Kattintson az alábbi linkre, hogy többet tudjon meg a vízummal kapcsolatos kérdésekről",
+  "toKnowTrainQueries": "Kattintson az alábbi linkre, hogy többet tudjon meg a vonattal kapcsolatos kérdésekről",
+  "privacyDetails": "Adatvédelmi irányelveink valóban egyszerűek: nem gyűjtünk vagy tárolunk az Ön adataiból, és nem követjük nyomon az Ön felhasználását semmilyen módon"
 }

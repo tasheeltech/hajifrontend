@@ -46,10 +46,21 @@
   "q4": "Sem v sili",
   "q5": "Pokaži mi znamenitosti v Meki",
   "q6": "Preštej moj Sa'ii",
+  "q7": "Reci varnostniku, da želim najti svojega sina",
   "selectMadhab": "Izberite svoj mezheb",
   "prayer": "Nastavitve molitve",
   "makkah": "Makka",
   "madinah": "Madinah",
   "hanafi": "Hanafi",
-  "shafi": "Shafi"
+  "shafi": "Shafi",
+  "prayerTimesFor": "Molitveni časi za",
+  "fajr": "Fajr",
+  "sunrise": "Sončni vzhod",
+  "duhr": "Duhr",
+  "asr": "Asr",
+  "maghrib": "Maghrib",
+  "isha": "Isha",
+  "toKnowVisaQueries": "Kliknite na spodnjo povezavo, da izveste več o vprašanjih glede vizuma",
+  "toKnowTrainQueries": "Kliknite na spodnjo povezavo, da izveste več o vprašanjih glede vlakov",
+  "privacyDetails": "Naša politika zasebnosti je resnično preprosta: ne zbiramo ali shranjujemo nobenih vaših podatkov, niti ne spremljamo vaše uporabe na kakršenkoli način"
 }

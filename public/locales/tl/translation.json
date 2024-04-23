@@ -46,11 +46,21 @@
   "q4": "I am in an Emergency",
   "q5": "Show me Landmarks in Makkah",
   "q6": "Count my Sa'ii",
-  "q7": "Say to the security guard, I want to find my son",
+  "q7": "Sabihin sa guwardiya, gusto kong hanapin ang anak ko",
   "selectMadhab": "Piliin ang iyong Madhab",
   "prayer": "Mga Setting ng Panalangin",
   "makkah": "Makkah",
   "madinah": "Madinah",
   "hanafi": "Hanafi",
-  "shafi": "Shafi"
+  "shafi": "Shafi",
+  "prayerTimesFor": "Panahon ng Panalangin para sa",
+  "fajr": "Fajr",
+  "sunrise": "Pagtanglaw",
+  "duhr": "Duhr",
+  "asr": "Asr",
+  "maghrib": "Maghrib",
+  "isha": "Isha",
+  "toKnowVisaQueries": "I-click ang link sa ibaba upang malaman ang higit pa tungkol sa mga katanungan na nauugnay sa visa",
+  "toKnowTrainQueries": "I-click ang link sa ibaba upang malaman ang higit pa tungkol sa mga katanungan na nauugnay sa tren",
+  "privacyDetails": "Ang aming patakaran sa privacy ay tunay na simple: hindi namin kinokolekta o iniimbak ang anumang iyong data, o sinusubaybayan ang iyong paggamit sa anumang paraan"
 }

@@ -46,10 +46,21 @@
   "q4": "Kei roto ahau i tetahi arorangi",
   "q5": "Whakaatu mai ki ahau nga Whenua Whakamaharatanga i Makkah",
   "q6": "Whakamahara i taku Sa'ii",
+  "q7": "Kī ki te kaiwhakamarumaru, e hiahia ana ahau ki te kite i taku tama",
   "selectMadhab": "Tīpakohia tō Madhab",
   "prayer": "Tautuhinga Karakia",
   "makkah": "Makkah",
   "madinah": "Madinah",
   "hanafi": "Hanafi",
-  "shafi": "Shafi"
+  "shafi": "Shafi",
+  "prayerTimesFor": "Wā mihinare mō",
+  "fajr": "Fajr",
+  "sunrise": "Te Ao Mārama",
+  "duhr": "Te Kōhā",
+  "asr": "Asr",
+  "maghrib": "Maghrib",
+  "isha": "Isha",
+  "toKnowVisaQueries": "Pāwhiritia te hononga i raro nei ki te ako atu ki ngā uiui e pa ana ki te Tohu",
+  "toKnowTrainQueries": "Pāwhiritia te hononga i raro nei ki te ako atu ki ngā uiui e pa ana ki te Tereina",
+  "privacyDetails": "Our privacy policy is really simple: we don’t collect or store any of your data, or track your usage in any way"
 }

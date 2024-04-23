@@ -1,23 +1,33 @@
 import React, { useEffect, useState } from "react"
 import { useTranslation } from "react-i18next"
-import { IoIosSend } from "react-icons/io"
+import { IoIosSend, IoMdMic } from "react-icons/io"
 
 interface Props {
   handleClick: (question: string) => void
   click: () => void
+  startRecord: () => void
+  micPermission: string | null
+  micAvailable: boolean
   value: string
   dummy: number
 }
 
-const Search: React.FC<Props> = ({ handleClick, click, value, dummy }) => {
-
+const Search: React.FC<Props> = ({
+  handleClick,
+  click,
+  startRecord,
+  micPermission,
+  micAvailable,
+  value,
+  dummy,
+}) => {
   const [question, setQuestion] = useState(value)
 
   useEffect(() => {
     // Update question whenever the value prop changes
     setQuestion(value)
   }, [value, dummy])
-  
+
   const { t } = useTranslation()
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -44,9 +54,21 @@ const Search: React.FC<Props> = ({ handleClick, click, value, dummy }) => {
         >
           <IoIosSend size={28} color="#ffffff" />
         </button>
+      ) : micPermission === "granted" && micAvailable ? (
+        <button
+          className="bg-[#2BCE98] p-[10px] rounded-full flex items-center justify-center"
+          onClick={() => startRecord()}
+        >
+          {/* <IoIosSend size={28} color="#ffffff" /> */}
+          <IoMdMic size={28} color="#ffffff" />
+        </button>
       ) : (
-        <button className="bg-[#2BCE98] p-[10px] rounded-full opacity-50 flex items-center justify-center">
-          <IoIosSend size={28} color="#ffffff" />
+        <button
+          className="bg-[#2BCE98] p-[10px] rounded-full flex items-center justify-center opacity-50"
+          // onClick={() => startRecord()}
+        >
+          {/* <IoIosSend size={28} color="#ffffff" /> */}
+          <IoMdMic size={28} color="#ffffff" />
         </button>
       )}
     </div>

@@ -46,10 +46,21 @@
   "q4": "Ek is in 'n noodgeval",
   "q5": "Wys my baken in Mekka",
   "q6": "Tel my Sa'ii",
+  "q7": "Sê vir die sekuriteitswag, Ek wil my seun vind",
   "selectMadhab": "Kies jou Madhab",
   "prayer": "Gebedsinstellings",
   "makkah": "Makkah",
   "madinah": "Madinah",
   "hanafi": "Hanafi",
-  "shafi": "Shafi"
+  "shafi": "Shafi",
+  "prayerTimesFor": "Gebedstye vir",
+  "fajr": "Fajr",
+  "sunrise": "Sonsopkoms",
+  "duhr": "Duhr",
+  "asr": "Asr",
+  "maghrib": "Maghrib",
+  "isha": "Isha",
+  "toKnowVisaQueries": "Klik op die onderstaande skakel om meer te wete te kom oor visumverwante navrae",
+  "toKnowTrainQueries": "Klik op die onderstaande skakel om meer te wete te kom oor treinverwante navrae",
+  "privacyDetails": "Ons privaatheidsbeleid is werklik eenvoudig: ons versamel of stoor nie enige van jou data nie, of volg jou gebruik op enige manier nie"
 }

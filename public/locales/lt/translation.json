@@ -46,10 +46,21 @@
   "q4": "Esu skubioje situacijoje",
   "q5": "Parodyk man žymiausius objektus Mekoje",
   "q6": "Suskaičiuokite mano Sa'ii",
+  "q7": "Pasakykite saugumui, kad noriu rasti savo sūnų",
   "selectMadhab": "Pasirinkite savo Madhab",
   "prayer": "Maldos nustatymai",
   "makkah": "Meka",
   "madinah": "Medina",
   "hanafi": "Hanafis",
-  "shafi": "Shafis"
+  "shafi": "Shafis",
+  "prayerTimesFor": "Maldų laikai",
+  "fajr": "Fadžras",
+  "sunrise": "Saulėtekis",
+  "duhr": "Duhra",
+  "asr": "Asras",
+  "maghrib": "Magrib",
+  "isha": "Iša",
+  "toKnowVisaQueries": "Norėdami sužinoti daugiau apie vizos klausimus, spustelėkite žemiau esančią nuorodą",
+  "toKnowTrainQueries": "Norėdami sužinoti daugiau apie traukinių klausimus, spustelėkite žemiau esančią nuorodą",
+  "privacyDetails": "Mūsų privatumo politika yra tikrai paprasta: mes nerenkame ir nesaugome jūsų duomenų arba ne stebime jūsų naudojimo jokiu būdu"
 }

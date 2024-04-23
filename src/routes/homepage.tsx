@@ -295,14 +295,29 @@ function HomePage() {
       </div>
       {/* <section className="flex flex-col border-b ">
         <div className="flex flex-col justify-center items-center">
-          <p className="my-4 font-bold">Prayer times for {prayerDate}</p>
+         
+          <p className="my-4 font-bold">
+            {t("prayerTimesFor")} {prayerDate}
+          </p>
           <div className="flex flex-col  mb-4">
-            <p>Fajr: {fajrTime}</p>
-            <p>Sunrise: {sunriseTime}</p>
-            <p>Dhuhr: {dhuhrTime}</p>
-            <p>Asr: {asrTime}</p>
-            <p>Maghrib: {maghribTime}</p>
-            <p>Isha: {ishaTime}</p>
+            <p>
+              {t("fajr")}: {fajrTime}
+            </p>
+            <p>
+              {t("sunrise")}: {sunriseTime}
+            </p>
+            <p>
+              {t("duhr")}: {dhuhrTime}
+            </p>
+            <p>
+              {t("asr")}: {asrTime}
+            </p>
+            <p>
+              {t("maghrib")}: {maghribTime}
+            </p>
+            <p>
+              {t("isha")}: {ishaTime}
+            </p>
           </div>
         </div>
       </section> */}

@@ -46,10 +46,21 @@
   "q4": "Sunt într-o situație de urgență",
   "q5": "Arată-mi reperele din Makkah",
   "q6": "Numără-mi Sa'ii",
+  "q7": "Spuneți paznicului, vreau să-mi găsesc fiul",
   "selectMadhab": "Selectați-vă Madhab-ul",
   "prayer": "Setări de rugăciune",
   "makkah": "Makkah",
   "madinah": "Madinah",
   "hanafi": "Hanafi",
-  "shafi": "Shafi"
+  "shafi": "Shafi",
+  "prayerTimesFor": "Timpurile de rugăciune pentru",
+  "fajr": "Fajr",
+  "sunrise": "Răsăritul soarelui",
+  "duhr": "Duhru",
+  "asr": "Asru",
+  "maghrib": "Maghrib",
+  "isha": "Isha",
+  "toKnowVisaQueries": "Faceți clic pe linkul de mai jos pentru a afla mai multe despre întrebările legate de viză",
+  "toKnowTrainQueries": "Faceți clic pe linkul de mai jos pentru a afla mai multe despre întrebările legate de tren",
+  "privacyDetails": "Politica noastră de confidențialitate este într-adevăr simplă: nu colectăm sau stocăm niciuna dintre datele dvs., sau urmărim utilizarea dvs. în niciun fel"
 }

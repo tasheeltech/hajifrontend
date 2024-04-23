@@ -46,10 +46,21 @@
   "q4": "Olen hädaolukorras",
   "q5": "Näita mulle Mekkas märke",
   "q6": "Lugeda minu Sa'ii",
+  "q7": "Öelge turvamehele, et tahan oma poega leida",
   "selectMadhab": "Valige oma Madhab",
   "prayer": "Palve seaded",
   "makkah": "Makkah",
   "madinah": "Madinah",
   "hanafi": "Hanafi",
-  "shafi": "Shafi"
+  "shafi": "Shafi",
+  "prayerTimesFor": "Palveajad",
+  "fajr": "Fajr",
+  "sunrise": "Päikesetõus",
+  "duhr": "Keskpäev",
+  "asr": "Pärastlõuna",
+  "maghrib": "Maghrib",
+  "isha": "Isha",
+  "toKnowVisaQueries": "Klõpsake allolevat linki, et teada saada rohkem viisaga seotud päringute kohta",
+  "toKnowTrainQueries": "Klõpsake allolevat linki, et teada saada rohkem rongidega seotud päringute kohta",
+  "privacyDetails": "Meie privaatsuspoliitika on tõesti lihtne: me ei kogu ega salvesta teie andmeid ega jälgi teie kasutamist mingil viisil"
 }
