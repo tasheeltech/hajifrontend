@@ -28,10 +28,10 @@ function HomePage() {
   const { isoLanguage, madhab, calMethod, setLocation, setCalMethod } =
     useUserState(loadedData)
   const arrayvalue = [
-    "MuslimWorldLeague",
+    "UmmAlQura",
     "Egyptian",
     "Karachi",
-    "UmmAlQura",
+    "MuslimWorldLeague",
     "Dubai",
     "Qatar",
     "Kuwait",
@@ -40,7 +40,7 @@ function HomePage() {
     "Turkey",
     "Tehran",
     "NorthAmerica",
-  ]
+  ];
 
   const [coordinates, setCoordinates] = useState<Coordinates | null>(null)
   // const [remainingTime, setRemainingTime] = useState("");
@@ -49,14 +49,14 @@ function HomePage() {
   //@ts-ignore
   const params = (() => {
     switch (calMethod) {
-      case "MuslimWorldLeague":
-        return CalculationMethod.MuslimWorldLeague();
+      case "UmmAlQura":
+        return CalculationMethod.UmmAlQura();
       case "Egyptian":
         return CalculationMethod.Egyptian();
       case "Karachi":
         return CalculationMethod.Karachi();
-      case "UmmAlQura":
-        return CalculationMethod.UmmAlQura();
+      case "MuslimWorldLeague":
+        return CalculationMethod.MuslimWorldLeague();
       case "Dubai":
         return CalculationMethod.Dubai();
       case "Qatar":
