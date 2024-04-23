@@ -37,6 +37,7 @@ function HomePage() {
   // const prayerTimes = new PrayerTimes(coordinates, date, params);
   const timeZone = moment.tz.guess()
   const currentTime = moment().tz(timeZone)
+  console.log(timeZone)
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
