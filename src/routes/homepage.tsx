@@ -208,92 +208,96 @@ function HomePage() {
   }, [i18n, i18n.language])
 
   return (
-    <div className="flex flex-col gap-6 justify-between h-full p-6">
-      <div className="">
-        <p className="text-4xl">Assalamu aliakum, Sadiya! 😊</p>
-      </div>
-      <div className="prayer flex flex-col gap-4 bg-white p-5 rounded-[30px]">
-        <div className="top flex justify-between">
-          <div className="left">
-            <div className="flex items-center gap-[6px]">
-              <BiSolidTime color="#2BCE98" />
-              <p>prayer</p>
-            </div>
-            <div className="flex items-center gap-[6px]">
-              <div className="w-4"></div>
-              <p>time left</p>
-            </div>
+    <div className="bg-[#EFF0F2] h-full">
+      <div className="relative h-full">
+        <div className="absolute top-0 w-full h-3/5 bg-gradient-to-b from-[#2BCE98] via-[#3AB9D0] to-[#ABDDE6] z-10"></div>
+        <div className="absolute bottom-0 w-full h-[70%] bg-[#EFF0F2] rounded-tl-3xl rounded-tr-3xl z-20"></div>
+        <div className="relative flex flex-col gap-6 justify-between h-full p-6 z-40">
+          <div className="">
+            <p className="text-white text-4xl">Assalamu aliakum, Sadiya! 😊</p>
           </div>
-          <div className="right">
-            <div className="flex items-center gap-[6px]">
-              <FaMapMarkerAlt color="#2BCE98" />
+          <div className="prayer flex flex-col gap-4 bg-white p-5 rounded-[30px] items-center">
+            <div className="top flex justify-between w-full">
+              <div className="left">
+                <div className="flex items-center gap-[6px]">
+                  <BiSolidTime color="#2BCE98" />
+                  <p>prayer</p>
+                </div>
+                <div className="flex items-center gap-[6px]">
+                  <div className="w-4"></div>
+                  <p>time left</p>
+                </div>
+              </div>
+              <div className="right">
+                <div className="flex items-center gap-[6px]">
+                  <FaMapMarkerAlt color="#2BCE98" />
 
-              <p>prayer</p>
+                  <p>prayer</p>
+                </div>
+                <div className="flex items-center gap-[6px]">
+                  <div className="w-4"></div>
+                  <p>time left</p>
+                </div>
+              </div>
             </div>
-            <div className="flex items-center gap-[6px]">
-              <div className="w-4"></div>
-              <p>time left</p>
+            <div className="h-[2px] w-full bg-[#ACACAC]"></div>
+            <div className="timings flex items-center gap-[6px] overflow-x-scroll no-scrollbar">
+              <div className="h-[78px] min-w-[58px] bg-[#37353573] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm">
+                <p className="text-[10px] text-white">{fajrTime}</p>
+                <div>
+                  <img src="/mosque.svg" alt="" />
+                </div>
+                <p className="text-[10px] text-white">{t("fajr")}</p>
+              </div>
+              <div className="h-[78px] min-w-[58px] bg-[#37353573] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm bg-[#373535]">
+                <p className="text-[10px] text-white">4:30</p>
+                <div>
+                  <img src="/mosque.svg" alt="" />
+                </div>
+                <p className="text-[10px] text-white">{t("duhr")}</p>
+              </div>
+              <div className="h-[78px] min-w-[58px] bg-[#37353573] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm">
+                <p className="text-[10px] text-white">4:30</p>
+                <div>
+                  <img src="/mosque.svg" alt="" />
+                </div>
+                <p className="text-[10px] text-white">{t("asr")}</p>
+              </div>
+              <div className="h-[78px] min-w-[58px] bg-[#37353573] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm">
+                <p className="text-[10px] text-white">4:30</p>
+                <div>
+                  <img src="/mosque.svg" alt="" />
+                </div>
+                <p className="text-[10px] text-white">{t("maghrib")}</p>
+              </div>
+              <div className="h-[78px] min-w-[58px] bg-[#37353573] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm">
+                <p className="text-[10px] text-white">4:30</p>
+                <div>
+                  <img src="/mosque.svg" alt="" />
+                </div>
+                <p className="text-[10px] text-white">{t("isha")}</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="h-[2px] bg-[#ACACAC]"></div>
-        <div className="timings flex items-center gap-[6px] overflow-x-scroll no-scrollbar">
-          <div className="h-[78px] min-w-[58px] bg-[#37353573] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm">
-            <p className="text-[10px] text-white">4:30</p>
-            <div>
-              <img src="/mosque.svg" alt="" />
+          <div className="flex flex-col justify-between items-center text-center gap-6 rounded-[20px] border border-[#3735353D] px-3 mt-8">
+            <div className="flex justify-center items-center rounded-3xl bg-[#373535] min-w-20 h-20 p-[18px] -m-10">
+              <img
+                src="/HajiAnsariLogoWhite.svg"
+                className="min-w-full aspect-square"
+                alt=""
+              />
             </div>
-            <p className="text-[10px] text-white">fajr</p>
+            <h1 className="pt-10 text-3xl font-bold">Welcome to HajiAnsari</h1>
+            <p className="text-[#373535] text px-3">
+              HajiAnsari is on a mission to become a true “supporter” of
+              pilgrims throughout their Umrah and Hajj journey.
+            </p>
+            <Link to="/chat" className="flex flex-col items-center pb-2">
+              <p className="text-[#0097B2]">Start a new chat</p>
+              <IoIosArrowDown color="#0097B2" />
+            </Link>
           </div>
-          <div className="h-[78px] min-w-[58px] bg-[#37353573] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm bg-[#373535]">
-            <p className="text-[10px] text-white">4:30</p>
-            <div>
-              <img src="/mosque.svg" alt="" />
-            </div>
-            <p className="text-[10px] text-white">fajr</p>
-          </div>
-          <div className="h-[78px] min-w-[58px] bg-[#37353573] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm">
-            <p className="text-[10px] text-white">4:30</p>
-            <div>
-              <img src="/mosque.svg" alt="" />
-            </div>
-            <p className="text-[10px] text-white">fajr</p>
-          </div>
-          <div className="h-[78px] min-w-[58px] bg-[#37353573] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm">
-            <p className="text-[10px] text-white">4:30</p>
-            <div>
-              <img src="/mosque.svg" alt="" />
-            </div>
-            <p className="text-[10px] text-white">fajr</p>
-          </div>
-          <div className="h-[78px] min-w-[58px] bg-[#37353573] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm">
-            <p className="text-[10px] text-white">4:30</p>
-            <div>
-              <img src="/mosque.svg" alt="" />
-            </div>
-            <p className="text-[10px] text-white">fajr</p>
-          </div>
-        </div>
-      </div>
-      <div className="flex flex-col justify-between items-center text-center gap-6 rounded-[20px] border border-[#3735353D] px-3 mt-8">
-        <div className="flex justify-center items-center rounded-3xl bg-[#373535] min-w-20 h-20 p-[18px] -m-10">
-          <img
-            src="/HajiAnsariLogoWhite.svg"
-            className="min-w-full aspect-square"
-            alt=""
-          />
-        </div>
-        <h1 className="pt-10 text-3xl font-bold">Welcome to HajiAnsari</h1>
-        <p className="text-[#373535] text px-3">
-          HajiAnsari is on a mission to become a true “supporter” of pilgrims
-          throughout their Umrah and Hajj journey.
-        </p>
-        <Link to="/chat" className="flex flex-col gap-1 items-center">
-          <p className="text-[#0097B2]">Start a new chat</p>
-          <IoIosArrowDown color="#0097B2" />
-        </Link>
-      </div>
-      {/* <section className="flex flex-col border-b ">
+          {/* <section className="flex flex-col border-b ">
         <div className="flex flex-col justify-center items-center">
          
           <p className="my-4 font-bold">
@@ -321,6 +325,8 @@ function HomePage() {
           </div>
         </div>
       </section> */}
+        </div>
+      </div>
     </div>
   )
 }
