@@ -299,15 +299,15 @@ function HomePage() {
   const place = timeZone.split("/")
 
   return (
-    <div className="bg-[#EFF0F2] h-full">
+    <div className="bg-[#EFF0F2] overflow-y-scroll no-scrollbar h-full">
       <div className="relative h-full">
         <div className="absolute top-0 w-full h-3/5 bg-gradient-to-b from-[#2BCE98] via-[#3AB9D0] to-[#ABDDE6] z-10"></div>
         <div className="absolute bottom-0 w-full h-[70%] bg-[#EFF0F2] rounded-tl-3xl rounded-tr-3xl z-20"></div>
-        <div className="relative flex flex-col gap-6 justify-between h-full p-6 z-40">
+        <div className="relative flex flex-col gap-6 justify-between h-full px-6 py-8 z-40">
           <div className="">
             <p className="text-white text-4xl">{t("welcome")}, Sadiya! 😊</p>
           </div>
-          <div className="prayer flex flex-col gap-4 bg-white py-5 px-6 rounded-[30px] items-center">
+          <div className="prayer flex flex-col items-center gap-4 bg-white py-5 px-6 rounded-[30px]">
             <div className="top text-center w-full">
               {/* <div className="top flex justify-between w-full">
                 <div className="left">
@@ -341,13 +341,13 @@ function HomePage() {
               </p>
             </div>
             <div className="h-[2px] w-full bg-[#ACACAC]"></div>
-            <div className="timings flex items-center gap-[6px] overflow-x-scroll no-scrollbar">
+            <div className="timings w-full flex items-center gap-[6px] text-center overflow-x-scroll no-scrollbar">
               <div
                 //   className={`${
                 //     nextPrayerName === "Fajr" ? "bg-[#373535]" : "bg-[#37353573]"
-                //   } h-[78px] max-w-[58px]  flex flex-col justify-between items-center g-2 p-[6px] rounded-sm`}
+                //   } min-h-[78px] flex-1 min-w-[56px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm`}
                 // >
-                className="bg-[#373535] h-[78px] max-w-[58px]  flex flex-col justify-between items-center g-2 p-[6px] rounded-sm"
+                className="bg-[#373535] min-h-[78px] flex-1 min-w-[56px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm"
               >
                 <p className="text-[10px] text-white">
                   {fajrTime.format(" h:mm a")}
@@ -360,9 +360,9 @@ function HomePage() {
               <div
                 //   className={`${
                 //     nextPrayerName === "Dhuhr" ? "bg-[#373535]" : "bg-[#37353573]"
-                //   } h-[78px] max-w-[58px]  flex flex-col justify-between items-center g-2 p-[6px] rounded-sm`}
+                //   } min-h-[78px] flex-1 min-w-[56px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm`}
                 // >
-                className="bg-[#373535] h-[78px] max-w-[58px]  flex flex-col justify-between items-center g-2 p-[6px] rounded-sm"
+                className="bg-[#373535] min-h-[78px] flex-1 min-w-[56px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm"
               >
                 <p className="text-[10px] text-white">
                   {dhuhrTime.format(" h:mm a")}
@@ -375,9 +375,9 @@ function HomePage() {
               <div
                 //   className={`${
                 //     nextPrayerName === "Asr" ? "bg-[#373535]" : "bg-[#37353573]"
-                //   } h-[78px] max-w-[58px]  flex flex-col justify-between items-center g-2 p-[6px] rounded-sm`}
+                //   } min-h-[78px] flex-1 min-w-[56px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm`}
                 // >
-                className="bg-[#373535] h-[78px] max-w-[58px]  flex flex-col justify-between items-center g-2 p-[6px] rounded-sm"
+                className="bg-[#373535] min-h-[78px] flex-1 min-w-[56px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm"
               >
                 <p className="text-[10px] text-white">
                   {asrTime.format(" h:mm a")}
@@ -392,9 +392,9 @@ function HomePage() {
                 //     nextPrayerName === "Maghrib"
                 //       ? "bg-[#373535]"
                 //       : "bg-[#37353573]"
-                //   } h-[78px] max-w-[58px]  flex flex-col justify-between items-center g-2 p-[6px] rounded-sm`}
+                //   } min-h-[78px] flex-1 min-w-[56px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm`}
                 // >
-                className="bg-[#373535] h-[78px] max-w-[58px]  flex flex-col justify-between items-center g-2 p-[6px] rounded-sm"
+                className="bg-[#373535] min-h-[78px] flex-1 min-w-[56px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm"
               >
                 <p className="text-[10px] text-white">
                   {maghribTime.format(" h:mm a")}
@@ -407,9 +407,9 @@ function HomePage() {
               <div
                 //   className={`${
                 //     nextPrayerName === "Isha" ? "bg-[#373535]" : "bg-[#37353573]"
-                //   } h-[78px] max-w-[58px]  flex flex-col justify-between items-center g-2 p-[6px] rounded-sm`}
+                //   } min-h-[78px] flex-1 min-w-[56px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm`}
                 // >
-                className="bg-[#373535] h-[78px] max-w-[58px]  flex flex-col justify-between items-center g-2 p-[6px] rounded-sm"
+                className="bg-[#373535] min-h-[78px] flex-1 min-w-[56px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm"
               >
                 <p className="text-[10px] text-white">
                   {ishaTime.format(" h:mm a")}
@@ -422,7 +422,7 @@ function HomePage() {
             </div>
           </div>
           <div className="flex flex-col justify-between items-center text-center gap-6 rounded-[20px] border border-[#3735353D] px-3 mt-8">
-            <div className="flex justify-center items-center rounded-3xl bg-[#373535] min-w-[72px] h-[72px] p-[14px] -m-[38px]">
+            <div className="flex justify-center items-center rounded-3xl bg-[#373535] w-[72px] h-[72px] p-[14px] -m-[38px]">
               <img
                 src="/HajiAnsariLogoWhite.svg"
                 className="min-w-full aspect-square"
