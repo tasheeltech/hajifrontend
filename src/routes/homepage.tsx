@@ -303,7 +303,7 @@ function HomePage() {
       <div className="relative h-full">
         <div className="absolute top-0 w-full h-3/5 bg-gradient-to-b from-[#2BCE98] via-[#3AB9D0] to-[#ABDDE6] z-10"></div>
         <div className="absolute bottom-0 w-full h-[70%] bg-[#EFF0F2] rounded-tl-3xl rounded-tr-3xl z-20"></div>
-        <div className="relative flex flex-col gap-6 justify-between h-full px-6 py-8 z-40">
+        <div className="relative flex flex-col gap-6 justify-between h-full before:p-1 after:p-1 px-6 z-40">
           <div className="">
             <p className="text-white text-4xl">{t("welcome")}, Sadiya! 😊</p>
           </div>
