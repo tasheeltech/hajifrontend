@@ -138,8 +138,8 @@ function HomePage() {
         console.error("Error getting user location:", error)
         console.log(location, "manual location")
         load(
-          location ? location.lat : 24.470901,
-          location ? location.lng : 39.612236
+          location ? location.lat : 24.46861,
+          location ? location.lng : 39.61417
         )
 
         // setCoordinates(new Coordinates(24.470901, 39.612236))
@@ -165,7 +165,7 @@ function HomePage() {
     }
   }, [])
 
-  // const prayerDate = moment(date).format("MMMM DD, YYYY")
+  const prayerDate = moment(date).format("MMMM DD, YYYY")
 
   useEffect(() => {
     i18n.changeLanguage(isoLanguage ? isoLanguage.iso : navigator.language)
@@ -432,8 +432,8 @@ function HomePage() {
                       </div>
                       <div className="flex items-center gap-[6px]">
                         <div className="w-4"></div>
-                        {/* <p className="text-[#6a6a6a] font-medium">{prayerDate}</p> */}
-                        <p className="text-[#6a6a6a] font-medium line-clamp-1">{`${remainingHours} hr ${remainingMinutes} mins left`}</p>
+                        <p className="text-[#6a6a6a] font-medium">{prayerDate}</p>
+                        {/* <p className="text-[#6a6a6a] font-medium line-clamp-1">{`${remainingHours} hr ${remainingMinutes} mins left`}</p> */}
                       </div>
                     </div>
                     <div className="right">
