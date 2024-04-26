@@ -127,8 +127,7 @@ function HomePage() {
     navigator.geolocation.getCurrentPosition(
       (position) => {
         const { latitude, longitude } = position.coords
-        setLocation({ lat: latitude, lng: longitude })
-        // setCoordinates(new Coordinates(41.9029, 12.4534))
+        // setLocation({ lat: latitude, lng: longitude })
         setDefaultToMadinah(false)
 
         load(latitude, longitude)
