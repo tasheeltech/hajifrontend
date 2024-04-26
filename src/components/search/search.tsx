@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { useTranslation } from "react-i18next"
-import { IoIosSend, IoMdMic } from "react-icons/io"
+import { IoIosSend, IoMdMic, IoMdMicOff } from "react-icons/io"
 
 interface Props {
   handleClick: (question: string) => void
@@ -64,11 +64,11 @@ const Search: React.FC<Props> = ({
         </button>
       ) : (
         <button
-          className="bg-[#2BCE98] p-[10px] rounded-full flex items-center justify-center opacity-50"
+          className=" p-[10px] rounded-full flex items-center justify-center"
           // onClick={() => startRecord()}
         >
-          {/* <IoIosSend size={28} color="#ffffff" /> */}
-          <IoMdMic size={28} color="#ffffff" />
+          {/* <IoMdMicOff size={28} color="#e17472" /> */}
+          <IoMdMicOff size={28} color="#a6a6a6" />
         </button>
       )}
     </div>
