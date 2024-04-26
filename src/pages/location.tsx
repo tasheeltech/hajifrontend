@@ -7,6 +7,8 @@ import { DefaultLoader } from "../loaders/defaultLoader"
 import { useUserState } from "../helper/userStateHelper"
 import "../components/location/location.css"
 import { t } from "i18next"
+import { HiLocationMarker } from "react-icons/hi";
+
 
 const containerStyle = {
   width: "100%",
@@ -91,7 +93,7 @@ const Location: React.FC = () => {
 
   return (
     <div className="flex flex-col items-stretch h-full relative">
-      <div className="bg-[#F1F1F1] shadow-inner h-full ">
+      <div className="bg-[#F1F1F1] shadow-inner h-full relative">
         {isLoaded ? (
           <GoogleMap
             mapContainerStyle={containerStyle}
@@ -99,10 +101,16 @@ const Location: React.FC = () => {
             zoom={12}
             onLoad={onLoad}
             onUnmount={onUnmount}
-            onBoundsChanged={handleBoundsChanged}
+            // onBoundsChanged={handleBoundsChanged}
+            onIdle={handleBoundsChanged}
             options={{
               disableDefaultUI: true,
+              // restriction: {
+              //   latLngBounds: { north: 85, south: -85, west: -180, east: 180 },
+              //   strictBounds: true,
+              // },
             }}
+
             // onClick={(e) => {
             //   console.log("latitide = ", e.latLng!.lat())
             //   console.log("longitude = ", e.latLng!.lng())
@@ -111,7 +119,9 @@ const Location: React.FC = () => {
             //   setCenter({ lat, lng })
             // }}
           >
-            <MarkerF position={center} />
+            {/* <MarkerF position={center} /> */}
+            <HiLocationMarker color="" className="fixed left-1/2 top-1/2" />
+
           </GoogleMap>
         ) : (
           <></>
@@ -121,7 +131,7 @@ const Location: React.FC = () => {
         className=" flex items-center justify-center rounded-full px-4 gap-1 border-2 border-[#a3a3a3] absolute bottom-4 right-4 text-sm bg-white p-3 font-semibold active:bg-[#4a7b6b] active:text-white"
         onClick={() => {
           setLocation(center)
-          console.log(location)
+          // console.log(location)
           alert("Your location has been updated")
         }}
       >
