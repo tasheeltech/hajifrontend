@@ -441,7 +441,9 @@ export default function ChatPage() {
                   className="flex gap-4 items-center justify-between px-5 py-2 rounded-[36px] border"
                   onClick={() => {
                     handleForceUpdate()
-                    setValue(q)
+                    // setValue(q)
+                    handleSendClick(q)
+                    handleStopRecord()
                   }}
                   key={index}
                 >
