@@ -7,8 +7,6 @@ import { DefaultLoader } from "../loaders/defaultLoader"
 import { useUserState } from "../helper/userStateHelper"
 import "../components/location/location.css"
 import { t } from "i18next"
-import { HiLocationMarker } from "react-icons/hi";
-
 
 const containerStyle = {
   width: "100%",
@@ -93,7 +91,7 @@ const Location: React.FC = () => {
 
   return (
     <div className="flex flex-col items-stretch h-full relative">
-      <div className="bg-[#F1F1F1] shadow-inner h-full relative">
+      <div className="bg-[#F1F1F1] shadow-inner h-full ">
         {isLoaded ? (
           <GoogleMap
             mapContainerStyle={containerStyle}
@@ -101,16 +99,10 @@ const Location: React.FC = () => {
             zoom={12}
             onLoad={onLoad}
             onUnmount={onUnmount}
-            // onBoundsChanged={handleBoundsChanged}
-            onIdle={handleBoundsChanged}
+            onBoundsChanged={handleBoundsChanged}
             options={{
               disableDefaultUI: true,
-              // restriction: {
-              //   latLngBounds: { north: 85, south: -85, west: -180, east: 180 },
-              //   strictBounds: true,
-              // },
             }}
-
             // onClick={(e) => {
             //   console.log("latitide = ", e.latLng!.lat())
             //   console.log("longitude = ", e.latLng!.lng())
@@ -119,9 +111,7 @@ const Location: React.FC = () => {
             //   setCenter({ lat, lng })
             // }}
           >
-            {/* <MarkerF position={center} /> */}
-            <HiLocationMarker color="" className="fixed left-1/2 top-1/2" />
-
+            <MarkerF position={center} />
           </GoogleMap>
         ) : (
           <></>

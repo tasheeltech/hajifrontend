@@ -82,10 +82,6 @@ function HomePage() {
 
   const [temp, setTemp] = useState(false)
 
-  // const [remainingHours, setRemainingHours] = useState(0)
-  // const [remainingMinutes, setRemainingMinutes] = useState(0)
-  // const coordinates = new Coordinates(10.342005, 79.380153);
-  // const calMethodValue = calMethod !== null ? parseInt(calMethod) : 4
   //@ts-ignore
   const params = (() => {
     switch (calMethod) {
@@ -120,16 +116,11 @@ function HomePage() {
   })()
 
   params.madhab = madhab === "Hanafi" ? Madhab.Hanafi : Madhab.Shafi
-
-  // const [coordinates, setCoordinates] = useState<Coordinates | null>(null)
   // const [defaultToMadinah, setDefaultToMadinah] = useState(false)
   const [remainingHours, setRemainingHours] = useState(0)
   const [remainingMinutes, setRemainingMinutes] = useState(0)
 
   const date = new Date()
-  // const prayerTimes = new PrayerTimes(coordinates, date, params);
-  // const timeZone = moment.tz.guess(true)
-  // const currentTime = moment().tz(timeZone)
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
@@ -156,57 +147,12 @@ function HomePage() {
     )
   }, [])
 
-  // const prayerDate = moment(date).format("MMMM DD, YYYY")
-
   const { t } = useTranslation()
 
   useEffect(() => {
     i18n.changeLanguage(isoLanguage ? isoLanguage.iso : navigator.language)
     document.body.dir = i18n.dir()
   }, [i18n, i18n.language])
-
-  // // Define prayer times
-  // const fajrTime = moment(prayerTimes?.fajr).tz(timeZone)
-  // const dhuhrTime = moment(prayerTimes?.dhuhr).tz(timeZone)
-  // const asrTime = moment(prayerTimes?.asr).tz(timeZone)
-  // const maghribTime = moment(prayerTimes?.maghrib).tz(timeZone)
-  // const ishaTime = moment(prayerTimes?.isha).tz(timeZone)
-
-  // // Find the next upcoming prayer
-  // let nextPrayerTime: any
-  // let nextPrayerName
-
-  // if (currentTime.isBefore(fajrTime)) {
-  //   nextPrayerTime = fajrTime
-  //   nextPrayerName = "Fajr"
-  // } else if (currentTime.isBefore(dhuhrTime)) {
-  //   nextPrayerTime = dhuhrTime
-  //   nextPrayerName = "Dhuhr"
-  // } else if (currentTime.isBefore(asrTime)) {
-  //   nextPrayerTime = asrTime
-  //   nextPrayerName = "Asr"
-  // } else if (currentTime.isBefore(maghribTime)) {
-  //   nextPrayerTime = maghribTime
-  //   nextPrayerName = "Maghrib"
-  // } else if (currentTime.isBefore(ishaTime)) {
-  //   nextPrayerTime = ishaTime
-  //   nextPrayerName = "Isha"
-  // } else {
-  //   // If it's past Isha, then the next prayer will be Fajr of the next day
-  //   nextPrayerTime = moment(prayerTimes?.fajr).add(1, "day").tz(timeZone)
-  //   nextPrayerName = "Fajr"
-  // }
-
-  // useEffect(() => {
-  //   if (prayerTimes && currentTime && timeZone) {
-  //     // Convert prayer times to the determined time zone
-  //     setFajrTime(moment(prayerTimes.fajr).tz(timeZone))
-  //     setDhuhrTime(moment(prayerTimes.dhuhr).tz(timeZone))
-  //     setAsrTime(moment(prayerTimes.asr).tz(timeZone))
-  //     setMaghribTime(moment(prayerTimes.maghrib).tz(timeZone))
-  //     setIshaTime(moment(prayerTimes.isha).tz(timeZone))
-  //   }
-  // }, [prayerTimes, timeZone, currentTime])
 
   useEffect(() => {
     const timerId = window.setInterval(() => {
@@ -217,15 +163,6 @@ function HomePage() {
       clearInterval(timerId) // Cleanup function to clear the interval when component unmounts
     }
   }, [])
-
-  // useEffect(() => {
-  //   if (nextPrayerTime) {
-  //     const remainingTime = moment.duration(nextPrayerTime.diff(currentTime))
-  //     setRemainingHours(Math.floor(remainingTime.asHours()))
-  //     setRemainingMinutes(remainingTime.minutes())
-  //     // const remainingSeconds = remainingTime.seconds()
-  //   }
-  // }, [nextPrayerTime, prayerTimes, temp])
 
   // const prayerDate = moment(date).format("MMMM DD, YYYY")
 
@@ -293,12 +230,6 @@ function HomePage() {
           }
         })
 
-    
-
-      // User's location (assuming you have it)
-      // const userLat = 41.9029 // Example latitude
-      // const userLng = 12.4534 // Example longitude
-
       // Find the nearest city
       let nearestCity: City = {
         name: "Medina",
@@ -329,69 +260,6 @@ function HomePage() {
         // You can handle this case by informing the user or taking appropriate action
       } else {
         setNearestLocation(nearestCity)
-
-        // Store the coordinates of the nearest city
-        // const nearestCityCoordinates = {
-        //   lat: nearestCity.geo.lat,
-        //   lng: nearestCity.geo.lng,
-        // }
-
-        // // You can now use nearestCityCoordinates as needed
-
-        // // setCoordinates(
-        // //   new Coordinates(
-        // //     nearestCityCoordinates.lat,
-        // //     nearestCityCoordinates.lng
-        // //   )
-        // // )
-
-        // // const timeZone = moment.tz.guess(true)
-        // setTimeZone(nearestCity.tz)
-        // // const places = timeZone.split("/")
-        // const places = nearestCity.tz.split("/")
-
-        // setPlace(places && places)
-
-        // // Set current time initially
-        // // const initialCurrentTime = moment().tz(timeZone)
-        // const initialCurrentTime = moment().tz(nearestCity.tz)
-        // setCurrentTime(initialCurrentTime)
-
-        // const prayerTimes = nearestCityCoordinates
-        //   ? new PrayerTimes(
-        //       new Coordinates(
-        //         nearestCityCoordinates.lat,
-        //         nearestCityCoordinates.lng
-        //       ),
-        //       date,
-        //       params
-        //     )
-        //   : new PrayerTimes(
-        //     new Coordinates(
-        //       24.46861,
-        //       39.61417
-        //     ),
-        //     date,
-        //     params
-        //   )
-
-        // setPrayerTimes(prayerTimes)
-
-        // // const prayerTimes = coordinates
-        // //   ? new PrayerTimes(coordinates, date, params)
-        // //   : null
-
-        // //   // setPrayerTimes(times)
-        // //   if (prayerTimes) {
-        // //     setFajrTime(moment(prayerTimes.fajr).tz(timeZone))
-        // //     setDhuhrTime(moment(prayerTimes.dhuhr).tz(timeZone))
-        // //     setAsrTime(moment(prayerTimes.asr).tz(timeZone))
-        // //     setMaghribTime(moment(prayerTimes.maghrib).tz(timeZone))
-        // //     setIshaTime(moment(prayerTimes.isha).tz(timeZone))
-        // // console.error("fajr", fajrTime)
-        // // console.error("shuhr", dhuhrTime)
-
-        // //   }
       }
     } catch (error) {
       console.error("Error loading cities data:", error)
@@ -442,47 +310,6 @@ function HomePage() {
       setPrayerTimes(prayerTimes)
     }
   }, [nearestLocation])
-
-  // useEffect(() => {
-  //   if (prayerTimes) {
-  //     setFajrTime(moment(prayerTimes.fajr).tz(timeZone))
-  //     setDhuhrTime(moment(prayerTimes.dhuhr).tz(timeZone))
-  //     setAsrTime(moment(prayerTimes.asr).tz(timeZone))
-  //     setMaghribTime(moment(prayerTimes.maghrib).tz(timeZone))
-  //     setIshaTime(moment(prayerTimes.isha).tz(timeZone))
-  //     console.error("fajr", fajrTime)
-  //     console.error("shuhr", dhuhrTime)
-  //   }
-  // }, [prayerTimes])
-
-  // useEffect(() => {
-  //   if (nextPrayerTime && currentTime && timeZone) {
-  //     // Determine the next prayer
-  //     let nextPrayerName: string = ""
-  //     if (currentTime.isBefore(fajrTime)) {
-  //       setNextPrayerTime(fajrTime)
-  //       nextPrayerName = "Fajr"
-  //     } else if (currentTime.isBefore(dhuhrTime)) {
-  //       setNextPrayerTime(dhuhrTime)
-  //       nextPrayerName = "Dhuhr"
-  //     } else if (currentTime.isBefore(asrTime)) {
-  //       setNextPrayerTime(asrTime)
-  //       nextPrayerName = "Asr"
-  //     } else if (currentTime.isBefore(maghribTime)) {
-  //       setNextPrayerTime(maghribTime)
-  //       nextPrayerName = "Maghrib"
-  //     } else {
-  //       setNextPrayerTime(ishaTime)
-  //       nextPrayerName = "Isha"
-  //     }
-
-  //     // Update next prayer name state
-  //     setNextPrayerName(nextPrayerName)
-  //     const remainingTime = moment.duration(nextPrayerTime.diff(currentTime))
-  //     setRemainingHours(Math.floor(remainingTime.asHours()))
-  //     setRemainingMinutes(remainingTime.minutes())
-  //   }
-  // }, [ishaTime])
 
   useEffect(() => {
     console.log(timeZone, "tz")
@@ -550,62 +377,6 @@ function HomePage() {
     }
   }, [prayerTimes, temp])
 
-  // useEffect(() => {
-  //   if (
-  //     fajrTime &&
-  //     dhuhrTime &&
-  //     asrTime &&
-  //     maghribTime &&
-  //     ishaTime &&
-  //     currentTime &&
-  //     timeZone
-  //   ) {
-  //     // Determine the next prayer
-  //     let nextPrayerTime: moment.Moment | null = null
-  //     let nextPrayerName: string = ""
-
-  //     if (currentTime.isBefore(fajrTime)) {
-  //       nextPrayerTime = fajrTime
-  //       nextPrayerName = "Fajr"
-  //     } else if (currentTime.isBefore(dhuhrTime)) {
-  //       nextPrayerTime = dhuhrTime
-  //       nextPrayerName = "Dhuhr"
-  //     } else if (currentTime.isBefore(asrTime)) {
-  //       nextPrayerTime = asrTime
-  //       nextPrayerName = "Asr"
-  //     } else if (currentTime.isBefore(maghribTime)) {
-  //       nextPrayerTime = maghribTime
-  //       nextPrayerName = "Maghrib"
-  //     }
-  //     // else {
-  //     //   nextPrayerTime = ishaTime
-  //     //   nextPrayerName = "Isha"
-  //     // }
-  //     else if (currentTime.isBefore(ishaTime)) {
-  //       nextPrayerTime = ishaTime
-  //       nextPrayerName = "Isha"
-  //     } else {
-  //       // If it's past Isha, then the next prayer will be Fajr of the next day
-  //       nextPrayerTime = moment(prayerTimes?.fajr).add(1, "day").tz(timeZone)
-  //       nextPrayerName = "Fajr"
-  //     }
-
-  //     // Update next prayer name state
-  //     setNextPrayerTime(nextPrayerTime)
-  //     setNextPrayerName(nextPrayerName)
-  //     // console.log(nextPrayerName, "setNextPrayerName")
-  //     console.log(nextPrayerTime, "nextPrayerTime")
-  //   }
-  // }, [
-  //   fajrTime,
-  //   dhuhrTime,
-  //   asrTime,
-  //   maghribTime,
-  //   ishaTime,
-  //   currentTime,
-  //   timeZone,
-  // ])
-
   useEffect(() => {
     console.log("run remaining")
     console.log("currentTime", currentTime)
@@ -618,7 +389,7 @@ function HomePage() {
       // const remainingSeconds = remainingTime.seconds()
       console.log(remainingTime, "remainingTime")
     }
-  }, [nextPrayerTime, temp])
+  }, [nextPrayerTime, nextPrayerName, temp])
 
   //   load()
   // }, [])
@@ -641,7 +412,9 @@ function HomePage() {
         <div className="absolute bottom-0 w-full h-[70%] bg-[#EFF0F2] rounded-tl-3xl rounded-tr-3xl z-20"></div>
         <div className="relative flex flex-col gap-6 justify-between h-full before:p-1 after:p-1 px-6 z-40">
           <div className="">
-            <p className="text-white text-4xl">{t("welcome")}, {name} 😊</p>
+            <p className="text-white text-4xl">
+              {t("welcome")}, {name} 😊
+            </p>
           </div>
           <div className="prayer flex flex-col items-center gap-4 bg-white py-5 px-6 rounded-[30px]">
             <div className="top text-center w-full">
@@ -682,9 +455,9 @@ function HomePage() {
             <div className="h-[2px] w-full bg-[#ACACAC]"></div>
             <div className="timings w-full flex items-center gap-[6px] text-center overflow-x-scroll no-scrollbar">
               <div
-                  className={`${
-                    nextPrayerName === "Fajr" ? "bg-[#373535]" : "bg-[#37353573]"
-                  } h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm`}
+                className={`${
+                  nextPrayerName === "Fajr" ? "bg-[#373535]" : "bg-[#37353573]"
+                } h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm`}
                 // >
                 // className="bg-[#373535] h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm"
               >
@@ -697,9 +470,9 @@ function HomePage() {
                 <p className="text-[10px] text-white">{t("fajr")}</p>
               </div>
               <div
-                  className={`${
-                    nextPrayerName === "Dhuhr" ? "bg-[#373535]" : "bg-[#37353573]"
-                  } h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm`}
+                className={`${
+                  nextPrayerName === "Dhuhr" ? "bg-[#373535]" : "bg-[#37353573]"
+                } h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm`}
                 // >
                 // className="bg-[#373535] h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm"
               >
@@ -712,9 +485,9 @@ function HomePage() {
                 <p className="text-[10px] text-white">{t("duhr")}</p>
               </div>
               <div
-                  className={`${
-                    nextPrayerName === "Asr" ? "bg-[#373535]" : "bg-[#37353573]"
-                  } h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm`}
+                className={`${
+                  nextPrayerName === "Asr" ? "bg-[#373535]" : "bg-[#37353573]"
+                } h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm`}
                 // >
                 // className="bg-[#373535] h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm"
               >
@@ -727,11 +500,11 @@ function HomePage() {
                 <p className="text-[10px] text-white">{t("asr")}</p>
               </div>
               <div
-                  className={`${
-                    nextPrayerName === "Maghrib"
-                      ? "bg-[#373535]"
-                      : "bg-[#37353573]"
-                  } h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm`}
+                className={`${
+                  nextPrayerName === "Maghrib"
+                    ? "bg-[#373535]"
+                    : "bg-[#37353573]"
+                } h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm`}
                 // >
                 // className="bg-[#373535] h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm"
               >
@@ -744,9 +517,9 @@ function HomePage() {
                 <p className="text-[10px] text-white">{t("maghrib")}</p>
               </div>
               <div
-                  className={`${
-                    nextPrayerName === "Isha" ? "bg-[#373535]" : "bg-[#37353573]"
-                  } h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm`}
+                className={`${
+                  nextPrayerName === "Isha" ? "bg-[#373535]" : "bg-[#37353573]"
+                } h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm`}
                 // >
                 // className="bg-[#373535] h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm"
               >
