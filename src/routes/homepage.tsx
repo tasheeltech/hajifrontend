@@ -623,6 +623,17 @@ function HomePage() {
   //   load()
   // }, [])
 
+  const [name, setName] = useState("")
+
+  useEffect(() => {
+    let uName: string
+    const userInfo = localStorage.getItem("userInfo")
+    if (userInfo) {
+      uName = JSON.parse(userInfo).name
+      setName(uName)
+    }
+  }, [])
+
   return (
     <div className="bg-[#EFF0F2] overflow-y-scroll no-scrollbar h-full">
       <div className="relative h-full">
@@ -630,7 +641,7 @@ function HomePage() {
         <div className="absolute bottom-0 w-full h-[70%] bg-[#EFF0F2] rounded-tl-3xl rounded-tr-3xl z-20"></div>
         <div className="relative flex flex-col gap-6 justify-between h-full before:p-1 after:p-1 px-6 z-40">
           <div className="">
-            <p className="text-white text-4xl">{t("welcome")}, Sadiya! 😊</p>
+            <p className="text-white text-4xl">{t("welcome")}, {name} 😊</p>
           </div>
           <div className="prayer flex flex-col items-center gap-4 bg-white py-5 px-6 rounded-[30px]">
             <div className="top text-center w-full">
@@ -671,11 +682,11 @@ function HomePage() {
             <div className="h-[2px] w-full bg-[#ACACAC]"></div>
             <div className="timings w-full flex items-center gap-[6px] text-center overflow-x-scroll no-scrollbar">
               <div
-                //   className={`${
-                //     nextPrayerName === "Fajr" ? "bg-[#373535]" : "bg-[#37353573]"
-                //   } h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm`}
+                  className={`${
+                    nextPrayerName === "Fajr" ? "bg-[#373535]" : "bg-[#37353573]"
+                  } h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm`}
                 // >
-                className="bg-[#373535] h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm"
+                // className="bg-[#373535] h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm"
               >
                 <p className="text-[10px] text-white">
                   {fajrTime && fajrTime.format(" h:mm a")}
@@ -686,11 +697,11 @@ function HomePage() {
                 <p className="text-[10px] text-white">{t("fajr")}</p>
               </div>
               <div
-                //   className={`${
-                //     nextPrayerName === "Dhuhr" ? "bg-[#373535]" : "bg-[#37353573]"
-                //   } h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm`}
+                  className={`${
+                    nextPrayerName === "Dhuhr" ? "bg-[#373535]" : "bg-[#37353573]"
+                  } h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm`}
                 // >
-                className="bg-[#373535] h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm"
+                // className="bg-[#373535] h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm"
               >
                 <p className="text-[10px] text-white">
                   {dhuhrTime && dhuhrTime.format(" h:mm a")}
@@ -701,11 +712,11 @@ function HomePage() {
                 <p className="text-[10px] text-white">{t("duhr")}</p>
               </div>
               <div
-                //   className={`${
-                //     nextPrayerName === "Asr" ? "bg-[#373535]" : "bg-[#37353573]"
-                //   } h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm`}
+                  className={`${
+                    nextPrayerName === "Asr" ? "bg-[#373535]" : "bg-[#37353573]"
+                  } h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm`}
                 // >
-                className="bg-[#373535] h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm"
+                // className="bg-[#373535] h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm"
               >
                 <p className="text-[10px] text-white">
                   {asrTime && asrTime.format(" h:mm a")}
@@ -716,13 +727,13 @@ function HomePage() {
                 <p className="text-[10px] text-white">{t("asr")}</p>
               </div>
               <div
-                //   className={`${
-                //     nextPrayerName === "Maghrib"
-                //       ? "bg-[#373535]"
-                //       : "bg-[#37353573]"
-                //   } h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm`}
+                  className={`${
+                    nextPrayerName === "Maghrib"
+                      ? "bg-[#373535]"
+                      : "bg-[#37353573]"
+                  } h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm`}
                 // >
-                className="bg-[#373535] h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm"
+                // className="bg-[#373535] h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm"
               >
                 <p className="text-[10px] text-white">
                   {maghribTime && maghribTime.format(" h:mm a")}
@@ -733,11 +744,11 @@ function HomePage() {
                 <p className="text-[10px] text-white">{t("maghrib")}</p>
               </div>
               <div
-                //   className={`${
-                //     nextPrayerName === "Isha" ? "bg-[#373535]" : "bg-[#37353573]"
-                //   } h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm`}
+                  className={`${
+                    nextPrayerName === "Isha" ? "bg-[#373535]" : "bg-[#37353573]"
+                  } h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm`}
                 // >
-                className="bg-[#373535] h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm"
+                // className="bg-[#373535] h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm"
               >
                 <p className="text-[10px] text-white">
                   {ishaTime && ishaTime.format(" h:mm a")}
