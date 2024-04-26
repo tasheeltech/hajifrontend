@@ -121,7 +121,7 @@ const Location: React.FC = () => {
         className=" flex items-center justify-center rounded-full px-4 gap-1 border-2 border-[#a3a3a3] absolute bottom-4 right-4 text-sm bg-white p-3 font-semibold active:bg-[#4a7b6b] active:text-white"
         onClick={() => {
           setLocation(center)
-          console.log(location)
+          // console.log(location)
           alert("Your location has been updated")
         }}
       >
