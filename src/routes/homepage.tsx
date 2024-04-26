@@ -81,6 +81,7 @@ function HomePage() {
   const [place, setPlace] = useState<string[]>(["", ""])
 
   const [temp, setTemp] = useState(false)
+  const [loading, setLoading] = useState(true)
 
   //@ts-ignore
   const params = (() => {
@@ -260,6 +261,47 @@ function HomePage() {
         // You can handle this case by informing the user or taking appropriate action
       } else {
         setNearestLocation(nearestCity)
+
+        const nearestCityCoordinates = {
+          lat: nearestCity.geo.lat,
+          lng: nearestCity.geo.lng,
+        }
+
+        console.log(nearestCityCoordinates, "nearestCityCoordinates")
+
+        setTimeZone(nearestCity.tz)
+        // const timeNow = moment().tz(timeZone).format('YYYY-MM-DD HH:mm:ss');
+        // console.log(timeNow)
+
+        const currentTime = moment().tz(nearestCity.tz)
+
+        // Format the time as desired
+        const formattedTime = currentTime.format("YYYY-MM-DD HH:mm:ss")
+
+        console.log(`Current time in ${timeZone}: ${formattedTime}`)
+
+        // const places = timeZone.split("/")
+        const places = nearestCity.tz.split("/")
+
+        setPlace(places && places)
+
+        // Set current time initially
+        // const initialCurrentTime = moment().tz(timeZone)
+        const initialCurrentTime = moment().tz(nearestCity.tz)
+        setCurrentTime(initialCurrentTime)
+
+        const prayerTimes = nearestCityCoordinates
+          ? new PrayerTimes(
+              new Coordinates(
+                nearestCityCoordinates.lat,
+                nearestCityCoordinates.lng
+              ),
+              date,
+              params
+            )
+          : new PrayerTimes(new Coordinates(24.46861, 39.61417), date, params)
+
+        setPrayerTimes(prayerTimes)
       }
     } catch (error) {
       console.error("Error loading cities data:", error)
@@ -267,129 +309,87 @@ function HomePage() {
   }
 
   useEffect(() => {
-    if (nearestLocation) {
-      const nearestCityCoordinates = {
-        lat: nearestLocation.geo.lat,
-        lng: nearestLocation.geo.lng,
-      }
-
-      console.log(nearestCityCoordinates, "nearestCityCoordinates")
-
-      setTimeZone(nearestLocation.tz)
-      // const timeNow = moment().tz(timeZone).format('YYYY-MM-DD HH:mm:ss');
-      // console.log(timeNow)
-
-      const currentTime = moment().tz(nearestLocation.tz)
-
-      // Format the time as desired
-      const formattedTime = currentTime.format("YYYY-MM-DD HH:mm:ss")
-
-      console.log(`Current time in ${timeZone}: ${formattedTime}`)
-
-      // const places = timeZone.split("/")
-      const places = nearestLocation.tz.split("/")
-
-      setPlace(places && places)
-
-      // Set current time initially
-      // const initialCurrentTime = moment().tz(timeZone)
-      const initialCurrentTime = moment().tz(nearestLocation.tz)
-      setCurrentTime(initialCurrentTime)
-
-      const prayerTimes = nearestCityCoordinates
-        ? new PrayerTimes(
-            new Coordinates(
-              nearestCityCoordinates.lat,
-              nearestCityCoordinates.lng
-            ),
-            date,
-            params
-          )
-        : new PrayerTimes(new Coordinates(24.46861, 39.61417), date, params)
-
-      setPrayerTimes(prayerTimes)
-    }
-  }, [nearestLocation])
-
-  useEffect(() => {
     console.log(timeZone, "tz")
 
-    if (timeZone && temp) {
+    if (timeZone) {
       const initialCurrentTime = moment().tz(timeZone)
       setCurrentTime(initialCurrentTime)
-      console.log(currentTime, "2")
+      // console.log(currentTime, "2")
     }
-  }, [timeZone, temp])
+  }, [temp])
 
   useEffect(() => {
-    if (prayerTimes && currentTime && timeZone) {
-      // Convert prayer times to the determined time zone
-      setFajrTime(moment(prayerTimes.fajr).tz(timeZone))
-      setDhuhrTime(moment(prayerTimes.dhuhr).tz(timeZone))
-      setAsrTime(moment(prayerTimes.asr).tz(timeZone))
-      setMaghribTime(moment(prayerTimes.maghrib).tz(timeZone))
-      setIshaTime(moment(prayerTimes.isha).tz(timeZone))
+    // console.log("PrayerTime", prayerTimes)
+    // console.log("currentTime", currentTime)
+    if (prayerTimes && currentTime) {
+      // console.log("prayer times running")
+
+      try {
+        // Convert prayer times to the determined time zone
+        setFajrTime(moment(prayerTimes.fajr).tz(timeZone))
+        setDhuhrTime(moment(prayerTimes.dhuhr).tz(timeZone))
+        setAsrTime(moment(prayerTimes.asr).tz(timeZone))
+        setMaghribTime(moment(prayerTimes.maghrib).tz(timeZone))
+        setIshaTime(moment(prayerTimes.isha).tz(timeZone))
+        // console.log("prayer times running")
+      } catch (error) {
+        console.error("Error converting prayer times:", error)
+      }
     }
 
-    if (
-      fajrTime &&
-      dhuhrTime &&
-      asrTime &&
-      maghribTime &&
-      ishaTime &&
-      currentTime &&
-      timeZone
-    ) {
-      let nextPrayerTime: moment.Moment | null = null
-      let nextPrayerName: string = ""
+    if (currentTime && timeZone) {
+      // console.log("prayer next times running")
 
-      if (currentTime.isBefore(fajrTime)) {
-        nextPrayerTime = fajrTime
-        nextPrayerName = "Fajr"
-      } else if (currentTime.isBefore(dhuhrTime)) {
-        nextPrayerTime = dhuhrTime
-        nextPrayerName = "Dhuhr"
-      } else if (currentTime.isBefore(asrTime)) {
-        nextPrayerTime = asrTime
-        nextPrayerName = "Asr"
-      } else if (currentTime.isBefore(maghribTime)) {
-        nextPrayerTime = maghribTime
-        nextPrayerName = "Maghrib"
-      }
-      // else {
-      //   nextPrayerTime = ishaTime
-      //   nextPrayerName = "Isha"
-      // }
-      else if (currentTime.isBefore(ishaTime)) {
-        nextPrayerTime = ishaTime
-        nextPrayerName = "Isha"
-      } else {
-        // If it's past Isha, then the next prayer will be Fajr of the next day
-        nextPrayerTime = moment(prayerTimes?.fajr).add(1, "day").tz(timeZone)
-        nextPrayerName = "Fajr"
-      }
+      try {
+        let nextPrayerTime: moment.Moment | null = null
+        let nextPrayerName: string = ""
 
-      // Update next prayer name state
-      setNextPrayerTime(nextPrayerTime)
-      setNextPrayerName(nextPrayerName)
-      // console.log(nextPrayerName, "setNextPrayerName")
-      console.log(nextPrayerTime, "nextPrayerTime")
+        if (currentTime.isBefore(fajrTime)) {
+          nextPrayerTime = fajrTime
+          nextPrayerName = "Fajr"
+        } else if (currentTime.isBefore(dhuhrTime)) {
+          nextPrayerTime = dhuhrTime
+          nextPrayerName = "Dhuhr"
+        } else if (currentTime.isBefore(asrTime)) {
+          nextPrayerTime = asrTime
+          nextPrayerName = "Asr"
+        } else if (currentTime.isBefore(maghribTime)) {
+          nextPrayerTime = maghribTime
+          nextPrayerName = "Maghrib"
+        } else if (currentTime.isBefore(ishaTime)) {
+          nextPrayerTime = ishaTime
+          nextPrayerName = "Isha"
+        } else {
+          // If it's past Isha, then the next prayer will be Fajr of the next day
+          nextPrayerTime = moment(prayerTimes?.fajr).add(1, "day").tz(timeZone)
+          nextPrayerName = "Fajr"
+        }
+
+        // Update next prayer name state
+        setNextPrayerTime(nextPrayerTime)
+        setNextPrayerName(nextPrayerName)
+
+        // console.log(nextPrayerTime, "nextPrayerTime")
+      } catch (error) {
+        console.error("Error determining next prayer:", error)
+      }
     }
   }, [prayerTimes, temp])
 
   useEffect(() => {
-    console.log("run remaining")
-    console.log("currentTime", currentTime)
-    console.log("prayerTimes", prayerTimes)
+    // console.log("run remaining")
+    // console.log("currentTime", currentTime)
+    // console.log("prayerTimes", prayerTimes)
 
     if (nextPrayerTime && currentTime) {
       const remainingTime = moment.duration(nextPrayerTime.diff(currentTime))
       setRemainingHours(Math.floor(remainingTime.asHours()))
       setRemainingMinutes(remainingTime.minutes())
       // const remainingSeconds = remainingTime.seconds()
-      console.log(remainingTime, "remainingTime")
+      // console.log(remainingTime, "remainingTime")
+      setLoading(false)
     }
-  }, [nextPrayerTime, nextPrayerName, temp])
+  }, [nextPrayerTime, temp])
 
   //   load()
   // }, [])
@@ -417,121 +417,137 @@ function HomePage() {
             </p>
           </div>
           <div className="prayer flex flex-col items-center gap-4 bg-white py-5 px-6 rounded-[30px]">
-            <div className="top text-center w-full">
-              <div className="top flex justify-between w-full">
-                <div className="left">
-                  <div className="flex items-center gap-[6px]">
-                    <BiSolidTime color="#2BCE98" />
-                    <p className="font-semibold">{nextPrayerName}</p>
-                  </div>
-                  <div className="flex items-center gap-[6px]">
-                    <div className="w-4"></div>
-                    {/* <p className="text-[#6a6a6a] font-medium">{prayerDate}</p> */}
-                    <p className="text-[#6a6a6a] font-medium">{`${remainingHours} hr ${remainingMinutes} mins left`}</p>
-                  </div>
-                </div>
-                <div className="right">
-                  <div className="flex items-center gap-[6px]">
-                    <FaMapMarkerAlt color="#2BCE98" />
-
-                    <p className="font-semibold">
-                      {/* {defaultToMadinah ? "Al Madinah" : place[1]} */}
-                      {place[1]}
-                    </p>
-                  </div>
-                  <div className="flex items-center gap-[6px]">
-                    <div className="w-4"></div>
-                    <p className="text-[#6a6a6a] font-medium">
-                      {/* {defaultToMadinah ? "Saudi Arabia" : place[0]} */}
-                      {place[0]}
-                    </p>
-                  </div>
-                </div>
+            {loading ? (
+              <div className="text-lg min-h-[160px] flex justify-center items-center font-medium">
+                Fetching Prayer Times ...
               </div>
-              {/* <p className="font-bold">
+            ) : (
+              <>
+                <div className="top text-center w-full">
+                  <div className="top flex text-left justify-between w-full">
+                    <div className="left">
+                      <div className="flex items-center gap-[6px]">
+                        <BiSolidTime color="#2BCE98" />
+                        <p className="font-semibold">{nextPrayerName}</p>
+                      </div>
+                      <div className="flex items-center gap-[6px]">
+                        <div className="w-4"></div>
+                        {/* <p className="text-[#6a6a6a] font-medium">{prayerDate}</p> */}
+                        <p className="text-[#6a6a6a] font-medium line-clamp-1">{`${remainingHours} hr ${remainingMinutes} mins left`}</p>
+                      </div>
+                    </div>
+                    <div className="right">
+                      <div className="flex items-center gap-[6px]">
+                        <FaMapMarkerAlt color="#2BCE98" />
+
+                        <p className="font-semibold">
+                          {/* {defaultToMadinah ? "Al Madinah" : place[1]} */}
+                          {place[1]}
+                        </p>
+                      </div>
+                      <div className="flex items-center gap-[6px]">
+                        <div className="w-4"></div>
+                        <p className="text-[#6a6a6a] font-medium">
+                          {/* {defaultToMadinah ? "Saudi Arabia" : place[0]} */}
+                          {place[0]}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  {/* <p className="font-bold">
                 {t("prayerTimesFor")} {prayerDate}
               </p> */}
-            </div>
-            <div className="h-[2px] w-full bg-[#ACACAC]"></div>
-            <div className="timings w-full flex items-center gap-[6px] text-center overflow-x-scroll no-scrollbar">
-              <div
-                className={`${
-                  nextPrayerName === "Fajr" ? "bg-[#373535]" : "bg-[#37353573]"
-                } h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm`}
-                // >
-                // className="bg-[#373535] h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm"
-              >
-                <p className="text-[10px] text-white">
-                  {fajrTime && fajrTime.format(" h:mm a")}
-                </p>
-                <div className="w-5">
-                  <img src="/mosque.svg" alt="" />
                 </div>
-                <p className="text-[10px] text-white">{t("fajr")}</p>
-              </div>
-              <div
-                className={`${
-                  nextPrayerName === "Dhuhr" ? "bg-[#373535]" : "bg-[#37353573]"
-                } h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm`}
-                // >
-                // className="bg-[#373535] h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm"
-              >
-                <p className="text-[10px] text-white">
-                  {dhuhrTime && dhuhrTime.format(" h:mm a")}
-                </p>
-                <div className="w-5">
-                  <img src="/mosque.svg" alt="" />
+                <div className="h-[2px] w-full bg-[#ACACAC]"></div>
+                <div className="timings w-full flex items-center gap-[6px] text-center overflow-x-scroll no-scrollbar">
+                  <div
+                    className={`${
+                      nextPrayerName === "Fajr"
+                        ? "bg-[#373535]"
+                        : "bg-[#37353573]"
+                    } h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm`}
+                    // >
+                    // className="bg-[#373535] h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm"
+                  >
+                    <p className="text-[10px] text-white">
+                      {fajrTime && fajrTime.format(" h:mm a")}
+                    </p>
+                    <div className="w-5">
+                      <img src="/mosque.svg" alt="" />
+                    </div>
+                    <p className="text-[10px] text-white">{t("fajr")}</p>
+                  </div>
+                  <div
+                    className={`${
+                      nextPrayerName === "Dhuhr"
+                        ? "bg-[#373535]"
+                        : "bg-[#37353573]"
+                    } h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm`}
+                    // >
+                    // className="bg-[#373535] h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm"
+                  >
+                    <p className="text-[10px] text-white">
+                      {dhuhrTime && dhuhrTime.format(" h:mm a")}
+                    </p>
+                    <div className="w-5">
+                      <img src="/mosque.svg" alt="" />
+                    </div>
+                    <p className="text-[10px] text-white">{t("duhr")}</p>
+                  </div>
+                  <div
+                    className={`${
+                      nextPrayerName === "Asr"
+                        ? "bg-[#373535]"
+                        : "bg-[#37353573]"
+                    } h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm`}
+                    // >
+                    // className="bg-[#373535] h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm"
+                  >
+                    <p className="text-[10px] text-white">
+                      {asrTime && asrTime.format(" h:mm a")}
+                    </p>
+                    <div className="w-5">
+                      <img src="/mosque.svg" alt="" />
+                    </div>
+                    <p className="text-[10px] text-white">{t("asr")}</p>
+                  </div>
+                  <div
+                    className={`${
+                      nextPrayerName === "Maghrib"
+                        ? "bg-[#373535]"
+                        : "bg-[#37353573]"
+                    } h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm`}
+                    // >
+                    // className="bg-[#373535] h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm"
+                  >
+                    <p className="text-[10px] text-white">
+                      {maghribTime && maghribTime.format(" h:mm a")}
+                    </p>
+                    <div className="w-5">
+                      <img src="/mosque.svg" alt="" />
+                    </div>
+                    <p className="text-[10px] text-white">{t("maghrib")}</p>
+                  </div>
+                  <div
+                    className={`${
+                      nextPrayerName === "Isha"
+                        ? "bg-[#373535]"
+                        : "bg-[#37353573]"
+                    } h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm`}
+                    // >
+                    // className="bg-[#373535] h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm"
+                  >
+                    <p className="text-[10px] text-white">
+                      {ishaTime && ishaTime.format(" h:mm a")}
+                    </p>
+                    <div className="w-5">
+                      <img src="/mosque.svg" alt="" />
+                    </div>
+                    <p className="text-[10px] text-white">{t("isha")}</p>
+                  </div>
                 </div>
-                <p className="text-[10px] text-white">{t("duhr")}</p>
-              </div>
-              <div
-                className={`${
-                  nextPrayerName === "Asr" ? "bg-[#373535]" : "bg-[#37353573]"
-                } h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm`}
-                // >
-                // className="bg-[#373535] h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm"
-              >
-                <p className="text-[10px] text-white">
-                  {asrTime && asrTime.format(" h:mm a")}
-                </p>
-                <div className="w-5">
-                  <img src="/mosque.svg" alt="" />
-                </div>
-                <p className="text-[10px] text-white">{t("asr")}</p>
-              </div>
-              <div
-                className={`${
-                  nextPrayerName === "Maghrib"
-                    ? "bg-[#373535]"
-                    : "bg-[#37353573]"
-                } h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm`}
-                // >
-                // className="bg-[#373535] h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm"
-              >
-                <p className="text-[10px] text-white">
-                  {maghribTime && maghribTime.format(" h:mm a")}
-                </p>
-                <div className="w-5">
-                  <img src="/mosque.svg" alt="" />
-                </div>
-                <p className="text-[10px] text-white">{t("maghrib")}</p>
-              </div>
-              <div
-                className={`${
-                  nextPrayerName === "Isha" ? "bg-[#373535]" : "bg-[#37353573]"
-                } h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm`}
-                // >
-                // className="bg-[#373535] h-[78px] flex-1 min-w-[57px] flex flex-col justify-between items-center g-2 p-[6px] rounded-sm"
-              >
-                <p className="text-[10px] text-white">
-                  {ishaTime && ishaTime.format(" h:mm a")}
-                </p>
-                <div className="w-5">
-                  <img src="/mosque.svg" alt="" />
-                </div>
-                <p className="text-[10px] text-white">{t("isha")}</p>
-              </div>
-            </div>
+              </>
+            )}
           </div>
           <div className="flex flex-col justify-between items-center text-center gap-6 rounded-[20px] border border-[#3735353D] px-3 mt-8">
             <div className="flex justify-center items-center rounded-3xl bg-[#373535] w-[72px] h-[72px] p-[14px] -m-[38px]">
