@@ -1,10 +1,5 @@
 import React, { useEffect, useRef, useState } from "react"
-import {
-  Link,
-  Outlet,
-  useLocation,
-  useNavigate,
-} from "react-router-dom"
+import { Link, Outlet, useLocation, useNavigate } from "react-router-dom"
 import Header from "../header/header"
 import { useTranslation } from "react-i18next"
 import { LuChevronRightCircle } from "react-icons/lu"
@@ -16,6 +11,7 @@ import { MdCategory } from "react-icons/md"
 import { RiHome3Fill } from "react-icons/ri"
 import { FaLocationDot } from "react-icons/fa6"
 import { RiUserSettingsFill } from "react-icons/ri"
+import { BiCategoryAlt, BiHomeAlt2, BiSolidChat } from "react-icons/bi"
 
 interface MyObject {
   name: string
@@ -175,7 +171,7 @@ function RootLayout() {
       </main>
       {layout && (
         <footer>
-          <div className=" py-1 flex gap-2 items-baseline justify-around w-full bg-white border-t-2">
+          {/* <div className=" py-1 flex gap-2 items-baseline justify-around w-full bg-white border-t-2">
             <button
               onClick={() => {
                 navigate("/homepage")
@@ -246,6 +242,38 @@ function RootLayout() {
                 </p>
               </div>
             </button>
+          </div> */}
+          <div className="bg-[#eff0f2] relative flex justify-center items-center py-5  text-white font-medium">
+            <button
+              className="chat btn bg-gradient-to-b from-[#2BCE98] to-[#3AB9D0] flex flex-col justify-center items-center aspect-square h-[72px] absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 rounded-full border-[2px] border-[#373535] text-[10px]"
+              onClick={() => {
+                navigate("/chat")
+              }}
+            >
+              <BiSolidChat size={24} />
+              {t("chat")}
+            </button>
+            <div className="flex items-center gap-4 px-8 ">
+              <button
+                className="home btn bg-[#373535] h-14 px-12 flex flex-col justify-center items-center text-[8px] gap-1  rounded-l-[40px]"
+                onClick={() => {
+                  navigate("/homepage")
+                }}
+              >
+                <BiHomeAlt2 size={20} />
+                {t("home")}
+              </button>
+              <div className=""></div>
+              <button
+                className="tools btn bg-[#373535] h-14 px-12 flex flex-col justify-center items-center text-[8px] gap-1  rounded-r-[40px]"
+                onClick={() => {
+                  navigate("/tools")
+                }}
+              >
+                <BiCategoryAlt size={20} />
+                {t("tools")}
+              </button>
+            </div>
           </div>
         </footer>
       )}
