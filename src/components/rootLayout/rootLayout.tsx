@@ -31,6 +31,7 @@ function RootLayout() {
   const [layout, setLayout] = useState(false)
   const [showMenu, setShowMenu] = useState(false)
   const [selectedMenuItem, setSelectedMenuItem] = useState("/homepage")
+  const [direction, setDirection] = useState("ltr")
   const [home, setHome] = useState(true)
   const [chat, setChat] = useState(false)
   const [tools, setTools] = useState(false)
@@ -106,6 +107,10 @@ function RootLayout() {
       document.removeEventListener("mousedown", handler)
     }
   })
+
+  useEffect(() => {
+    setDirection(document.body.dir)
+  }, [])
 
   return (
     <div className="h-dvh flex flex-col">
@@ -245,33 +250,45 @@ function RootLayout() {
           </div> */}
           <div className="bg-[#eff0f2] relative flex justify-center items-center py-5  text-white font-medium">
             <button
-              className="chat btn bg-gradient-to-b from-[#2BCE98] to-[#3AB9D0] flex flex-col justify-center items-center aspect-square h-[72px] absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 rounded-full border-[2px] border-[#373535] text-[10px]"
+              className="chat btn bg-gradient-to-b from-[#2BCE98] to-[#3AB9D0] flex flex-col justify-center items-center aspect-square h-[72px] w-[72px] absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 rounded-full border-[2px] border-[#373535] text-[10px]"
               onClick={() => {
                 navigate("/chat")
               }}
             >
               <BiSolidChat size={24} />
-              {t("chat")}
+              <p className="line-clamp-1">{t("chat")}</p>
             </button>
-            <div className="flex items-center gap-4 px-8 ">
+            <div className="flex items-center ">
               <button
-                className="home btn bg-[#373535] h-14 px-12 flex flex-col justify-center items-center text-[8px] gap-1  rounded-l-[40px]"
+                className={`home btn bg-[#373535] h-14 px-8 flex flex-col justify-center items-start text-[8px] gap-1 w-32 ${
+                  document.body.dir === "ltr"
+                    ? "rounded-l-[40px] rounded-r-none"
+                    : "rounded-r-[40px] rounded-l-none"
+                } `}
                 onClick={() => {
                   navigate("/homepage")
                 }}
               >
-                <BiHomeAlt2 size={20} />
-                {t("home")}
+                <div className=" flex flex-col justify-center items-center text-[8px] gap-1 max-w-16">
+                  <BiHomeAlt2 size={20} />
+                  <p className="line-clamp-1">{t("home")}</p>
+                </div>
               </button>
               <div className=""></div>
               <button
-                className="tools btn bg-[#373535] h-14 px-12 flex flex-col justify-center items-center text-[8px] gap-1  rounded-r-[40px]"
+                className={`tools btn bg-[#373535] h-14 px-8 flex flex-col justify-center items-end text-[8px] gap-1 w-32 ${
+                  document.body.dir === "ltr"
+                    ? "rounded-r-[40px] rounded-l-none"
+                    : "rounded-l-[40px] rounded-r-none"
+                }`}
                 onClick={() => {
                   navigate("/tools")
                 }}
               >
-                <BiCategoryAlt size={20} />
-                {t("tools")}
+                <div className=" flex flex-col justify-center items-center gap-1 max-w-16">
+                  <BiCategoryAlt size={20} />
+                  <p className="line-clamp-1">{t("tools")}</p>
+                </div>
               </button>
             </div>
           </div>
