@@ -250,17 +250,17 @@ function RootLayout() {
           </div> */}
           <div className="bg-[#eff0f2] relative flex justify-center items-center py-5  text-white font-medium">
             <button
-              className="chat btn bg-gradient-to-b from-[#2BCE98] to-[#3AB9D0] flex flex-col justify-center items-center aspect-square h-[72px] absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 rounded-full border-[2px] border-[#373535] text-[10px] "
+              className="chat btn bg-gradient-to-b from-[#2BCE98] to-[#3AB9D0] flex flex-col justify-center items-center aspect-square h-[72px] w-[72px] absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 rounded-full border-[2px] border-[#373535] text-[10px]"
               onClick={() => {
                 navigate("/chat")
               }}
             >
               <BiSolidChat size={24} />
-              <p className="truncate">{t("chat")}</p>
+              <p className="line-clamp-1">{t("chat")}</p>
             </button>
             <div className="flex items-center ">
               <button
-                className={`home btn bg-[#373535] h-14 px-12 flex flex-col justify-center items-center text-[8px] gap-1 w-36 ${
+                className={`home btn bg-[#373535] h-14 px-8 flex flex-col justify-center items-start text-[8px] gap-1 w-32 ${
                   document.body.dir === "ltr"
                     ? "rounded-l-[40px] rounded-r-none"
                     : "rounded-r-[40px] rounded-l-none"
@@ -269,12 +269,14 @@ function RootLayout() {
                   navigate("/homepage")
                 }}
               >
-                <BiHomeAlt2 size={20} />
-                <p className="truncate">{t("home")}</p>
+                <div className=" flex flex-col justify-center items-center text-[8px] gap-1 max-w-16">
+                  <BiHomeAlt2 size={20} />
+                  <p className="line-clamp-1">{t("home")}</p>
+                </div>
               </button>
               <div className=""></div>
               <button
-                className={`tools btn bg-[#373535] h-14 px-12 flex flex-col justify-center items-center text-[8px] gap-1 w-36 ${
+                className={`tools btn bg-[#373535] h-14 px-8 flex flex-col justify-center items-end text-[8px] gap-1 w-32 ${
                   document.body.dir === "ltr"
                     ? "rounded-r-[40px] rounded-l-none"
                     : "rounded-l-[40px] rounded-r-none"
@@ -283,8 +285,10 @@ function RootLayout() {
                   navigate("/tools")
                 }}
               >
-                <BiCategoryAlt size={20} />
-                <p className="truncate">{t("tools")}</p>
+                <div className=" flex flex-col justify-center items-center gap-1 max-w-16">
+                  <BiCategoryAlt size={20} />
+                  <p className="line-clamp-1">{t("tools")}</p>
+                </div>
               </button>
             </div>
           </div>
