@@ -4,6 +4,7 @@ import StarRating from "../rating/starRating"
 import { Badge } from "../../ui/badge"
 import { Link } from "react-router-dom"
 import { ImageContext } from "./context"
+import { MdCall } from "react-icons/md"
 
 type CardProps = {
   places: {
@@ -57,10 +58,10 @@ const Card: React.FC<CardProps> = ({ places }) => {
                 </div>
                 {valueFromContext && (
                   <>
-                    <div className="w-24 h-24">
-                      <div>
+                    <div className="w-24 h-24 aspect-square">
+                      {/* <div> */}
                         <LocationImage />
-                      </div>
+                      {/* </div> */}
                     </div>
                   </>
                 )}
@@ -74,7 +75,8 @@ const Card: React.FC<CardProps> = ({ places }) => {
                     variant="outline"
                     className="flex gap-2 py-2 px-3 border-[#2BCE98] rounded-3xl"
                   >
-                    <img src="/icons/call.svg" className="w-4 h-4" alt="" />
+                    {/* <img src="/icons/call.svg" className="w-4 h-4" alt="" /> */}
+                    <MdCall color="#2BCE98" />
                     <div className="text-[#2BCE98]">Call</div>
                   </Badge>
                 </Link>

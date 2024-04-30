@@ -248,7 +248,11 @@ function RootLayout() {
               </div>
             </button>
           </div> */}
-          <div className="bg-[#eff0f2] relative flex justify-center items-center py-5  text-white font-medium">
+          <div
+            className={`${
+              home ? "bg-[#eff0f2]" : "bg-white"
+            } relative flex justify-center items-center py-5  text-white font-medium`}
+          >
             <button
               className="chat btn bg-gradient-to-b from-[#2BCE98] to-[#3AB9D0] flex flex-col justify-center items-center aspect-square h-[72px] w-[72px] absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 rounded-full border-[2px] border-[#373535] text-[10px]"
               onClick={() => {

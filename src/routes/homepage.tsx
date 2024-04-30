@@ -166,10 +166,10 @@ function HomePage() {
 
   const prayerDate = moment(date).format("MMMM DD, YYYY")
 
-  useEffect(() => {
-    i18n.changeLanguage(isoLanguage ? isoLanguage.iso : navigator.language)
-    document.body.dir = i18n.dir()
-  }, [i18n, i18n.language])
+  // useEffect(() => {
+  //   i18n.changeLanguage(isoLanguage ? isoLanguage.iso : navigator.language)
+  //   document.body.dir = i18n.dir()
+  // }, [i18n, i18n.language])
 
   // const place = timeZone.split("/")
 
